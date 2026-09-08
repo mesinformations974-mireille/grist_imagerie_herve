@@ -2643,8 +2643,14 @@ function renderProjectSelector() {
 
   // Filtre Catégorie
   var allCategories = [];
-  tasks.forEach(function(t) { if (t.Category && allCategories.indexOf(t.Category) === -1) allCategories.push(t.Category); });
+  tasks.forEach(function(t) {
+    if (!t.Category) return;
+    t.Category.split(',').map(function(c) { return c.trim(); }).filter(Boolean).forEach(function(c) {
+      if (allCategories.indexOf(c) === -1) allCategories.push(c);
+    });
+  });
   allCategories.sort();
+  
   var catOptions = allCategories.map(function(c) { return { value: c, label: c }; });
   html += buildFilterCombo('category', currentLang === 'fr' ? '— Catégorie —' : '— Category —', catOptions, currentFilterCategory, filterByCategory);
 
@@ -3052,7 +3058,9 @@ function sanitizeRestoredFilters() {
   if (currentFilterAssignee && !findUserByIdent(currentFilterAssignee)) currentFilterAssignee = null;
   if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
-    var catFound = tasks.some(function(t) { return String(t.Category || '').trim() === catKey; });
+    var catFound = tasks.some(function(t) {
+      return String(t.Category || '').split(',').map(function(c) { return c.trim(); }).indexOf(catKey) !== -1;
+    });
     if (!catFound) currentFilterCategory = null;
   }
   if (currentFilterTag) {
@@ -3162,7 +3170,9 @@ function getFilteredTasks() {
   }
   if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
-    result = result.filter(function(t) { return String(t.Category || '').trim() === catKey; });
+    result = result.filter(function(t) {
+      return String(t.Category || '').split(',').map(function(c) { return c.trim(); }).indexOf(catKey) !== -1;
+    });
   }
   if (currentFilterTag) {
     var tagKey = String(currentFilterTag).trim();
