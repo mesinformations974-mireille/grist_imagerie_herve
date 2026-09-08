@@ -3942,13 +3942,11 @@ function renderTaskCard(task) {
     var blockers = getTaskDependencies(task.id).filter(function(b) { return b && b.Status !== 'done'; });
     html += '<div class="blocked-badge">🔒 ' + t('blockedBy') + ' ' + blockers.map(function(b) { return sanitize(b.Title); }).join(', ') + '</div>';
   }
-
-  html += '<div class="task-card-header">';
-  html += '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
-  html += '<div class="task-card-title" style="cursor:pointer;" onclick="openEditTaskModal(' + task.id + ')">' + sanitize(task.Title) + '</div>';
+// modifié
+  html += '<div class="task-card-header" style="display:flex;flex-direction:column;gap:6px;">';
+  html += '<div class="task-card-title" style="cursor:pointer;width:100%;" onclick="openEditTaskModal(' + task.id + ')">' + sanitize(task.Title) + '</div>';
+  html += '<div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;flex-wrap:wrap;">';
   if (cd.priority) html += '<span class="priority-badge priority-' + (task.Priority || 'medium') + '" style="font-size:11px;">' + priorityLabel(task.Priority) + '</span>';
-  html += '</div>';
-  html += '<div class="task-card-actions">';
   var _statusDef = getKanbanStatuses().find(function(st) { return st.key === task.Status; });
   var _statusColor = _statusDef ? _statusDef.color : '#94a3b8';
   html += '<span class="task-card-status-badge" style="background:' + _statusColor + '20;color:' + _statusColor + ';">' + statusLabel(task.Status) + '</span>';
