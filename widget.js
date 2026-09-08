@@ -6,8 +6,8 @@ var currentLang = 'fr';
 
 var i18n = {
   fr: {
-    appTitle: 'Projets informatiques - VETAGROSUP',
-    appSubtitle: 'Organisez et suivez vos tâches pour les projets SI',
+    appTitle: 'Tâches SIRIUS - VETAGROSUP',
+    appSubtitle: 'Organiser et suivre les tâches pour l'évolution de SIRIUS',
     notInGrist: 'Ce widget doit être utilisé dans Grist.',
     tabCalendar: 'Calendrier',
     tabKanban: 'Kanban',
@@ -348,8 +348,8 @@ var i18n = {
     templateUpdated: 'Modèle mis à jour !'
   },
   en: {
-    appTitle: 'VetAgroSup IT Tracking',
-    appSubtitle: 'Organize and track your tasks for IT projects',
+    appTitle: 'VetAgroSup SIRIUS tasks Tracking',
+    appSubtitle: 'Organize and track tasks for SIRIUS projects',
     notInGrist: 'This widget must be used inside Grist.',
     tabCalendar: 'Calendar',
     tabKanban: 'Kanban',
