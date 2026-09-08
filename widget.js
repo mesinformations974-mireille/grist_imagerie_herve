@@ -2628,13 +2628,12 @@ function renderProjectSelector() {
     var myIds = myProjectIdSet();
     visibleProjects = projects.filter(function (p) { return myIds[p.id]; });
   }
-  if (currentFilterAssignee) {
+    if (currentFilterAssignee) {
     var projIdSet = {};
     var selIdentSet = personIdentSet(currentFilterAssignee);
     tasks.forEach(function(t) {
-      getCategoryList(t.Category).forEach(function(c) {
-      if (allCategories.indexOf(c) === -1) allCategories.push(c);
-      });
+      if (!t.Project_Id) return;
+      if (assigneeListHas(t.Assignee, selIdentSet)) projIdSet[t.Project_Id] = true;
     });
     // Si aucune tâche associée, on laisse les projets courants (sinon UX bloquée)
     var filtered = visibleProjects.filter(function(p) { return projIdSet[p.id]; });
@@ -2656,11 +2655,10 @@ function renderProjectSelector() {
   });
   html += buildFilterCombo('person', currentLang === 'fr' ? '— Personne —' : '— Person —', personOptions, currentFilterAssignee, filterByAssignee);
 
-  // Filtre Catégorie
+    // Filtre Catégorie
   var allCategories = [];
   tasks.forEach(function(t) {
-    if (!t.Category) return;
-    t.Category.split(',').map(function(c) { return c.trim(); }).filter(Boolean).forEach(function(c) {
+    getCategoryList(t.Category).forEach(function(c) {
       if (allCategories.indexOf(c) === -1) allCategories.push(c);
     });
   });
@@ -3181,7 +3179,7 @@ function getFilteredTasks() {
     var identSet = personIdentSet(currentFilterAssignee);
     result = result.filter(function(t) { return assigneeListHas(t.Assignee, identSet); });
   }
-  if (currentFilterCategory) if (currentFilterCategory) {
+    if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
     result = result.filter(function(t) { return getCategoryList(t.Category).indexOf(catKey) !== -1; });
   }
@@ -4021,10 +4019,12 @@ function renderTaskCard(task) {
 
   if ((cd.category && task.Category) || (cd.tags && task.Tag)) {
     html += '<div class="task-card-row" style="gap:6px;flex-wrap:wrap;">';
-    if (cd.category && task.Category) {
-      var catObj = categories.find(function(c) { return c.Name === task.Category; });
-      var catColor = catObj ? catObj.Color : '#6366f1';
-      html += '<span style="font-size:10px;color:' + catColor + ';font-weight:700;">| ' + sanitize(task.Category) + '</span>';
+      if (cd.category && task.Category) {
+        getCategoryList(task.Category).forEach(function(catName) {
+        var catObj = categories.find(function(c) { return c.Name === catName; });
+        var catColor = catObj ? catObj.Color : '#6366f1';
+        html += '<span style="font-size:10px;color:' + catColor + ';font-weight:700;">| ' + sanitize(catName) + '</span>';
+      });
     }
     if (cd.tags && task.Tag) {
       var tagList = task.Tag.split(',').map(function(tg) { return tg.trim(); }).filter(Boolean);
