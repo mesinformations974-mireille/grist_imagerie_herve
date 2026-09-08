@@ -6,8 +6,8 @@ var currentLang = 'fr';
 
 var i18n = {
   fr: {
-    appTitle: 'Tâches SIRIUS - VETAGROSUP',
-    appSubtitle: 'Organiser et suivre les tâches pour l'évolution de SIRIUS',
+    appTitle: "Tâches SIRIUS - VETAGROSUP",
+    appSubtitle: "Organiser et suivre les tâches pour l'évolution de SIRIUS",
     notInGrist: 'Ce widget doit être utilisé dans Grist.',
     tabCalendar: 'Calendrier',
     tabKanban: 'Kanban',
