@@ -1072,6 +1072,20 @@ function getUserRoles(u) {
 function userMatchesRole(u, role) {
   return getUserRoles(u).indexOf(role) !== -1;
 }
+
+// ChoiceList-safe : gère tableau Grist pour les catégories (["L","cat1","cat2"]), chaîne "L,cat1,cat2", ou "cat1,cat2"
+function getCategoryList(val) {
+  if (!val) return [];
+  if (Array.isArray(val)) {
+    var arr = (val.length > 0 && val[0] === 'L') ? val.slice(1) : val;
+    return arr.filter(function(c) { return c && c !== 'L'; }).map(function(c) { return String(c).trim(); });
+  }
+  var s = String(val).trim();
+  if (!s) return [];
+  if (s.length > 1 && s[0] === 'L' && s[1] === ',') s = s.slice(2);
+  return s.split(',').map(function(c) { return c.trim(); }).filter(Boolean);
+}
+
 function userRoleDisplay(u) {
   var roles = getUserRoles(u);
   return roles.length ? roles.join(', ') : '';
@@ -2618,8 +2632,9 @@ function renderProjectSelector() {
     var projIdSet = {};
     var selIdentSet = personIdentSet(currentFilterAssignee);
     tasks.forEach(function(t) {
-      if (!t.Project_Id) return;
-      if (assigneeListHas(t.Assignee, selIdentSet)) projIdSet[t.Project_Id] = true;
+      getCategoryList(t.Category).forEach(function(c) {
+      if (allCategories.indexOf(c) === -1) allCategories.push(c);
+      });
     });
     // Si aucune tâche associée, on laisse les projets courants (sinon UX bloquée)
     var filtered = visibleProjects.filter(function(p) { return projIdSet[p.id]; });
@@ -3058,9 +3073,7 @@ function sanitizeRestoredFilters() {
   if (currentFilterAssignee && !findUserByIdent(currentFilterAssignee)) currentFilterAssignee = null;
   if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
-    var catFound = tasks.some(function(t) {
-      return String(t.Category || '').split(',').map(function(c) { return c.trim(); }).indexOf(catKey) !== -1;
-    });
+    var catFound = tasks.some(function(t) { return getCategoryList(t.Category).indexOf(catKey) !== -1; });
     if (!catFound) currentFilterCategory = null;
   }
   if (currentFilterTag) {
@@ -3168,11 +3181,9 @@ function getFilteredTasks() {
     var identSet = personIdentSet(currentFilterAssignee);
     result = result.filter(function(t) { return assigneeListHas(t.Assignee, identSet); });
   }
-  if (currentFilterCategory) {
+  if (currentFilterCategory) if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
-    result = result.filter(function(t) {
-      return String(t.Category || '').split(',').map(function(c) { return c.trim(); }).indexOf(catKey) !== -1;
-    });
+    result = result.filter(function(t) { return getCategoryList(t.Category).indexOf(catKey) !== -1; });
   }
   if (currentFilterTag) {
     var tagKey = String(currentFilterTag).trim();
