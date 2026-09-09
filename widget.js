@@ -1140,6 +1140,61 @@ function fromEpoch(ts) {
   return y + '-' + m + '-' + day;
 }
 
+// Format epoch -> "YYYY-MM-DDTHH:MM" pour <input type="datetime-local">
+function fromEpochDateTime(ts) {
+  if (!ts) return '';
+  var d = new Date(ts * 1000);
+  var y = d.getFullYear();
+  var m = String(d.getMonth() + 1).padStart(2, '0');
+  var day = String(d.getDate()).padStart(2, '0');
+  var h = String(d.getHours()).padStart(2, '0');
+  var min = String(d.getMinutes()).padStart(2, '0');
+  return y + '-' + m + '-' + day + 'T' + h + ':' + min;
+}
+
+// Capacité de RV simultanés par service (identifié par préfixe insensible à la casse,
+// même logique que le filtrage des zones demandées).
+var RDV_CAPACITY = [
+  { prefix: 'echo', capacity: 2 },
+  { prefix: 'radio', capacity: 1 },
+  { prefix: 'scanner', capacity: 1 },
+  { prefix: 'irm', capacity: 1 }
+];
+function getServiceCapacity(serviceName) {
+  if (!serviceName) return 1;
+  var lower = serviceName.toLowerCase();
+  for (var i = 0; i < RDV_CAPACITY.length; i++) {
+    if (lower.indexOf(RDV_CAPACITY[i].prefix) !== -1) return RDV_CAPACITY[i].capacity;
+  }
+  return 1;
+}
+
+// Vérifie si [startEpoch, endEpoch[ dépasse la capacité du service pour le projet donné.
+// excludeTaskId : exclut le RV en cours de modification de la comparaison (édition autorisée).
+// Retourne null si pas de conflit, ou un message d'erreur sinon.
+function checkRdvConflict(excludeTaskId, projectId, startEpoch, endEpoch) {
+  if (!projectId || !startEpoch || !endEpoch) return null;
+  if (endEpoch <= startEpoch) return currentLang === 'fr' ? 'L\'heure de fin doit être après l\'heure de début.' : 'End time must be after start time.';
+  var proj = projects.find(function(p) { return p.id === projectId; });
+  var serviceName = proj ? proj.Name : '';
+  var capacity = getServiceCapacity(serviceName);
+
+  var overlapping = tasks.filter(function(t) {
+    if (t.id === excludeTaskId) return false;
+    if (t.Project_Id !== projectId) return false;
+    if (t.Status === 'archived') return false;
+    if (!t.RDV_Debut || !t.RDV_Fin) return false;
+    return (startEpoch < t.RDV_Fin) && (endEpoch > t.RDV_Debut);
+  });
+
+  if (overlapping.length >= capacity) {
+    return currentLang === 'fr'
+      ? 'Conflit d\'horaire : ' + serviceName + ' est déjà complet sur ce créneau (capacité : ' + capacity + ').'
+      : 'Time conflict: ' + serviceName + ' is already fully booked for this slot (capacity: ' + capacity + ').';
+  }
+  return null;
+}
+
 function isOverdue(task) {
   if (!task.Due_Date || task.Status === 'done') return false;
   var now = Math.floor(Date.now() / 1000);
@@ -2058,6 +2113,12 @@ async function ensureTables() {
       if (imgCols.indexOf('Prescripteur') === -1) {
         imgMig.push(['AddColumn', TASKS_TABLE, 'Prescripteur', { type: 'Text' }]);
       }
+      if (imgCols.indexOf('RDV_Debut') === -1) {
+        imgMig.push(['AddColumn', TASKS_TABLE, 'RDV_Debut', { type: 'DateTime:Europe/Paris' }]);
+      }
+      if (imgCols.indexOf('RDV_Fin') === -1) {
+        imgMig.push(['AddColumn', TASKS_TABLE, 'RDV_Fin', { type: 'DateTime:Europe/Paris' }]);
+      }
 
       if (imgMig.length) {
         await grist.docApi.applyUserActions(imgMig);
@@ -2362,6 +2423,20 @@ async function loadAllData() {
         task.Informed = taskData.Informed ? taskData.Informed[i] || '' : '';
         task.Extension_Date = taskData.Extension_Date ? taskData.Extension_Date[i] : null;
         task.Auto_Extend = taskData.Auto_Extend ? !!taskData.Auto_Extend[i] : false;
+
+        // Champs patient (imagerie)
+        task.Espece = taskData.Espece ? taskData.Espece[i] || '' : '';
+        task.Race = taskData.Race ? taskData.Race[i] || '' : '';
+        task.Poids = taskData.Poids ? taskData.Poids[i] : null;
+        task.Age_Animal = taskData.Age_Animal ? taskData.Age_Animal[i] || '' : '';
+        task.Commemoratifs = taskData.Commemoratifs ? taskData.Commemoratifs[i] || '' : '';
+        task.Zone_Demandee = taskData.Zone_Demandee ? taskData.Zone_Demandee[i] : null;
+        task.Risque_Anesthesie = taskData.Risque_Anesthesie ? taskData.Risque_Anesthesie[i] || '' : '';
+        task.Examen_Complementaire = taskData.Examen_Complementaire ? taskData.Examen_Complementaire[i] || '' : '';
+        task.Type_Examen_Complementaire = taskData.Type_Examen_Complementaire ? taskData.Type_Examen_Complementaire[i] || '' : '';
+        task.Prescripteur = taskData.Prescripteur ? taskData.Prescripteur[i] || '' : '';
+        task.RDV_Debut = taskData.RDV_Debut ? taskData.RDV_Debut[i] : null;
+        task.RDV_Fin = taskData.RDV_Fin ? taskData.RDV_Fin[i] : null;
 
         tasks.push(task);
       }
@@ -3922,7 +3997,7 @@ function renderKanbanView() {
   if (sel && sel.value !== kanbanGroupBy) sel.value = kanbanGroupBy;
   var sortSel = document.getElementById('kanban-sort');
   if (sortSel && sortSel.value !== kanbanSort) sortSel.value = kanbanSort;
-  
+
   var columns = [];
   var filteredTasks = getFilteredTasks();
 
@@ -6462,6 +6537,12 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="detail-field-value"><select id="task-project" onchange="filterZoneChoicesByService()">' + projectOptions + '</select></div>';
   html += '</div>';
 
+  // Créneau du rendez-vous (début/fin, choisis librement)
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+  html += '<div class="detail-field"><span class="detail-field-icon">🕐</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Début RV' : 'Start time') + '</span><div class="detail-field-value"><input type="datetime-local" id="task-rdv-debut" value="' + fromEpochDateTime(task.RDV_Debut) + '" /></div></div>';
+  html += '<div class="detail-field"><span class="detail-field-icon">🕐</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Fin RV' : 'End time') + '</span><div class="detail-field-value"><input type="datetime-local" id="task-rdv-fin" value="' + fromEpochDateTime(task.RDV_Fin) + '" /></div></div>';
+  html += '</div>';
+
   // === CHAMPS PATIENT (IMAGERIE) ===
   html += '<div class="subtasks-header" style="margin-top:14px;"><span class="detail-field-icon">🩻</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Informations patient' : 'Patient information') + '</span></div>';
 
@@ -7123,6 +7204,8 @@ async function persistTaskFormFields(taskId) {
   if ((el = document.getElementById('task-examen-comp'))) record.Examen_Complementaire = el.value;
   if ((el = document.getElementById('task-type-examen-comp'))) record.Type_Examen_Complementaire = el.value;
   if ((el = document.getElementById('task-prescripteur'))) record.Prescripteur = el.value.trim();
+  if ((el = document.getElementById('task-rdv-debut'))) record.RDV_Debut = toEpoch(el.value);
+  if ((el = document.getElementById('task-rdv-fin'))) record.RDV_Fin = toEpoch(el.value);
   if ((el = document.getElementById('task-extension-date'))) record.Extension_Date = toEpoch(el.value);
   if ((el = document.getElementById('task-auto-extend'))) record.Auto_Extend = el.checked;
   try { await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, record]]); }
@@ -8071,6 +8154,19 @@ async function updateTask(taskId) {
   var projectEl = document.getElementById('task-project');
   var projectId = projectEl && projectEl.value ? parseInt(projectEl.value) : 0;
 
+  // Vérification des conflits de rendez-vous (capacité par service)
+  var rdvDebutEl = document.getElementById('task-rdv-debut');
+  var rdvFinEl = document.getElementById('task-rdv-fin');
+  var rdvDebutEpoch = rdvDebutEl ? toEpoch(rdvDebutEl.value) : null;
+  var rdvFinEpoch = rdvFinEl ? toEpoch(rdvFinEl.value) : null;
+  if (rdvDebutEpoch && rdvFinEpoch) {
+    var conflictMsg = checkRdvConflict(taskId, projectId, rdvDebutEpoch, rdvFinEpoch);
+    if (conflictMsg) {
+      showToast(conflictMsg, 'error');
+      return;
+    }
+  }
+
   var record = {};
   setField(record, 'tasks', 'title', title);
   setField(record, 'tasks', 'description', document.getElementById('task-desc').value.trim());
@@ -8113,6 +8209,8 @@ async function updateTask(taskId) {
   if ((pel = document.getElementById('task-examen-comp'))) record.Examen_Complementaire = pel.value;
   if ((pel = document.getElementById('task-type-examen-comp'))) record.Type_Examen_Complementaire = pel.value;
   if ((pel = document.getElementById('task-prescripteur'))) record.Prescripteur = pel.value.trim();
+  record.RDV_Debut = rdvDebutEpoch;
+  record.RDV_Fin = rdvFinEpoch;
 
   try {
     await grist.docApi.applyUserActions([
