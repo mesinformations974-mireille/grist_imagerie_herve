@@ -9,7 +9,7 @@ var i18n = {
     appTitle: "GESTION IMAGERIE - VETAGROSUP",
     appSubtitle: "Organiser et suivre les rendez-vous et suivis d'imagerie à VetagroSup",
     notInGrist: 'Ce widget doit être utilisé dans Grist.',
-    tabCalendar: 'Planning',
+    tabCalendar: 'Calendrier',
     tabKanban: 'Kanban',
     tabTable: 'Tableau',
     tabGantt: 'Gantt',
@@ -3529,8 +3529,11 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
     var task = dayTasks[i];
     var statusClass = 'status-' + task.Status;
     var priorityClass = task.Priority === 'high' ? ' priority-high' : '';
-    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '">';
-    html += sanitize(task.Title);
+    var proj = projects.find(function(p) { return p.id === task.Project_Id; });
+    var svcColor = proj && proj.Color ? proj.Color : '#94a3b8';
+    var rvTime = task.RDV_Debut ? new Date(task.RDV_Debut * 1000).toTimeString().slice(0, 5) : '';
+    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '" style="border-left:4px solid ' + svcColor + ';">';
+    html += (rvTime ? '<b>' + rvTime + '</b> ' : '') + sanitize(task.Title);
     html += '</div>';
   }
 
@@ -3543,7 +3546,59 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
 }
 
 function onCalendarDayClick(dateStr) {
-  openNewTaskModalWithDate(dateStr);
+  openRdvPickerModal(dateStr);
+}
+
+// Choix du service puis de la demande existante pour lui attribuer un RV ce jour-là
+// (le Planning ne crée jamais de nouvelle demande).
+function openRdvPickerModal(dateStr) {
+  var projOptions = '<option value="">' + (currentLang === 'fr' ? '-- Choisir un service --' : '-- Choose a service --') + '</option>';
+  projects.forEach(function(p) {
+    projOptions += '<option value="' + p.id + '">' + sanitize(p.Name) + '</option>';
+  });
+  var html = '<div class="modal-overlay" onclick="closeModal(event)">';
+  html += '<div class="modal" onclick="event.stopPropagation()" style="max-width:420px;">';
+  html += '<div class="modal-header"><h3>📅 ' + (currentLang === 'fr' ? 'Prendre un RV le ' : 'Book an appointment on ') + dateStr + '</h3></div>';
+  html += '<div class="modal-body" style="padding:16px;">';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Service' : 'Service') + '</span><div class="detail-field-value"><select id="rdv-picker-project" onchange="updateRdvPickerTasks()">' + projOptions + '</select></div></div>';
+  html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Demande' : 'Request') + '</span><div class="detail-field-value"><select id="rdv-picker-task"><option value="">' + (currentLang === 'fr' ? '-- Choisissez d\'abord un service --' : '-- Choose a service first --') + '</option></select></div></div>';
+  html += '</div>';
+  html += '<div class="modal-footer" style="padding:16px;text-align:right;">';
+  html += '<button class="btn btn-secondary" onclick="closeModalForce()">' + (currentLang === 'fr' ? 'Annuler' : 'Cancel') + '</button> ';
+  html += '<button class="btn btn-primary" onclick="confirmRdvPicker(\'' + dateStr + '\')">' + (currentLang === 'fr' ? 'Choisir' : 'Choose') + '</button>';
+  html += '</div></div></div>';
+  document.getElementById('modal-container').innerHTML = html;
+}
+
+function updateRdvPickerTasks() {
+  var projSel = document.getElementById('rdv-picker-project');
+  var taskSel = document.getElementById('rdv-picker-task');
+  if (!projSel || !taskSel) return;
+  var pid = projSel.value ? parseInt(projSel.value) : null;
+  if (!pid) {
+    taskSel.innerHTML = '<option value="">' + (currentLang === 'fr' ? '-- Choisissez d\'abord un service --' : '-- Choose a service first --') + '</option>';
+    return;
+  }
+  var candidates = tasks.filter(function(t) { return t.Project_Id === pid && t.Status !== 'archived'; });
+  var opts = '<option value="">' + (currentLang === 'fr' ? '-- Choisir une demande --' : '-- Choose a request --') + '</option>';
+  candidates.forEach(function(t) {
+    opts += '<option value="' + t.id + '">' + sanitize(t.Title) + ' (' + statusLabel(t.Status) + ')</option>';
+  });
+  if (!candidates.length) opts = '<option value="">' + (currentLang === 'fr' ? 'Aucune demande sur ce service' : 'No request for this service') + '</option>';
+  taskSel.innerHTML = opts;
+}
+
+function confirmRdvPicker(dateStr) {
+  var taskSel = document.getElementById('rdv-picker-task');
+  var taskId = taskSel && taskSel.value ? parseInt(taskSel.value) : null;
+  if (!taskId) { showToast(currentLang === 'fr' ? 'Choisis une demande.' : 'Choose a request.', 'error'); return; }
+  closeModalForce();
+  openEditTaskModal(taskId);
+  // Pré-remplit la date (pas l'heure) du champ Début RV si vide, pour gagner du temps
+  setTimeout(function() {
+    var debutEl = document.getElementById('task-rdv-debut');
+    if (debutEl && !debutEl.value) debutEl.value = dateStr + 'T09:00';
+  }, 50);
 }
 
 var calendarDraggedTaskId = null;
@@ -3567,24 +3622,20 @@ async function onCalendarDrop(event, dateStr) {
   if (!calendarDraggedTaskId) return;
   
   var task = tasks.find(function(t) { return t.id === calendarDraggedTaskId; });
-  if (!task) return;
+  if (!task || !task.RDV_Debut) { calendarDraggedTaskId = null; return; }
   
-  // Parse the new date
+  // Parse the new date, en conservant l'heure et la durée du RV existant
   var parts = dateStr.split('-');
-  var newDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
-  var newTimestamp = Math.floor(newDate.getTime() / 1000);
-  
-  // Calculate duration if task has both start and due dates
-  var duration = 0;
-  if (task.Start_Date && task.Due_Date) {
-    duration = task.Due_Date - task.Start_Date;
-  }
-  
-  // Update the task dates
-  var updates = { Due_Date: newTimestamp };
-  if (task.Start_Date) {
-    updates.Start_Date = newTimestamp - duration;
-  }
+  var oldStart = new Date(task.RDV_Debut * 1000);
+  var newStart = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]), oldStart.getHours(), oldStart.getMinutes());
+  var newStartTs = Math.floor(newStart.getTime() / 1000);
+  var duration = task.RDV_Fin ? (task.RDV_Fin - task.RDV_Debut) : 0;
+
+  var updates = { RDV_Debut: newStartTs };
+  if (task.RDV_Fin) updates.RDV_Fin = newStartTs + duration;
+
+  var conflictMsg = checkRdvConflict(task.id, task.Project_Id, newStartTs, updates.RDV_Fin || (newStartTs + 1));
+  if (conflictMsg) { showToast(conflictMsg, 'error'); calendarDraggedTaskId = null; return; }
   
   try {
     await grist.docApi.applyUserActions([
@@ -3648,15 +3699,8 @@ function getTasksForDate(date) {
   var dateEndTs = dateEnd.getTime() / 1000;
 
   return getFilteredTasks().filter(function(task) {
-    var taskStart = task.Start_Date;
-    var taskEnd = task.Due_Date;
-    if (!taskStart && !taskEnd) return false;
-    if (taskStart && taskEnd) {
-      return taskStart <= dateEndTs && taskEnd >= dateTs;
-    }
-    if (taskStart) return taskStart >= dateTs && taskStart <= dateEndTs;
-    if (taskEnd) return taskEnd >= dateTs && taskEnd <= dateEndTs;
-    return false;
+    if (!task.RDV_Debut) return false;
+    return task.RDV_Debut >= dateTs && task.RDV_Debut <= dateEndTs;
   });
 }
 
@@ -6300,17 +6344,16 @@ function openNewTaskModal(defaultStatus) {
 
   // Dates
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-    // Dates (masquées : remplacées par Début RV / Fin RV, gardées en HTML caché pour compatibilité)
-  html += '<div class="detail-field" style="display:none;">';
+  html += '<div class="detail-field">';
   html += '<span class="detail-field-icon">📅</span>';
   html += '<span class="detail-field-label">' + t('fieldStartDate') + '</span>';
-  html += '<div class="detail-field-value"><input type="date" id="task-start" value="' + startVal + '" /></div>';
+  html += '<div class="detail-field-value"><input type="date" id="task-start" /></div>';
   html += '</div>';
 
-  html += '<div class="detail-field" style="display:none;">';
+  html += '<div class="detail-field">';
   html += '<span class="detail-field-icon">⏰</span>';
   html += '<span class="detail-field-label">' + t('fieldDueDate') + '</span>';
-  html += '<div class="detail-field-value"><input type="date" id="task-due" value="' + dueVal + '" /></div>';
+  html += '<div class="detail-field-value"><input type="date" id="task-due" /></div>';
   html += '</div>';
   html += '</div>';
 
@@ -6491,14 +6534,14 @@ function openEditTaskModal(taskId, preserveAssignees) {
   }
   html += '</select></div></div>';
 
-  // Dates
-  html += '<div class="detail-field">';
+  // Dates (masquées : remplacées par Début RV / Fin RV, gardées en HTML caché pour compatibilité)
+  html += '<div class="detail-field" style="display:none;">';
   html += '<span class="detail-field-icon">📅</span>';
   html += '<span class="detail-field-label">' + t('fieldStartDate') + '</span>';
   html += '<div class="detail-field-value"><input type="date" id="task-start" value="' + startVal + '" /></div>';
   html += '</div>';
 
-  html += '<div class="detail-field">';
+  html += '<div class="detail-field" style="display:none;">';
   html += '<span class="detail-field-icon">⏰</span>';
   html += '<span class="detail-field-label">' + t('fieldDueDate') + '</span>';
   html += '<div class="detail-field-value"><input type="date" id="task-due" value="' + dueVal + '" /></div>';
