@@ -7,7 +7,7 @@ var currentLang = 'fr';
 var i18n = {
   fr: {
     appTitle: "GESTION IMAGERIE - VETAGROSUP",
-    appSubtitle: "Organiser et suivre les rendez-vous et suivis d'imagerie à VetagroSup",
+    appSubtitle: "Organiser et suivre les rendez-vous d'imagerie à VetagroSup",
     notInGrist: 'Ce widget doit être utilisé dans Grist.',
     tabCalendar: 'Calendrier',
     tabKanban: 'Kanban',
@@ -66,7 +66,7 @@ var i18n = {
     modalNewTask: 'Nouvelle demande',
     modalEditTask: 'Modifier la demande',
     modalNewTemplate: 'Nouveau modèle de demande',
-    fieldTitle: 'Titre *',
+    fieldTitle: 'N° Dossier *',
     fieldDescription: 'Description',
     fieldStatus: 'Statut',
     fieldPriority: 'Priorité',
@@ -408,7 +408,7 @@ var i18n = {
     modalNewTask: 'New request',
     modalEditTask: 'Edit request',
     modalNewTemplate: 'New request template',
-    fieldTitle: 'Title *',
+    fieldTitle: 'File # *',
     fieldDescription: 'Description',
     fieldStatus: 'Status',
     fieldPriority: 'Priority',
