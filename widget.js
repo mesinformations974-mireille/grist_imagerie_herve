@@ -1977,6 +1977,71 @@ async function ensureTables() {
     } catch (e) {
       console.log('[GristPM] Migration Project_Id ignorée :', e.message);
     }
+    // Migration : ajout des champs patient imagerie sur PM_Tasks
+try {
+  var imgCols = Object.keys(await grist.docApi.fetchTable(TASKS_TABLE));
+  var imgMig = [];
+
+  if (imgCols.indexOf('Espece') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Espece', {
+      type: 'Choice',
+      widgetOptions: JSON.stringify({ choices: ['Chien', 'Chat', 'NAC', 'Equin', 'Autre'] })
+    }]);
+  }
+  if (imgCols.indexOf('Race') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Race', { type: 'Text' }]);
+  }
+  if (imgCols.indexOf('Poids') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Poids', { type: 'Numeric' }]);
+  }
+  if (imgCols.indexOf('Age_Animal') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Age_Animal', { type: 'Text' }]);
+  }
+  if (imgCols.indexOf('Commemoratifs') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Commemoratifs', { type: 'Text' }]);
+  }
+  if (imgCols.indexOf('Zone_Demandee') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Zone_Demandee', {
+      type: 'ChoiceList',
+      widgetOptions: JSON.stringify({ choices: [
+        'Radio - Thorax', 'Radio - Abdomen', 'Radio - Rachis cervical',
+        'Radio - Rachis thoraco-lombaire', 'Radio - Rachis lombo-sacré',
+        'Radio - Bassin/hanches', 'Radio - Membre antérieur droit',
+        'Radio - Membre antérieur gauche', 'Radio - Membre postérieur droit',
+        'Radio - Membre postérieur gauche', 'Radio - Crâne/dents', 'Radio - Autre',
+        'Echo - Cardiaque', 'Echo - Abdominale', 'Echo - Gestation',
+        'Echo - Cervicale', 'Echo - Autre',
+        'IRM - Encéphale', 'IRM - Rachis complet', 'IRM - Autre',
+        'Scanner - Encéphale', 'Scanner - Thorax', 'Scanner - Abdomen', 'Scanner - Autre'
+      ] })
+    }]);
+  }
+  if (imgCols.indexOf('Risque_Anesthesie') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Risque_Anesthesie', { type: 'Text' }]);
+  }
+  if (imgCols.indexOf('Examen_Complementaire') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Examen_Complementaire', {
+      type: 'Choice',
+      widgetOptions: JSON.stringify({ choices: ['Oui', 'Non'] })
+    }]);
+  }
+  if (imgCols.indexOf('Type_Examen_Complementaire') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Type_Examen_Complementaire', {
+      type: 'Choice',
+      widgetOptions: JSON.stringify({ choices: ['Échographie', 'Analyses sanguines', 'Scanner', 'IRM', 'Consultation spécialisée', 'Autre'] })
+    }]);
+  }
+  if (imgCols.indexOf('Prescripteur') === -1) {
+    imgMig.push(['AddColumn', TASKS_TABLE, 'Prescripteur', { type: 'Text' }]);
+  }
+
+  if (imgMig.length) {
+    await grist.docApi.applyUserActions(imgMig);
+    console.log('[GristPM] Champs imagerie ajoutés à PM_Tasks');
+  }
+} catch (e) {
+  console.log('[GristPM] Migration imagerie ignorée :', e.message);
+}
 
     // Migration Group_Name / Tag / Recurrence sur PM_Templates
     try {
