@@ -3532,7 +3532,7 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
     var proj = projects.find(function(p) { return p.id === task.Project_Id; });
     var svcColor = proj && proj.Color ? proj.Color : '#94a3b8';
     var rvTime = task.RDV_Debut ? new Date(task.RDV_Debut * 1000).toTimeString().slice(0, 5) : '';
-    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '" style="border-left:4px solid ' + svcColor + ';">';
+    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openRdvViewer(' + task.id + ')" title="' + sanitize(task.Title) + '" style="border-left:4px solid ' + svcColor + ';">';
     html += (rvTime ? '<b>' + rvTime + '</b> ' : '') + sanitize(task.Title);
     html += '</div>';
   }
@@ -3593,12 +3593,114 @@ function confirmRdvPicker(dateStr) {
   var taskId = taskSel && taskSel.value ? parseInt(taskSel.value) : null;
   if (!taskId) { showToast(currentLang === 'fr' ? 'Choisis une demande.' : 'Choose a request.', 'error'); return; }
   closeModalForce();
-  openEditTaskModal(taskId);
-  // Pré-remplit la date (pas l'heure) du champ Début RV si vide, pour gagner du temps
-  setTimeout(function() {
-    var debutEl = document.getElementById('task-rdv-debut');
-    if (debutEl && !debutEl.value) debutEl.value = dateStr + 'T09:00';
-  }, 50);
+  openRdvEditor(taskId, dateStr);
+}
+
+// Petit formulaire dédié : seulement le créneau (Début RV / Fin RV) d'une demande existante.
+// dateStr optionnel : pré-remplit la date si le RV n'existe pas encore.
+function openRdvEditor(taskId, dateStr) {
+  var task = tasks.find(function(t) { return t.id === taskId; });
+  if (!task) return;
+  var proj = projects.find(function(p) { return p.id === task.Project_Id; });
+  var serviceName = proj ? proj.Name : (currentLang === 'fr' ? 'Sans service' : 'No service');
+  var debutVal = task.RDV_Debut ? fromEpochDateTime(task.RDV_Debut) : (dateStr ? dateStr + 'T09:00' : '');
+  var finVal = task.RDV_Fin ? fromEpochDateTime(task.RDV_Fin) : '';
+
+  var html = '<div class="modal-overlay" onclick="closeModal(event)">';
+  html += '<div class="modal" onclick="event.stopPropagation()" style="max-width:420px;">';
+  html += '<div class="modal-header"><h3>🕐 ' + (currentLang === 'fr' ? 'Rendez-vous — ' : 'Appointment — ') + sanitize(task.Title) + '</h3></div>';
+  html += '<div class="modal-body" style="padding:16px;">';
+  html += '<div style="font-size:12px;color:#64748b;margin-bottom:12px;">' + (currentLang === 'fr' ? 'Service' : 'Service') + ' : <b>' + sanitize(serviceName) + '</b></div>';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Début RV' : 'Start time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-debut" value="' + debutVal + '" /></div></div>';
+  html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Fin RV' : 'End time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-fin" value="' + finVal + '" /></div></div>';
+  html += '</div>';
+  html += '<div class="modal-footer" style="padding:16px;text-align:right;">';
+  html += '<button class="btn btn-secondary" onclick="closeModalForce()">' + (currentLang === 'fr' ? 'Annuler' : 'Cancel') + '</button> ';
+  html += '<button class="btn btn-primary" onclick="saveRdvEditor(' + taskId + ')">' + t('save') + '</button>';
+  html += '</div></div></div>';
+  document.getElementById('modal-container').innerHTML = html;
+}
+
+async function saveRdvEditor(taskId) {
+  var task = tasks.find(function(t) { return t.id === taskId; });
+  if (!task) return;
+  var debutEl = document.getElementById('rdv-editor-debut');
+  var finEl = document.getElementById('rdv-editor-fin');
+  var debutEpoch = debutEl ? toEpoch(debutEl.value) : null;
+  var finEpoch = finEl ? toEpoch(finEl.value) : null;
+  if (!debutEpoch || !finEpoch) { showToast(currentLang === 'fr' ? 'Renseigne le début et la fin.' : 'Fill in start and end.', 'error'); return; }
+  var conflictMsg = checkRdvConflict(taskId, task.Project_Id, debutEpoch, finEpoch);
+  if (conflictMsg) { showToast(conflictMsg, 'error'); return; }
+  try {
+    await grist.docApi.applyUserActions([
+      ['UpdateRecord', TASKS_TABLE, taskId, { RDV_Debut: debutEpoch, RDV_Fin: finEpoch }]
+    ]);
+    closeModalForce();
+    await loadAllData();
+    refreshAllViews();
+    showToast(currentLang === 'fr' ? 'RV enregistré.' : 'Appointment saved.', 'success');
+  } catch (e) {
+    showToast('Error: ' + e.message, 'error');
+  }
+}
+
+async function deleteRdv(taskId) {
+  try {
+    await grist.docApi.applyUserActions([
+      ['UpdateRecord', TASKS_TABLE, taskId, { RDV_Debut: null, RDV_Fin: null }]
+    ]);
+    closeModalForce();
+    await loadAllData();
+    refreshAllViews();
+    showToast(currentLang === 'fr' ? 'RV supprimé.' : 'Appointment deleted.', 'success');
+  } catch (e) {
+    showToast('Error: ' + e.message, 'error');
+  }
+}
+
+// Aperçu en lecture seule des infos patient depuis le Planning : rien n'est modifiable ici,
+// seules actions possibles = déplacer (rouvre openRdvEditor) ou supprimer le RV.
+function openRdvViewer(taskId) {
+  var task = tasks.find(function(t) { return t.id === taskId; });
+  if (!task) return;
+  var proj = projects.find(function(p) { return p.id === task.Project_Id; });
+  var serviceName = proj ? proj.Name : (currentLang === 'fr' ? 'Sans service' : 'No service');
+  var zoneList = getCategoryList(task.Zone_Demandee);
+  var rvRange = '';
+  if (task.RDV_Debut) {
+    var db = new Date(task.RDV_Debut * 1000);
+    rvRange += db.toLocaleDateString() + ' ' + db.toTimeString().slice(0, 5);
+  }
+  if (task.RDV_Fin) {
+    rvRange += ' → ' + new Date(task.RDV_Fin * 1000).toTimeString().slice(0, 5);
+  }
+
+  function row(label, value) {
+    if (!value) return '';
+    return '<div class="detail-info-row"><span class="info-label">' + label + ' :</span><span class="info-value">' + sanitize(String(value)) + '</span></div>';
+  }
+
+  var html = '<div class="modal-overlay" onclick="closeModal(event)">';
+  html += '<div class="modal" onclick="event.stopPropagation()" style="max-width:440px;">';
+  html += '<div class="modal-header"><h3>🩻 ' + sanitize(task.Title) + '</h3></div>';
+  html += '<div class="modal-body" style="padding:16px;">';
+  html += '<div style="font-size:12px;color:#64748b;margin-bottom:10px;">🕐 ' + rvRange + '</div>';
+  html += row(currentLang === 'fr' ? 'Service' : 'Service', serviceName);
+  html += row(currentLang === 'fr' ? 'Statut' : 'Status', statusLabel(task.Status));
+  html += row(currentLang === 'fr' ? 'Espèce' : 'Species', task.Espece);
+  html += row(currentLang === 'fr' ? 'Race' : 'Breed', task.Race);
+  html += row(currentLang === 'fr' ? 'Poids (kg)' : 'Weight (kg)', task.Poids);
+  html += row(currentLang === 'fr' ? 'Âge' : 'Age', task.Age_Animal);
+  html += row(currentLang === 'fr' ? 'Commémoratifs' : 'History', task.Commemoratifs);
+  html += row(currentLang === 'fr' ? 'Zone demandée' : 'Requested area', zoneList.join(', '));
+  html += row(currentLang === 'fr' ? 'Prescripteur' : 'Prescriber', task.Prescripteur);
+  html += '</div>';
+  html += '<div class="modal-footer" style="padding:16px;text-align:right;">';
+  html += '<button class="btn btn-secondary" onclick="closeModalForce()">' + (currentLang === 'fr' ? 'Fermer' : 'Close') + '</button> ';
+  html += '<button class="btn btn-secondary" onclick="if(confirm(\'' + (currentLang === 'fr' ? 'Supprimer ce RV ?' : 'Delete this appointment?') + '\')) deleteRdv(' + taskId + ')">🗑️ ' + (currentLang === 'fr' ? 'Supprimer le RV' : 'Delete appointment') + '</button> ';
+  html += '<button class="btn btn-primary" onclick="openRdvEditor(' + taskId + ')">↔️ ' + (currentLang === 'fr' ? 'Déplacer le RV' : 'Move appointment') + '</button>';
+  html += '</div></div></div>';
+  document.getElementById('modal-container').innerHTML = html;
 }
 
 var calendarDraggedTaskId = null;
@@ -3818,7 +3920,7 @@ function renderCalendarMobileView() {
     html += '<div class="day-tasks">';
     for (var i = 0; i < dayTasks.length; i++) {
       var task = dayTasks[i];
-      html += '<div class="day-task status-' + task.Status + '" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '">' + sanitize(task.Title) + '</div>';
+      html += '<div class="day-task status-' + task.Status + '" onclick="event.stopPropagation(); openRdvViewer(' + task.id + ')" title="' + sanitize(task.Title) + '">' + sanitize(task.Title) + '</div>';
     }
     if (dayTasks.length === 0) {
       html += '<span class="mobile-no-task">\u2014</span>';
@@ -3922,7 +4024,7 @@ function renderCalendarDayView() {
       var dueBadge = dueThisDay
         ? '<span class="day-due-badge">📌 ' + (currentLang === 'fr' ? 'Échéance' : 'Due today') + '</span>'
         : (isOverdue ? '<span class="day-due-badge overdue">⚠️ ' + (currentLang === 'fr' ? 'En retard' : 'Overdue') + '</span>' : '<span class="day-due-badge ongoing">🔄 ' + (currentLang === 'fr' ? 'En cours' : 'In progress') + '</span>');
-      html += '<div class="day-task-row" onclick="openEditTaskModal(' + task.id + ')">';
+      html += '<div class="day-task-row" onclick="openRdvViewer(' + task.id + ')">';
       html += '<div class="day-task-indicator" style="background:' + stColor + '"></div>';
       html += '<div class="day-task-body">';
       html += '<div class="day-task-title">' + sanitize(task.Title) + ' ' + dueBadge + '</div>';
@@ -3952,7 +4054,7 @@ function renderCalendarDayView() {
   // Quick add task for this day
   var dateStr = viewDate.getFullYear() + '-' + String(viewDate.getMonth() + 1).padStart(2, '0') + '-' + String(viewDate.getDate()).padStart(2, '0');
   html += '<div class="day-add-task" onclick="openNewTaskForDay(\'' + dateStr + '\')">';
-  html += '+ ' + (currentLang === 'fr' ? 'Ajouter une demande ce jour' : 'Add a request for this day');
+  html += '+ ' + (currentLang === 'fr' ? 'Prendre un RV ce jour' : 'Book an appointment this day');
   html += '</div>';
   html += '</div>';
 
@@ -3963,7 +4065,7 @@ function renderCalendarDayView() {
 }
 
 function openNewTaskForDay(dateStr) {
-  openNewTaskModalWithDate(dateStr);
+  openRdvPickerModal(dateStr);
 }
 
 // =============================================================================
@@ -6581,8 +6683,9 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="detail-field-value"><select id="task-project" onchange="filterZoneChoicesByService()">' + projectOptions + '</select></div>';
   html += '</div>';
 
-  // Créneau du rendez-vous (début/fin, choisis librement)
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+  // Créneau du rendez-vous : géré désormais uniquement depuis le Planning (voir openRdvEditor).
+  // Champs gardés en HTML caché pour compatibilité avec les lectures existantes.
+  html += '<div style="display:none;">';
   html += '<div class="detail-field"><span class="detail-field-icon">🕐</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Début RV' : 'Start time') + '</span><div class="detail-field-value"><input type="datetime-local" id="task-rdv-debut" value="' + fromEpochDateTime(task.RDV_Debut) + '" /></div></div>';
   html += '<div class="detail-field"><span class="detail-field-icon">🕐</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Fin RV' : 'End time') + '</span><div class="detail-field-value"><input type="datetime-local" id="task-rdv-fin" value="' + fromEpochDateTime(task.RDV_Fin) + '" /></div></div>';
   html += '</div>';
