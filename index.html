@@ -4605,19 +4605,19 @@
   <div id="project-modal" class="modal-overlay" style="display:none;">
     <div class="modal-content" style="max-width:500px;">
       <div class="modal-header">
-        <h2 data-i18n="manageProjects">Gérer les projets</h2>
+        <h2 data-i18n="manageProjects">Gérer les services</h2>
         <button class="modal-close" onclick="closeProjectModal()">×</button>
       </div>
       <div class="modal-body">
         <input type="text" id="project-search" placeholder="Rechercher un projet..." data-i18n-placeholder="projectSearchPlaceholder" oninput="renderProjectList()" style="width:100%;padding:8px 12px;border:1px solid #e2e8f0;border-radius:6px;font-size:13px;margin-bottom:10px;" autocomplete="off">
         <div id="project-list" style="margin-bottom:20px;"></div>
         <div class="form-section">
-          <h3 id="project-form-title" data-i18n="addProject">Ajouter un projet</h3>
+          <h3 id="project-form-title" data-i18n="addProject">Ajouter un service</h3>
           <input type="hidden" id="edit-project-id" value="">
           <div class="form-row">
             <div class="form-group">
-              <label data-i18n="projectName">Nom du projet</label>
-              <input type="text" id="project-name" placeholder="Mon projet">
+              <label data-i18n="projectName">Nom du service</label>
+              <input type="text" id="project-name" placeholder="Radio">
             </div>
             <div class="form-group">
               <label data-i18n="projectColor">Couleur</label>
@@ -4626,7 +4626,7 @@
           </div>
           <div class="form-group">
             <label data-i18n="projectDescription">Description</label>
-            <textarea id="project-description" rows="2" placeholder="Description du projet..."></textarea>
+            <textarea id="project-description" rows="2" placeholder="Description du service..."></textarea>
           </div>
           <div class="form-row">
             <div class="form-group">
