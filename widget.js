@@ -14,8 +14,8 @@ var i18n = {
     tabTable: 'Tableau',
     tabGantt: 'Gantt',
     tabTemplates: 'Templates',
-    newTask: 'Nouvelle tâche',
-    newProject: 'Nouveau projet',
+    newTask: 'Nouvelle demande',
+    newProject: 'Nouveau service',
     statTotal: 'Total',
     statTodo: 'À faire',
     statProgress: 'En cours',
@@ -23,14 +23,14 @@ var i18n = {
     colTodo: 'À faire',
     colProgress: 'En cours',
     colDone: 'Terminé',
-    noTasks: 'Aucune tâche',
-    addTask: '+ Ajouter une tâche',
+    noRequest: 'Aucune demande',
+    addTask: '+ Ajouter une demande',
     tableTitle: 'Tableau de Gestion',
-    tableSubtitle: 'Gérez vos tâches avec édition inline avancée',
-    searchPlaceholder: 'Rechercher une tâche...',
+    tableSubtitle: "Gérez vos demandes d'imagerie avec édition inline avancée",
+    searchPlaceholder: 'Rechercher une demande...',
     allStatuses: 'Tous les statuts',
     allPriorities: 'Toutes priorités',
-    colTaskName: 'Tâche',
+    colTaskName: 'demande',
     colStatus: 'Statut',
     colPriority: 'Priorité',
     colAssignee: 'Assigné à',
@@ -56,21 +56,21 @@ var i18n = {
     extensionDate: 'Date de prolongation',
     extensionTooltip: 'Prolongation : dépassement de l\'échéance',
     autoExtend: 'Prolongation auto',
-    autoExtendHint: 'Prolonge automatiquement jusqu\'à la date du jour tant que la tâche n\'est pas terminée',
+    autoExtendHint: 'Prolonge automatiquement jusqu\'à la date du jour tant que la demande n\'est pas terminée',
     ganttFullYear: 'Année complète',
     ganttNavInfo: 'Navigation infinie vers autres années',
     ganttViewRange: 'Vue :',
-    templatesTitle: 'Tâches Préformatées',
-    templatesSubtitle: 'Gérez les modèles de tâches disponibles pour tous les utilisateurs',
+    templatesTitle: 'Demandes types',
+    templatesSubtitle: 'Gérez les modèles de demandes disponibles pour tous les utilisateurs',
     newTemplate: 'Nouveau modèle',
-    modalNewTask: 'Nouvelle tâche',
-    modalEditTask: 'Modifier la tâche',
-    modalNewTemplate: 'Nouveau modèle de tâche',
+    modalNewTask: 'Nouvelle demande',
+    modalEditTask: 'Modifier la demande',
+    modalNewTemplate: 'Nouveau modèle de demande',
     fieldTitle: 'Titre *',
     fieldDescription: 'Description',
     fieldStatus: 'Statut',
     fieldPriority: 'Priorité',
-    fieldAssignee: 'Assigné à',
+    fieldAssignee: 'Attribué à',
     fieldGroup: 'Groupe',
     fieldStartDate: 'Date de début',
     fieldDueDate: 'Échéance',
@@ -85,12 +85,12 @@ var i18n = {
     save: 'Enregistrer',
     cancel: 'Annuler',
     delete: 'Supprimer',
-    confirmDelete: 'Supprimer cette tâche ?',
+    confirmDelete: 'Supprimer cette demande ?',
     confirmDeleteTemplate: 'Supprimer ce modèle ?',
-    taskCreated: 'Tâche créée !',
-    taskUpdated: 'Tâche mise à jour !',
-    taskDeleted: 'Tâche supprimée.',
-    taskMoved: 'Tâche déplacée.',
+    taskCreated: 'demande créée !',
+    taskUpdated: 'demande mise à jour !',
+    taskDeleted: 'demande supprimée.',
+    taskMoved: 'demande déplacée.',
     templateCreated: 'Modèle créé !',
     templateDeleted: 'Modèle supprimé.',
     overdue: 'En retard',
@@ -98,28 +98,28 @@ var i18n = {
     notDefined: 'Non définie',
     tablesCreated: 'Tables créées automatiquement.',
     notifications: 'Alertes',
-    overdueTasksAlert: 'tâche(s) en retard',
-    upcomingTasksAlert: 'tâche(s) à venir (3j)',
+    overdueRequestAlert: 'demande(s) en retard',
+    upcomingRequestAlert: 'demande(s) à venir (3j)',
     noAlerts: 'Aucune alerte',
     markAllRead: 'Tout lu',
     markAsRead: 'Marquer comme lu',
     notifUnread: 'non lu(s)',
     automationTitle: 'Automatisations',
-    automationSubtitle: 'Actions automatiques quand les tâches changent',
+    automationSubtitle: 'Actions automatiques quand les demandes changent',
     addRule: 'Ajouter une règle',
     ruleEnabled: 'Activée',
     ruleDisabled: 'Désactivée',
     triggerLabel: 'Déclencheur',
     triggerStatusChange: 'Changement de statut',
     triggerPriorityChange: 'Changement de priorité',
-    triggerAssignmentChange: 'Changement d\'assignation',
-    triggerOverdue: 'Tâche en retard',
+    triggerAssignmentChange: 'Changement de prise en charge',
+    triggerOverdue: 'demande en retard',
     triggerApproachingDeadline: 'Échéance proche (3j)',
     conditionFrom: 'De',
     conditionTo: 'Vers',
     conditionAny: 'N\'importe quel',
     actionLabel: 'Action',
-    actionNotifyAssignee: 'Notifier l\'assigné',
+    actionNotifyAssignee: 'Notifier la personne en charge',
     actionNotifyProjectLead: 'Notifier le responsable',
     actionNotifySpecific: 'Notifier une personne',
     actionNotifyAll: 'Notifier tout le monde',
@@ -139,34 +139,34 @@ var i18n = {
     lightMode: 'Mode clair',
     tabStats: 'Stats',
     statsTitle: 'Statistiques',
-    statsSubtitle: 'Analysez la productivité de votre équipe',
+    statsSubtitle: 'Améliorez la prise en charge de votre service Imagerie',
     chartStatus: 'Répartition par statut',
     chartPriority: 'Répartition par priorité',
-    chartAssignee: 'Tâches par assigné',
-    chartWeek: 'Tâches cette semaine',
+    chartAssignee: 'demandes par la personne en charge',
+    chartWeek: 'demandes cette semaine',
     chartWorkload: 'Charge de travail (risque de surcharge)',
     completionRate: 'Taux de complétion',
     overdueLabel: 'En retard',
-    avgTimePerTask: 'Temps moyen/tâche',
+    avgTimePerTask: 'Temps moyen/demande',
     totalTime: 'Temps total',
-    allProjects: 'Tous les projets',
-    manageProjects: 'Gérer les projets',
-    project: 'Projet',
-    projectName: 'Nom du projet',
+    allProjects: 'Tous les services',
+    manageProjects: 'Gérer les services',
+    project: 'service',
+    projectName: 'Nom du service',
     projectLead: 'Responsable',
     projectDescription: 'Description',
     projectColor: 'Couleur',
     projectStatus: 'Statut',
-    addProject: 'Ajouter un projet',
-    editProject: 'Modifier le projet',
-    deleteProject: 'Supprimer le projet',
-    noProject: 'Sans projet',
-    projectSearchPlaceholder: 'Rechercher un projet...',
+    addProject: 'Ajouter un service',
+    editProject: 'Modifier le service',
+    deleteProject: 'Supprimer le service',
+    noProject: 'Sans service',
+    projectSearchPlaceholder: 'Rechercher un service...',
     tabSettings: 'Paramètres',
-    settingsSubtitle: 'Configurez vos projets, catégories et autres options',
-    projectsSubtitle: 'Gérez vos projets',
-    categoriesSubtitle: 'Gérez les catégories de tâches',
-    tagsSubtitle: 'Gérez les tags pour vos tâches',
+    settingsSubtitle: 'Configurez vos services, catégories et autres options',
+    projectsSubtitle: 'Gérez vos services',
+    categoriesSubtitle: 'Gérez les catégories de demandes',
+    tagsSubtitle: 'Gérez les tags pour vos demandes',
     addCategory: 'Ajouter',
     tagName: 'Nom du tag',
     tagColor: 'Couleur',
@@ -212,24 +212,24 @@ var i18n = {
     startLabel: 'Début :',
     dueLabel: 'Échéance :',
     quickActions: 'Actions rapides',
-    reopenTask: 'Rouvrir la tâche',
-    startTask: 'Démarrer la tâche',
-    completeTask: 'Terminer la tâche',
+    reopenTask: 'Rouvrir la demande',
+    startTask: 'Démarrer la demande',
+    completeTask: 'Terminer la demande',
     changePriority: 'Changer la priorité',
-    taskSummary: 'Résumé de la tâche',
+    Requestummary: 'Résumé de la demande',
     addAssignee: 'Ajouter',
     searchAssignee: 'Rechercher des noms...',
-    subtasks: 'Sous-tâches',
-    addSubtask: 'Ajouter une sous-tâche',
-    subtaskPlaceholder: 'Nouvelle sous-tâche...',
-    noSubtasks: 'Aucune sous-tâche',
-    subtaskCompleted: 'Sous-tâche terminée',
-    subtaskDeleted: 'Sous-tâche supprimée',
-    subtaskSaved: 'Sous-tâche modifiée',
-    editSubtask: 'Modifier la sous-tâche',
+    subRequest: 'Sous-demandes',
+    addSubtask: 'Ajouter une sous-demande',
+    subtaskPlaceholder: 'Nouvelle sous-demande...',
+    noSubRequest: 'Aucune sous-demande',
+    subtaskCompleted: 'Sous-demande terminée',
+    subtaskDeleted: 'Sous-demande supprimée',
+    subRequestaved: 'Sous-demande modifiée',
+    editSubtask: 'Modifier la sous-demande',
     subtaskAssignee: 'Responsable',
     subtaskDueDate: 'Échéance',
-    noAssignee: 'Non assigné',
+    noAssignee: 'Non pris en charge par une personne',
     dependencies: 'Dépendances',
     blockedBy: 'Bloqué par',
     blocks: 'Bloque',
@@ -237,8 +237,8 @@ var i18n = {
     noDependencies: 'Aucune dépendance',
     dependencyAdded: 'Dépendance ajoutée',
     dependencyRemoved: 'Dépendance supprimée',
-    selectTask: 'Sélectionner une tâche...',
-    blockedWarning: 'Tâche bloquée',
+    selectTask: 'Sélectionner une demande...',
+    blockedWarning: 'demande bloquée',
     comments: 'Commentaires',
     addComment: 'Ajouter un commentaire',
     commentPlaceholder: 'Écrire un commentaire...',
@@ -270,7 +270,7 @@ var i18n = {
     recurrenceQuarterly: 'Trimestrielle',
     recurrenceYearly: 'Annuelle',
     nextOccurrence: 'Prochaine occurrence créée',
-    recurrenceExplain: 'Quand cette tâche est marquée "Terminée", une nouvelle occurrence est automatiquement créée avec les dates décalées.',
+    recurrenceExplain: 'Quand cette demande est marquée "Terminée", une nouvelle occurrence est automatiquement créée avec les dates décalées.',
     generateMonth: 'Générer pour le mois',
     generateYear: 'Générer pour l\'année',
     occurrencesGenerated: 'occurrences générées',
@@ -302,12 +302,12 @@ var i18n = {
     burnIdeal: 'Idéal',
     activityLog: 'Journal d\'activité',
     activityLogSubtitle: 'Historique des actions récentes',
-    actTaskCreated: 'a créé la tâche',
-    actTaskUpdated: 'a modifié la tâche',
-    actTaskDeleted: 'a supprimé la tâche',
+    actTaskCreated: 'a créé la demande',
+    actTaskUpdated: 'a modifié la demande',
+    actTaskDeleted: 'a supprimé la demande',
     actStatusChanged: 'a changé le statut de',
-    actTaskArchived: 'a archivé la tâche',
-    actTaskRestored: 'a restauré la tâche',
+    actTaskArchived: 'a archivé la demande',
+    actTaskRestored: 'a restauré la demande',
     actCommentAdded: 'a commenté sur',
     actNoActivity: 'Aucune activité récente',
     actLoadMore: 'Voir plus',
@@ -315,7 +315,7 @@ var i18n = {
     required: 'requis',
     tag: 'Tag',
     globalSearchPlaceholder: 'Rechercher...',
-    taskSearchPlaceholder: 'Rechercher une tâche...',
+    RequestearchPlaceholder: 'Rechercher une demande...',
     templateSearchPlaceholder: 'Rechercher un modèle...',
     calToday: "Aujourd'hui",
     calMonth: 'Mois',
@@ -328,12 +328,12 @@ var i18n = {
     advancedConfig: 'Configuration avancée',
     mappingSubtitle: 'Mappez vos propres tables et colonnes Grist',
     configureMapping: 'Configurer le mapping',
-    mappingDescription: 'Par défaut, le widget utilise les tables PM_Tasks, PM_Users, etc. Vous pouvez mapper vos propres tables existantes pour réutiliser vos données.',
+    mappingDescription: 'Par défaut, le widget utilise les tables PM_Request, PM_Users, etc. Vous pouvez mapper vos propres tables existantes pour réutiliser vos données.',
     mappingGuide: 'Consulter le guide complet du système de mapping',
     securityTitle: 'Sécurité du document',
     securitySubtitle: 'Protégez les tables PM_* avec des règles d\'accès Grist (ACL)',
     raciMode: 'Mode RACI',
-    raciSubtitle: 'Activez la matrice RACI pour définir les rôles sur chaque tâche',
+    raciSubtitle: 'Activez la matrice RACI pour définir les rôles sur chaque demande',
     raciResponsible: 'Responsable (R)',
     raciAccountable: 'Approbateur (A)',
     raciConsulted: 'Consulté (C)',
@@ -344,7 +344,7 @@ var i18n = {
     projectCompleted: 'Terminé',
     projectArchived: 'Archivé',
     editTemplate: 'Modifier le modèle',
-    modalEditTemplate: 'Modifier le modèle de tâche',
+    modalEditTemplate: 'Modifier le modèle de demande',
     templateUpdated: 'Modèle mis à jour !'
   },
   en: {
@@ -365,14 +365,14 @@ var i18n = {
     colTodo: 'To do',
     colProgress: 'In progress',
     colDone: 'Done',
-    noTasks: 'No tasks',
+    noRequest: 'No Request',
     addTask: '+ Add a task',
     tableTitle: 'Management Table',
-    tableSubtitle: 'Manage your tasks with advanced inline editing',
+    tableSubtitle: 'Manage your Request with advanced inline editing',
     searchPlaceholder: 'Search a task...',
     allStatuses: 'All statuses',
     allPriorities: 'All priorities',
-    colTaskName: 'Task',
+    colTaskName: 'Request',
     colStatus: 'Status',
     colPriority: 'Priority',
     colAssignee: 'Assigned to',
@@ -436,14 +436,14 @@ var i18n = {
     templateCreated: 'Template created!',
     templateDeleted: 'Template deleted.',
     notifications: 'Alerts',
-    overdueTasksAlert: 'overdue task(s)',
-    upcomingTasksAlert: 'upcoming task(s) (3d)',
+    overdueRequestAlert: 'overdue task(s)',
+    upcomingRequestAlert: 'upcoming task(s) (3d)',
     noAlerts: 'No alerts',
     markAllRead: 'All read',
     markAsRead: 'Mark as read',
     notifUnread: 'unread',
     automationTitle: 'Automations',
-    automationSubtitle: 'Automatic actions when tasks change',
+    automationSubtitle: 'Automatic actions when Request change',
     addRule: 'Add a rule',
     ruleEnabled: 'Enabled',
     ruleDisabled: 'Disabled',
@@ -480,8 +480,8 @@ var i18n = {
     statsSubtitle: 'Analyze your team productivity',
     chartStatus: 'Distribution by status',
     chartPriority: 'Distribution by priority',
-    chartAssignee: 'Tasks by assignee',
-    chartWeek: 'Tasks this week',
+    chartAssignee: 'Request by assignee',
+    chartWeek: 'Request this week',
     chartWorkload: 'Workload (overload risk)',
     completionRate: 'Completion rate',
     overdueLabel: 'Overdue',
@@ -504,7 +504,7 @@ var i18n = {
     settingsSubtitle: 'Configure your projects, categories and other options',
     projectsSubtitle: 'Manage your projects',
     categoriesSubtitle: 'Manage task categories',
-    tagsSubtitle: 'Manage tags for your tasks',
+    tagsSubtitle: 'Manage tags for your Request',
     addCategory: 'Add',
     tagName: 'Tag name',
     tagColor: 'Color',
@@ -558,16 +558,16 @@ var i18n = {
     startTask: 'Start task',
     completeTask: 'Complete task',
     changePriority: 'Change priority',
-    taskSummary: 'Task Summary',
+    Requestummary: 'Task Summary',
     addAssignee: 'Add',
     searchAssignee: 'Search names...',
-    subtasks: 'Subtasks',
+    subRequest: 'SubRequest',
     addSubtask: 'Add subtask',
     subtaskPlaceholder: 'New subtask...',
-    noSubtasks: 'No subtasks',
+    noSubRequest: 'No subRequest',
     subtaskCompleted: 'Subtask completed',
     subtaskDeleted: 'Subtask deleted',
-    subtaskSaved: 'Subtask updated',
+    subRequestaved: 'Subtask updated',
     editSubtask: 'Edit subtask',
     subtaskAssignee: 'Assignee',
     subtaskDueDate: 'Due date',
@@ -657,7 +657,7 @@ var i18n = {
     required: 'required',
     tag: 'Tag',
     globalSearchPlaceholder: 'Search...',
-    taskSearchPlaceholder: 'Search a task...',
+    RequestearchPlaceholder: 'Search a task...',
     templateSearchPlaceholder: 'Search a template...',
     calToday: 'Today',
     calMonth: 'Month',
@@ -670,7 +670,7 @@ var i18n = {
     advancedConfig: 'Advanced configuration',
     mappingSubtitle: 'Map your own Grist tables and columns',
     configureMapping: 'Configure mapping',
-    mappingDescription: 'By default the widget uses PM_Tasks, PM_Users, etc. You can map your own existing tables to reuse your data.',
+    mappingDescription: 'By default the widget uses PM_Request, PM_Users, etc. You can map your own existing tables to reuse your data.',
     mappingGuide: 'Read the complete mapping guide',
     securityTitle: 'Document security',
     securitySubtitle: 'Protect PM_* tables with Grist access rules (ACL)',
@@ -725,11 +725,11 @@ function setLang(lang) {
 // STATE
 // =============================================================================
 
-var tasks = [];
+var Request = [];
 var users = [];
 var groups = [];
 var templates = [];
-var subtasks = [];
+var subRequest = [];
 var dependencies = [];
 var comments = [];
 var timeEntries = [];
@@ -743,7 +743,7 @@ var currentFilterRole = null;
 var currentFilterAssignee = null; // user Name
 var currentFilterCategory = null;
 var currentFilterTag = null;
-var mineOnly = false; // "Mes projets" : projets créés par moi OU où je suis assigné
+var mineOnly = false; // "Mes services" : services créés par moi OU où je suis la personne prenant en charge
 var activeTimers = {}; // taskId -> startTime (for running timers)
 var kanbanGroupBy = 'status'; // 'status' | 'priority' | 'project'
 var kanbanSort = 'manual'; // 'manual' | 'alpha' | 'alpha-desc' | 'due'
@@ -761,12 +761,12 @@ function getKanbanStatuses() {
 }
 async function saveKanbanStatuses() {
   await saveSetting('kanban_statuses', JSON.stringify(customKanbanStatuses));
-  syncSubtaskStatusChoices();
+  syncSubRequesttatusChoices();
 }
 
-// Synchronise les choix (+ couleurs) de la colonne Status de PM_Subtasks avec les
+// Synchronise les choix (+ couleurs) de la colonne Status de PM_SubRequest avec les
 // statuts Kanban personnalisés → la grille Grist native affiche les bonnes pastilles.
-async function syncSubtaskStatusChoices() {
+async function syncSubRequesttatusChoices() {
   try {
     var statuses = getKanbanStatuses();
     var choices = statuses.map(function(s) { return s.key; });
@@ -779,11 +779,11 @@ async function syncSubtaskStatusChoices() {
     // Évite les réécritures inutiles (signature en cache navigateur)
     if (typeof localStorage !== 'undefined' && localStorage.getItem('pm_subtask_status_sig') === widgetOptions) return;
     await grist.docApi.applyUserActions([
-      ['ModifyColumn', SUBTASKS_TABLE, 'Status', { widgetOptions: widgetOptions }]
+      ['ModifyColumn', SUBRequest_TABLE, 'Status', { widgetOptions: widgetOptions }]
     ]);
     if (typeof localStorage !== 'undefined') localStorage.setItem('pm_subtask_status_sig', widgetOptions);
   } catch (e) {
-    console.log('syncSubtaskStatusChoices:', e.message);
+    console.log('syncSubRequesttatusChoices:', e.message);
   }
 }
 function getStatusLabel(key) {
@@ -793,7 +793,7 @@ function getStatusLabel(key) {
   return key;
 }
 
-var defaultCardDisplay = { description: true, priority: true, date: true, assignee: true, tags: true, category: true, time: true, subtasks: true, comments: true };
+var defaultCardDisplay = { description: true, priority: true, date: true, assignee: true, tags: true, category: true, time: true, subRequest: true, comments: true };
 var cardDisplaySettings = Object.assign({}, defaultCardDisplay);
 async function saveCardDisplaySettings() {
   await saveSetting('card_display', JSON.stringify(cardDisplaySettings));
@@ -860,18 +860,18 @@ var ganttCustomStart = ''; // mode 'custom' : date de début (YYYY-MM-DD)
 var ganttCustomEnd = '';   // mode 'custom' : date de fin (YYYY-MM-DD)
 var ganttYear = new Date().getFullYear();
 var ganttMonth = new Date().getMonth();
-var expandedGanttTasks = {}; // taskId -> true quand les sous-tâches sont visibles dans le Gantt
+var expandedGanttRequest = {}; // taskId -> true quand les sous-demandes sont visibles dans le Gantt
 var calendarYear = new Date().getFullYear();
 var calendarMonth = new Date().getMonth();
 var calendarMode = 'month'; // 'month', 'week' or 'day'
 var calendarWeekOffset = 0; // Offset in weeks from current week
 var calendarDayOffset = 0; // Offset in days from today (day view)
 
-var TASKS_TABLE = 'PM_Tasks';
+var Request_TABLE = 'PM_Request';
 var USERS_TABLE = 'PM_Users';
 var GROUPS_TABLE = 'PM_Groups';
 var TEMPLATES_TABLE = 'PM_Templates';
-var SUBTASKS_TABLE = 'PM_Subtasks';
+var SUBRequest_TABLE = 'PM_SubRequest';
 var DEPENDENCIES_TABLE = 'PM_Dependencies';
 var COMMENTS_TABLE = 'PM_Comments';
 var TIME_ENTRIES_TABLE = 'PM_TimeEntries';
@@ -891,7 +891,7 @@ var activityLog = [];
 // Default table names — used to detect remapping: if a table var differs from
 // its default it means the user mapped it to an existing table, so we must NOT
 // auto-create the default PM_* table.
-var DEFAULT_TASKS_TABLE    = 'PM_Tasks';
+var DEFAULT_Request_TABLE    = 'PM_Request';
 var DEFAULT_USERS_TABLE    = 'PM_Users';
 var DEFAULT_PROJECTS_TABLE = 'PM_Projects';
 var DEFAULT_CATEGORIES_TABLE = 'PM_Categories';
@@ -899,7 +899,7 @@ var DEFAULT_TAGS_TABLE     = 'PM_Tags';
 
 // Configuration mapping object
 var columnMapping = {
-  tasks: {
+  Request: {
     title: 'Title',
     description: 'Description',
     status: 'Status',
@@ -988,8 +988,8 @@ async function loadColumnMapping() {
       // Parse key to determine which mapping to update
       if (key.startsWith('task_')) {
         var field = toCamel(key.slice(5));
-        if (columnMapping.tasks[field] !== undefined) {
-          columnMapping.tasks[field] = columnName;
+        if (columnMapping.Request[field] !== undefined) {
+          columnMapping.Request[field] = columnName;
         }
       } else if (key.startsWith('user_')) {
         var field = toCamel(key.slice(5));
@@ -1014,7 +1014,7 @@ async function loadColumnMapping() {
       }
       
       // Also update table names if they differ
-      if (key === 'task_title') TASKS_TABLE = tableName;
+      if (key === 'task_title') Request_TABLE = tableName;
       else if (key === 'user_name') USERS_TABLE = tableName;
       else if (key === 'project_name') PROJECTS_TABLE = tableName;
       else if (key === 'category_name') CATEGORIES_TABLE = tableName;
@@ -1123,9 +1123,9 @@ function isOverdue(task) {
   return task.Due_Date < now;
 }
 
-function getTaskSubtasks(taskId) {
+function getRequestubRequest(taskId) {
   // D1 : tri par échéance croissante (sans date en dernier), Order en départage
-  return subtasks.filter(function(st) { return st.Parent_Task_Id === taskId; })
+  return subRequest.filter(function(st) { return st.Parent_Task_Id === taskId; })
     .sort(function(a, b) {
       var da = a.Due_Date || null;
       var db = b.Due_Date || null;
@@ -1141,28 +1141,28 @@ function getTaskSubtasks(taskId) {
 }
 
 function getTaskProgress(task) {
-  var taskSubtasks = getTaskSubtasks(task.id);
-  if (taskSubtasks.length === 0) {
-    // No subtasks: use status-based progress
+  var RequestubRequest = getRequestubRequest(task.id);
+  if (RequestubRequest.length === 0) {
+    // No subRequest: use status-based progress
     return task.Status === 'done' ? 100 : (task.Status === 'progress' ? 50 : 10);
   }
-  var completed = taskSubtasks.filter(function(st) { return st.Completed; }).length;
-  return Math.round((completed / taskSubtasks.length) * 100);
+  var completed = RequestubRequest.filter(function(st) { return st.Completed; }).length;
+  return Math.round((completed / RequestubRequest.length) * 100);
 }
 
 function getTaskDependencies(taskId) {
-  // Returns tasks that this task depends on (blockers)
+  // Returns Request that this task depends on (blockers)
   return dependencies.filter(function(d) { return d.Task_Id === taskId; })
     .map(function(d) {
-      return tasks.find(function(t) { return t.id === d.Depends_On_Task_Id; });
+      return Request.find(function(t) { return t.id === d.Depends_On_Task_Id; });
     }).filter(Boolean);
 }
 
-function getTasksDependingOn(taskId) {
-  // Returns tasks that depend on this task (blocked by this)
+function getRequestDependingOn(taskId) {
+  // Returns Request that depend on this task (blocked by this)
   return dependencies.filter(function(d) { return d.Depends_On_Task_Id === taskId; })
     .map(function(d) {
-      return tasks.find(function(t) { return t.id === d.Task_Id; });
+      return Request.find(function(t) { return t.id === d.Task_Id; });
     }).filter(Boolean);
 }
 
@@ -1467,7 +1467,7 @@ function compressImageFile(file, maxW, quality) {
   });
 }
 
-// Upload d'un ou plusieurs fichiers (encodés base64) pour une tâche
+// Upload d'un ou plusieurs fichiers (encodés base64) pour une demande
 async function uploadTaskAttachments(taskId, fileList) {
   if (!fileList || !fileList.length) return;
   var statusEl = document.getElementById('attach-status-' + taskId);
@@ -1564,7 +1564,7 @@ function closeAttachmentViewer() {
   if (overlay) overlay.style.display = 'none';
 }
 
-// (Re)construit la section pièces jointes du formulaire de tâche
+// (Re)construit la section pièces jointes du formulaire de demande
 function renderAttachmentsSection(taskId) {
   var container = document.getElementById('attachments-list-' + taskId);
   if (!container) return;
@@ -1628,7 +1628,7 @@ function getTaskCustomFieldValue(taskId, fieldId) {
   return cfv ? cfv.Value : '';
 }
 
-// B3 : concatène toutes les valeurs de champs personnalisés d'une tâche (pour la recherche)
+// B3 : concatène toutes les valeurs de champs personnalisés d'une demande (pour la recherche)
 function getTaskCustomFieldsText(taskId) {
   return customFieldValues
     .filter(function(v) { return v.Task_Id === taskId && v.Value; })
@@ -1638,13 +1638,13 @@ function getTaskCustomFieldsText(taskId) {
 
 function isSubtaskBlocked(subtask) {
   if (!subtask.Blocked_By_Subtask_Id) return false;
-  var blocker = subtasks.find(function(st) { return st.id === subtask.Blocked_By_Subtask_Id; });
+  var blocker = subRequest.find(function(st) { return st.id === subtask.Blocked_By_Subtask_Id; });
   return blocker && !blocker.Completed;
 }
 
 function getSubtaskBlocker(subtask) {
   if (!subtask.Blocked_By_Subtask_Id) return null;
-  return subtasks.find(function(st) { return st.id === subtask.Blocked_By_Subtask_Id; });
+  return subRequest.find(function(st) { return st.id === subtask.Blocked_By_Subtask_Id; });
 }
 
 function getCustomFieldTypeLabel(type) {
@@ -1698,7 +1698,7 @@ function personIdentSet(v) {
   return set;
 }
 
-// La liste CSV d'assignés contient-elle l'un des identifiants ?
+// La liste CSV des personnes prenant en charge contient-elle l'un des identifiants ?
 function assigneeListHas(assigneeStr, identSet) {
   return String(assigneeStr || '').split(',').some(function(s) {
     var k = s.toLowerCase().trim();
@@ -1774,9 +1774,9 @@ async function ensureTables() {
 
     // Only auto-create a table when it (a) still has its default PM_* name
     // (meaning it has not been remapped) AND (b) does not yet exist.
-    if (TASKS_TABLE === DEFAULT_TASKS_TABLE && existingTables.indexOf(TASKS_TABLE) === -1) {
+    if (Request_TABLE === DEFAULT_Request_TABLE && existingTables.indexOf(Request_TABLE) === -1) {
       await grist.docApi.applyUserActions([
-        ['AddTable', TASKS_TABLE, [
+        ['AddTable', Request_TABLE, [
           { id: 'Title', type: 'Text' },
           { id: 'Description', type: 'Text' },
           { id: 'Status', type: 'Choice', widgetOptions: JSON.stringify({ choices: ['todo', 'progress', 'done', 'archived'] }) },
@@ -1831,9 +1831,9 @@ async function ensureTables() {
       ]);
     }
 
-    if (existingTables.indexOf(SUBTASKS_TABLE) === -1) {
+    if (existingTables.indexOf(SUBRequest_TABLE) === -1) {
       await grist.docApi.applyUserActions([
-        ['AddTable', SUBTASKS_TABLE, [
+        ['AddTable', SUBRequest_TABLE, [
           { id: 'Parent_Task_Id', type: 'Int' },
           { id: 'Title', type: 'Text' },
           { id: 'Description', type: 'Text' },
@@ -1967,41 +1967,41 @@ async function ensureTables() {
     // Migration Project_Id : s'exécute APRÈS PM_Projects (install fraîche ou upgrade)
     // Séparé du bloc "existingTables" pour couvrir aussi les installations fraîches.
     try {
-      var taskColsCheck = Object.keys(await grist.docApi.fetchTable(TASKS_TABLE));
+      var taskColsCheck = Object.keys(await grist.docApi.fetchTable(Request_TABLE));
       if (taskColsCheck.indexOf('Project_Id') === -1) {
         await grist.docApi.applyUserActions([
-          ['AddColumn', TASKS_TABLE, 'Project_Id', { type: 'Ref:PM_Projects' }]
+          ['AddColumn', Request_TABLE, 'Project_Id', { type: 'Ref:PM_Projects' }]
         ]);
-        console.log('[GristPM] Project_Id ajouté à PM_Tasks');
+        console.log('[GristPM] Project_Id ajouté à PM_Request');
       }
     } catch (e) {
       console.log('[GristPM] Migration Project_Id ignorée :', e.message);
     }
-    // Migration : ajout des champs patient imagerie sur PM_Tasks
+    // Migration : ajout des champs patient imagerie sur PM_Request
 try {
-  var imgCols = Object.keys(await grist.docApi.fetchTable(TASKS_TABLE));
+  var imgCols = Object.keys(await grist.docApi.fetchTable(Request_TABLE));
   var imgMig = [];
 
   if (imgCols.indexOf('Espece') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Espece', {
+    imgMig.push(['AddColumn', Request_TABLE, 'Espece', {
       type: 'Choice',
       widgetOptions: JSON.stringify({ choices: ['Chien', 'Chat', 'NAC', 'Equin', 'Autre'] })
     }]);
   }
   if (imgCols.indexOf('Race') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Race', { type: 'Text' }]);
+    imgMig.push(['AddColumn', Request_TABLE, 'Race', { type: 'Text' }]);
   }
   if (imgCols.indexOf('Poids') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Poids', { type: 'Numeric' }]);
+    imgMig.push(['AddColumn', Request_TABLE, 'Poids', { type: 'Numeric' }]);
   }
   if (imgCols.indexOf('Age_Animal') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Age_Animal', { type: 'Text' }]);
+    imgMig.push(['AddColumn', Request_TABLE, 'Age_Animal', { type: 'Text' }]);
   }
   if (imgCols.indexOf('Commemoratifs') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Commemoratifs', { type: 'Text' }]);
+    imgMig.push(['AddColumn', Request_TABLE, 'Commemoratifs', { type: 'Text' }]);
   }
   if (imgCols.indexOf('Zone_Demandee') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Zone_Demandee', {
+    imgMig.push(['AddColumn', Request_TABLE, 'Zone_Demandee', {
       type: 'ChoiceList',
       widgetOptions: JSON.stringify({ choices: [
         'Radio - Thorax', 'Radio - Abdomen', 'Radio - Rachis cervical',
@@ -2017,27 +2017,27 @@ try {
     }]);
   }
   if (imgCols.indexOf('Risque_Anesthesie') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Risque_Anesthesie', { type: 'Text' }]);
+    imgMig.push(['AddColumn', Request_TABLE, 'Risque_Anesthesie', { type: 'Text' }]);
   }
   if (imgCols.indexOf('Examen_Complementaire') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Examen_Complementaire', {
+    imgMig.push(['AddColumn', Request_TABLE, 'Examen_Complementaire', {
       type: 'Choice',
       widgetOptions: JSON.stringify({ choices: ['Oui', 'Non'] })
     }]);
   }
   if (imgCols.indexOf('Type_Examen_Complementaire') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Type_Examen_Complementaire', {
+    imgMig.push(['AddColumn', Request_TABLE, 'Type_Examen_Complementaire', {
       type: 'Choice',
       widgetOptions: JSON.stringify({ choices: ['Échographie', 'Analyses sanguines', 'Scanner', 'IRM', 'Consultation spécialisée', 'Autre'] })
     }]);
   }
   if (imgCols.indexOf('Prescripteur') === -1) {
-    imgMig.push(['AddColumn', TASKS_TABLE, 'Prescripteur', { type: 'Text' }]);
+    imgMig.push(['AddColumn', Request_TABLE, 'Prescripteur', { type: 'Text' }]);
   }
 
   if (imgMig.length) {
     await grist.docApi.applyUserActions(imgMig);
-    console.log('[GristPM] Champs imagerie ajoutés à PM_Tasks');
+    console.log('[GristPM] Champs imagerie ajoutés à PM_Request');
   }
 } catch (e) {
   console.log('[GristPM] Migration imagerie ignorée :', e.message);
@@ -2055,7 +2055,7 @@ try {
       console.log('[GristPM] Migration templates ignorée :', e.message);
     }
 
-    // Migration CreatedBy / CreatedAt sur PM_Projects (créateur du projet)
+    // Migration CreatedBy / CreatedAt sur PM_Projects (créateur du service)
     try {
       var projCols = Object.keys(await grist.docApi.fetchTable(PROJECTS_TABLE));
       var projMig = [];
@@ -2082,21 +2082,21 @@ try {
       
       // Initialize with default mapping
       var defaultConfig = [
-        // Tasks mapping
-        ['task_title', TASKS_TABLE, 'Title', 'Titre', true, 'Title'],
-        ['task_description', TASKS_TABLE, 'Description', 'Description', false, 'Description'],
-        ['task_status', TASKS_TABLE, 'Status', 'Statut', true, 'Status'],
-        ['task_priority', TASKS_TABLE, 'Priority', 'Priorité', true, 'Priority'],
-        ['task_assignee', TASKS_TABLE, 'Assignee', 'Assigné à', false, 'Assignee'],
-        ['task_group', TASKS_TABLE, 'Group_Name', 'Groupe', false, 'Group_Name'],
-        ['task_start_date', TASKS_TABLE, 'Start_Date', 'Date début', false, 'Start_Date'],
-        ['task_due_date', TASKS_TABLE, 'Due_Date', 'Échéance', false, 'Due_Date'],
-        ['task_category', TASKS_TABLE, 'Category', 'Catégorie', false, 'Category'],
-        ['task_tag', TASKS_TABLE, 'Tag', 'Tag', false, 'Tag'],
-        ['task_recurrence', TASKS_TABLE, 'Recurrence', 'Récurrence', false, 'Recurrence'],
-        ['task_estimated_hours', TASKS_TABLE, 'Estimated_Hours', 'Heures estimées', false, 'Estimated_Hours'],
-        ['task_created_at', TASKS_TABLE, 'Created_At', 'Créé le', false, 'Created_At'],
-        ['task_project_id', TASKS_TABLE, 'Project_Id', 'Projet', false, 'Project_Id'],
+        // Request mapping
+        ['task_title', Request_TABLE, 'Title', 'Titre', true, 'Title'],
+        ['task_description', Request_TABLE, 'Description', 'Description', false, 'Description'],
+        ['task_status', Request_TABLE, 'Status', 'Statut', true, 'Status'],
+        ['task_priority', Request_TABLE, 'Priority', 'Priorité', true, 'Priority'],
+        ['task_assignee', Request_TABLE, 'Assignee', 'Pris en charge par', false, 'Assignee'],
+        ['task_group', Request_TABLE, 'Group_Name', 'Groupe', false, 'Group_Name'],
+        ['task_start_date', Request_TABLE, 'Start_Date', 'Date début', false, 'Start_Date'],
+        ['task_due_date', Request_TABLE, 'Due_Date', 'Échéance', false, 'Due_Date'],
+        ['task_category', Request_TABLE, 'Category', 'Catégorie', false, 'Category'],
+        ['task_tag', Request_TABLE, 'Tag', 'Tag', false, 'Tag'],
+        ['task_recurrence', Request_TABLE, 'Recurrence', 'Récurrence', false, 'Recurrence'],
+        ['task_estimated_hours', Request_TABLE, 'Estimated_Hours', 'Heures estimées', false, 'Estimated_Hours'],
+        ['task_created_at', Request_TABLE, 'Created_At', 'Créé le', false, 'Created_At'],
+        ['task_project_id', Request_TABLE, 'Project_Id', 'service', false, 'Project_Id'],
         // Users mapping
         ['user_name', USERS_TABLE, 'Name', 'Nom', true, 'Name'],
         ['user_email', USERS_TABLE, 'Email', 'Email', true, 'Email'],
@@ -2170,25 +2170,25 @@ try {
       ]);
     }
 
-    // Migration: Add missing columns to existing PM_Tasks table
-    if (existingTables.indexOf(TASKS_TABLE) !== -1) {
+    // Migration: Add missing columns to existing PM_Request table
+    if (existingTables.indexOf(Request_TABLE) !== -1) {
       try {
-        var tableInfo = await grist.docApi.fetchTable(TASKS_TABLE);
+        var tableInfo = await grist.docApi.fetchTable(Request_TABLE);
         var existingCols = Object.keys(tableInfo);
         
         if (existingCols.indexOf('Recurrence') === -1) {
           await grist.docApi.applyUserActions([
-            ['AddColumn', TASKS_TABLE, 'Recurrence', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['none', 'daily', 'weekly', 'monthly'] }) }]
+            ['AddColumn', Request_TABLE, 'Recurrence', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['none', 'daily', 'weekly', 'monthly'] }) }]
           ]);
         }
         if (existingCols.indexOf('Estimated_Hours') === -1) {
           await grist.docApi.applyUserActions([
-            ['AddColumn', TASKS_TABLE, 'Estimated_Hours', { type: 'Numeric' }]
+            ['AddColumn', Request_TABLE, 'Estimated_Hours', { type: 'Numeric' }]
           ]);
         }
         if (existingCols.indexOf('Tag') === -1) {
           await grist.docApi.applyUserActions([
-            ['AddColumn', TASKS_TABLE, 'Tag', { type: 'Text' }]
+            ['AddColumn', Request_TABLE, 'Tag', { type: 'Text' }]
           ]);
         }
         // RACI columns
@@ -2196,7 +2196,7 @@ try {
         var raciActions = [];
         for (var rc = 0; rc < raciCols.length; rc++) {
           if (existingCols.indexOf(raciCols[rc]) === -1) {
-            raciActions.push(['AddColumn', TASKS_TABLE, raciCols[rc], { type: 'Text' }]);
+            raciActions.push(['AddColumn', Request_TABLE, raciCols[rc], { type: 'Text' }]);
           }
         }
         if (raciActions.length > 0) {
@@ -2204,52 +2204,52 @@ try {
         }
         // Extension columns
         if (existingCols.indexOf('Extension_Date') === -1) {
-          await grist.docApi.applyUserActions([['AddColumn', TASKS_TABLE, 'Extension_Date', { type: 'Date' }]]);
+          await grist.docApi.applyUserActions([['AddColumn', Request_TABLE, 'Extension_Date', { type: 'Date' }]]);
         }
         if (existingCols.indexOf('Auto_Extend') === -1) {
-          await grist.docApi.applyUserActions([['AddColumn', TASKS_TABLE, 'Auto_Extend', { type: 'Bool' }]]);
+          await grist.docApi.applyUserActions([['AddColumn', Request_TABLE, 'Auto_Extend', { type: 'Bool' }]]);
         }
       } catch (migrationErr) {
         console.log('Migration check completed or columns already exist');
       }
     }
 
-    // Migration: Add Blocked_By_Subtask_Id, Assignee, Due_Date to PM_Subtasks
-    if (existingTables.indexOf(SUBTASKS_TABLE) !== -1) {
+    // Migration: Add Blocked_By_Subtask_Id, Assignee, Due_Date to PM_SubRequest
+    if (existingTables.indexOf(SUBRequest_TABLE) !== -1) {
       try {
-        var stInfo = await grist.docApi.fetchTable(SUBTASKS_TABLE);
+        var stInfo = await grist.docApi.fetchTable(SUBRequest_TABLE);
         var stCols = Object.keys(stInfo);
         var stActions = [];
         if (stCols.indexOf('Blocked_By_Subtask_Id') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Blocked_By_Subtask_Id', { type: 'Int' }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Blocked_By_Subtask_Id', { type: 'Int' }]);
         }
         if (stCols.indexOf('Assignee') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Assignee', { type: 'Text' }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Assignee', { type: 'Text' }]);
         }
         if (stCols.indexOf('Due_Date') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Due_Date', { type: 'Date' }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Due_Date', { type: 'Date' }]);
         }
         if (stCols.indexOf('Description') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Description', { type: 'Text' }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Description', { type: 'Text' }]);
         }
         if (stCols.indexOf('Status') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Status', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['todo', 'progress', 'done', 'archived'] }) }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Status', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['todo', 'progress', 'done', 'archived'] }) }]);
         }
         if (stCols.indexOf('Priority') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Priority', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['high', 'medium', 'low'] }) }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Priority', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['high', 'medium', 'low'] }) }]);
         }
         if (stCols.indexOf('Estimated_Hours') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Estimated_Hours', { type: 'Numeric' }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Estimated_Hours', { type: 'Numeric' }]);
         }
         if (stCols.indexOf('Recurrence') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Recurrence', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['none', 'daily', 'weekly', 'monthly'] }) }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Recurrence', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['none', 'daily', 'weekly', 'monthly'] }) }]);
         }
         if (stCols.indexOf('Start_Date') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Start_Date', { type: 'Date' }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Start_Date', { type: 'Date' }]);
         }
-        // B2 : type de sous-tâche (sous-tâche classique ou jalon)
+        // B2 : type de sous-demande (sous-demande classique ou jalon)
         if (stCols.indexOf('Type') === -1) {
-          stActions.push(['AddColumn', SUBTASKS_TABLE, 'Type', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['subtask', 'milestone'] }) }]);
+          stActions.push(['AddColumn', SUBRequest_TABLE, 'Type', { type: 'Choice', widgetOptions: JSON.stringify({ choices: ['subtask', 'milestone'] }) }]);
         }
         if (stActions.length > 0) {
           await grist.docApi.applyUserActions(stActions);
@@ -2270,25 +2270,25 @@ try {
 // =============================================================================
 
 /**
- * Supprime les brouillons fantômes : tâches créées par l'approche « brouillon »
- * mais jamais renseignées (aucun titre, description, responsable, ni sous-tâche),
+ * Supprime les brouillons fantômes : demandes créées par l'approche « brouillon »
+ * mais jamais renseignées (aucun titre, description, responsable, ni sous-demande),
  * laissées derrière quand la modale s'est fermée par un chemin inhabituel.
  * Prudent : Owner uniquement, cibles totalement vides, hors brouillon en cours.
  */
-async function cleanupEmptyDraftTasks() {
+async function cleanupEmptyDraftRequest() {
   if (!isOwner) return;
-  var ghosts = tasks.filter(function (tk) {
+  var ghosts = Request.filter(function (tk) {
     if (tk.id === draftTaskId) return false;
     if ((tk.Title || '').trim()) return false;
     if ((tk.Description || '').trim()) return false;
     if ((tk.Assignee || '').trim()) return false;
-    return getTaskSubtasks(tk.id).length === 0;
+    return getRequestubRequest(tk.id).length === 0;
   });
   if (!ghosts.length) return;
   try {
-    await grist.docApi.applyUserActions(ghosts.map(function (tk) { return ['RemoveRecord', TASKS_TABLE, tk.id]; }));
-    tasks = tasks.filter(function (tk) { return ghosts.indexOf(tk) === -1; });
-  } catch (e) { console.error('cleanupEmptyDraftTasks:', e); }
+    await grist.docApi.applyUserActions(ghosts.map(function (tk) { return ['RemoveRecord', Request_TABLE, tk.id]; }));
+    Request = Request.filter(function (tk) { return ghosts.indexOf(tk) === -1; });
+  } catch (e) { console.error('cleanupEmptyDraftRequest:', e); }
 }
 
 async function loadAllData() {
@@ -2296,27 +2296,27 @@ async function loadAllData() {
   await loadColumnMapping();
   
   try {
-    var taskData = await grist.docApi.fetchTable(TASKS_TABLE);
-    tasks = [];
+    var taskData = await grist.docApi.fetchTable(Request_TABLE);
+    Request = [];
     if (taskData && taskData.id) {
       for (var i = 0; i < taskData.id.length; i++) {
         var task = { id: taskData.id[i] };
         
         // Use column mapping to load data
-        var titleCol = getColumnName('tasks', 'title');
-        var descCol = getColumnName('tasks', 'description');
-        var statusCol = getColumnName('tasks', 'status');
-        var priorityCol = getColumnName('tasks', 'priority');
-        var assigneeCol = getColumnName('tasks', 'assignee');
-        var groupCol = getColumnName('tasks', 'group');
-        var startDateCol = getColumnName('tasks', 'startDate');
-        var dueDateCol = getColumnName('tasks', 'dueDate');
-        var categoryCol = getColumnName('tasks', 'category');
-        var tagCol = getColumnName('tasks', 'tag');
-        var recurrenceCol = getColumnName('tasks', 'recurrence');
-        var estimatedHoursCol = getColumnName('tasks', 'estimatedHours');
-        var createdAtCol = getColumnName('tasks', 'createdAt');
-        var projectIdCol = getColumnName('tasks', 'projectId');
+        var titleCol = getColumnName('Request', 'title');
+        var descCol = getColumnName('Request', 'description');
+        var statusCol = getColumnName('Request', 'status');
+        var priorityCol = getColumnName('Request', 'priority');
+        var assigneeCol = getColumnName('Request', 'assignee');
+        var groupCol = getColumnName('Request', 'group');
+        var startDateCol = getColumnName('Request', 'startDate');
+        var dueDateCol = getColumnName('Request', 'dueDate');
+        var categoryCol = getColumnName('Request', 'category');
+        var tagCol = getColumnName('Request', 'tag');
+        var recurrenceCol = getColumnName('Request', 'recurrence');
+        var estimatedHoursCol = getColumnName('Request', 'estimatedHours');
+        var createdAtCol = getColumnName('Request', 'createdAt');
+        var projectIdCol = getColumnName('Request', 'projectId');
         
         task.Title = taskData[titleCol] ? taskData[titleCol][i] : '';
         task.Description = taskData[descCol] ? taskData[descCol][i] : '';
@@ -2339,12 +2339,12 @@ async function loadAllData() {
         task.Extension_Date = taskData.Extension_Date ? taskData.Extension_Date[i] : null;
         task.Auto_Extend = taskData.Auto_Extend ? !!taskData.Auto_Extend[i] : false;
 
-        tasks.push(task);
+        Request.push(task);
       }
     }
   } catch (e) {
-    console.warn('Could not load tasks:', e);
-    tasks = [];
+    console.warn('Could not load Request:', e);
+    Request = [];
   }
 
   try {
@@ -2411,11 +2411,11 @@ async function loadAllData() {
   }
 
   try {
-    var subtaskData = await grist.docApi.fetchTable(SUBTASKS_TABLE);
-    subtasks = [];
+    var subtaskData = await grist.docApi.fetchTable(SUBRequest_TABLE);
+    subRequest = [];
     if (subtaskData && subtaskData.id) {
       for (var i = 0; i < subtaskData.id.length; i++) {
-        subtasks.push({
+        subRequest.push({
           id: subtaskData.id[i],
           Parent_Task_Id: subtaskData.Parent_Task_Id ? subtaskData.Parent_Task_Id[i] : null,
           Title: subtaskData.Title ? subtaskData.Title[i] : '',
@@ -2436,7 +2436,7 @@ async function loadAllData() {
       }
     }
   } catch (e) {
-    subtasks = [];
+    subRequest = [];
   }
 
   try {
@@ -2661,7 +2661,7 @@ async function loadAllData() {
     activityLog = [];
   }
 
-  await cleanupEmptyDraftTasks();
+  await cleanupEmptyDraftRequest();
   renderProjectSelector();
   refreshAllViews();
 }
@@ -2687,7 +2687,7 @@ function renderProjectSelector() {
     ? users.filter(function(u) { return userMatchesRole(u, currentFilterRole); })
     : users;
 
-  // Projets visibles
+  // services visibles
   var visibleProjects = projects;
   if (mineOnly) {
     var myIds = myProjectIdSet();
@@ -2696,11 +2696,11 @@ function renderProjectSelector() {
     if (currentFilterAssignee) {
     var projIdSet = {};
     var selIdentSet = personIdentSet(currentFilterAssignee);
-    tasks.forEach(function(t) {
+    Request.forEach(function(t) {
       if (!t.Project_Id) return;
       if (assigneeListHas(t.Assignee, selIdentSet)) projIdSet[t.Project_Id] = true;
     });
-    // Si aucune tâche associée, on laisse les projets courants (sinon UX bloquée)
+    // Si aucune demande associée, on laisse les services courants (sinon UX bloquée)
     var filtered = visibleProjects.filter(function(p) { return projIdSet[p.id]; });
     if (filtered.length > 0) visibleProjects = filtered;
   }
@@ -2722,7 +2722,7 @@ function renderProjectSelector() {
 
     // Filtre Catégorie
   var allCategories = [];
-  tasks.forEach(function(t) {
+  Request.forEach(function(t) {
     getCategoryList(t.Category).forEach(function(c) {
       if (allCategories.indexOf(c) === -1) allCategories.push(c);
     });
@@ -2736,9 +2736,9 @@ function renderProjectSelector() {
   var tagOptions = tags.map(function(tag) { return { value: tag.Name, label: tag.Name }; });
   html += buildFilterCombo('tag', '— Tag —', tagOptions, currentFilterTag, filterByTag);
 
-  // Filtre Projet — combobox moderne avec recherche intégrée
+  // Filtre service — combobox moderne avec recherche intégrée
   var selProj = currentProjectId ? projects.find(function(p) { return p.id === currentProjectId; }) : null;
-  var btnLabel = selProj ? sanitize(selProj.Name) : (currentLang === 'fr' ? 'Tous les projets' : 'All projects');
+  var btnLabel = selProj ? sanitize(selProj.Name) : (currentLang === 'fr' ? 'Tous les services' : 'All projects');
   var btnDotColor = selProj ? (selProj.Color || '#6366f1') : 'transparent';
   var btnClass = 'proj-combobox-btn' + (currentProjectId ? ' active' : '');
   html += '<div class="proj-combobox" id="proj-combobox">';
@@ -2754,13 +2754,13 @@ function renderProjectSelector() {
   // "All projects" option (always shown)
   html += '<div class="proj-option' + (!currentProjectId ? ' selected' : '') + '" data-id="" data-name="" data-always="1" onclick="selectProjectOption(\'\')">';
   html += '<span class="proj-dot" style="background:#94a3b8;opacity:.4;"></span>';
-  html += '<span>' + (currentLang === 'fr' ? 'Tous les projets' : 'All projects') + '</span>';
+  html += '<span>' + (currentLang === 'fr' ? 'Tous les services' : 'All projects') + '</span>';
   html += '</div>';
   // Project options — first 5 visible, rest hidden until search
-  var allTasksForCount = tasks;
+  var allRequestForCount = Request;
   var extraCount = Math.max(0, visibleProjects.length - PROJ_INITIAL_LIMIT);
   visibleProjects.forEach(function(proj, idx) {
-    var taskCount = allTasksForCount.filter(function(tt) { return tt.Project_Id === proj.id; }).length;
+    var taskCount = allRequestForCount.filter(function(tt) { return tt.Project_Id === proj.id; }).length;
     var isSelected = currentProjectId === proj.id;
     var safeName = sanitize(proj.Name || '');
     var isExtra = idx >= PROJ_INITIAL_LIMIT && !isSelected;
@@ -2781,9 +2781,9 @@ function renderProjectSelector() {
   }
   html += '</div></div></div>';
 
-  // Bouton "Mes projets" (créés par moi OU assigné à moi)
+  // Bouton "Mes services" (créés par moi OU pris en charge par moi)
   if (currentUserEmail) {
-    html += '<button class="btn-icon" onclick="toggleMyProjects()" title="' + (currentLang === 'fr' ? 'Mes projets : créés par moi ou qui me sont assignés' : 'My projects: created by or assigned to me') + '" style="width:auto;padding:0 12px;font-size:12px;font-weight:600;' + (mineOnly ? 'background:#6366f1;color:#fff;border-color:#6366f1;' : '') + '">👤 ' + (currentLang === 'fr' ? 'Mes projets' : 'My projects') + '</button>';
+    html += '<button class="btn-icon" onclick="toggleMyProjects()" title="' + (currentLang === 'fr' ? 'Mes services : créés par moi ou qui me sont attribués' : 'My projects: created by or assigned to me') + '" style="width:auto;padding:0 12px;font-size:12px;font-weight:600;' + (mineOnly ? 'background:#6366f1;color:#fff;border-color:#6366f1;' : '') + '">👤 ' + (currentLang === 'fr' ? 'Mes services' : 'My projects') + '</button>';
   }
 
   if (currentFilterRole || currentFilterAssignee || currentFilterCategory || currentFilterTag || currentProjectId || mineOnly) {
@@ -2805,7 +2805,7 @@ function renderProjectSelector() {
     var proj2 = currentProjectId ? projects.find(function(p) { return p.id === currentProjectId; }) : null;
     var c2 = (proj2 && proj2.Color) ? proj2.Color : '#6366f1';
     var bits = [];
-    if (mineOnly) bits.push('👤 ' + (currentLang === 'fr' ? 'Mes projets' : 'My projects'));
+    if (mineOnly) bits.push('👤 ' + (currentLang === 'fr' ? 'Mes services' : 'My projects'));
     if (currentFilterRole) bits.push('👔 ' + sanitize(roleLabel(currentFilterRole)));
     if (currentFilterAssignee) {
       var u = findUserByIdent(currentFilterAssignee);
@@ -3055,7 +3055,7 @@ function filterByProject(projectId) {
   refreshAllViews();
 }
 
-// Valeur d'assigné correspondant à l'utilisateur courant (Email en priorité, sinon Nom)
+// Valeur de prise en charge correspondant à l'utilisateur courant (Email en priorité, sinon Nom)
 function myAssigneeValue() {
   if (!currentUserEmail) return null;
   var em = currentUserEmail.toLowerCase().trim();
@@ -3063,23 +3063,23 @@ function myAssigneeValue() {
   if (u) return u.Email || u.Name;
   return currentUserEmail; // repli : on tente l'email brut
 }
-// Ensemble des projets "à moi" : créés par moi OU contenant une tâche qui m'est assignée
+// Ensemble des services "à moi" : créés par moi OU contenant une demande qui m'est attribuée
 function myProjectIdSet() {
   var em = (currentUserEmail || '').toLowerCase().trim();
   var mine = myAssigneeValue();
   var set = {};
   projects.forEach(function (p) {
     if (em && (p.CreatedBy || '').toLowerCase().trim() === em) set[p.id] = true;
-    if (mine && (p.Lead || '') === mine) set[p.id] = true; // responsable du projet
+    if (mine && (p.Lead || '') === mine) set[p.id] = true; // responsable du service
   });
-  if (mine) tasks.forEach(function (tk) {
+  if (mine) Request.forEach(function (tk) {
     if (!tk.Project_Id) return;
     var list = (tk.Assignee || '').split(',').map(function (s) { return s.trim(); });
     if (list.indexOf(mine) !== -1) set[tk.Project_Id] = true;
   });
   return set;
 }
-// Bascule "Afficher seulement mes projets"
+// Bascule "Afficher seulement mes services"
 function toggleMyProjects() {
   mineOnly = !mineOnly;
   persistFilters();
@@ -3136,7 +3136,7 @@ function sanitizeRestoredFilters() {
   if (currentFilterAssignee && !findUserByIdent(currentFilterAssignee)) currentFilterAssignee = null;
   if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
-    var catFound = tasks.some(function(t) { return getCategoryList(t.Category).indexOf(catKey) !== -1; });
+    var catFound = Request.some(function(t) { return getCategoryList(t.Category).indexOf(catKey) !== -1; });
     if (!catFound) currentFilterCategory = null;
   }
   if (currentFilterTag) {
@@ -3182,10 +3182,10 @@ function filterByRole(role) {
 
 function filterByAssignee(name) {
   currentFilterAssignee = name || null;
-  // Si le projet sélectionné n'a plus de tâches pour cette personne, le déselectionner
+  // Si le service sélectionné n'a plus de demandes pour cette personne, le déselectionner
   if (currentFilterAssignee && currentProjectId) {
     var idSet = personIdentSet(currentFilterAssignee);
-    var match = tasks.some(function(t) {
+    var match = Request.some(function(t) {
       if (Number(t.Project_Id) !== Number(currentProjectId)) return false;
       return assigneeListHas(t.Assignee, idSet);
     });
@@ -3223,11 +3223,11 @@ function resetFilters() {
   refreshAllViews();
 }
 
-var showArchivedTasks = false;
+var showArchivedRequest = false;
 
-function getFilteredTasks() {
-  var result = tasks.filter(function(t) {
-    if (showArchivedTasks) return t.Status === 'archived';
+function getFilteredRequest() {
+  var result = Request.filter(function(t) {
+    if (showArchivedRequest) return t.Status === 'archived';
     return t.Status !== 'archived';
   });
   if (currentFilterRole) {
@@ -3299,17 +3299,17 @@ function refreshAllViews() {
 function updateStats() {
   var container = document.getElementById('stats-row');
   if (!container) return;
-  var filteredTasks = getFilteredTasks();
-  var total = filteredTasks.length;
+  var filteredRequest = getFilteredRequest();
+  var total = filteredRequest.length;
   var html = '';
-  if (showArchivedTasks) {
+  if (showArchivedRequest) {
     html += '<div class="stat-card stat-total"><div><div class="stat-label">' + (currentLang === 'fr' ? 'Archivées' : 'Archived') + '</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📦</div></div>';
   } else {
     html += '<div class="stat-card stat-total"><div><div class="stat-label">Total</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📋</div></div>';
     var statuses = getKanbanStatuses();
     for (var i = 0; i < statuses.length; i++) {
       var s = statuses[i];
-      var count = filteredTasks.filter(function(t) { return t.Status === s.key; }).length;
+      var count = filteredRequest.filter(function(t) { return t.Status === s.key; }).length;
       var label = currentLang === 'fr' ? s.label_fr : s.label_en;
       var color = s.color || '#94a3b8';
       // Cohérent avec l'en-tête de colonne Kanban : emoji si configuré, sinon pastille colorée
@@ -3377,8 +3377,8 @@ function renderCalendarView() {
   for (var i = startDayOfWeek - 1; i >= 0; i--) {
     var dayNum = prevMonthDays - i;
     var prevDate = new Date(calendarYear, calendarMonth - 1, dayNum);
-    var prevTasks = getTasksForDate(prevDate);
-    daysHtml += renderCalendarDay(dayNum, prevDate, prevTasks, true, false, false);
+    var prevRequest = getRequestForDate(prevDate);
+    daysHtml += renderCalendarDay(dayNum, prevDate, prevRequest, true, false, false);
     dayIndex++;
   }
 
@@ -3386,8 +3386,8 @@ function renderCalendarView() {
   for (var d = 1; d <= daysInMonth; d++) {
     var currentDate = new Date(calendarYear, calendarMonth, d);
     var isToday = currentDate.getTime() === today.getTime();
-    var dayTasks = getTasksForDate(currentDate);
-    daysHtml += renderCalendarDay(d, currentDate, dayTasks, false, isToday, false);
+    var dayRequest = getRequestForDate(currentDate);
+    daysHtml += renderCalendarDay(d, currentDate, dayRequest, false, isToday, false);
     dayIndex++;
   }
 
@@ -3395,8 +3395,8 @@ function renderCalendarView() {
   var remainingDays = 42 - dayIndex; // 6 rows * 7 days
   for (var i = 1; i <= remainingDays; i++) {
     var nextDate = new Date(calendarYear, calendarMonth + 1, i);
-    var nextTasks = getTasksForDate(nextDate);
-    daysHtml += renderCalendarDay(i, nextDate, nextTasks, true, false);
+    var nextRequest = getRequestForDate(nextDate);
+    daysHtml += renderCalendarDay(i, nextDate, nextRequest, true, false);
   }
 
   var daysContainer = document.getElementById('calendar-days');
@@ -3404,7 +3404,7 @@ function renderCalendarView() {
   daysContainer.className = 'calendar-days';
 }
 
-function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeekView) {
+function renderCalendarDay(dayNum, date, dayRequest, isOtherMonth, isToday, isWeekView) {
   // Validate date
   if (!date || isNaN(date.getTime())) {
     console.error('Invalid date in renderCalendarDay:', date);
@@ -3423,11 +3423,11 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
   if (!isWeekView) {
     html += '<div class="day-number">' + dayNum + '</div>';
   }
-  html += '<div class="day-tasks">';
+  html += '<div class="day-Request">';
 
-  var maxTasks = isWeekView ? 20 : 3;
-  for (var i = 0; i < Math.min(dayTasks.length, maxTasks); i++) {
-    var task = dayTasks[i];
+  var maxRequest = isWeekView ? 20 : 3;
+  for (var i = 0; i < Math.min(dayRequest.length, maxRequest); i++) {
+    var task = dayRequest[i];
     var statusClass = 'status-' + task.Status;
     var priorityClass = task.Priority === 'high' ? ' priority-high' : '';
     html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '">';
@@ -3435,8 +3435,8 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
     html += '</div>';
   }
 
-  if (dayTasks.length > maxTasks) {
-    html += '<div class="day-more">+' + (dayTasks.length - maxTasks) + ' ' + (currentLang === 'fr' ? 'autres' : 'more') + '</div>';
+  if (dayRequest.length > maxRequest) {
+    html += '<div class="day-more">+' + (dayRequest.length - maxRequest) + ' ' + (currentLang === 'fr' ? 'autres' : 'more') + '</div>';
   }
 
   html += '</div></div>';
@@ -3467,7 +3467,7 @@ async function onCalendarDrop(event, dateStr) {
   
   if (!calendarDraggedTaskId) return;
   
-  var task = tasks.find(function(t) { return t.id === calendarDraggedTaskId; });
+  var task = Request.find(function(t) { return t.id === calendarDraggedTaskId; });
   if (!task) return;
   
   // Parse the new date
@@ -3489,7 +3489,7 @@ async function onCalendarDrop(event, dateStr) {
   
   try {
     await grist.docApi.applyUserActions([
-      ['UpdateRecord', TASKS_TABLE, calendarDraggedTaskId, updates]
+      ['UpdateRecord', Request_TABLE, calendarDraggedTaskId, updates]
     ]);
     showToast(t('taskMoved'), 'success');
     await loadAllData();
@@ -3540,7 +3540,7 @@ function getWeekStart(offset) {
   return monday;
 }
 
-function getTasksForDate(date) {
+function getRequestForDate(date) {
   var dateStart = new Date(date);
   dateStart.setHours(0, 0, 0, 0);
   var dateEnd = new Date(date);
@@ -3548,14 +3548,14 @@ function getTasksForDate(date) {
   var dateTs = dateStart.getTime() / 1000;
   var dateEndTs = dateEnd.getTime() / 1000;
 
-  return getFilteredTasks().filter(function(task) {
-    var taskStart = task.Start_Date;
+  return getFilteredRequest().filter(function(task) {
+    var Requesttart = task.Start_Date;
     var taskEnd = task.Due_Date;
-    if (!taskStart && !taskEnd) return false;
-    if (taskStart && taskEnd) {
-      return taskStart <= dateEndTs && taskEnd >= dateTs;
+    if (!Requesttart && !taskEnd) return false;
+    if (Requesttart && taskEnd) {
+      return Requesttart <= dateEndTs && taskEnd >= dateTs;
     }
-    if (taskStart) return taskStart >= dateTs && taskStart <= dateEndTs;
+    if (Requesttart) return Requesttart >= dateTs && Requesttart <= dateEndTs;
     if (taskEnd) return taskEnd >= dateTs && taskEnd <= dateEndTs;
     return false;
   });
@@ -3609,8 +3609,8 @@ function renderCalendarWeekView() {
   for (var d = 0; d < 7; d++) {
     var dayDate = new Date(weekStartDate.getFullYear(), weekStartDate.getMonth(), weekStartDate.getDate() + d);
     var isToday = dayDate.getTime() === today.getTime();
-    var dayTasks = getTasksForDate(dayDate);
-    daysHtml += renderCalendarDay(dayDate.getDate(), dayDate, dayTasks, false, isToday, true);
+    var dayRequest = getRequestForDate(dayDate);
+    daysHtml += renderCalendarDay(dayDate.getDate(), dayDate, dayRequest, false, isToday, true);
   }
 
   var daysContainer = document.getElementById('calendar-days');
@@ -3663,7 +3663,7 @@ function renderCalendarMobileView() {
     var dayDate = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate() + d);
     var isToday = dayDate.getTime() === today.getTime();
     var isWeekend = d >= 5;
-    var dayTasks = getTasksForDate(dayDate);
+    var dayRequest = getRequestForDate(dayDate);
     var dateStr = dayDate.getFullYear() + '-' + String(dayDate.getMonth() + 1).padStart(2, '0') + '-' + String(dayDate.getDate()).padStart(2, '0');
 
     var cls = 'calendar-day' + (isToday ? ' today' : '') + (isWeekend ? ' weekend' : '');
@@ -3672,12 +3672,12 @@ function renderCalendarMobileView() {
     html += '<span class="mobile-day-name">' + dayNames[dayDate.getDay()] + '</span>';
     html += '<div class="day-number">' + dayDate.getDate() + '</div>';
     html += '</div>';
-    html += '<div class="day-tasks">';
-    for (var i = 0; i < dayTasks.length; i++) {
-      var task = dayTasks[i];
+    html += '<div class="day-Request">';
+    for (var i = 0; i < dayRequest.length; i++) {
+      var task = dayRequest[i];
       html += '<div class="day-task status-' + task.Status + '" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '">' + sanitize(task.Title) + '</div>';
     }
-    if (dayTasks.length === 0) {
+    if (dayRequest.length === 0) {
       html += '<span class="mobile-no-task">\u2014</span>';
     }
     html += '</div></div>';
@@ -3745,14 +3745,14 @@ function renderCalendarDayView() {
   var dayStartTs = Math.floor(dayStart.getTime() / 1000);
   var dayEndTs = Math.floor(dayEnd.getTime() / 1000);
 
-  var filteredTasks = getFilteredTasks();
-  var dayTasks = filteredTasks.filter(function(t) {
-    // Tâches dues ce jour précis
+  var filteredRequest = getFilteredRequest();
+  var dayRequest = filteredRequest.filter(function(t) {
+    // demandes dues ce jour précis
     var dueThisDay = t.Due_Date && t.Due_Date >= dayStartTs && t.Due_Date <= dayEndTs;
-    // Tâches en cours ce jour : commencées avant la fin du jour et finissant après le début du jour
+    // demandes en cours ce jour : commencées avant la fin du jour et finissant après le début du jour
     var inProgressThisDay = t.Status === 'progress' && t.Start_Date && t.Due_Date &&
       t.Start_Date <= dayEndTs && t.Due_Date >= dayStartTs;
-    // Tâches en cours sans date de fin définie mais démarrées
+    // demandes en cours sans date de fin définie mais démarrées
     var inProgressNoEnd = t.Status === 'progress' && t.Start_Date && !t.Due_Date &&
       t.Start_Date <= dayEndTs;
     return dueThisDay || inProgressThisDay || inProgressNoEnd;
@@ -3764,15 +3764,15 @@ function renderCalendarDayView() {
   var html = '<div class="calendar-day-view">';
   html += '<div class="calendar-day-header' + (isToday ? ' today' : '') + '">';
   html += isToday ? '📅 ' + (currentLang === 'fr' ? "Aujourd'hui" : 'Today') : '';
-  html += '<span class="day-task-count">' + dayTasks.length + ' ' + (currentLang === 'fr' ? 'tâche(s)' : 'task(s)') + '</span>';
+  html += '<span class="day-task-count">' + dayRequest.length + ' ' + (currentLang === 'fr' ? 'demande(s)' : 'task(s)') + '</span>';
   html += '</div>';
 
-  if (dayTasks.length === 0) {
-    html += '<div class="day-empty">' + (currentLang === 'fr' ? 'Aucune tâche ce jour' : 'No tasks today') + '</div>';
+  if (dayRequest.length === 0) {
+    html += '<div class="day-empty">' + (currentLang === 'fr' ? 'Aucune demande ce jour' : 'No Request today') + '</div>';
   } else {
-    dayTasks.forEach(function(task) {
-      var taskSubtasks = getTaskSubtasks(task.id);
-      var completedSt = taskSubtasks.filter(function(st) { return st.Completed; }).length;
+    dayRequest.forEach(function(task) {
+      var RequestubRequest = getRequestubRequest(task.id);
+      var completedSt = RequestubRequest.filter(function(st) { return st.Completed; }).length;
       var stColor = statusColors[task.Status] || '#94a3b8';
       var dueThisDay = task.Due_Date && task.Due_Date >= dayStartTs && task.Due_Date <= dayEndTs;
       var isOverdue = task.Due_Date && task.Due_Date < dayStartTs && task.Status !== 'done';
@@ -3786,13 +3786,13 @@ function renderCalendarDayView() {
       html += '<div class="day-task-meta">';
       if (task.Assignee) html += '<span>👤 ' + sanitize(task.Assignee.split(',')[0].trim()) + '</span>';
       html += '<span style="color:' + priorityColors[task.Priority] + ';">▲ ' + task.Priority + '</span>';
-      if (taskSubtasks.length > 0) {
-        html += '<span>☑️ ' + completedSt + '/' + taskSubtasks.length + '</span>';
+      if (RequestubRequest.length > 0) {
+        html += '<span>☑️ ' + completedSt + '/' + RequestubRequest.length + '</span>';
       }
       html += '</div>';
-      if (taskSubtasks.length > 0) {
-        html += '<div class="day-subtasks">';
-        taskSubtasks.forEach(function(st) {
+      if (RequestubRequest.length > 0) {
+        html += '<div class="day-subRequest">';
+        RequestubRequest.forEach(function(st) {
           html += '<div class="day-subtask-item">';
           html += '<input type="checkbox" ' + (st.Completed ? 'checked' : '') + ' onclick="event.stopPropagation();toggleSubtask(' + st.id + ', ' + !st.Completed + ')" />';
           html += '<span class="' + (st.Completed ? 'st-done' : '') + '">' + sanitize(st.Title) + '</span>';
@@ -3809,7 +3809,7 @@ function renderCalendarDayView() {
   // Quick add task for this day
   var dateStr = viewDate.getFullYear() + '-' + String(viewDate.getMonth() + 1).padStart(2, '0') + '-' + String(viewDate.getDate()).padStart(2, '0');
   html += '<div class="day-add-task" onclick="openNewTaskForDay(\'' + dateStr + '\')">';
-  html += '+ ' + (currentLang === 'fr' ? 'Ajouter une tâche ce jour' : 'Add a task for this day');
+  html += '+ ' + (currentLang === 'fr' ? 'Ajouter une demande ce jour' : 'Add a task for this day');
   html += '</div>';
   html += '</div>';
 
@@ -3839,7 +3839,7 @@ function setKanbanSort(value) {
 }
 
 // A1 : tri des fiches d'une colonne Kanban
-function sortKanbanTasks(list) {
+function sortKanbanRequest(list) {
   var arr = list.slice();
   if (kanbanSort === 'alpha') {
     arr.sort(function(a, b) { return (a.Title || '').localeCompare(b.Title || ''); });
@@ -3877,14 +3877,14 @@ function toggleCardExpand(taskId, ev) {
   renderKanbanView();
 }
 
-// Cocher/décocher une sous-tâche depuis le panneau déplié d'une tuile
+// Cocher/décocher une sous-demande depuis le panneau déplié d'une tuile
 async function toggleSubtaskFromCard(subtaskId, completed) {
   try {
     await grist.docApi.applyUserActions([
-      ['UpdateRecord', SUBTASKS_TABLE, subtaskId, { Completed: completed }]
+      ['UpdateRecord', SUBRequest_TABLE, subtaskId, { Completed: completed }]
     ]);
-    for (var i = 0; i < subtasks.length; i++) {
-      if (subtasks[i].id === subtaskId) { subtasks[i].Completed = completed; break; }
+    for (var i = 0; i < subRequest.length; i++) {
+      if (subRequest[i].id === subtaskId) { subRequest[i].Completed = completed; break; }
     }
     renderKanbanView();
   } catch (e) {
@@ -3900,7 +3900,7 @@ function renderKanbanView() {
   if (sortSel && sortSel.value !== kanbanSort) sortSel.value = kanbanSort;
 
   var columns = [];
-  var filteredTasks = getFilteredTasks();
+  var filteredRequest = getFilteredRequest();
 
   if (kanbanGroupBy === 'priority') {
     columns = [
@@ -3910,15 +3910,15 @@ function renderKanbanView() {
     ];
   } else if (kanbanGroupBy === 'project') {
     var projMap = {};
-    filteredTasks.forEach(function(task) {
+    filteredRequest.forEach(function(task) {
       var pid = task.Project_Id || 0;
       if (!projMap[pid]) {
-        projMap[pid] = { key: String(pid), label: pid ? (getProjectName(pid) || 'Projet ' + pid) : (currentLang === 'fr' ? 'Sans projet' : 'No project'), cssClass: 'col-todo', field: 'Project_Id', tasks: [], color: getProjectColor(pid || null) };
+        projMap[pid] = { key: String(pid), label: pid ? (getProjectName(pid) || 'service ' + pid) : (currentLang === 'fr' ? 'Sans service' : 'No project'), cssClass: 'col-todo', field: 'Project_Id', Request: [], color: getProjectColor(pid || null) };
       }
-      projMap[pid].tasks.push(task);
+      projMap[pid].Request.push(task);
     });
     columns = Object.values(projMap).sort(function(a, b) { return a.label.localeCompare(b.label); });
-  } else if (showArchivedTasks) {
+  } else if (showArchivedRequest) {
     columns = [
       { key: 'archived', label: currentLang === 'fr' ? '📦 Archives' : '📦 Archives', cssClass: 'col-custom', field: 'Status', color: '#94a3b8' }
     ];
@@ -3938,12 +3938,12 @@ function renderKanbanView() {
   var html = '';
   for (var s = 0; s < columns.length; s++) {
     var col = columns[s];
-    var colTasks = col.tasks || filteredTasks.filter(function(task) {
+    var colRequest = col.Request || filteredRequest.filter(function(task) {
       if (col.field === 'Status') return task.Status === col.key;
       if (col.field === 'Priority') return task.Priority === col.key;
       return false;
     });
-    colTasks = sortKanbanTasks(colTasks);
+    colRequest = sortKanbanRequest(colRequest);
     var dotStyle = col.color ? 'display:inline-block;width:10px;height:10px;border-radius:50%;background:' + col.color + ';margin-right:6px;' : 'display:none;';
     var isCollapsed = !!collapsedKanbanCols[col.key];
 
@@ -3952,7 +3952,7 @@ function renderKanbanView() {
       html += '<div class="kanban-column kanban-column-collapsed ' + col.cssClass + '" onclick="toggleKanbanCol(\'' + sanitize(col.key) + '\')" title="' + col.label + '" style="' + collapsedStyle + '">';
       html += '<div class="kanban-col-header-collapsed">';
       html += '<span class="col-collapse-icon">⇄</span>';
-      html += '<span class="col-collapsed-label">' + col.label + ' (' + colTasks.length + ')</span>';
+      html += '<span class="col-collapsed-label">' + col.label + ' (' + colRequest.length + ')</span>';
       html += '</div></div>';
       continue;
     }
@@ -3960,20 +3960,20 @@ function renderKanbanView() {
     html += '<div class="kanban-column ' + col.cssClass + '">';
     var headerStyle = col.color ? 'border-bottom-color:' + col.color + ';color:' + col.color + ';' : '';
     html += '<div class="kanban-col-header" style="' + headerStyle + '">';
-    html += '<div style="display:flex;align-items:center;gap:4px;"><span style="' + dotStyle + '"></span>' + col.label + ' <span class="col-count">' + colTasks.length + '</span></div>';
+    html += '<div style="display:flex;align-items:center;gap:4px;"><span style="' + dotStyle + '"></span>' + col.label + ' <span class="col-count">' + colRequest.length + '</span></div>';
     html += '<div style="display:flex;align-items:center;gap:4px;">';
-    if (kanbanGroupBy === 'status') html += '<button class="col-add" onclick="openNewTaskModal(\'' + col.key + '\')" title="' + (currentLang === 'fr' ? 'Nouvelle tâche' : 'New task') + '">+</button>';
+    if (kanbanGroupBy === 'status') html += '<button class="col-add" onclick="openNewTaskModal(\'' + col.key + '\')" title="' + (currentLang === 'fr' ? 'Nouvelle demande' : 'New task') + '">+</button>';
     var collapseColor = col.color ? 'color:' + col.color + ';background:white;' : '';
     html += '<button class="col-add" onclick="toggleKanbanCol(\'' + sanitize(col.key) + '\')" title="' + (currentLang === 'fr' ? 'Réduire' : 'Collapse') + '" style="' + collapseColor + '">⇄</button>';
     html += '</div>';
     html += '</div>';
     html += '<div class="kanban-cards" data-groupby="' + kanbanGroupBy + '" data-value="' + sanitize(col.key) + '" data-field="' + col.field + '" ondragover="onDragOver(event)" ondrop="onDrop(event)" ondragleave="onDragLeave(event)">';
 
-    if (colTasks.length === 0) {
-      html += '<div class="kanban-empty"><div class="kanban-empty-icon">📝</div>' + t('noTasks') + '</div>';
+    if (colRequest.length === 0) {
+      html += '<div class="kanban-empty"><div class="kanban-empty-icon">📝</div>' + t('noRequest') + '</div>';
     } else {
-      for (var i = 0; i < colTasks.length; i++) {
-        html += renderTaskCard(colTasks[i]);
+      for (var i = 0; i < colRequest.length; i++) {
+        html += renderTaskCard(colRequest[i]);
       }
     }
 
@@ -3988,9 +3988,9 @@ function renderKanbanView() {
 function renderTaskCard(task) {
   var cd = cardDisplaySettings;
   var overdueHtml = isOverdue(task) ? ' <span class="overdue-badge">' + t('overdue') + '</span>' : '';
-  var taskSubtasks = getTaskSubtasks(task.id);
+  var RequestubRequest = getRequestubRequest(task.id);
   var progressPct = getTaskProgress(task);
-  var completedCount = taskSubtasks.filter(function(st) { return st.Completed; }).length;
+  var completedCount = RequestubRequest.filter(function(st) { return st.Completed; }).length;
   var blocked = isTaskBlocked(task.id);
   var taskComments = getTaskComments(task.id);
 
@@ -4024,12 +4024,12 @@ function renderTaskCard(task) {
     html += '<div class="task-card-desc">' + sanitize(task.Description) + '</div>';
   }
 
-  if (cd.subtasks && taskSubtasks.length > 0) {
+  if (cd.subRequest && RequestubRequest.length > 0) {
     var barClass = progressPct === 100 ? 'bar-done' : (progressPct >= 50 ? 'bar-progress' : 'bar-todo');
-    html += '<div class="task-card-subtasks">';
+    html += '<div class="task-card-subRequest">';
     html += '<div class="subtask-progress-row">';
     html += '<span class="subtask-icon">☑️</span>';
-    html += '<span class="subtask-count">' + completedCount + '/' + taskSubtasks.length + '</span>';
+    html += '<span class="subtask-count">' + completedCount + '/' + RequestubRequest.length + '</span>';
     html += '<div class="subtask-progress-bar"><div class="subtask-progress-fill ' + barClass + '" style="width:' + progressPct + '%"></div></div>';
     html += '</div></div>';
   }
@@ -4107,7 +4107,7 @@ function renderTaskCard(task) {
     html += '<div class="task-card-row" style="justify-content:flex-end;"><button class="btn btn-sm" style="font-size:10px;padding:2px 8px;background:#dbeafe;border:1px solid #93c5fd;border-radius:6px;cursor:pointer;" onclick="event.stopPropagation();restoreTask(' + task.id + ')" title="' + (currentLang === 'fr' ? 'Restaurer' : 'Restore') + '">♻️ ' + (currentLang === 'fr' ? 'Restaurer' : 'Restore') + '</button></div>';
   }
 
-  // A2 : panneau de détail déplié (description complète, sous-tâches, commentaires)
+  // A2 : panneau de détail déplié (description complète, sous-demandes, commentaires)
   if (_isExpanded) {
     var _fr = currentLang === 'fr';
     html += '<div class="task-card-detail" onclick="event.stopPropagation();">';
@@ -4115,9 +4115,9 @@ function renderTaskCard(task) {
       html += '<div class="tcd-section"><div class="tcd-label">' + (_fr ? 'Description' : 'Description') + '</div>';
       html += '<div class="tcd-desc">' + sanitize(task.Description) + '</div></div>';
     }
-    if (taskSubtasks.length > 0) {
-      html += '<div class="tcd-section"><div class="tcd-label">' + (_fr ? 'Sous-tâches' : 'Subtasks') + ' (' + completedCount + '/' + taskSubtasks.length + ')</div>';
-      taskSubtasks.forEach(function(st) {
+    if (RequestubRequest.length > 0) {
+      html += '<div class="tcd-section"><div class="tcd-label">' + (_fr ? 'Sous-demandes' : 'SubRequest') + ' (' + completedCount + '/' + RequestubRequest.length + ')</div>';
+      RequestubRequest.forEach(function(st) {
         html += '<label class="tcd-subtask"><input type="checkbox" ' + (st.Completed ? 'checked' : '') + ' onclick="event.stopPropagation();toggleSubtaskFromCard(' + st.id + ', this.checked)">';
         html += '<span' + (st.Completed ? ' style="text-decoration:line-through;color:#94a3b8;"' : '') + '>' + sanitize(st.Title) + '</span>';
         if (st.Due_Date) html += '<span class="tcd-st-date">📅 ' + formatDate(st.Due_Date) + '</span>';
@@ -4134,10 +4134,10 @@ function renderTaskCard(task) {
       });
       html += '</div>';
     }
-    if (!task.Description && taskSubtasks.length === 0 && taskComments.length === 0) {
+    if (!task.Description && RequestubRequest.length === 0 && taskComments.length === 0) {
       html += '<div style="color:#94a3b8;font-size:12px;padding:4px 0;">' + (_fr ? 'Aucun détail pour le moment' : 'No details yet') + '</div>';
     }
-    html += '<button class="btn btn-sm" style="margin-top:8px;font-size:11px;padding:3px 10px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;cursor:pointer;" onclick="event.stopPropagation();openEditTaskModal(' + task.id + ')">✏️ ' + (_fr ? 'Éditer la tâche' : 'Edit task') + '</button>';
+    html += '<button class="btn btn-sm" style="margin-top:8px;font-size:11px;padding:3px 10px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;cursor:pointer;" onclick="event.stopPropagation();openEditTaskModal(' + task.id + ')">✏️ ' + (_fr ? 'Éditer la demande' : 'Edit task') + '</button>';
     html += '</div>';
   }
 
@@ -4147,12 +4147,12 @@ function renderTaskCard(task) {
 
 async function archiveTask(taskId) {
   try {
-    var statusCol = getColumnName('tasks', 'status');
-    var task = tasks.find(function(t) { return t.id === taskId; });
+    var statusCol = getColumnName('Request', 'status');
+    var task = Request.find(function(t) { return t.id === taskId; });
     var oldStatus = task ? task.Status : '';
-    await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, { [statusCol]: 'archived' }]]);
+    await grist.docApi.applyUserActions([['UpdateRecord', Request_TABLE, taskId, { [statusCol]: 'archived' }]]);
     if (task) task.Status = 'archived';
-    showToast(currentLang === 'fr' ? 'Tâche archivée' : 'Task archived', 'success');
+    showToast(currentLang === 'fr' ? 'demande archivée' : 'Task archived', 'success');
     logActivity('task_archived', taskId, task ? task.Title : '', '');
     if (task && oldStatus !== 'archived') {
       await evaluateAutomationRules(Object.assign({}, task, { Status: 'archived' }), { status: { from: oldStatus, to: 'archived' } });
@@ -4165,12 +4165,12 @@ async function archiveTask(taskId) {
 
 async function restoreTask(taskId) {
   try {
-    var statusCol = getColumnName('tasks', 'status');
-    var task = tasks.find(function(t) { return t.id === taskId; });
+    var statusCol = getColumnName('Request', 'status');
+    var task = Request.find(function(t) { return t.id === taskId; });
     var oldStatus = task ? task.Status : '';
-    await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, { [statusCol]: 'todo' }]]);
+    await grist.docApi.applyUserActions([['UpdateRecord', Request_TABLE, taskId, { [statusCol]: 'todo' }]]);
     if (task) task.Status = 'todo';
-    showToast(currentLang === 'fr' ? 'Tâche restaurée' : 'Task restored', 'success');
+    showToast(currentLang === 'fr' ? 'demande restaurée' : 'Task restored', 'success');
     logActivity('task_restored', taskId, task ? task.Title : '', '');
     if (task && oldStatus !== 'todo') {
       await evaluateAutomationRules(Object.assign({}, task, { Status: 'todo' }), { status: { from: oldStatus, to: 'todo' } });
@@ -4182,7 +4182,7 @@ async function restoreTask(taskId) {
 }
 
 function toggleArchiveView() {
-  showArchivedTasks = !showArchivedTasks;
+  showArchivedRequest = !showArchivedRequest;
   updateArchiveButton();
   refreshAllViews();
 }
@@ -4190,10 +4190,10 @@ function toggleArchiveView() {
 function updateArchiveButton() {
   var btn = document.getElementById('archive-toggle-btn');
   if (!btn) return;
-  var archivedCount = tasks.filter(function(t) { return t.Status === 'archived'; }).length;
-  btn.classList.toggle('active', showArchivedTasks);
-  if (showArchivedTasks) {
-    btn.innerHTML = (currentLang === 'fr' ? '← Retour aux tâches' : '← Back to tasks');
+  var archivedCount = Request.filter(function(t) { return t.Status === 'archived'; }).length;
+  btn.classList.toggle('active', showArchivedRequest);
+  if (showArchivedRequest) {
+    btn.innerHTML = (currentLang === 'fr' ? '← Retour aux demandes' : '← Back to Request');
     btn.style.background = '#3b82f6';
     btn.style.color = 'white';
     btn.style.borderColor = '#3b82f6';
@@ -4247,12 +4247,12 @@ async function onDrop(e) {
     if (field === 'Status' && newValue === 'done' && isTaskBlocked(draggedTaskId)) {
       var blockers = getTaskDependencies(draggedTaskId).filter(function(b) { return b && b.Status !== 'done'; });
       var blockerNames = blockers.map(function(b) { return b.Title; }).join(', ');
-      showToast((currentLang === 'fr' ? 'Impossible : tâche bloquée par ' : 'Cannot move: blocked by ') + blockerNames, 'error');
+      showToast((currentLang === 'fr' ? 'Impossible : demande bloquée par ' : 'Cannot move: blocked by ') + blockerNames, 'error');
       draggedTaskId = null;
       return;
     }
     try {
-      var draggedTask = tasks.find(function(t) { return t.id === draggedTaskId; });
+      var draggedTask = Request.find(function(t) { return t.id === draggedTaskId; });
       var oldVal = draggedTask ? draggedTask[field] : '';
       var record = {};
       if (field === 'Project_Id') {
@@ -4260,10 +4260,10 @@ async function onDrop(e) {
       } else {
         record[field] = newValue;
       }
-      await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, draggedTaskId, record]]);
-      for (var i = 0; i < tasks.length; i++) {
-        if (tasks[i].id === draggedTaskId) {
-          tasks[i][field] = record[field];
+      await grist.docApi.applyUserActions([['UpdateRecord', Request_TABLE, draggedTaskId, record]]);
+      for (var i = 0; i < Request.length; i++) {
+        if (Request[i].id === draggedTaskId) {
+          Request[i][field] = record[field];
           break;
         }
       }
@@ -4297,7 +4297,7 @@ function sortTable(field) {
   renderTableView();
 }
 function renderTableView() {
-  // B3 : mémoriser l'état avant reconstruction (sous-tâches dépliées + scroll)
+  // B3 : mémoriser l'état avant reconstruction (sous-demandes dépliées + scroll)
   var _prevView = document.getElementById('table-view');
   var _expandedParents = [];
   if (_prevView) {
@@ -4314,7 +4314,7 @@ function renderTableView() {
 
   var search = (document.getElementById('table-search').value || '').toLowerCase();
 
-  var filtered = getFilteredTasks().filter(function(task) {
+  var filtered = getFilteredRequest().filter(function(task) {
     if (tableFilterStatuses.length && tableFilterStatuses.indexOf(task.Status) === -1) return false;
     if (tableFilterPriorities.length && tableFilterPriorities.indexOf(task.Priority) === -1) return false;
     if (search) {
@@ -4349,7 +4349,7 @@ function renderTableView() {
   var html = '<table class="data-table">';
   html += '<thead><tr>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Title\')">' + t('colTaskName') + sortIcon('Title') + '</th>';
-  html += '<th style="' + thStyle + '" onclick="sortTable(\'Project\')">' + (currentLang === 'fr' ? 'Projet' : 'Project') + sortIcon('Project') + '</th>';
+  html += '<th style="' + thStyle + '" onclick="sortTable(\'Project\')">' + (currentLang === 'fr' ? 'service' : 'Project') + sortIcon('Project') + '</th>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Status\')">' + t('colStatus') + sortIcon('Status') + '</th>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Priority\')">' + t('colPriority') + sortIcon('Priority') + '</th>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Assignee\')">' + t('colAssignee') + sortIcon('Assignee') + '</th>';
@@ -4364,15 +4364,15 @@ function renderTableView() {
     var overdueHtml = isOverdue(task) ? ' ⚠️' : '';
     var dotClass = task.Priority === 'high' ? 'dot-high' : (task.Priority === 'medium' ? 'dot-medium' : 'dot-low');
 
-    var taskSubtasks = getTaskSubtasks(task.id);
-    var completedSt = taskSubtasks.filter(function(st) { return st.Completed; }).length;
+    var RequestubRequest = getRequestubRequest(task.id);
+    var completedSt = RequestubRequest.filter(function(st) { return st.Completed; }).length;
 
     var taskProjColor = getProjectColor(task.Project_Id);
     var taskProjName = getProjectName(task.Project_Id);
     html += '<tr class="task-row clickable-row" onclick="openEditTaskModal(' + task.id + ')">';
     html += '<td><div style="display:flex;align-items:center;gap:8px;border-left:3px solid ' + taskProjColor + ';padding-left:6px;">';
-    if (taskSubtasks.length > 0) {
-      html += '<button class="toggle-btn" onclick="event.stopPropagation(); toggleSubtasks(' + task.id + ')" id="toggle-' + task.id + '">▶</button>';
+    if (RequestubRequest.length > 0) {
+      html += '<button class="toggle-btn" onclick="event.stopPropagation(); toggleSubRequest(' + task.id + ')" id="toggle-' + task.id + '">▶</button>';
     } else {
       html += '<span style="width:18px;"></span>';
     }
@@ -4381,7 +4381,7 @@ function renderTableView() {
     html += '</div></div></td>';
     html += '<td>' + (taskProjName ? '<span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:50%;background:' + taskProjColor + ';display:inline-block;"></span>' + sanitize(taskProjName) + '</span>' : '') + '</td>';
     html += '<td><span class="status-badge ' + statusClass + '">● ' + statusLabel(task.Status) + '</span>';
-    if (taskSubtasks.length > 0) html += ' <span class="st-badge">' + completedSt + '/' + taskSubtasks.length + '</span>';
+    if (RequestubRequest.length > 0) html += ' <span class="st-badge">' + completedSt + '/' + RequestubRequest.length + '</span>';
     html += '</td>';
     html += '<td><span class="priority-dot ' + dotClass + '"></span> ' + priorityLabel(task.Priority) + '</td>';
     var assigneeDisplay = task.Assignee ? task.Assignee.split(',').map(function(a) { return getUserDisplayName(a.trim()); }).join(', ') : '';
@@ -4393,19 +4393,19 @@ function renderTableView() {
     html += '</td>';
     html += '</tr>';
 
-    // Subtasks rows (hidden by default) — B1 : colonnes enrichies, sans pastille près du titre
+    // SubRequest rows (hidden by default) — B1 : colonnes enrichies, sans pastille près du titre
     var _nowSec = Math.floor(Date.now() / 1000);
-    for (var si = 0; si < taskSubtasks.length; si++) {
-      var st = taskSubtasks[si];
+    for (var si = 0; si < RequestubRequest.length; si++) {
+      var st = RequestubRequest[si];
       html += '<tr class="subtask-row clickable-row" data-parent="' + task.id + '" style="display:none;cursor:pointer;" onclick="openEditTaskModal(' + task.id + ', true); setTimeout(function(){startEditSubtask(' + st.id + ')},100);">';
       var stStatus = st.Status || (st.Completed ? 'done' : 'todo');
       var stDotClass = st.Priority === 'high' ? 'dot-high' : (st.Priority === 'medium' ? 'dot-medium' : 'dot-low');
       var stAssignee = st.Assignee ? st.Assignee.split(',').map(function(a) { return getUserDisplayName(a.trim()); }).join(', ') : '';
       var stOverdue = st.Due_Date && !st.Completed && st.Due_Date < _nowSec;
-      // Colonne Tâche (titre)
+      // Colonne demande (titre)
       var stMilestoneMark = (st.Type === 'milestone') ? '<span title="Jalon" style="color:#7c3aed;margin-right:3px;">◆</span>' : '';
       html += '<td><div class="subtask-indent"><span class="subtask-arrow">└</span><input type="checkbox" class="subtask-checkbox" ' + (st.Completed ? 'checked' : '') + ' onclick="event.stopPropagation();toggleSubtask(' + st.id + ', ' + !st.Completed + ')" style="cursor:pointer;width:14px;height:14px;margin-right:6px;flex-shrink:0;" />' + stMilestoneMark + '<span class="subtask-name' + (st.Completed ? ' completed' : '') + '">' + sanitize(st.Title) + '</span></div></td>';
-      // Projet (vide : hérité du parent)
+      // service (vide : hérité du parent)
       html += '<td></td>';
       // Statut (couleur réelle du statut personnalisé)
       var stStatusDef = getKanbanStatuses().find(function(s) { return s.key === stStatus; });
@@ -4413,7 +4413,7 @@ function renderTableView() {
       html += '<td><span class="status-badge" style="background:' + stStatusColor + '20;color:' + stStatusColor + ';">● ' + statusLabel(stStatus) + '</span></td>';
       // Priorité
       html += '<td><span class="priority-dot ' + stDotClass + '"></span> ' + priorityLabel(st.Priority) + '</td>';
-      // Assigné à
+      // Attribué à
       html += '<td>' + (stAssignee ? '<span class="assignee-chip">👤 ' + sanitize(stAssignee) + '</span>' : '') + '</td>';
       // Date de début
       html += '<td>' + (st.Start_Date ? formatDate(st.Start_Date) : '') + '</td>';
@@ -4426,13 +4426,13 @@ function renderTableView() {
   }
 
   if (filtered.length === 0) {
-    html += '<tr><td colspan="8" style="text-align:center;padding:30px;color:#94a3b8;">' + t('noTasks') + '</td></tr>';
+    html += '<tr><td colspan="8" style="text-align:center;padding:30px;color:#94a3b8;">' + t('noRequest') + '</td></tr>';
   }
 
   html += '</tbody></table>';
   document.getElementById('table-view').innerHTML = html;
 
-  // B3 : restaurer le dépliage des sous-tâches puis la position de scroll
+  // B3 : restaurer le dépliage des sous-demandes puis la position de scroll
   _expandedParents.forEach(function(pid) {
     var rows = document.querySelectorAll('.subtask-row[data-parent="' + pid + '"]');
     var btn = document.getElementById('toggle-' + pid);
@@ -4442,7 +4442,7 @@ function renderTableView() {
   if (_scrollEl && _scrollTop) _scrollEl.scrollTop = _scrollTop;
 }
 
-function toggleSubtasks(taskId) {
+function toggleSubRequest(taskId) {
   var rows = document.querySelectorAll('.subtask-row[data-parent="' + taskId + '"]');
   var btn = document.getElementById('toggle-' + taskId);
   var isExpanded = rows.length > 0 && rows[0].style.display !== 'none';
@@ -4456,14 +4456,14 @@ function toggleSubtasks(taskId) {
   }
 }
 
-function expandAllSubtasks() {
+function expandAllSubRequest() {
   var rows = document.querySelectorAll('.subtask-row');
   var btns = document.querySelectorAll('.toggle-btn');
   for (var i = 0; i < rows.length; i++) rows[i].style.display = 'table-row';
   for (var i = 0; i < btns.length; i++) { btns[i].textContent = '▼'; btns[i].classList.add('expanded'); }
 }
 
-function collapseAllSubtasks() {
+function collapseAllSubRequest() {
   var rows = document.querySelectorAll('.subtask-row');
   var btns = document.querySelectorAll('.toggle-btn');
   for (var i = 0; i < rows.length; i++) rows[i].style.display = 'none';
@@ -4472,24 +4472,24 @@ function collapseAllSubtasks() {
 
 async function toggleSubtaskFromTable(subtaskId, completed) {
   // Find parent task ID before updating
-  var subtask = subtasks.find(function(st) { return st.id === subtaskId; });
+  var subtask = subRequest.find(function(st) { return st.id === subtaskId; });
   var parentTaskId = subtask ? subtask.Parent_Task_Id : null;
   
   // Remember which toggles are expanded
-  var expandedTasks = [];
+  var expandedRequest = [];
   document.querySelectorAll('.toggle-btn.expanded').forEach(function(btn) {
     var taskId = btn.id.replace('toggle-', '');
-    expandedTasks.push(parseInt(taskId));
+    expandedRequest.push(parseInt(taskId));
   });
   
   try {
     await grist.docApi.applyUserActions([
-      ['UpdateRecord', SUBTASKS_TABLE, subtaskId, { Completed: completed }]
+      ['UpdateRecord', SUBRequest_TABLE, subtaskId, { Completed: completed }]
     ]);
     // Update local state
-    for (var i = 0; i < subtasks.length; i++) {
-      if (subtasks[i].id === subtaskId) {
-        subtasks[i].Completed = completed;
+    for (var i = 0; i < subRequest.length; i++) {
+      if (subRequest[i].id === subtaskId) {
+        subRequest[i].Completed = completed;
         break;
       }
     }
@@ -4497,7 +4497,7 @@ async function toggleSubtaskFromTable(subtaskId, completed) {
     renderTableView();
     
     // Restore expanded toggles
-    expandedTasks.forEach(function(taskId) {
+    expandedRequest.forEach(function(taskId) {
       var rows = document.querySelectorAll('.subtask-row[data-parent="' + taskId + '"]');
       var btn = document.getElementById('toggle-' + taskId);
       for (var i = 0; i < rows.length; i++) {
@@ -4539,24 +4539,24 @@ function getWeekStart(year, weekNum) {
   return monday;
 }
 
-function toggleGanttSubtasks(taskId) {
-  if (expandedGanttTasks[taskId]) delete expandedGanttTasks[taskId];
-  else expandedGanttTasks[taskId] = true;
+function toggleGanttSubRequest(taskId) {
+  if (expandedGanttRequest[taskId]) delete expandedGanttRequest[taskId];
+  else expandedGanttRequest[taskId] = true;
   renderGanttView();
 }
 
-// Sous-tâches du Gantt : seulement celles avec une Due_Date (sinon impossible à positionner)
-function getGanttSubtasks(taskId) {
-  return getTaskSubtasks(taskId).filter(function(st) { return st.Due_Date; });
+// Sous-demandes du Gantt : seulement celles avec une Due_Date (sinon impossible à positionner)
+function getGanttSubRequest(taskId) {
+  return getRequestubRequest(taskId).filter(function(st) { return st.Due_Date; });
 }
 
-// Construit la <td> de libellé d'une sous-tâche (indentée, allégée, cliquable)
+// Construit la <td> de libellé d'une sous-demande (indentée, allégée, cliquable)
 function renderGanttSubtaskLabelCell(st, parentTaskId) {
   var completedClass = st.Completed ? ' style="text-decoration:line-through;opacity:0.5;"' : '';
   var html = '<td class="gantt-task-label gantt-subtask-cell gantt-clickable-label" onclick="openEditTaskModal(' + parentTaskId + ')"' + completedClass + '>';
   html += '<span style="font-size:10px;color:#94a3b8;margin-right:4px;">' + (isMilestone(st) ? '◆' : '↳') + '</span>';
   html += '<span style="font-size:11px;' + (isMilestone(st) ? 'font-weight:700;' : '') + '">' + sanitize(st.Title) + '</span>';
-  // A1 : indicateur de dépendance entre sous-tâches
+  // A1 : indicateur de dépendance entre sous-demandes
   var stBlocker = getSubtaskBlocker(st);
   if (stBlocker) {
     var depColor = stBlocker.Completed ? '#94a3b8' : '#ef4444';
@@ -4570,7 +4570,7 @@ function renderGanttSubtaskLabelCell(st, parentTaskId) {
 
 function isMilestone(st) { return st && st.Type === 'milestone'; }
 
-// Couleur de barre pour une sous-tâche (verte si complétée, sinon hérite du statut parent)
+// Couleur de barre pour une sous-demande (verte si complétée, sinon hérite du statut parent)
 // B2 : un jalon reçoit en plus la classe gantt-bar-milestone (rendu losange, tous modes)
 function ganttSubtaskBarClass(st, parentTask) {
   var base;
@@ -4580,7 +4580,7 @@ function ganttSubtaskBarClass(st, parentTask) {
   return base + (isMilestone(st) ? ' gantt-bar-milestone' : '');
 }
 
-// Bornes de la sous-tâche. B2 : un jalon est une date unique (Due_Date) → start = end.
+// Bornes de la sous-demande. B2 : un jalon est une date unique (Due_Date) → start = end.
 function getGanttSubtaskRange(st, parentTask) {
   var stEnd = st.Due_Date ? new Date(st.Due_Date * 1000) : (parentTask.Due_Date ? new Date(parentTask.Due_Date * 1000) : null);
   if (!stEnd) return { start: new Date(), end: new Date() };
@@ -4597,10 +4597,10 @@ function getGanttSubtaskRange(st, parentTask) {
 }
 
 // Slot de toggle à insérer dans la cellule de libellé. Toujours rendu (largeur fixe)
-// pour que tous les titres soient alignés, même quand la tâche n'a pas de sous-tâche.
+// pour que tous les titres soient alignés, même quand la demande n'a pas de sous-demande.
 function ganttDepBadge(task) {
   var deps = getTaskDependencies(task.id);
-  var blocks = getTasksDependingOn(task.id);
+  var blocks = getRequestDependingOn(task.id);
   var html = '';
   if (deps.length > 0) html += ' <span title="' + (currentLang === 'fr' ? 'Dépend de: ' : 'Depends on: ') + deps.map(function(d) { return sanitize(d.Title); }).join(', ') + '" style="font-size:10px;color:#8b5cf6;cursor:help;">🔗' + deps.length + '</span>';
   if (blocks.length > 0) html += ' <span title="' + (currentLang === 'fr' ? 'Bloque: ' : 'Blocks: ') + blocks.map(function(d) { return sanitize(d.Title); }).join(', ') + '" style="font-size:10px;color:#f59e0b;cursor:help;">⏳' + blocks.length + '</span>';
@@ -4608,12 +4608,12 @@ function ganttDepBadge(task) {
 }
 
 function ganttChevron(task) {
-  if (getGanttSubtasks(task.id).length === 0) {
+  if (getGanttSubRequest(task.id).length === 0) {
     return '<span class="gantt-toggle gantt-toggle-empty"></span>';
   }
-  var expanded = !!expandedGanttTasks[task.id];
+  var expanded = !!expandedGanttRequest[task.id];
   var icon = expanded ? '▼' : '▶';
-  return '<button type="button" class="gantt-toggle' + (expanded ? ' gantt-toggle-open' : '') + '" onclick="event.stopPropagation();toggleGanttSubtasks(' + task.id + ')" title="' + (currentLang === 'fr' ? 'Sous-tâches' : 'Subtasks') + '">' + icon + '</button>';
+  return '<button type="button" class="gantt-toggle' + (expanded ? ' gantt-toggle-open' : '') + '" onclick="event.stopPropagation();toggleGanttSubRequest(' + task.id + ')" title="' + (currentLang === 'fr' ? 'Sous-demandes' : 'SubRequest') + '">' + icon + '</button>';
 }
 
 function getTaskExtensionEnd(task) {
@@ -4740,26 +4740,26 @@ function renderGanttView() {
     btn.classList.toggle('active', btn.getAttribute('data-gantt-mode') === ganttMode);
   });
 
-  var tasksWithDates = getFilteredTasks().filter(function(task) { return task.Start_Date || task.Due_Date; });
+  var RequestWithDates = getFilteredRequest().filter(function(task) { return task.Start_Date || task.Due_Date; });
   // A8 : tri du Gantt
   var ganttSortSel = document.getElementById('gantt-sort');
   if (ganttSortSel && ganttSortSel.value !== ganttSort) ganttSortSel.value = ganttSort;
   if (ganttSort === 'priority') {
     var prioOrder = { high: 0, medium: 1, low: 2 };
-    tasksWithDates.sort(function(a, b) {
+    RequestWithDates.sort(function(a, b) {
       var pa = prioOrder[a.Priority] !== undefined ? prioOrder[a.Priority] : 3;
       var pb = prioOrder[b.Priority] !== undefined ? prioOrder[b.Priority] : 3;
       return pa - pb;
     });
   } else if (ganttSort === 'alpha') {
-    tasksWithDates.sort(function(a, b) { return (a.Title || '').localeCompare(b.Title || ''); });
+    RequestWithDates.sort(function(a, b) { return (a.Title || '').localeCompare(b.Title || ''); });
   } else if (ganttSort === 'due') {
-    tasksWithDates.sort(function(a, b) {
+    RequestWithDates.sort(function(a, b) {
       var da = a.Due_Date || a.Start_Date || 0, db = b.Due_Date || b.Start_Date || 0;
       return da - db;
     });
   }
-  document.getElementById('gantt-task-count').textContent = '(' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + ')';
+  document.getElementById('gantt-task-count').textContent = '(' + RequestWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request') + ')';
 
   var today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -4829,8 +4829,8 @@ function renderGanttView() {
     }
 
     // Task rows
-    for (var ti = 0; ti < tasksWithDates.length; ti++) {
-      var task = tasksWithDates[ti];
+    for (var ti = 0; ti < RequestWithDates.length; ti++) {
+      var task = RequestWithDates[ti];
       var barClass = getGanttBarClass(task);
       var barCustomColor = getGanttBarColor(task);
       var barCustomStyle = barCustomColor ? 'background:' + barCustomColor + ';color:white;' : '';
@@ -4867,8 +4867,8 @@ function renderGanttView() {
       html += '</tr>';
 
       // === Lignes sous-taches (mode Semaines) ===
-      if (expandedGanttTasks[task.id]) {
-        var sts = getGanttSubtasks(task.id);
+      if (expandedGanttRequest[task.id]) {
+        var sts = getGanttSubRequest(task.id);
         for (var sti = 0; sti < sts.length; sti++) {
           var st = sts[sti];
           var stRange = getGanttSubtaskRange(st, task);
@@ -4892,7 +4892,7 @@ function renderGanttView() {
     var viewEndMonth = monthNames[weeks[weeks.length - 1].start.getMonth()];
     html += '</tbody></table>';
     html += '<div class="gantt-footer">';
-    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
+    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + RequestWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request') + '</span>';
     html += '<span>' + t('ganttViewRange') + ' ' + viewStartMonth + ' - ' + viewEndMonth + ' ' + ganttYear + '</span>';
     html += '</div></div>';
 
@@ -4928,8 +4928,8 @@ function renderGanttView() {
     }
     html += '</tr></thead><tbody>';
 
-    for (var ti = 0; ti < tasksWithDates.length; ti++) {
-      var task = tasksWithDates[ti];
+    for (var ti = 0; ti < RequestWithDates.length; ti++) {
+      var task = RequestWithDates[ti];
       var barClass = getGanttBarClass(task);
       var barCustomColor = getGanttBarColor(task);
       var barCustomStyle = barCustomColor ? 'background:' + barCustomColor + ';color:white;' : '';
@@ -4960,7 +4960,7 @@ function renderGanttView() {
         for (var yme = 0; yme < totalMonths; yme++) {
           var yre = startYr + Math.floor(yme / 12); var moe = yme % 12;
           var mse = new Date(yre, moe, 1); var mee = new Date(yre, moe + 1, 0, 23, 59, 59, 999);
-          // Démarrer la prolongation le mois SUIVANT la fin de tâche (évite le chevauchement)
+          // Démarrer la prolongation le mois SUIVANT la fin de demande (évite le chevauchement)
           if (mse > yTEnd && yExtEnd >= mse) { if (yExtStart === -1) yExtStart = yme; yExtEndIdx = yme; }
         }
       }
@@ -4983,8 +4983,8 @@ function renderGanttView() {
       }
       html += '</tr>';
 
-      if (expandedGanttTasks[task.id]) {
-        var sts = getGanttSubtasks(task.id);
+      if (expandedGanttRequest[task.id]) {
+        var sts = getGanttSubRequest(task.id);
         for (var sti = 0; sti < sts.length; sti++) {
           var st = sts[sti];
           var stRange = getGanttSubtaskRange(st, task);
@@ -5017,7 +5017,7 @@ function renderGanttView() {
     html += '</tbody></table>';
     html += '<div class="gantt-footer">';
     var rangeLabel = ganttMode === 'twoyears' ? (startYr + ' - ' + (startYr + 1)) : String(startYr);
-    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
+    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + RequestWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request') + '</span>';
     html += '<span>' + t('ganttViewRange') + ' ' + rangeLabel + '</span>';
     html += '</div></div>';
 
@@ -5050,8 +5050,8 @@ function renderGanttView() {
     }
     html += '</tr></thead><tbody>';
 
-    for (var ti = 0; ti < tasksWithDates.length; ti++) {
-      var task = tasksWithDates[ti];
+    for (var ti = 0; ti < RequestWithDates.length; ti++) {
+      var task = RequestWithDates[ti];
       var barClass = getGanttBarClass(task);
       var barCustomColor = getGanttBarColor(task);
       var barCustomStyle = barCustomColor ? 'background:' + barCustomColor + ';color:white;' : '';
@@ -5088,8 +5088,8 @@ function renderGanttView() {
       html += '</tr>';
 
       // === Lignes sous-taches (mode Mois) ===
-      if (expandedGanttTasks[task.id]) {
-        var sts = getGanttSubtasks(task.id);
+      if (expandedGanttRequest[task.id]) {
+        var sts = getGanttSubRequest(task.id);
         for (var sti = 0; sti < sts.length; sti++) {
           var st = sts[sti];
           var stRange = getGanttSubtaskRange(st, task);
@@ -5114,7 +5114,7 @@ function renderGanttView() {
 
     html += '</tbody></table>';
     html += '<div class="gantt-footer">';
-    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
+    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + RequestWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request') + '</span>';
     html += '<span>' + t('ganttViewRange') + ' ' + monthNames[0] + ' - ' + monthNames[11] + ' ' + ganttYear + '</span>';
     html += '</div></div>';
 
@@ -5172,8 +5172,8 @@ function renderGanttView() {
   }
   html += '</tr></thead><tbody>';
 
-  for (var ti = 0; ti < tasksWithDates.length; ti++) {
-    var task = tasksWithDates[ti];
+  for (var ti = 0; ti < RequestWithDates.length; ti++) {
+    var task = RequestWithDates[ti];
     var barClass = getGanttBarClass(task);
     var barCustomColor = getGanttBarColor(task);
     var barCustomStyle = barCustomColor ? 'background:' + barCustomColor + ';color:white;' : '';
@@ -5238,9 +5238,9 @@ function renderGanttView() {
 
     html += '</tr>';
 
-    // === Lignes sous-tâches (mode Jours) ===
-    if (expandedGanttTasks[task.id]) {
-      var sts = getGanttSubtasks(task.id);
+    // === Lignes sous-demandes (mode Jours) ===
+    if (expandedGanttRequest[task.id]) {
+      var sts = getGanttSubRequest(task.id);
       for (var sti = 0; sti < sts.length; sti++) {
         var st = sts[sti];
         var stRange = getGanttSubtaskRange(st, task);
@@ -5278,7 +5278,7 @@ function renderGanttView() {
   var viewStart = monthNames[startDate.getMonth()];
   var viewEnd = monthNames[endDate.getMonth()];
   html += '<div class="gantt-footer">';
-  html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
+  html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + RequestWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request') + '</span>';
   html += '<span>' + t('ganttViewRange') + ' ' + viewStart + ' - ' + viewEnd + ' ' + ganttYear + '</span>';
   html += '</div></div>';
 
@@ -5362,13 +5362,13 @@ function ganttToday() {
 }
 
 function ganttExpandAll() {
-  var tasksWithSubs = tasks.filter(function(t) { return getGanttSubtasks(t.id).length > 0; });
-  tasksWithSubs.forEach(function(t) { expandedGanttTasks[t.id] = true; });
+  var RequestWithSubs = Request.filter(function(t) { return getGanttSubRequest(t.id).length > 0; });
+  RequestWithSubs.forEach(function(t) { expandedGanttRequest[t.id] = true; });
   renderGanttView();
 }
 
 function ganttCollapseAll() {
-  expandedGanttTasks = {};
+  expandedGanttRequest = {};
   renderGanttView();
 }
 
@@ -5487,7 +5487,7 @@ function renderTemplatesView() {
   }
 
   if (filtered.length === 0) {
-    html = '<div style="text-align:center;padding:40px;color:#94a3b8;">' + t('noTasks') + '</div>';
+    html = '<div style="text-align:center;padding:40px;color:#94a3b8;">' + t('noRequest') + '</div>';
   }
 
   document.getElementById('templates-list').innerHTML = html;
@@ -6268,29 +6268,29 @@ var editAssignees = [];
 var editAccountable = [];
 var editConsulted = [];
 var editInformed = [];
-var draftTaskId = null; // id de la tâche brouillon en cours de création (approche "créer puis éditer")
+var draftTaskId = null; // id de la demande brouillon en cours de création (approche "créer puis éditer")
 
-// Crée une tâche brouillon immédiatement puis ouvre l'éditeur COMPLET.
+// Crée une demande brouillon immédiatement puis ouvre l'éditeur COMPLET.
 // À la fermeture : si un titre a été saisi -> enregistrée ; sinon -> brouillon supprimé.
 async function startNewTask(defaultStatus, dateStr, prefill) {
   prefill = prefill || {};
   var statuses = getKanbanStatuses();
   var record = {};
-  setField(record, 'tasks', 'title', prefill.title || '');
-  setField(record, 'tasks', 'status', defaultStatus || (statuses[0] && statuses[0].key) || 'todo');
-  setField(record, 'tasks', 'priority', prefill.priority || 'medium');
-  if (prefill.description) setField(record, 'tasks', 'description', prefill.description);
-  if (prefill.category) setField(record, 'tasks', 'category', prefill.category);
-  if (prefill.group) setField(record, 'tasks', 'group', prefill.group);
-  if (prefill.tag) setField(record, 'tasks', 'tag', prefill.tag);
-  if (prefill.recurrence && prefill.recurrence !== 'none') setField(record, 'tasks', 'recurrence', prefill.recurrence);
-  if (prefill.estimatedHours) setField(record, 'tasks', 'estimatedHours', prefill.estimatedHours);
-  if (currentProjectId) setField(record, 'tasks', 'projectId', currentProjectId);
-  setField(record, 'tasks', 'createdAt', Math.floor(Date.now() / 1000));
+  setField(record, 'Request', 'title', prefill.title || '');
+  setField(record, 'Request', 'status', defaultStatus || (statuses[0] && statuses[0].key) || 'todo');
+  setField(record, 'Request', 'priority', prefill.priority || 'medium');
+  if (prefill.description) setField(record, 'Request', 'description', prefill.description);
+  if (prefill.category) setField(record, 'Request', 'category', prefill.category);
+  if (prefill.group) setField(record, 'Request', 'group', prefill.group);
+  if (prefill.tag) setField(record, 'Request', 'tag', prefill.tag);
+  if (prefill.recurrence && prefill.recurrence !== 'none') setField(record, 'Request', 'recurrence', prefill.recurrence);
+  if (prefill.estimatedHours) setField(record, 'Request', 'estimatedHours', prefill.estimatedHours);
+  if (currentProjectId) setField(record, 'Request', 'projectId', currentProjectId);
+  setField(record, 'Request', 'createdAt', Math.floor(Date.now() / 1000));
   record.Auto_Extend = true;
-  if (dateStr) { setField(record, 'tasks', 'startDate', toEpoch(dateStr)); setField(record, 'tasks', 'dueDate', toEpoch(dateStr)); }
+  if (dateStr) { setField(record, 'Request', 'startDate', toEpoch(dateStr)); setField(record, 'Request', 'dueDate', toEpoch(dateStr)); }
   try {
-    var res = await grist.docApi.applyUserActions([['AddRecord', TASKS_TABLE, null, record]]);
+    var res = await grist.docApi.applyUserActions([['AddRecord', Request_TABLE, null, record]]);
     var newId = (res && res.retValues && res.retValues[0]) || null;
     if (!newId) { showToast('Error', 'error'); return; }
     draftTaskId = newId;
@@ -6300,7 +6300,7 @@ async function startNewTask(defaultStatus, dateStr, prefill) {
 }
 
 function openEditTaskModal(taskId, preserveAssignees) {
-  var task = tasks.find(function(t) { return t.id === taskId; });
+  var task = Request.find(function(t) { return t.id === taskId; });
   if (!task) return;
 
   if (!preserveAssignees) {
@@ -6319,7 +6319,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   var startVal = task.Start_Date ? new Date(task.Start_Date * 1000).toISOString().split('T')[0] : '';
   var dueVal = task.Due_Date ? new Date(task.Due_Date * 1000).toISOString().split('T')[0] : '';
 
-  // Progress calculation based on subtasks
+  // Progress calculation based on subRequest
   var progressPct = getTaskProgress(task);
   var barClass = progressPct === 100 ? 'bar-done' : (progressPct >= 50 ? 'bar-progress' : 'bar-todo');
 
@@ -6457,21 +6457,21 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="detail-field-value"><select id="task-tag">' + tagOptions + '</select></div>';
   html += '</div>';
 
-  // === SUBTASKS SECTION ===
-  var taskSubtasks = getTaskSubtasks(task.id);
-  html += '<div class="subtasks-section">';
-  html += '<div class="subtasks-header">';
+  // === SUBRequest SECTION ===
+  var RequestubRequest = getRequestubRequest(task.id);
+  html += '<div class="subRequest-section">';
+  html += '<div class="subRequest-header">';
   html += '<span class="detail-field-icon">☑️</span>';
-  html += '<span class="detail-field-label">' + t('subtasks') + '</span>';
-  html += '<span class="subtask-badge">' + taskSubtasks.filter(function(st) { return st.Completed; }).length + '/' + taskSubtasks.length + '</span>';
+  html += '<span class="detail-field-label">' + t('subRequest') + '</span>';
+  html += '<span class="subtask-badge">' + RequestubRequest.filter(function(st) { return st.Completed; }).length + '/' + RequestubRequest.length + '</span>';
   html += '</div>';
   
-  html += '<div class="subtasks-list" id="subtasks-list">';
-  if (taskSubtasks.length === 0) {
-    html += '<div class="subtasks-empty">' + t('noSubtasks') + '</div>';
+  html += '<div class="subRequest-list" id="subRequest-list">';
+  if (RequestubRequest.length === 0) {
+    html += '<div class="subRequest-empty">' + t('noSubRequest') + '</div>';
   } else {
-    for (var si = 0; si < taskSubtasks.length; si++) {
-      var st = taskSubtasks[si];
+    for (var si = 0; si < RequestubRequest.length; si++) {
+      var st = RequestubRequest[si];
       var stBlocked = isSubtaskBlocked(st);
       var stBlocker = getSubtaskBlocker(st);
       var stDueDateStr = st.Due_Date ? new Date(st.Due_Date * 1000).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
@@ -6514,7 +6514,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
       html += '<button class="subtask-delete" onclick="deleteSubtask(' + st.id + ', ' + task.id + ')" title="' + t('delete') + '">✕</button>';
       html += '</div>';
       // Edit view (hidden by default)
-      // Assignés multiples : liste de cases à cocher (comme les tâches, séparés par virgule)
+      // Prises en charges multiples : liste de cases à cocher (comme les demandes, séparés par virgule)
       var stAssignees = (st.Assignee || '').split(',').map(function(a) { return a.trim(); }).filter(Boolean);
       var assigneeListHtml = '<div class="st-assignee-list" id="st-assignee-' + st.id + '" style="display:flex;flex-wrap:wrap;gap:4px 10px;max-height:84px;overflow-y:auto;padding:6px 8px;border:1px solid #e2e8f0;border-radius:8px;">';
       if (users.length === 0) {
@@ -6533,14 +6533,14 @@ function openEditTaskModal(taskId, preserveAssignees) {
       var prLbl = { high: t('priorityHigh'), medium: t('priorityMedium'), low: t('priorityLow') };
       html += '<div class="subtask-edit-form" id="st-edit-' + st.id + '">';
       // Title
-      html += '<input type="text" class="subtask-edit-title" id="st-title-' + st.id + '" value="' + sanitize(st.Title) + '" placeholder="' + (currentLang === 'fr' ? 'Titre de la sous-tâche...' : 'Subtask title...') + '">';
+      html += '<input type="text" class="subtask-edit-title" id="st-title-' + st.id + '" value="' + sanitize(st.Title) + '" placeholder="' + (currentLang === 'fr' ? 'Titre de la sous-demande...' : 'Subtask title...') + '">';
       // Description
       html += '<textarea class="subtask-edit-title" id="st-desc-' + st.id + '" rows="2" placeholder="' + (currentLang === 'fr' ? 'Description (optionnel)...' : 'Description (optional)...') + '" style="resize:vertical;">' + sanitize(st.Description || '') + '</textarea>';
-      // B2 : type (sous-tâche / jalon)
+      // B2 : type (sous-demande / jalon)
       var stType = st.Type || 'subtask';
       html += '<div><div class="st-pill-label">' + (currentLang === 'fr' ? 'Type' : 'Type') + '</div>';
       html += '<div class="st-pill-group">';
-      html += '<button type="button" class="st-pill' + (stType !== 'milestone' ? ' active-progress' : '') + '" onclick="setStType(' + st.id + ',\'subtask\',this)">' + (currentLang === 'fr' ? '↳ Sous-tâche' : '↳ Subtask') + '</button>';
+      html += '<button type="button" class="st-pill' + (stType !== 'milestone' ? ' active-progress' : '') + '" onclick="setStType(' + st.id + ',\'subtask\',this)">' + (currentLang === 'fr' ? '↳ Sous-demande' : '↳ Subtask') + '</button>';
       html += '<button type="button" class="st-pill' + (stType === 'milestone' ? ' active-progress' : '') + '" onclick="setStType(' + st.id + ',\'milestone\',this)">' + (currentLang === 'fr' ? '◆ Jalon (1 date)' : '◆ Milestone (1 date)') + '</button>';
       html += '</div>';
       html += '<input type="hidden" id="st-type-' + st.id + '" value="' + stType + '">';
@@ -6567,7 +6567,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
       html += '</div>';
       html += '<input type="hidden" id="st-priority-' + st.id + '" value="' + stPriority + '">';
       html += '</div>';
-      // Assignés (multiples)
+      // Prises en charges (multiples)
       html += '<div>';
       html += '<div class="st-pill-label">' + t('subtaskAssignee') + (currentLang === 'fr' ? ' (plusieurs possibles)' : ' (multiple)') + '</div>';
       if (users.length > 1) {
@@ -6616,7 +6616,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
 
   // === DEPENDENCIES SECTION ===
   var taskDeps = getTaskDependencies(task.id);
-  var taskBlocks = getTasksDependingOn(task.id);
+  var taskBlocks = getRequestDependingOn(task.id);
   html += '<div class="dependencies-section">';
   html += '<div class="dependencies-header">';
   html += '<span class="detail-field-icon">🔗</span>';
@@ -6643,7 +6643,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   }
   html += '</div>';
   
-  // Blocks (tasks depending on this one)
+  // Blocks (Request depending on this one)
   if (taskBlocks.length > 0) {
     html += '<div class="dep-subsection">';
     html += '<div class="dep-label">' + t('blocks') + ':</div>';
@@ -6662,11 +6662,11 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="dep-add-row">';
   html += '<select id="dep-select" onchange="if (this.value) addDependency(' + task.id + ')">';
   html += '<option value="">-- ' + t('selectTask') + ' --</option>';
-  var availableTasks = getFilteredTasks().filter(function(t) {
+  var availableRequest = getFilteredRequest().filter(function(t) {
     return t.id !== task.id && !taskDeps.some(function(d) { return d.id === t.id; });
   });
-  for (var ti = 0; ti < availableTasks.length; ti++) {
-    html += '<option value="' + availableTasks[ti].id + '">' + sanitize(availableTasks[ti].Title) + '</option>';
+  for (var ti = 0; ti < availableRequest.length; ti++) {
+    html += '<option value="' + availableRequest[ti].id + '">' + sanitize(availableRequest[ti].Title) + '</option>';
   }
   html += '</select>';
   html += '<button class="dep-add-btn" onclick="addDependency(' + task.id + ')">+</button>';
@@ -6782,7 +6782,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
 
   // Summary card
   html += '<div class="detail-card">';
-  html += '<h4>📋 ' + t('taskSummary') + '</h4>';
+  html += '<h4>📋 ' + t('Requestummary') + '</h4>';
   html += '<div class="detail-info-row"><span class="info-label">' + t('fieldStatus') + ' :</span><span class="info-value" style="color:' + (task.Status === 'done' ? '#22c55e' : (task.Status === 'progress' ? '#3b82f6' : '#f59e0b')) + '">' + statusLabel(task.Status) + '</span></div>';
   html += '<div class="detail-info-row"><span class="info-label">' + t('fieldPriority') + ' :</span><span class="info-value" style="color:' + dotColor + '">' + priorityLabel(task.Priority) + '</span></div>';
   html += '<div class="detail-info-row"><span class="info-label">' + t('fieldAssignee') + ' :</span><span class="info-value">' + editAssignees.length + '</span></div>';
@@ -6970,11 +6970,11 @@ function addAssigneeChip() { addRaciChip('editAssignees', 'assignee'); }
 function removeAssigneeChip(index) { removeRaciChip('editAssignees', index, 'assignee'); }
 
 function openSubtaskDepModal(subtaskId, taskId) {
-  var subtask = subtasks.find(function(st) { return st.id === subtaskId; });
+  var subtask = subRequest.find(function(st) { return st.id === subtaskId; });
   if (!subtask) return;
   
-  var taskSubtasks = getTaskSubtasks(taskId);
-  var otherSubtasks = taskSubtasks.filter(function(st) { return st.id !== subtaskId; });
+  var RequestubRequest = getRequestubRequest(taskId);
+  var otherSubRequest = RequestubRequest.filter(function(st) { return st.id !== subtaskId; });
   
   var html = '<div class="modal-overlay" onclick="closeModal(event)">';
   html += '<div class="modal" style="max-width:400px;" onclick="event.stopPropagation()">';
@@ -6985,8 +6985,8 @@ function openSubtaskDepModal(subtaskId, taskId) {
   html += '<div class="form-group"><label>' + t('blockedBy') + '</label>';
   html += '<select id="subtask-blocker-select">';
   html += '<option value="">-- ' + t('noDependencies') + ' --</option>';
-  for (var i = 0; i < otherSubtasks.length; i++) {
-    var ost = otherSubtasks[i];
+  for (var i = 0; i < otherSubRequest.length; i++) {
+    var ost = otherSubRequest[i];
     var sel = subtask.Blocked_By_Subtask_Id === ost.id ? ' selected' : '';
     html += '<option value="' + ost.id + '"' + sel + '>' + sanitize(ost.Title) + '</option>';
   }
@@ -7007,7 +7007,7 @@ async function updateSubtaskDep(subtaskId, taskId) {
   
   try {
     await grist.docApi.applyUserActions([
-      ['UpdateRecord', SUBTASKS_TABLE, subtaskId, { Blocked_By_Subtask_Id: blockerId }]
+      ['UpdateRecord', SUBRequest_TABLE, subtaskId, { Blocked_By_Subtask_Id: blockerId }]
     ]);
     showToast(t('dependencyAdded'), 'success');
     closeModalForce();
@@ -7020,7 +7020,7 @@ async function updateSubtaskDep(subtaskId, taskId) {
 }
 
 async function quickAction(taskId, newStatus) {
-  var task = tasks.find(function(t) { return t.id === taskId; });
+  var task = Request.find(function(t) { return t.id === taskId; });
   var wasNotDone = task && task.Status !== 'done';
 
   // A2 : le blocage par dependance s'applique aussi aux actions rapides
@@ -7034,10 +7034,10 @@ async function quickAction(taskId, newStatus) {
 
   try {
     await grist.docApi.applyUserActions([
-      ['UpdateRecord', TASKS_TABLE, taskId, { Status: newStatus }]
+      ['UpdateRecord', Request_TABLE, taskId, { Status: newStatus }]
     ]);
-    for (var i = 0; i < tasks.length; i++) {
-      if (tasks[i].id === taskId) { tasks[i].Status = newStatus; break; }
+    for (var i = 0; i < Request.length; i++) {
+      if (Request[i].id === taskId) { Request[i].Status = newStatus; break; }
     }
     showToast(t('taskMoved'), 'success');
     
@@ -7054,13 +7054,13 @@ async function quickAction(taskId, newStatus) {
 }
 
 // =============================================================================
-// SUBTASKS CRUD
+// SUBRequest CRUD
 // =============================================================================
 
 /**
- * Fige dans la base les champs actuellement saisis dans l'éditeur de tâche, sans
+ * Fige dans la base les champs actuellement saisis dans l'éditeur de demande, sans
  * fermer la modale ni déclencher notifications/automatisations. Appelé avant toute
- * opération sur une sous-tâche : celles-ci rouvrent la modale depuis la base, ce
+ * opération sur une sous-demande : celles-ci rouvrent la modale depuis la base, ce
  * qui écrasait sinon la description, le groupe, les dates… saisis mais non validés.
  */
 async function persistTaskFormFields(taskId) {
@@ -7068,27 +7068,27 @@ async function persistTaskFormFields(taskId) {
   var titleEl = document.getElementById('task-title');
   if (!titleEl) return;                       // l'éditeur n'est pas ouvert : rien à figer
   var record = {};
-  setField(record, 'tasks', 'title', titleEl.value.trim());
+  setField(record, 'Request', 'title', titleEl.value.trim());
   var el;
-  if ((el = document.getElementById('task-desc'))) setField(record, 'tasks', 'description', el.value.trim());
-  if ((el = document.getElementById('task-status'))) setField(record, 'tasks', 'status', el.value);
-  if ((el = document.getElementById('task-priority'))) setField(record, 'tasks', 'priority', el.value);
-  setField(record, 'tasks', 'assignee', editAssignees.join(', '));
+  if ((el = document.getElementById('task-desc'))) setField(record, 'Request', 'description', el.value.trim());
+  if ((el = document.getElementById('task-status'))) setField(record, 'Request', 'status', el.value);
+  if ((el = document.getElementById('task-priority'))) setField(record, 'Request', 'priority', el.value);
+  setField(record, 'Request', 'assignee', editAssignees.join(', '));
   if (raciEnabled) {
     record.Accountable = editAccountable.join(', ');
     record.Consulted = editConsulted.join(', ');
     record.Informed = editInformed.join(', ');
   }
-  if ((el = document.getElementById('task-group'))) setField(record, 'tasks', 'group', el.value);
-  if ((el = document.getElementById('task-start'))) setField(record, 'tasks', 'startDate', toEpoch(el.value));
-  if ((el = document.getElementById('task-due'))) setField(record, 'tasks', 'dueDate', toEpoch(el.value));
-  if ((el = document.getElementById('task-category'))) setField(record, 'tasks', 'category', el.value.trim());
-  if ((el = document.getElementById('task-project'))) setField(record, 'tasks', 'projectId', el.value ? parseInt(el.value) : 0);
-  if ((el = document.getElementById('task-recurrence'))) setField(record, 'tasks', 'recurrence', el.value);
-  if ((el = document.getElementById('task-tag'))) setField(record, 'tasks', 'tag', el.value.trim());
+  if ((el = document.getElementById('task-group'))) setField(record, 'Request', 'group', el.value);
+  if ((el = document.getElementById('task-start'))) setField(record, 'Request', 'startDate', toEpoch(el.value));
+  if ((el = document.getElementById('task-due'))) setField(record, 'Request', 'dueDate', toEpoch(el.value));
+  if ((el = document.getElementById('task-category'))) setField(record, 'Request', 'category', el.value.trim());
+  if ((el = document.getElementById('task-project'))) setField(record, 'Request', 'projectId', el.value ? parseInt(el.value) : 0);
+  if ((el = document.getElementById('task-recurrence'))) setField(record, 'Request', 'recurrence', el.value);
+  if ((el = document.getElementById('task-tag'))) setField(record, 'Request', 'tag', el.value.trim());
   if ((el = document.getElementById('task-extension-date'))) record.Extension_Date = toEpoch(el.value);
   if ((el = document.getElementById('task-auto-extend'))) record.Auto_Extend = el.checked;
-  try { await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, record]]); }
+  try { await grist.docApi.applyUserActions([['UpdateRecord', Request_TABLE, taskId, record]]); }
   catch (e) { console.error('persistTaskFormFields:', e); }
 }
 
@@ -7104,12 +7104,12 @@ async function addSubtask(parentTaskId) {
   var savedInformed = editInformed.slice();
   var scrollPos = getModalScrollTop();
 
-  var taskSubtasks = getTaskSubtasks(parentTaskId);
-  var maxOrder = taskSubtasks.length > 0 ? Math.max.apply(null, taskSubtasks.map(function(st) { return st.Order || 0; })) : 0;
+  var RequestubRequest = getRequestubRequest(parentTaskId);
+  var maxOrder = RequestubRequest.length > 0 ? Math.max.apply(null, RequestubRequest.map(function(st) { return st.Order || 0; })) : 0;
 
   try {
     await grist.docApi.applyUserActions([
-      ['AddRecord', SUBTASKS_TABLE, null, {
+      ['AddRecord', SUBRequest_TABLE, null, {
         Parent_Task_Id: parentTaskId,
         Title: title,
         Completed: false,
@@ -7149,22 +7149,22 @@ async function toggleSubtask(subtaskId, completed) {
   var savedConsulted = editConsulted.slice();
   var savedInformed = editInformed.slice();
   var scrollPos = getModalScrollTop();
-  var _tgSt = subtasks.find(function(st){ return st.id === subtaskId; });
+  var _tgSt = subRequest.find(function(st){ return st.id === subtaskId; });
   if (_tgSt) await persistTaskFormFields(_tgSt.Parent_Task_Id);   // préserve la saisie parent
   try {
     var newStatus = completed ? 'done' : 'todo';
     await grist.docApi.applyUserActions([
-      ['UpdateRecord', SUBTASKS_TABLE, subtaskId, { Completed: completed, Status: newStatus }]
+      ['UpdateRecord', SUBRequest_TABLE, subtaskId, { Completed: completed, Status: newStatus }]
     ]);
-    for (var i = 0; i < subtasks.length; i++) {
-      if (subtasks[i].id === subtaskId) {
-        subtasks[i].Completed = completed;
-        subtasks[i].Status = newStatus;
+    for (var i = 0; i < subRequest.length; i++) {
+      if (subRequest[i].id === subtaskId) {
+        subRequest[i].Completed = completed;
+        subRequest[i].Status = newStatus;
         break;
       }
     }
     showToast(t('subtaskCompleted'), 'success');
-    var subtask = subtasks.find(function(st) { return st.id === subtaskId; });
+    var subtask = subRequest.find(function(st) { return st.id === subtaskId; });
     if (subtask) {
       editAssignees = savedAssignees;
       editAccountable = savedAccountable;
@@ -7187,7 +7187,7 @@ async function deleteSubtask(subtaskId, parentTaskId) {
   await persistTaskFormFields(parentTaskId);   // préserve la saisie parent en cours
   try {
     await grist.docApi.applyUserActions([
-      ['RemoveRecord', SUBTASKS_TABLE, subtaskId]
+      ['RemoveRecord', SUBRequest_TABLE, subtaskId]
     ]);
     showToast(t('subtaskDeleted'), 'info');
     await loadAllData();
@@ -7203,7 +7203,7 @@ async function deleteSubtask(subtaskId, parentTaskId) {
 }
 
 // Toggle pill selection for status/priority
-// Sélecteur de statut de sous-tâche (statuts personnalisés avec couleur réelle)
+// Sélecteur de statut de sous-demande (statuts personnalisés avec couleur réelle)
 function setStStatus(subtaskId, value, btn) {
   var hidden = document.getElementById('st-status-' + subtaskId);
   if (hidden) hidden.value = value;
@@ -7216,7 +7216,7 @@ function setStStatus(subtaskId, value, btn) {
   btn.style.background = color; btn.style.color = '#fff'; btn.style.borderColor = color;
 }
 
-// B2 : sélecteur de type de sous-tâche (sous-tâche / jalon)
+// B2 : sélecteur de type de sous-demande (sous-demande / jalon)
 function setStType(subtaskId, value, btn) {
   var hidden = document.getElementById('st-type-' + subtaskId);
   if (hidden) hidden.value = value;
@@ -7237,7 +7237,7 @@ function setStPill(field, subtaskId, value, btn) {
   btn.className = 'st-pill active-' + value;
 }
 
-// Édition inline d'une sous-tâche
+// Édition inline d'une sous-demande
 function startEditSubtask(subtaskId) {
   var viewEl = document.getElementById('st-view-' + subtaskId);
   var editEl = document.getElementById('st-edit-' + subtaskId);
@@ -7252,7 +7252,7 @@ function cancelEditSubtask(subtaskId) {
   if (editEl) editEl.style.display = 'none';
 }
 
-// Filtre la liste des assignés d'une sous-tâche selon la saisie clavier
+// Filtre la liste des attributions d'une sous-demande selon la saisie clavier
 function filterStAssignees(subtaskId, query) {
   var box = document.getElementById('st-assignee-' + subtaskId);
   if (!box) return;
@@ -7304,8 +7304,8 @@ async function saveEditSubtask(subtaskId, parentTaskId) {
   var savedInformed = editInformed.slice();
   await persistTaskFormFields(parentTaskId);   // préserve la saisie parent en cours
   try {
-    await grist.docApi.applyUserActions([['UpdateRecord', SUBTASKS_TABLE, subtaskId, fields]]);
-    showToast(t('subtaskSaved'), 'success');
+    await grist.docApi.applyUserActions([['UpdateRecord', SUBRequest_TABLE, subtaskId, fields]]);
+    showToast(t('subRequestaved'), 'success');
     await loadAllData();
     editAssignees = savedAssignees;
     editAccountable = savedAccountable;
@@ -7319,7 +7319,7 @@ async function saveEditSubtask(subtaskId, parentTaskId) {
 }
 
 async function generateSubtaskOccurrences(subtaskId, parentTaskId) {
-  var st = subtasks.find(function(s) { return s.id === subtaskId; });
+  var st = subRequest.find(function(s) { return s.id === subtaskId; });
   if (!st || !st.Recurrence || st.Recurrence === 'none') return;
   var baseDate = st.Due_Date ? new Date(st.Due_Date * 1000) : new Date();
   var actions = [];
@@ -7335,7 +7335,7 @@ async function generateSubtaskOccurrences(subtaskId, parentTaskId) {
     else if (st.Recurrence === 'quarterly') d.setMonth(d.getMonth() + i * 3);
     else if (st.Recurrence === 'yearly') d.setFullYear(d.getFullYear() + i);
     else d.setMonth(d.getMonth() + i);
-    actions.push(['AddRecord', SUBTASKS_TABLE, null, {
+    actions.push(['AddRecord', SUBRequest_TABLE, null, {
       Parent_Task_Id: parentTaskId,
       Title: st.Title,
       Description: st.Description || '',
@@ -7459,7 +7459,7 @@ async function addComment(taskId) {
     ]);
     textarea.value = '';
     showToast(t('commentAdded'), 'success');
-    var commentTask = tasks.find(function(t2) { return t2.id === taskId; });
+    var commentTask = Request.find(function(t2) { return t2.id === taskId; });
     logActivity('comment_added', taskId, commentTask ? commentTask.Title : '', content.substring(0, 80));
     await loadAllData();
     editAssignees = savedAssignees;
@@ -7745,10 +7745,10 @@ async function deleteCustomField(fieldId) {
 // RECURRENCE HANDLING
 // =============================================================================
 
-// Génère toutes les occurrences d'une tâche récurrente sur le mois ou l'année en cours.
+// Génère toutes les occurrences d'une demande récurrente sur le mois ou l'année en cours.
 // N'écrase pas les occurrences déjà existantes (vérifie par titre + date).
 async function generateOccurrences(taskId, period) {
-  var task = tasks.find(function(t) { return t.id === taskId; });
+  var task = Request.find(function(t) { return t.id === taskId; });
   if (!task || !task.Recurrence || task.Recurrence === 'none') return;
 
   var now = Math.floor(Date.now() / 1000);
@@ -7764,7 +7764,7 @@ async function generateOccurrences(taskId, period) {
   var stepSeconds = task.Recurrence === 'daily' ? 86400 : task.Recurrence === 'weekly' ? 604800 : 2592000;
 
   // Trouver la dernière date d'échéance parmi les occurrences existantes du même titre
-  var existingDates = tasks
+  var existingDates = Request
     .filter(function(t) { return t.Title === task.Title && t.Due_Date; })
     .map(function(t) { return t.Due_Date; });
   var cursor = existingDates.length > 0 ? Math.max.apply(null, existingDates) : (task.Due_Date || now);
@@ -7776,27 +7776,27 @@ async function generateOccurrences(taskId, period) {
     cursor += stepSeconds;
     safety++;
     // Ne pas créer en double
-    var alreadyExists = tasks.some(function(t) {
+    var alreadyExists = Request.some(function(t) {
       return t.Title === task.Title && t.Due_Date && Math.abs(t.Due_Date - cursor) < 43200;
     });
     if (alreadyExists) continue;
     var record = {};
-    setField(record, 'tasks', 'title', task.Title);
-    setField(record, 'tasks', 'description', task.Description);
-    setField(record, 'tasks', 'status', 'todo');
-    setField(record, 'tasks', 'priority', task.Priority);
-    setField(record, 'tasks', 'assignee', task.Assignee);
-    setField(record, 'tasks', 'group', task.Group_Name);
+    setField(record, 'Request', 'title', task.Title);
+    setField(record, 'Request', 'description', task.Description);
+    setField(record, 'Request', 'status', 'todo');
+    setField(record, 'Request', 'priority', task.Priority);
+    setField(record, 'Request', 'assignee', task.Assignee);
+    setField(record, 'Request', 'group', task.Group_Name);
     var startOffset = (task.Start_Date && task.Due_Date) ? (task.Due_Date - task.Start_Date) : 0;
-    setField(record, 'tasks', 'startDate', cursor - startOffset);
-    setField(record, 'tasks', 'dueDate', cursor);
-    setField(record, 'tasks', 'category', task.Category);
-    setField(record, 'tasks', 'tag', task.Tag);
-    setField(record, 'tasks', 'recurrence', task.Recurrence);
-    setField(record, 'tasks', 'estimatedHours', task.Estimated_Hours);
-    setField(record, 'tasks', 'projectId', task.Project_Id);
-    setField(record, 'tasks', 'createdAt', now);
-    actions.push(['AddRecord', TASKS_TABLE, null, record]);
+    setField(record, 'Request', 'startDate', cursor - startOffset);
+    setField(record, 'Request', 'dueDate', cursor);
+    setField(record, 'Request', 'category', task.Category);
+    setField(record, 'Request', 'tag', task.Tag);
+    setField(record, 'Request', 'recurrence', task.Recurrence);
+    setField(record, 'Request', 'estimatedHours', task.Estimated_Hours);
+    setField(record, 'Request', 'projectId', task.Project_Id);
+    setField(record, 'Request', 'createdAt', now);
+    actions.push(['AddRecord', Request_TABLE, null, record]);
     count++;
   }
 
@@ -7815,7 +7815,7 @@ async function generateOccurrences(taskId, period) {
   }
 }
 
-// Symbole court d'une récurrence (badge cartes/sous-tâches)
+// Symbole court d'une récurrence (badge cartes/sous-demandes)
 function recurrenceSymbol(rec) {
   var map = { daily: '🔄 J', weekly: '🔄 S', biweekly: '🔄 2S', monthly: '🔄 M', quarterly: '🔄 T', yearly: '🔄 A' };
   return map[rec] || '🔄';
@@ -7846,22 +7846,22 @@ async function createNextOccurrence(task) {
 
   try {
     var record = {};
-    setField(record, 'tasks', 'title', task.Title);
-    setField(record, 'tasks', 'description', task.Description);
-    setField(record, 'tasks', 'status', 'todo');
-    setField(record, 'tasks', 'priority', task.Priority);
-    setField(record, 'tasks', 'assignee', task.Assignee);
-    setField(record, 'tasks', 'group', task.Group_Name);
-    setField(record, 'tasks', 'startDate', newStartDate);
-    setField(record, 'tasks', 'dueDate', newDueDate);
-    setField(record, 'tasks', 'category', task.Category);
-    setField(record, 'tasks', 'tag', task.Tag);
-    setField(record, 'tasks', 'recurrence', task.Recurrence);
-    setField(record, 'tasks', 'estimatedHours', task.Estimated_Hours);
-    setField(record, 'tasks', 'createdAt', now);
+    setField(record, 'Request', 'title', task.Title);
+    setField(record, 'Request', 'description', task.Description);
+    setField(record, 'Request', 'status', 'todo');
+    setField(record, 'Request', 'priority', task.Priority);
+    setField(record, 'Request', 'assignee', task.Assignee);
+    setField(record, 'Request', 'group', task.Group_Name);
+    setField(record, 'Request', 'startDate', newStartDate);
+    setField(record, 'Request', 'dueDate', newDueDate);
+    setField(record, 'Request', 'category', task.Category);
+    setField(record, 'Request', 'tag', task.Tag);
+    setField(record, 'Request', 'recurrence', task.Recurrence);
+    setField(record, 'Request', 'estimatedHours', task.Estimated_Hours);
+    setField(record, 'Request', 'createdAt', now);
     
     await grist.docApi.applyUserActions([
-      ['AddRecord', TASKS_TABLE, null, record]
+      ['AddRecord', Request_TABLE, null, record]
     ]);
     showToast(t('nextOccurrence'), 'success');
   } catch (e) {
@@ -7937,13 +7937,13 @@ function closeModal(e) {
 }
 
 function closeModalForce() {
-  // Gestion du brouillon de nouvelle tâche : titre saisi -> on enregistre ; sinon -> on supprime
+  // Gestion du brouillon de nouvelle demande : titre saisi -> on enregistre ; sinon -> on supprime
   if (draftTaskId != null) {
     var did = draftTaskId; draftTaskId = null;
     var ti = document.getElementById('task-title');
     var titleVal = ti ? ti.value.trim() : '';
     if (titleVal) { updateTask(did); return; } // updateTask enregistre, ferme et recharge
-    grist.docApi.applyUserActions([['RemoveRecord', TASKS_TABLE, did]])
+    grist.docApi.applyUserActions([['RemoveRecord', Request_TABLE, did]])
       .then(function () { return loadAllData(); })
       .then(function () { refreshAllViews(); })
       .catch(function () {});
@@ -7963,34 +7963,34 @@ async function createTask() {
   var projectId = projectEl && projectEl.value ? parseInt(projectEl.value) : 0;
 
   var record = {};
-  setField(record, 'tasks', 'title', title);
-  setField(record, 'tasks', 'description', document.getElementById('task-desc').value.trim());
-  setField(record, 'tasks', 'status', document.getElementById('task-status').value);
-  setField(record, 'tasks', 'priority', document.getElementById('task-priority').value);
-  setField(record, 'tasks', 'assignee', editAssignees.join(', '));
+  setField(record, 'Request', 'title', title);
+  setField(record, 'Request', 'description', document.getElementById('task-desc').value.trim());
+  setField(record, 'Request', 'status', document.getElementById('task-status').value);
+  setField(record, 'Request', 'priority', document.getElementById('task-priority').value);
+  setField(record, 'Request', 'assignee', editAssignees.join(', '));
   if (raciEnabled) {
     record.Accountable = editAccountable.join(', ');
     record.Consulted = editConsulted.join(', ');
     record.Informed = editInformed.join(', ');
   }
-  setField(record, 'tasks', 'group', document.getElementById('task-group').value);
-  setField(record, 'tasks', 'startDate', toEpoch(document.getElementById('task-start').value));
-  setField(record, 'tasks', 'dueDate', toEpoch(document.getElementById('task-due').value));
-  setField(record, 'tasks', 'category', document.getElementById('task-category').value.trim());
-  setField(record, 'tasks', 'projectId', projectId);
-  setField(record, 'tasks', 'createdAt', Math.floor(Date.now() / 1000));
-  // B4 : prolongation auto activée par défaut sur les nouvelles tâches (modifiable ensuite)
+  setField(record, 'Request', 'group', document.getElementById('task-group').value);
+  setField(record, 'Request', 'startDate', toEpoch(document.getElementById('task-start').value));
+  setField(record, 'Request', 'dueDate', toEpoch(document.getElementById('task-due').value));
+  setField(record, 'Request', 'category', document.getElementById('task-category').value.trim());
+  setField(record, 'Request', 'projectId', projectId);
+  setField(record, 'Request', 'createdAt', Math.floor(Date.now() / 1000));
+  // B4 : prolongation auto activée par défaut sur les nouvelles demandes (modifiable ensuite)
   record.Auto_Extend = true;
 
   // Add Tag only if the element exists
   var tagEl = document.getElementById('task-tag');
   if (tagEl) {
-    setField(record, 'tasks', 'tag', tagEl.value.trim());
+    setField(record, 'Request', 'tag', tagEl.value.trim());
   }
 
   try {
     var createResult = await grist.docApi.applyUserActions([
-      ['AddRecord', TASKS_TABLE, null, record]
+      ['AddRecord', Request_TABLE, null, record]
     ]);
     var newTaskId = (createResult && createResult.retValues && createResult.retValues[0]) || null;
     showToast(t('taskCreated'), 'success');
@@ -8014,16 +8014,16 @@ async function createTask() {
 async function updateTask(taskId) {
   var title = document.getElementById('task-title').value.trim();
   if (!title) return;
-  if (draftTaskId === taskId) draftTaskId = null; // ce brouillon devient une vraie tâche
+  if (draftTaskId === taskId) draftTaskId = null; // ce brouillon devient une vraie demande
 
-  var task = tasks.find(function(t) { return t.id === taskId; });
+  var task = Request.find(function(t) { return t.id === taskId; });
   var wasNotDone = task && task.Status !== 'done';
   var newStatus = document.getElementById('task-status').value;
 
   if (newStatus === 'done' && isTaskBlocked(taskId)) {
     var blockers = getTaskDependencies(taskId).filter(function(b) { return b && b.Status !== 'done'; });
     var blockerNames = blockers.map(function(b) { return b.Title; }).join(', ');
-    showToast((currentLang === 'fr' ? 'Impossible : tâche bloquée par ' : 'Cannot complete: blocked by ') + blockerNames, 'error');
+    showToast((currentLang === 'fr' ? 'Impossible : demande bloquée par ' : 'Cannot complete: blocked by ') + blockerNames, 'error');
     return;
   }
 
@@ -8034,27 +8034,27 @@ async function updateTask(taskId) {
   var projectId = projectEl && projectEl.value ? parseInt(projectEl.value) : 0;
 
   var record = {};
-  setField(record, 'tasks', 'title', title);
-  setField(record, 'tasks', 'description', document.getElementById('task-desc').value.trim());
-  setField(record, 'tasks', 'status', newStatus);
-  setField(record, 'tasks', 'priority', document.getElementById('task-priority').value);
-  setField(record, 'tasks', 'assignee', editAssignees.join(', '));
+  setField(record, 'Request', 'title', title);
+  setField(record, 'Request', 'description', document.getElementById('task-desc').value.trim());
+  setField(record, 'Request', 'status', newStatus);
+  setField(record, 'Request', 'priority', document.getElementById('task-priority').value);
+  setField(record, 'Request', 'assignee', editAssignees.join(', '));
   if (raciEnabled) {
     record.Accountable = editAccountable.join(', ');
     record.Consulted = editConsulted.join(', ');
     record.Informed = editInformed.join(', ');
   }
-  setField(record, 'tasks', 'group', document.getElementById('task-group').value);
-  setField(record, 'tasks', 'startDate', toEpoch(document.getElementById('task-start').value));
-  setField(record, 'tasks', 'dueDate', toEpoch(document.getElementById('task-due').value));
-  setField(record, 'tasks', 'category', document.getElementById('task-category').value.trim());
-  setField(record, 'tasks', 'projectId', projectId);
-  setField(record, 'tasks', 'recurrence', newRecurrence);
+  setField(record, 'Request', 'group', document.getElementById('task-group').value);
+  setField(record, 'Request', 'startDate', toEpoch(document.getElementById('task-start').value));
+  setField(record, 'Request', 'dueDate', toEpoch(document.getElementById('task-due').value));
+  setField(record, 'Request', 'category', document.getElementById('task-category').value.trim());
+  setField(record, 'Request', 'projectId', projectId);
+  setField(record, 'Request', 'recurrence', newRecurrence);
   
   // Add Tag only if the element exists
   var tagEl = document.getElementById('task-tag');
   if (tagEl) {
-    setField(record, 'tasks', 'tag', tagEl.value.trim());
+    setField(record, 'Request', 'tag', tagEl.value.trim());
   }
 
   // Extension fields
@@ -8071,7 +8071,7 @@ async function updateTask(taskId) {
 
   try {
     await grist.docApi.applyUserActions([
-      ['UpdateRecord', TASKS_TABLE, taskId, record]
+      ['UpdateRecord', Request_TABLE, taskId, record]
     ]);
     showToast(t('taskUpdated'), 'success');
     var logDetails = [];
@@ -8109,13 +8109,13 @@ async function updateTask(taskId) {
 
 async function deleteTask(taskId) {
   if (!isOwner) return;
-  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer la tâche' : 'Delete task');
+  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer la demande' : 'Delete task');
   if (!confirmed) return;
   try {
     await grist.docApi.applyUserActions([
-      ['RemoveRecord', TASKS_TABLE, taskId]
+      ['RemoveRecord', Request_TABLE, taskId]
     ]);
-    var deletedTask = tasks.find(function(t2) { return t2.id === taskId; });
+    var deletedTask = Request.find(function(t2) { return t2.id === taskId; });
     showToast(t('taskDeleted'), 'info');
     logActivity('task_deleted', taskId, deletedTask ? deletedTask.Title : '', '');
     if (draftTaskId === taskId) draftTaskId = null;
@@ -8228,7 +8228,7 @@ async function useTemplate(tplId) {
 // =============================================================================
 
 var WIDGET_ID = 'grist-project-manager';
-var WIDGET_NAME = 'Gestion de Projet';
+var WIDGET_NAME = 'Gestion de service';
 var WIDGET_TABS = [
   { id: 'calendar',  label_fr: 'Calendrier',  label_en: 'Calendar' },
   { id: 'kanban',    label_fr: 'Kanban',       label_en: 'Kanban' },
@@ -8314,12 +8314,12 @@ function applyOwnerRestrictions() {
 // =============================================================================
 
 function renderStatsView() {
-  var filteredTasks = getFilteredTasks();
+  var filteredRequest = getFilteredRequest();
   // Status chart (dynamic based on custom statuses)
   var kanbanStatuses = getKanbanStatuses();
   var statusCounts = {};
   kanbanStatuses.forEach(function(s) { statusCounts[s.key] = 0; });
-  filteredTasks.forEach(function(t) { statusCounts[t.Status] = (statusCounts[t.Status] || 0) + 1; });
+  filteredRequest.forEach(function(t) { statusCounts[t.Status] = (statusCounts[t.Status] || 0) + 1; });
   var maxStatus = Math.max.apply(null, kanbanStatuses.map(function(s) { return statusCounts[s.key] || 0; }).concat([1]));
 
   var statusHtml = '';
@@ -8337,7 +8337,7 @@ function renderStatsView() {
 
   // Priority chart
   var priorityCounts = { high: 0, medium: 0, low: 0 };
-  filteredTasks.forEach(function(t) { priorityCounts[t.Priority] = (priorityCounts[t.Priority] || 0) + 1; });
+  filteredRequest.forEach(function(t) { priorityCounts[t.Priority] = (priorityCounts[t.Priority] || 0) + 1; });
   var maxPriority = Math.max(priorityCounts.high, priorityCounts.medium, priorityCounts.low, 1);
   
   var priorityHtml = '';
@@ -8355,7 +8355,7 @@ function renderStatsView() {
 
   // Assignee chart
   var assigneeCounts = {};
-  filteredTasks.forEach(function(t) {
+  filteredRequest.forEach(function(t) {
     if (t.Assignee) {
       t.Assignee.split(',').forEach(function(a) {
         var name = getUserDisplayName(a.trim());
@@ -8381,7 +8381,7 @@ function renderStatsView() {
   }
   document.getElementById('chart-assignee').innerHTML = assigneeHtml;
 
-  // Week chart (tasks active or due this week by day)
+  // Week chart (Request active or due this week by day)
   var weekDays = currentLang === 'fr' ? ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'] : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   var now = new Date();
   var dayOfWeek = now.getDay();
@@ -8389,7 +8389,7 @@ function renderStatsView() {
   var weekStart = new Date(now.getFullYear(), now.getMonth(), now.getDate() + mondayOffset);
 
   var weekCounts = [0, 0, 0, 0, 0, 0, 0];
-  filteredTasks.forEach(function(task) {
+  filteredRequest.forEach(function(task) {
     var tStart = task.Start_Date ? task.Start_Date : (task.Due_Date || null);
     var tEnd = task.Due_Date ? task.Due_Date : (task.Start_Date || null);
     if (!tEnd) return;
@@ -8418,10 +8418,10 @@ function renderStatsView() {
   document.getElementById('chart-week').innerHTML = weekHtml;
 
   // Summary stats
-  var completionRate = filteredTasks.length > 0 ? Math.round((statusCounts.done / filteredTasks.length) * 100) : 0;
+  var completionRate = filteredRequest.length > 0 ? Math.round((statusCounts.done / filteredRequest.length) * 100) : 0;
   document.getElementById('stats-completion-rate').textContent = completionRate + '%';
   
-  var overdueCount = getOverdueTasks().length;
+  var overdueCount = getOverdueRequest().length;
   document.getElementById('stats-overdue-count').textContent = overdueCount;
   
   // Calculate total time from time entries
@@ -8432,7 +8432,7 @@ function renderStatsView() {
   var totalHours = Math.round(totalMinutes / 60);
   document.getElementById('stats-total-time').textContent = totalHours + 'h';
   
-  var avgMinutes = filteredTasks.length > 0 ? Math.round(totalMinutes / filteredTasks.length) : 0;
+  var avgMinutes = filteredRequest.length > 0 ? Math.round(totalMinutes / filteredRequest.length) : 0;
   var avgHours = Math.round(avgMinutes / 60 * 10) / 10;
   document.getElementById('stats-avg-time').textContent = avgHours + 'h';
 
@@ -8445,10 +8445,10 @@ function renderStatsView() {
 function renderWorkloadChart() {
   var workloadData = {};
   var now = Math.floor(Date.now() / 1000);
-  var filteredTasks = getFilteredTasks();
+  var filteredRequest = getFilteredRequest();
   
   // Calculate workload for each assignee
-  filteredTasks.forEach(function(task) {
+  filteredRequest.forEach(function(task) {
     if (task.Assignee && task.Status !== 'done') {
       task.Assignee.split(',').forEach(function(a) {
         var email = a.trim();
@@ -8476,7 +8476,7 @@ function renderWorkloadChart() {
   });
 
   // Calculate risk score for each user
-  // Score = (tasks * 10) + (overdue * 30) + (highPriority * 15)
+  // Score = (Request * 10) + (overdue * 30) + (highPriority * 15)
   // Risk levels: 0-50 = low, 51-100 = medium, >100 = high
   var workloadEntries = Object.entries(workloadData).map(function(entry) {
     var name = entry[0];
@@ -8501,7 +8501,7 @@ function renderWorkloadChart() {
 
   var html = '';
   if (workloadEntries.length === 0) {
-    html = '<div style="text-align:center;color:#94a3b8;padding:20px;">' + (currentLang === 'fr' ? 'Aucune tâche assignée' : 'No assigned tasks') + '</div>';
+    html = '<div style="text-align:center;color:#94a3b8;padding:20px;">' + (currentLang === 'fr' ? 'Aucune demande attribuée' : 'No assigned Request') + '</div>';
   } else {
     workloadEntries.forEach(function(entry) {
       var barWidth = Math.min((entry.score / maxScore) * 100, 100);
@@ -8512,7 +8512,7 @@ function renderWorkloadChart() {
       html += '</div>';
       html += '<div class="workload-stats">';
       html += '<span class="workload-badge ' + entry.level + '">' + entry.levelLabel + '</span>';
-      html += '<span class="workload-detail">' + entry.total + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks');
+      html += '<span class="workload-detail">' + entry.total + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request');
       if (entry.overdue > 0) {
         html += ' • <span style="color:#ef4444;">' + entry.overdue + ' ' + (currentLang === 'fr' ? 'en retard' : 'overdue') + '</span>';
       }
@@ -8572,12 +8572,12 @@ function renderTimelineChart() {
     }
   }
 
-  // Collect tasks per slot per agent (overlap-based: task active during slot)
+  // Collect Request per slot per agent (overlap-based: task active during slot)
   var agentColors = ['#3b82f6', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#84cc16'];
   var allAgents = [];
-  var filteredTasks = getFilteredTasks().filter(function(t) { return t.Status !== 'done'; });
+  var filteredRequest = getFilteredRequest().filter(function(t) { return t.Status !== 'done'; });
 
-  filteredTasks.forEach(function(t) {
+  filteredRequest.forEach(function(t) {
     if (!t.Assignee) return;
     t.Assignee.split(',').forEach(function(a) {
       var name = getUserDisplayName(a.trim());
@@ -8592,7 +8592,7 @@ function renderTimelineChart() {
   var data = slots.map(function(slot) {
     var row = { label: slot.label, total: 0, current: slot.current };
     visibleAgents.forEach(function(agent) { row[agent] = 0; });
-    filteredTasks.forEach(function(t) {
+    filteredRequest.forEach(function(t) {
       var tS = t.Start_Date ? t.Start_Date : (t.Due_Date || null);
       var tE = t.Due_Date ? t.Due_Date : (t.Start_Date || null);
       if (!tE) return;
@@ -8661,7 +8661,7 @@ function renderBurndownChart() {
   var thisMonday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + mondayOffset);
   thisMonday.setHours(0, 0, 0, 0);
 
-  var allTasks = getFilteredTasks();
+  var allRequest = getFilteredRequest();
   var labels = [];
   var remaining = [];
   var completed = [];
@@ -8676,7 +8676,7 @@ function renderBurndownChart() {
     var mm = String(weekEnd.getMonth() + 1).padStart(2, '0');
     labels.push(dd + '/' + mm);
 
-    var createdBefore = allTasks.filter(function(t) {
+    var createdBefore = allRequest.filter(function(t) {
       return t.Created_At && t.Created_At <= weekEndTs;
     });
 
@@ -8893,19 +8893,19 @@ function renderProjectList() {
   var shown = q ? matching : matching.slice(0, PROJECT_LIST_LIMIT);
 
   if (matching.length === 0) {
-    html = '<div style="text-align:center;color:#94a3b8;padding:16px;">' + (currentLang === 'fr' ? 'Aucun projet trouvé' : 'No project found') + '</div>';
+    html = '<div style="text-align:center;color:#94a3b8;padding:16px;">' + (currentLang === 'fr' ? 'Aucun service trouvé' : 'No project found') + '</div>';
     document.getElementById('project-list').innerHTML = html;
     return;
   }
 
-  var filteredTasks = getFilteredTasks();
+  var filteredRequest = getFilteredRequest();
   html = '<div class="project-items">';
   shown.forEach(function(proj) {
-    var taskCount = filteredTasks.filter(function(t) { return t.Project_Id === proj.id; }).length;
+    var taskCount = filteredRequest.filter(function(t) { return t.Project_Id === proj.id; }).length;
     html += '<div class="project-item" style="border-left: 4px solid ' + (proj.Color || '#6366f1') + ';">';
     html += '<div class="project-item-info">';
     html += '<strong>' + sanitize(proj.Name) + '</strong>';
-    var metaTxt = taskCount + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks');
+    var metaTxt = taskCount + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request');
     if (proj.Lead) metaTxt += ' · 👤 ' + (currentLang === 'fr' ? 'resp. ' : 'lead ') + sanitize(getUserDisplayName(proj.Lead));
     if (proj.CreatedBy) metaTxt += ' · ' + (currentLang === 'fr' ? 'créé par ' : 'created by ') + sanitize(getUserDisplayName(proj.CreatedBy));
     html += '<span class="project-item-meta">' + metaTxt + '</span>';
@@ -8918,7 +8918,7 @@ function renderProjectList() {
   });
   html += '</div>';
 
-  // Indicateur si des projets sont masqués (hors recherche)
+  // Indicateur si des services sont masqués (hors recherche)
   if (!q && matching.length > PROJECT_LIST_LIMIT) {
     html += '<div style="text-align:center;color:#94a3b8;font-size:12px;padding:6px;">'
       + (currentLang === 'fr'
@@ -8971,7 +8971,7 @@ async function saveProject() {
       ]);
       showToast(t('editProject') + ' ✓', 'success');
     } else {
-      // Créateur du projet (auteur) — uniquement sur la table par défaut qui possède ces colonnes
+      // Créateur du service (auteur) — uniquement sur la table par défaut qui possède ces colonnes
       if (PROJECTS_TABLE === DEFAULT_PROJECTS_TABLE) {
         record.CreatedBy = currentUserEmail || '';
         record.CreatedAt = new Date().toISOString();
@@ -8999,7 +8999,7 @@ async function saveProject() {
 }
 
 async function deleteProject(projectId) {
-  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer le projet' : 'Delete project');
+  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer le service' : 'Delete project');
   if (!confirmed) return;
   
   try {
@@ -9185,7 +9185,7 @@ function renderCardDisplaySettings() {
     { key: 'tags',        label: 'Tags' },
     { key: 'category',    label: currentLang === 'fr' ? 'Catégorie' : 'Category' },
     { key: 'time',        label: currentLang === 'fr' ? 'Temps passé' : 'Time spent' },
-    { key: 'subtasks',    label: currentLang === 'fr' ? 'Sous-tâches' : 'Subtasks' },
+    { key: 'subRequest',    label: currentLang === 'fr' ? 'Sous-demandes' : 'SubRequest' },
     { key: 'comments',    label: currentLang === 'fr' ? 'Commentaires' : 'Comments' }
   ];
   var html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">';
@@ -9217,8 +9217,8 @@ var PM_ACL_RULES = [
   { tableId: 'PM_Tags',            ownerPerms: '+CRUDS', editorPerms: '+R-CUD' },
   { tableId: 'PM_Config',          ownerPerms: '+CRUDS', editorPerms: '+R-CUD' },
   { tableId: 'PM_Templates',       ownerPerms: '+CRUDS', editorPerms: '+R-CUD' },
-  { tableId: 'PM_Tasks',           ownerPerms: '+CRUDS', editorPerms: '+RCU-D' },
-  { tableId: 'PM_Subtasks',        ownerPerms: '+CRUDS', editorPerms: '+RCU-D' },
+  { tableId: 'PM_Request',           ownerPerms: '+CRUDS', editorPerms: '+RCU-D' },
+  { tableId: 'PM_SubRequest',        ownerPerms: '+CRUDS', editorPerms: '+RCU-D' },
   { tableId: 'PM_Comments',        ownerPerms: '+CRUDS', editorPerms: '+RCU-D' },
   { tableId: 'PM_TimeEntries',     ownerPerms: '+CRUDS', editorPerms: '+RCU-D' },
   { tableId: 'PM_CustomFieldValues', ownerPerms: '+CRUDS', editorPerms: '+RCU-D' },
@@ -9290,8 +9290,8 @@ async function applySecurityRules() {
 
   var confirmed = await showConfirmModal(
     currentLang === 'fr'
-      ? 'Cela va créer des règles d\'accès (ACL) pour protéger les tables PM_*. Les owners garderont tous les droits. Les éditeurs pourront créer et modifier les tâches mais pas les supprimer ni modifier les paramètres. Le document sera rechargé automatiquement.'
-      : 'This will create access rules (ACL) to protect PM_* tables. Owners keep full rights. Editors can create and edit tasks but cannot delete them or modify settings. The document will reload automatically.',
+      ? 'Cela va créer des règles d\'accès (ACL) pour protéger les tables PM_*. Les owners garderont tous les droits. Les éditeurs pourront créer et modifier les demandes mais pas les supprimer ni modifier les paramètres. Le document sera rechargé automatiquement.'
+      : 'This will create access rules (ACL) to protect PM_* tables. Owners keep full rights. Editors can create and edit Request but cannot delete them or modify settings. The document will reload automatically.',
     currentLang === 'fr' ? 'Sécuriser le document' : 'Secure document',
     currentLang === 'fr' ? 'Confirmer' : 'Confirm'
   );
@@ -9462,7 +9462,7 @@ function renderNotifyConcernedToggle() {
   var L = currentLang === 'fr';
   var html = '<div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0;">';
   html += '<div><span style="font-size:13px;font-weight:600;">' + (L ? 'Notifier les utilisateurs concernés' : 'Notify concerned users') + '</span>';
-  html += '<p style="font-size:12px;color:#94a3b8;margin:2px 0 0;">' + (L ? 'À la création et à la modification d\'une tâche (R/A/C/I), une notification est créée pour chaque personne concernée.' : 'On task creation and update, a notification is created for each concerned person (R/A/C/I).') + '</p></div>';
+  html += '<p style="font-size:12px;color:#94a3b8;margin:2px 0 0;">' + (L ? 'À la création et à la modification d\'une demande (R/A/C/I), une notification est créée pour chaque personne concernée.' : 'On task creation and update, a notification is created for each concerned person (R/A/C/I).') + '</p></div>';
   html += '<label class="toggle-switch"><input type="checkbox" ' + (notifyConcernedEnabled ? 'checked' : '') + ' onchange="toggleNotifyConcerned(this.checked)"><span class="toggle-slider"></span></label>';
   html += '</div>';
   container.innerHTML = html;
@@ -9626,7 +9626,7 @@ async function saveAutomationRuleFromModal() {
   if (toVal) rule.condition.to = toVal;
 
   if (!rule.message_fr && !rule.message_en) {
-    rule.message_fr = 'La tâche "{title}" a changé';
+    rule.message_fr = 'La demande "{title}" a changé';
     rule.message_en = 'Task "{title}" changed';
   }
 
@@ -9659,17 +9659,17 @@ async function addDefaultAutomationRules() {
     {
       id: 'rule_default_1', enabled: true, trigger: 'status_change',
       condition: { to: 'done' }, action: 'notify_assignee',
-      message_fr: 'La tâche "{title}" est terminée', message_en: 'Task "{title}" is completed'
+      message_fr: 'La demande "{title}" est terminée', message_en: 'Task "{title}" is completed'
     },
     {
       id: 'rule_default_2', enabled: true, trigger: 'priority_change',
       condition: { to: 'high' }, action: 'notify_project_lead',
-      message_fr: 'La tâche "{title}" est passée en priorité haute', message_en: 'Task "{title}" priority changed to high'
+      message_fr: 'La demande "{title}" est passée en priorité haute', message_en: 'Task "{title}" priority changed to high'
     },
     {
       id: 'rule_default_3', enabled: true, trigger: 'overdue',
       condition: {}, action: 'notify_assignee',
-      message_fr: 'La tâche "{title}" est en retard !', message_en: 'Task "{title}" is overdue!'
+      message_fr: 'La demande "{title}" est en retard !', message_en: 'Task "{title}" is overdue!'
     }
   ];
   await saveSetting('automation_rules', JSON.stringify(automationRules));
@@ -9763,7 +9763,7 @@ function renderSettingsProjectsList(searchOverride) {
 
   var html = '<div style="margin-bottom:10px;">';
   html += '<input type="text" id="settings-proj-search" class="settings-search-input"';
-  html += ' placeholder="' + (currentLang === 'fr' ? 'Rechercher un projet...' : 'Search a project...') + '"';
+  html += ' placeholder="' + (currentLang === 'fr' ? 'Rechercher un service...' : 'Search a project...') + '"';
   html += ' value="' + sanitize(_settingsProjectSearch) + '" oninput="renderSettingsProjectsList(this.value)"';
   html += ' autocomplete="off">';
   html += '</div>';
@@ -9772,15 +9772,15 @@ function renderSettingsProjectsList(searchOverride) {
     html += '<div style="text-align:center;color:#94a3b8;padding:20px;">' + t('noProject') + '</div>';
   } else {
     html += '<div class="settings-items">';
-    var allTasks = tasks;
+    var allRequest = Request;
     displayed.forEach(function(proj) {
-      var taskCount = allTasks.filter(function(tk) { return tk.Project_Id === proj.id; }).length;
+      var taskCount = allRequest.filter(function(tk) { return tk.Project_Id === proj.id; }).length;
       var dotColor = proj.Color || '#6366f1';
       html += '<div class="settings-item">';
       html += '<span class="settings-item-dot" style="background:' + dotColor + ';"></span>';
       html += '<div class="settings-item-info">';
       html += '<strong>' + sanitize(proj.Name) + '</strong>';
-      html += '<span class="settings-item-meta">' + taskCount + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
+      html += '<span class="settings-item-meta">' + taskCount + ' ' + (currentLang === 'fr' ? 'demandes' : 'Request') + '</span>';
       html += '</div>';
       html += '<div class="settings-item-actions">';
       html += '<button class="btn-icon" onclick="openProjectModalForEdit(' + proj.id + ')" title="' + t('editProject') + '">✏️</button>';
@@ -9808,7 +9808,7 @@ function openProjectModalForEdit(projectId) {
 
   var html = '<div class="modal-overlay" onclick="closeModal(event)">';
   html += '<div class="modal" style="max-width:420px;" onclick="event.stopPropagation()">';
-  html += '<div class="modal-header"><h3>✏️ ' + (currentLang === 'fr' ? 'Modifier le projet' : 'Edit project') + '</h3>';
+  html += '<div class="modal-header"><h3>✏️ ' + (currentLang === 'fr' ? 'Modifier le service' : 'Edit project') + '</h3>';
   html += '<button class="modal-close" onclick="closeModalForce()">✕</button></div>';
   html += '<div class="modal-body">';
   html += '<div class="form-group"><label>' + (currentLang === 'fr' ? 'Nom' : 'Name') + '</label>';
@@ -9843,7 +9843,7 @@ async function saveInlineProjectEdit(projectId) {
   setField(record, 'projects', 'status', document.getElementById('inline-proj-status').value || 'active');
   try {
     await grist.docApi.applyUserActions([['UpdateRecord', PROJECTS_TABLE, projectId, record]]);
-    showToast((currentLang === 'fr' ? 'Projet modifié' : 'Project updated') + ' ✓', 'success');
+    showToast((currentLang === 'fr' ? 'service modifié' : 'Project updated') + ' ✓', 'success');
     closeModalForce();
     await loadAllData();
     renderSettingsProjectsList();
@@ -9928,19 +9928,19 @@ async function openColumnMappingModal() {
     console.error('Error listing tables:', e);
   }
   
-  // Tasks mapping section
+  // Request mapping section
   html += '<div class="form-section" style="margin-bottom:25px;">';
-  html += '<h4 style="margin-bottom:15px;color:#1e293b;">📋 Table des Tâches</h4>';
+  html += '<h4 style="margin-bottom:15px;color:#1e293b;">📋 Table des demandes</h4>';
   html += '<div class="form-group">';
   html += '<label>Nom de la table</label>';
-  html += '<select id="mapping-tasks-table" onchange="detectTaskColumns()">';
+  html += '<select id="mapping-Request-table" onchange="detectTaskColumns()">';
   for (var i = 0; i < availableTables.length; i++) {
-    var selected = availableTables[i] === TASKS_TABLE ? ' selected' : '';
+    var selected = availableTables[i] === Request_TABLE ? ' selected' : '';
     html += '<option value="' + sanitize(availableTables[i]) + '"' + selected + '>' + sanitize(availableTables[i]) + '</option>';
   }
   html += '</select>';
   html += '</div>';
-  html += '<div id="tasks-columns-mapping"></div>';
+  html += '<div id="Request-columns-mapping"></div>';
   html += '</div>';
   
   // Users mapping section
@@ -9960,7 +9960,7 @@ async function openColumnMappingModal() {
   
   // Projects mapping section
   html += '<div class="form-section" style="margin-bottom:25px;">';
-  html += '<h4 style="margin-bottom:15px;color:#1e293b;">📂 Table des Projets</h4>';
+  html += '<h4 style="margin-bottom:15px;color:#1e293b;">📂 Table des services</h4>';
   html += '<div class="form-group">';
   html += '<label>Nom de la table</label>';
   html += '<select id="mapping-projects-table" onchange="detectProjectColumns()">';
@@ -9989,7 +9989,7 @@ async function openColumnMappingModal() {
 }
 
 async function detectTaskColumns() {
-  var tableName = document.getElementById('mapping-tasks-table').value;
+  var tableName = document.getElementById('mapping-Request-table').value;
   var html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;">';
   
   try {
@@ -10010,12 +10010,12 @@ async function detectTaskColumns() {
       { key: 'recurrence', label: 'Récurrence', required: false },
       { key: 'estimatedHours', label: 'Heures estimées', required: false },
       { key: 'createdAt', label: 'Créé le', required: false },
-      { key: 'projectId', label: 'Projet', required: false }
+      { key: 'projectId', label: 'service', required: false }
     ];
     
     for (var i = 0; i < fields.length; i++) {
       var field = fields[i];
-      var currentCol = getColumnName('tasks', field.key);
+      var currentCol = getColumnName('Request', field.key);
       html += '<div class="form-group">';
       html += '<label>' + field.label + (field.required ? ' <span style="color:#ef4444;">*</span>' : '') + '</label>';
       html += '<select id="map-task-' + field.key + '">';
@@ -10032,7 +10032,7 @@ async function detectTaskColumns() {
   }
   
   html += '</div>';
-  document.getElementById('tasks-columns-mapping').innerHTML = html;
+  document.getElementById('Request-columns-mapping').innerHTML = html;
 }
 
 async function detectUserColumns() {
@@ -10114,15 +10114,15 @@ async function saveColumnMapping() {
     // Collect all mappings
     var updates = [];
     
-    // Tasks mappings
-    var tasksTable = document.getElementById('mapping-tasks-table').value;
+    // Request mappings
+    var RequestTable = document.getElementById('mapping-Request-table').value;
     var taskFields = ['title', 'description', 'status', 'priority', 'assignee', 'group', 'startDate', 'dueDate', 'category', 'tag', 'recurrence', 'estimatedHours', 'createdAt', 'projectId'];
     for (var i = 0; i < taskFields.length; i++) {
       var field = taskFields[i];
       var el = document.getElementById('map-task-' + field);
       if (el && el.value) {
         var configKey = 'task_' + field.replace(/([A-Z])/g, '_$1').toLowerCase();
-        updates.push({ key: configKey, table: tasksTable, column: el.value });
+        updates.push({ key: configKey, table: RequestTable, column: el.value });
       }
     }
     
@@ -10286,17 +10286,17 @@ async function deleteTag(tagId) {
 // NOTIFICATIONS / ALERTS + AUTOMATION ENGINE
 // =============================================================================
 
-function getOverdueTasks() {
+function getOverdueRequest() {
   var now = Math.floor(Date.now() / 1000);
-  return getFilteredTasks().filter(function(t) {
+  return getFilteredRequest().filter(function(t) {
     return t.Due_Date && t.Due_Date < now && t.Status !== 'done' && t.Status !== 'archived';
   });
 }
 
-function getUpcomingTasks() {
+function getUpcomingRequest() {
   var now = Math.floor(Date.now() / 1000);
   var threeDays = now + (3 * 24 * 60 * 60);
-  return getFilteredTasks().filter(function(t) {
+  return getFilteredRequest().filter(function(t) {
     return t.Due_Date && t.Due_Date >= now && t.Due_Date <= threeDays && t.Status !== 'done' && t.Status !== 'archived';
   });
 }
@@ -10318,8 +10318,8 @@ function updateNotificationBadge() {
   var hasOverdueRule = automationRules.some(function(r) { return r.enabled && r.trigger === 'overdue'; });
   var hasApproachingRule = automationRules.some(function(r) { return r.enabled && r.trigger === 'approaching_deadline'; });
   var computed = 0;
-  if (!hasOverdueRule) computed += getOverdueTasks().length;
-  if (!hasApproachingRule) computed += getUpcomingTasks().length;
+  if (!hasOverdueRule) computed += getOverdueRequest().length;
+  if (!hasApproachingRule) computed += getUpcomingRequest().length;
   var total = unread + computed;
   var badge = document.getElementById('notif-badge');
   if (badge) {
@@ -10334,8 +10334,8 @@ function showNotifications() {
   var readRecent = myNotifs.filter(function(n) { return n.Is_Read; }).slice(0, 10);
   var hasOverdueRule = automationRules.some(function(r) { return r.enabled && r.trigger === 'overdue'; });
   var hasApproachingRule = automationRules.some(function(r) { return r.enabled && r.trigger === 'approaching_deadline'; });
-  var overdue = !hasOverdueRule ? getOverdueTasks() : [];
-  var upcoming = !hasApproachingRule ? getUpcomingTasks() : [];
+  var overdue = !hasOverdueRule ? getOverdueRequest() : [];
+  var upcoming = !hasApproachingRule ? getUpcomingRequest() : [];
 
   var html = '<div class="notif-dropdown" id="notif-dropdown">';
   html += '<div class="notif-header" style="display:flex;justify-content:space-between;align-items:center;">';
@@ -10360,7 +10360,7 @@ function showNotifications() {
   }
 
   if (overdue.length > 0) {
-    html += '<div style="padding:6px 16px;font-size:10px;color:#ef4444;font-weight:700;">⚠️ ' + overdue.length + ' ' + t('overdueTasksAlert') + '</div>';
+    html += '<div style="padding:6px 16px;font-size:10px;color:#ef4444;font-weight:700;">⚠️ ' + overdue.length + ' ' + t('overdueRequestAlert') + '</div>';
     for (var oi = 0; oi < overdue.length; oi++) {
       html += '<div class="notif-item overdue" onclick="openEditTaskModal(' + overdue[oi].id + '); closeNotifications();">';
       html += '<div class="notif-item-title">' + sanitize(overdue[oi].Title) + '</div>';
@@ -10369,7 +10369,7 @@ function showNotifications() {
     }
   }
   if (upcoming.length > 0) {
-    html += '<div style="padding:6px 16px;font-size:10px;color:#f59e0b;font-weight:700;">📅 ' + upcoming.length + ' ' + t('upcomingTasksAlert') + '</div>';
+    html += '<div style="padding:6px 16px;font-size:10px;color:#f59e0b;font-weight:700;">📅 ' + upcoming.length + ' ' + t('upcomingRequestAlert') + '</div>';
     for (var upi = 0; upi < upcoming.length; upi++) {
       html += '<div class="notif-item upcoming" onclick="openEditTaskModal(' + upcoming[upi].id + '); closeNotifications();">';
       html += '<div class="notif-item-title">' + sanitize(upcoming[upi].Title) + '</div>';
@@ -10461,7 +10461,7 @@ async function createNotification(taskId, userEmail, type, message, ruleId) {
   }
 }
 
-// Notification intégrée : à la création/modification d'une tâche, prévient chaque
+// Notification intégrée : à la création/modification d'une demande, prévient chaque
 // utilisateur concerné (R/A/C/I). Une ligne PM_Notifications par destinataire → un webhook
 // Grist posé sur PM_Notifications peut la transformer en e-mail (voir onglet Paramètres).
 async function notifyConcernedUsers(taskId, emails, eventType, title) {
@@ -10469,7 +10469,7 @@ async function notifyConcernedUsers(taskId, emails, eventType, title) {
   var me = (currentUserEmail || '').toLowerCase().trim();
   var seen = {}, recipients = [];
   (emails || []).forEach(function(e) {
-    // e peut être un NOM (assignation par nom) : on résout vers l'email PM_Users,
+    // e peut être un NOM (prise en charge par nom) : on résout vers l'email PM_Users,
     // sinon User_Email recevrait un nom et les automatisations (n8n) échoueraient.
     var v = resolveUserEmail(e);
     if (!v) {
@@ -10481,8 +10481,8 @@ async function notifyConcernedUsers(taskId, emails, eventType, title) {
   });
   if (!recipients.length) return;
   var msg = (eventType === 'task_created')
-    ? (currentLang === 'fr' ? 'Nouvelle tâche vous concernant : ' : 'New task involving you: ') + title
-    : (currentLang === 'fr' ? 'Tâche modifiée : ' : 'Task updated: ') + title;
+    ? (currentLang === 'fr' ? 'Nouvelle demande vous concernant : ' : 'New task involving you: ') + title
+    : (currentLang === 'fr' ? 'demande modifiée : ' : 'Task updated: ') + title;
   var now = Math.floor(Date.now() / 1000);
   var actions = recipients.map(function(email) {
     return ['AddRecord', NOTIFICATIONS_TABLE, null, { Task_Id: taskId, User_Email: email, Type: eventType, Message: msg, Is_Read: false, Created_At: now, Rule_Id: 'builtin' }];
@@ -10567,7 +10567,7 @@ async function checkTimeBasedAutomations() {
     if (!rule.enabled) continue;
     if (rule.trigger !== 'overdue' && rule.trigger !== 'approaching_deadline') continue;
 
-    var matching = tasks.filter(function(t) {
+    var matching = Request.filter(function(t) {
       if (t.Status === 'done' || t.Status === 'archived' || !t.Due_Date) return false;
       if (rule.trigger === 'overdue') return t.Due_Date < now;
       return t.Due_Date >= now && t.Due_Date <= threeDays;
@@ -10629,7 +10629,7 @@ function globalSearch(query) {
   }
   
   var q = query.toLowerCase();
-  var results = getFilteredTasks().filter(function(t) {
+  var results = getFilteredRequest().filter(function(t) {
     return (t.Title && t.Title.toLowerCase().indexOf(q) !== -1) ||
            (t.Description && t.Description.toLowerCase().indexOf(q) !== -1) ||
            (t.Category && t.Category.toLowerCase().indexOf(q) !== -1);
@@ -10681,11 +10681,11 @@ function loadDarkModePreference() {
 // EXPORT CSV
 // =============================================================================
 
-function exportTasks(format) {
+function exportRequest(format) {
   if (format === 'csv') {
     var csv = 'Titre,Description,Statut,Priorité,Catégorie,Assigné,Date début,Échéance\n';
-    for (var i = 0; i < tasks.length; i++) {
-      var t = tasks[i];
+    for (var i = 0; i < Request.length; i++) {
+      var t = Request[i];
       csv += '"' + (t.Title || '').replace(/"/g, '""') + '",';
       csv += '"' + (t.Description || '').replace(/"/g, '""') + '",';
       csv += '"' + (t.Status || '') + '",';
@@ -10699,7 +10699,7 @@ function exportTasks(format) {
     var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     var link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'tasks_export_' + new Date().toISOString().split('T')[0] + '.csv';
+    link.download = 'Request_export_' + new Date().toISOString().split('T')[0] + '.csv';
     link.click();
     showToast(t('exportCsv') + ' ✓', 'success');
   }
@@ -10820,8 +10820,8 @@ if (!isInsideGrist()) {
     renderProjectSelector();
     refreshAllViews();
     restoreActiveTab();
-    // Synchronise les choix de la colonne Status des sous-tâches avec les statuts personnalisés
-    if (isOwner) syncSubtaskStatusChoices();
+    // Synchronise les choix de la colonne Status des sous-demandes avec les statuts personnalisés
+    if (isOwner) syncSubRequesttatusChoices();
 
     // A6 : synchro live — recharge si la table liée change (édition directe dans Grist,
     // autre utilisateur). Debounce + on ne perturbe pas une saisie (modale ouverte).
