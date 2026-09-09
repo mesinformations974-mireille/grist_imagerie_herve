@@ -2827,17 +2827,15 @@ function renderProjectSelector() {
   });
   html += buildFilterCombo('person', currentLang === 'fr' ? '— Personne —' : '— Person —', personOptions, currentFilterAssignee, filterByAssignee);
 
-    // Filtre Catégorie
+    // Filtre Espèce (ex-Catégorie, réutilisé — Category n'est plus utilisée en imagerie)
   var allCategories = [];
   tasks.forEach(function(t) {
-    getCategoryList(t.Category).forEach(function(c) {
-      if (allCategories.indexOf(c) === -1) allCategories.push(c);
-    });
+    if (t.Espece && allCategories.indexOf(t.Espece) === -1) allCategories.push(t.Espece);
   });
   allCategories.sort();
   
   var catOptions = allCategories.map(function(c) { return { value: c, label: c }; });
-  html += buildFilterCombo('category', currentLang === 'fr' ? '— Catégorie —' : '— Category —', catOptions, currentFilterCategory, filterByCategory);
+  html += buildFilterCombo('category', currentLang === 'fr' ? '— Espèce —' : '— Species —', catOptions, currentFilterCategory, filterByCategory);
 
   // Filtre Tag
   var tagOptions = tags.map(function(tag) { return { value: tag.Name, label: tag.Name }; });
@@ -2919,7 +2917,7 @@ function renderProjectSelector() {
       var displayName = u ? (u.Name || u.Email) : currentFilterAssignee;
       bits.push('👤 ' + sanitize(displayName));
     }
-    if (currentFilterCategory) bits.push('📁 ' + sanitize(currentFilterCategory));
+    if (currentFilterCategory) bits.push('🐾 ' + sanitize(currentFilterCategory));
     if (currentFilterTag) bits.push('🏷️ ' + sanitize(currentFilterTag));
     if (proj2) bits.push('🎯 ' + sanitize(proj2.Name));
     banner.innerHTML = (currentLang === 'fr' ? 'Filtres actifs : ' : 'Active filters: ') + '<strong>' + bits.join(' › ') + '</strong> — <a href="#" onclick="resetFilters();return false;" style="color:inherit;text-decoration:underline;">' + (currentLang === 'fr' ? 'Tout effacer' : 'Clear all') + '</a>';
@@ -3353,7 +3351,7 @@ function getFilteredTasks() {
   }
     if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
-    result = result.filter(function(t) { return getCategoryList(t.Category).indexOf(catKey) !== -1; });
+    result = result.filter(function(t) { return String(t.Espece || '').trim() === catKey; });
   }
   if (currentFilterTag) {
     var tagKey = String(currentFilterTag).trim();
@@ -3541,7 +3539,10 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
     var svcColor = proj && proj.Color ? proj.Color : '#94a3b8';
     var rvTime = task.RDV_Debut ? new Date(task.RDV_Debut * 1000).toTimeString().slice(0, 5) : '';
     html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openRdvViewer(' + task.id + ')" title="' + sanitize(task.Title) + (task.Nom_Animal ? ' - ' + sanitize(task.Nom_Animal) : '') + '" style="border-left:4px solid ' + svcColor + ';background:' + svcColor + '22;">';
-    html += (rvTime ? '<b>' + rvTime + '</b> ' : '') + (task.Nom_Animal ? sanitize(task.Nom_Animal) : sanitize(task.Title));
+    var chipLabel = (task.Nom_Animal ? sanitize(task.Nom_Animal) : sanitize(task.Title));
+    if (task.Espece) chipLabel += ' (' + sanitize(task.Espece) + ')';
+    chipLabel += ' · ' + sanitize(task.Title);
+    html += (rvTime ? '<b>' + rvTime + '</b> ' : '') + chipLabel;
     html += '</div>';
   }
 
@@ -6743,7 +6744,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '</div>';
 
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Poids (kg) *' : 'Weight (kg) *') + '</span><div class="detail-field-value"><input type="number" step="0.1" min="0" id="task-poids" value="' + (task.Poids != null ? task.Poids : '') + '" /></div></div>';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Poids (kg) *' : 'Weight (kg) *') + '</span><div class="detail-field-value"><input type="number" step="0.5" min="0" id="task-poids" value="' + (task.Poids != null ? task.Poids : '') + '" /></div></div>';
   html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Âge' : 'Age') + '</span><div class="detail-field-value"><input type="text" id="task-age" value="' + sanitize(task.Age_Animal) + '" /></div></div>';
   html += '</div>';
 
@@ -6784,8 +6785,6 @@ function openEditTaskModal(taskId, preserveAssignees) {
   });
   html += '</select></div></div>';
   html += '</div>';
-
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Prescripteur' : 'Prescriber') + '</span><div class="detail-field-value"><input type="text" id="task-prescripteur" value="' + sanitize(task.Prescripteur) + '" /></div></div>';
 
   // === SUBTASKS SECTION ===
   var taskSubtasks = getTaskSubtasks(task.id);
