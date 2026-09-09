@@ -2119,6 +2119,12 @@ async function ensureTables() {
       if (imgCols.indexOf('RDV_Fin') === -1) {
         imgMig.push(['AddColumn', TASKS_TABLE, 'RDV_Fin', { type: 'DateTime:Europe/Paris' }]);
       }
+      if (imgCols.indexOf('Nom_Animal') === -1) {
+        imgMig.push(['AddColumn', TASKS_TABLE, 'Nom_Animal', { type: 'Text' }]);
+      }
+      if (imgCols.indexOf('Proprietaire') === -1) {
+        imgMig.push(['AddColumn', TASKS_TABLE, 'Proprietaire', { type: 'Text' }]);
+      }
 
       if (imgMig.length) {
         await grist.docApi.applyUserActions(imgMig);
@@ -2437,6 +2443,8 @@ async function loadAllData() {
         task.Prescripteur = taskData.Prescripteur ? taskData.Prescripteur[i] || '' : '';
         task.RDV_Debut = taskData.RDV_Debut ? taskData.RDV_Debut[i] : null;
         task.RDV_Fin = taskData.RDV_Fin ? taskData.RDV_Fin[i] : null;
+        task.Nom_Animal = taskData.Nom_Animal ? taskData.Nom_Animal[i] || '' : '';
+        task.Proprietaire = taskData.Proprietaire ? taskData.Proprietaire[i] || '' : '';
 
         tasks.push(task);
       }
@@ -3532,8 +3540,8 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
     var proj = projects.find(function(p) { return p.id === task.Project_Id; });
     var svcColor = proj && proj.Color ? proj.Color : '#94a3b8';
     var rvTime = task.RDV_Debut ? new Date(task.RDV_Debut * 1000).toTimeString().slice(0, 5) : '';
-    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openRdvViewer(' + task.id + ')" title="' + sanitize(task.Title) + '" style="border-left:4px solid ' + svcColor + ';">';
-    html += (rvTime ? '<b>' + rvTime + '</b> ' : '') + sanitize(task.Title);
+    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openRdvViewer(' + task.id + ')" title="' + sanitize(task.Title) + (task.Nom_Animal ? ' - ' + sanitize(task.Nom_Animal) : '') + '" style="border-left:4px solid ' + svcColor + ';background:' + svcColor + '22;">';
+    html += (rvTime ? '<b>' + rvTime + '</b> ' : '') + (task.Nom_Animal ? sanitize(task.Nom_Animal) : sanitize(task.Title));
     html += '</div>';
   }
 
@@ -3598,15 +3606,11 @@ function confirmRdvPicker(dateStr) {
 
 // Petit formulaire dédié : seulement le créneau (Début RV / Fin RV) d'une demande existante.
 // dateStr optionnel : pré-remplit la date si le RV n'existe pas encore.
-
 function openRdvEditor(taskId, dateStr) {
   var task = tasks.find(function(t) { return t.id === taskId; });
   if (!task) return;
   var proj = projects.find(function(p) { return p.id === task.Project_Id; });
   var serviceName = proj ? proj.Name : (currentLang === 'fr' ? 'Sans service' : 'No service');
-
-  // dateStr fourni = on vient d'un clic sur un jour du Planning -> date déjà fixée,
-  // on ne demande plus que l'heure. Pas de dateStr = "Déplacer le RV" -> date+heure modifiables.
   var isNew = !!dateStr;
 
   var html = '<div class="modal-overlay" onclick="closeModal(event)">';
@@ -3653,7 +3657,6 @@ async function saveRdvEditor(taskId) {
     debutEpoch = debutEl ? toEpoch(debutEl.value) : null;
     finEpoch = finEl ? toEpoch(finEl.value) : null;
   }
-  
   if (!debutEpoch || !finEpoch) { showToast(currentLang === 'fr' ? 'Renseigne le début et la fin.' : 'Fill in start and end.', 'error'); return; }
   var conflictMsg = checkRdvConflict(taskId, task.Project_Id, debutEpoch, finEpoch);
   if (conflictMsg) { showToast(conflictMsg, 'error'); return; }
@@ -3711,8 +3714,11 @@ function openRdvViewer(taskId) {
   html += '<div class="modal-header"><h3>🩻 ' + sanitize(task.Title) + '</h3></div>';
   html += '<div class="modal-body" style="padding:16px;">';
   html += '<div style="font-size:12px;color:#64748b;margin-bottom:10px;">🕐 ' + rvRange + '</div>';
+  html += row(currentLang === 'fr' ? 'N° dossier' : 'File #', task.Title);
   html += row(currentLang === 'fr' ? 'Service' : 'Service', serviceName);
   html += row(currentLang === 'fr' ? 'Statut' : 'Status', statusLabel(task.Status));
+  html += row(currentLang === 'fr' ? 'Animal' : 'Animal', task.Nom_Animal);
+  html += row(currentLang === 'fr' ? 'Propriétaire' : 'Owner', task.Proprietaire);
   html += row(currentLang === 'fr' ? 'Espèce' : 'Species', task.Espece);
   html += row(currentLang === 'fr' ? 'Race' : 'Breed', task.Race);
   html += row(currentLang === 'fr' ? 'Poids (kg)' : 'Weight (kg)', task.Poids);
@@ -4266,9 +4272,10 @@ function renderTaskCard(task) {
   var taskComments = getTaskComments(task.id);
 
   var priorityClass = 'priority-' + (task.Priority || 'medium');
-  var projColor = getProjectColor(task.Project_Id);
+  var projColor = getProjectColor(task.Project_Id) || '#94a3b8';
   var projName = getProjectName(task.Project_Id);
-  var html = '<div class="task-card ' + priorityClass + (blocked ? ' task-blocked' : '') + '" draggable="true" ondragstart="onDragStart(event, ' + task.id + ')" data-id="' + task.id + '" ondblclick="openEditTaskModal(' + task.id + ')" style="border-left:none;display:flex;flex-direction:row;padding:0;overflow:visible;">';
+  var cardBg = 'background:linear-gradient(135deg, ' + projColor + '15 0%, ' + projColor + '35 100%);';
+  var html = '<div class="task-card' + (blocked ? ' task-blocked' : '') + '" draggable="true" ondragstart="onDragStart(event, ' + task.id + ')" data-id="' + task.id + '" ondblclick="openEditTaskModal(' + task.id + ')" style="border-left:none;display:flex;flex-direction:row;padding:0;overflow:visible;' + cardBg + '">';
   html += '<div class="task-card-project-bar" style="background:' + projColor + ';min-width:22px;max-width:22px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;text-orientation:mixed;flex-shrink:0;border-radius:14px 0 0 14px;padding:8px 0;">';
   if (projName) html += '<span style="color:white;font-size:9px;font-weight:700;letter-spacing:0.5px;white-space:nowrap;">' + sanitize(projName) + '</span>';
   html += '</div>';
@@ -4280,7 +4287,7 @@ function renderTaskCard(task) {
   }
 // modifié
   html += '<div class="task-card-header" style="display:flex;flex-direction:column;gap:6px;">';
-  html += '<div class="task-card-title" style="cursor:pointer;width:100%;" onclick="openEditTaskModal(' + task.id + ')">' + sanitize(task.Title) + '</div>';
+  html += '<div class="task-card-title" style="cursor:pointer;width:100%;background:' + projColor + ';" onclick="openEditTaskModal(' + task.id + ')">' + sanitize(task.Title) + '</div>';
   html += '<div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;flex-wrap:wrap;">';
   if (cd.priority) html += '<span class="priority-badge priority-' + (task.Priority || 'medium') + '" style="font-size:11px;">' + priorityLabel(task.Priority) + '</span>';
   var _statusDef = getKanbanStatuses().find(function(st) { return st.key === task.Status; });
@@ -6630,6 +6637,8 @@ function openEditTaskModal(taskId, preserveAssignees) {
     html += renderRaciField('C', t('raciConsulted'), 'consulted', 'editConsulted');
     html += renderRaciField('I', t('raciInformed'), 'informed', 'editInformed');
   } else {
+    html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Prescripteur *' : 'Prescriber *') + '</span><div class="detail-field-value"><input type="text" id="task-prescripteur" value="' + sanitize(task.Prescripteur) + '" /></div></div>';
+
     html += '<div class="detail-field">';
     html += '<span class="detail-field-icon">👤</span>';
     html += '<span class="detail-field-label">' + t('fieldAssignee') + '</span>';
@@ -6705,7 +6714,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   }
   html += '<div class="detail-field">';
   html += '<span class="detail-field-icon">📂</span>';
-  html += '<span class="detail-field-label">' + t('project') + '</span>';
+  html += '<span class="detail-field-label">' + t('project') + ' *</span>';
   html += '<div class="detail-field-value"><select id="task-project" onchange="filterZoneChoicesByService()">' + projectOptions + '</select></div>';
   html += '</div>';
 
@@ -6720,7 +6729,12 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="subtasks-header" style="margin-top:14px;"><span class="detail-field-icon">🩻</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Informations patient' : 'Patient information') + '</span></div>';
 
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Espèce' : 'Species') + '</span><div class="detail-field-value"><select id="task-espece">';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? "Nom de l'animal" : 'Animal name') + '</span><div class="detail-field-value"><input type="text" id="task-nom-animal" value="' + sanitize(task.Nom_Animal) + '" /></div></div>';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Nom du propriétaire *' : 'Owner name *') + '</span><div class="detail-field-value"><input type="text" id="task-proprietaire" value="' + sanitize(task.Proprietaire) + '" /></div></div>';
+  html += '</div>';
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Espèce *' : 'Species *') + '</span><div class="detail-field-value"><select id="task-espece">';
   ['Chien', 'Chat', 'NAC', 'Equin', 'Autre'].forEach(function(opt) {
     html += '<option value="' + opt + '"' + (task.Espece === opt ? ' selected' : '') + '>' + opt + '</option>';
   });
@@ -6729,7 +6743,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '</div>';
 
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Poids (kg)' : 'Weight (kg)') + '</span><div class="detail-field-value"><input type="number" step="0.1" min="0" id="task-poids" value="' + (task.Poids != null ? task.Poids : '') + '" /></div></div>';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Poids (kg) *' : 'Weight (kg) *') + '</span><div class="detail-field-value"><input type="number" step="0.1" min="0" id="task-poids" value="' + (task.Poids != null ? task.Poids : '') + '" /></div></div>';
   html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Âge' : 'Age') + '</span><div class="detail-field-value"><input type="text" id="task-age" value="' + sanitize(task.Age_Animal) + '" /></div></div>';
   html += '</div>';
 
@@ -6775,7 +6789,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
 
   // === SUBTASKS SECTION ===
   var taskSubtasks = getTaskSubtasks(task.id);
-  html += '<div class="subtasks-section">';
+  html += '<div class="subtasks-section" style="display:none;">';
   html += '<div class="subtasks-header">';
   html += '<span class="detail-field-icon">☑️</span>';
   html += '<span class="detail-field-label">' + t('subtasks') + '</span>';
@@ -6933,7 +6947,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   // === DEPENDENCIES SECTION ===
   var taskDeps = getTaskDependencies(task.id);
   var taskBlocks = getTasksDependingOn(task.id);
-  html += '<div class="dependencies-section">';
+  html += '<div class="dependencies-section" style="display:none;">';
   html += '<div class="dependencies-header">';
   html += '<span class="detail-field-icon">🔗</span>';
   html += '<span class="detail-field-label">' + t('dependencies') + '</span>';
@@ -6991,7 +7005,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
 
   // === CUSTOM FIELDS SECTION ===
   if (customFields.length > 0) {
-    html += '<div class="custom-fields-section">';
+    html += '<div class="custom-fields-section" style="display:none;">';
     html += '<div class="custom-fields-header">';
     html += '<span class="detail-field-icon">📋</span>';
     html += '<span class="detail-field-label">' + t('customFields') + '</span>';
@@ -7009,7 +7023,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
     html += '</div>';
     html += '</div>';
   } else if (isOwner) {
-    html += '<div class="custom-fields-section">';
+    html += '<div class="custom-fields-section" style="display:none;">';
     html += '<div class="custom-fields-header">';
     html += '<span class="detail-field-icon">📋</span>';
     html += '<span class="detail-field-label">' + t('customFields') + '</span>';
@@ -7379,6 +7393,8 @@ async function persistTaskFormFields(taskId) {
   if ((el = document.getElementById('task-prescripteur'))) record.Prescripteur = el.value.trim();
   if ((el = document.getElementById('task-rdv-debut'))) record.RDV_Debut = toEpoch(el.value);
   if ((el = document.getElementById('task-rdv-fin'))) record.RDV_Fin = toEpoch(el.value);
+  if ((el = document.getElementById('task-nom-animal'))) record.Nom_Animal = el.value.trim();
+  if ((el = document.getElementById('task-proprietaire'))) record.Proprietaire = el.value.trim();
   if ((el = document.getElementById('task-extension-date'))) record.Extension_Date = toEpoch(el.value);
   if ((el = document.getElementById('task-auto-extend'))) record.Auto_Extend = el.checked;
   try { await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, record]]); }
@@ -8308,6 +8324,25 @@ async function createTask() {
 async function updateTask(taskId) {
   var title = document.getElementById('task-title').value.trim();
   if (!title) return;
+
+  // Champs obligatoires pour une demande d'imagerie
+  var missing = [];
+  if (!title) missing.push(currentLang === 'fr' ? 'N° de dossier' : 'File #');
+  var especeEl = document.getElementById('task-espece');
+  if (!especeEl || !especeEl.value) missing.push(currentLang === 'fr' ? 'Espèce' : 'Species');
+  var projectElCheck = document.getElementById('task-project');
+  if (!projectElCheck || !projectElCheck.value) missing.push(currentLang === 'fr' ? 'Service' : 'Service');
+  var poidsEl = document.getElementById('task-poids');
+  if (!poidsEl || !poidsEl.value) missing.push(currentLang === 'fr' ? 'Poids' : 'Weight');
+  var propEl2 = document.getElementById('task-proprietaire');
+  if (!propEl2 || !propEl2.value.trim()) missing.push(currentLang === 'fr' ? 'Nom du propriétaire' : 'Owner name');
+  var prescEl = document.getElementById('task-prescripteur');
+  if (!prescEl || !prescEl.value.trim()) missing.push(currentLang === 'fr' ? 'Prescripteur' : 'Prescriber');
+  if (missing.length) {
+    showToast((currentLang === 'fr' ? 'Champs obligatoires manquants : ' : 'Missing required fields: ') + missing.join(', '), 'error');
+    return;
+  }
+
   if (draftTaskId === taskId) draftTaskId = null; // ce brouillon devient une vraie tâche
 
   var task = tasks.find(function(t) { return t.id === taskId; });
@@ -8384,6 +8419,10 @@ async function updateTask(taskId) {
   if ((pel = document.getElementById('task-prescripteur'))) record.Prescripteur = pel.value.trim();
   record.RDV_Debut = rdvDebutEpoch;
   record.RDV_Fin = rdvFinEpoch;
+  var animalEl = document.getElementById('task-nom-animal');
+  if (animalEl) record.Nom_Animal = animalEl.value.trim();
+  var propEl = document.getElementById('task-proprietaire');
+  if (propEl) record.Proprietaire = propEl.value.trim();
 
   try {
     await grist.docApi.applyUserActions([
