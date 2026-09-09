@@ -2739,7 +2739,7 @@ function renderProjectSelector() {
 
   // Filtre Projet — combobox moderne avec recherche intégrée
   var selProj = currentProjectId ? projects.find(function(p) { return p.id === currentProjectId; }) : null;
-  var btnLabel = selProj ? sanitize(selProj.Name) : (currentLang === 'fr' ? 'Tous les projets' : 'All projects');
+  var btnLabel = selProj ? sanitize(selProj.Name) : (currentLang === 'fr' ? 'Tous les services' : 'All services');
   var btnDotColor = selProj ? (selProj.Color || '#6366f1') : 'transparent';
   var btnClass = 'proj-combobox-btn' + (currentProjectId ? ' active' : '');
   html += '<div class="proj-combobox" id="proj-combobox">';
@@ -2755,7 +2755,7 @@ function renderProjectSelector() {
   // "All projects" option (always shown)
   html += '<div class="proj-option' + (!currentProjectId ? ' selected' : '') + '" data-id="" data-name="" data-always="1" onclick="selectProjectOption(\'\')">';
   html += '<span class="proj-dot" style="background:#94a3b8;opacity:.4;"></span>';
-  html += '<span>' + (currentLang === 'fr' ? 'Tous les projets' : 'All projects') + '</span>';
+  html += '<span>' + (currentLang === 'fr' ? 'Tous les services' : 'All services') + '</span>';
   html += '</div>';
   // Project options — first 5 visible, rest hidden until search
   var allTasksForCount = tasks;
@@ -2784,7 +2784,7 @@ function renderProjectSelector() {
 
   // Bouton "Mes projets" (créés par moi OU assigné à moi)
   if (currentUserEmail) {
-    html += '<button class="btn-icon" onclick="toggleMyProjects()" title="' + (currentLang === 'fr' ? 'Mes projets : créés par moi ou qui me sont assignés' : 'My projects: created by or assigned to me') + '" style="width:auto;padding:0 12px;font-size:12px;font-weight:600;' + (mineOnly ? 'background:#6366f1;color:#fff;border-color:#6366f1;' : '') + '">👤 ' + (currentLang === 'fr' ? 'Mes projets' : 'My projects') + '</button>';
+    html += '<button class="btn-icon" onclick="toggleMyProjects()" title="' + (currentLang === 'fr' ? 'Mes services : créés par moi ou qui me sont assignés' : 'My services: created by or assigned to me') + '" style="width:auto;padding:0 12px;font-size:12px;font-weight:600;' + (mineOnly ? 'background:#6366f1;color:#fff;border-color:#6366f1;' : '') + '">👤 ' + (currentLang === 'fr' ? 'Mes services' : 'My services') + '</button>';
   }
 
   if (currentFilterRole || currentFilterAssignee || currentFilterCategory || currentFilterTag || currentProjectId || mineOnly) {
@@ -2806,7 +2806,7 @@ function renderProjectSelector() {
     var proj2 = currentProjectId ? projects.find(function(p) { return p.id === currentProjectId; }) : null;
     var c2 = (proj2 && proj2.Color) ? proj2.Color : '#6366f1';
     var bits = [];
-    if (mineOnly) bits.push('👤 ' + (currentLang === 'fr' ? 'Mes projets' : 'My projects'));
+    if (mineOnly) bits.push('👤 ' + (currentLang === 'fr' ? 'Mes services' : 'My services'));
     if (currentFilterRole) bits.push('👔 ' + sanitize(roleLabel(currentFilterRole)));
     if (currentFilterAssignee) {
       var u = findUserByIdent(currentFilterAssignee);
@@ -6405,7 +6405,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="detail-field-value"><input type="date" id="task-due" value="' + dueVal + '" /></div>';
   html += '</div>';
 
-  // Priority
+  // Priorité (conservée)
   html += '<div class="detail-field">';
   html += '<span class="detail-field-icon">🔥</span>';
   html += '<span class="detail-field-label">' + t('fieldPriority') + '</span>';
@@ -6415,38 +6415,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<option value="low"' + (task.Priority === 'low' ? ' selected' : '') + '>' + t('priorityLow') + '</option>';
   html += '</select></div></div>';
 
-  // Group
-  html += '<div class="detail-field">';
-  html += '<span class="detail-field-icon">👥</span>';
-  html += '<span class="detail-field-label">' + t('fieldGroup') + '</span>';
-  html += '<div class="detail-field-value"><select id="task-group">' + groupOptions + '</select></div>';
-  html += '</div>';
-
-  // Project
-  var projectOptions = '<option value="">' + t('noProject') + '</option>';
-  for (var pi = 0; pi < projects.length; pi++) {
-    var projSel = projects[pi].id === task.Project_Id ? ' selected' : '';
-    projectOptions += '<option value="' + projects[pi].id + '"' + projSel + '>' + sanitize(projects[pi].Name) + '</option>';
-  }
-  html += '<div class="detail-field">';
-  html += '<span class="detail-field-icon">📂</span>';
-  html += '<span class="detail-field-label">' + t('project') + '</span>';
-  html += '<div class="detail-field-value"><select id="task-project">' + projectOptions + '</select></div>';
-  html += '</div>';
-
-  // Category
-  var categoryOptions = '<option value="">--</option>';
-  for (var ci = 0; ci < categories.length; ci++) {
-    var catSel = categories[ci].Name === task.Category ? ' selected' : '';
-    categoryOptions += '<option value="' + sanitize(categories[ci].Name) + '"' + catSel + '>' + sanitize(categories[ci].Name) + '</option>';
-  }
-  html += '<div class="detail-field">';
-  html += '<span class="detail-field-icon">📁</span>';
-  html += '<span class="detail-field-label">' + t('fieldCategory') + '</span>';
-  html += '<div class="detail-field-value"><select id="task-category">' + categoryOptions + '</select></div>';
-  html += '</div>';
-
-  // Tag
+  // Tag (conservé)
   var tagOptions = '<option value="">--</option>';
   for (var ti = 0; ti < tags.length; ti++) {
     var tagSel = tags[ti].Name === task.Tag ? ' selected' : '';
@@ -6457,6 +6426,75 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<span class="detail-field-label">' + t('tag') + '</span>';
   html += '<div class="detail-field-value"><select id="task-tag">' + tagOptions + '</select></div>';
   html += '</div>';
+
+  // Service (ex-Projet)
+  var projectOptions = '<option value="">' + t('noProject') + '</option>';
+  for (var pi = 0; pi < projects.length; pi++) {
+    var projSel = projects[pi].id === task.Project_Id ? ' selected' : '';
+    projectOptions += '<option value="' + projects[pi].id + '" data-name="' + sanitize(projects[pi].Name) + '"' + projSel + '>' + sanitize(projects[pi].Name) + '</option>';
+  }
+  html += '<div class="detail-field">';
+  html += '<span class="detail-field-icon">📂</span>';
+  html += '<span class="detail-field-label">' + t('project') + '</span>';
+  html += '<div class="detail-field-value"><select id="task-project" onchange="filterZoneChoicesByService()">' + projectOptions + '</select></div>';
+  html += '</div>';
+
+  // === CHAMPS PATIENT (IMAGERIE) ===
+  html += '<div class="subtasks-header" style="margin-top:14px;"><span class="detail-field-icon">🩻</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Informations patient' : 'Patient information') + '</span></div>';
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Espèce' : 'Species') + '</span><div class="detail-field-value"><select id="task-espece">';
+  ['Chien', 'Chat', 'NAC', 'Equin', 'Autre'].forEach(function(opt) {
+    html += '<option value="' + opt + '"' + (task.Espece === opt ? ' selected' : '') + '>' + opt + '</option>';
+  });
+  html += '</select></div></div>';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Race' : 'Breed') + '</span><div class="detail-field-value"><input type="text" id="task-race" value="' + sanitize(task.Race) + '" /></div></div>';
+  html += '</div>';
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Poids (kg)' : 'Weight (kg)') + '</span><div class="detail-field-value"><input type="number" step="0.1" min="0" id="task-poids" value="' + (task.Poids != null ? task.Poids : '') + '" /></div></div>';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Âge' : 'Age') + '</span><div class="detail-field-value"><input type="text" id="task-age" value="' + sanitize(task.Age_Animal) + '" /></div></div>';
+  html += '</div>';
+
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Commémoratifs' : 'History') + '</span><div class="detail-field-value"><textarea id="task-commemoratifs">' + sanitize(task.Commemoratifs) + '</textarea></div></div>';
+
+  // Zone demandée (ChoiceList, réutilise le parseur ChoiceList-safe existant, filtrée par service)
+  var zoneList = getCategoryList(task.Zone_Demandee);
+  var ZONE_CHOICES = [
+    { service: 'Radio', zones: ['Thorax', 'Abdomen', 'Rachis cervical', 'Rachis thoraco-lombaire', 'Rachis lombo-sacré', 'Bassin/hanches', 'Membre antérieur droit', 'Membre antérieur gauche', 'Membre postérieur droit', 'Membre postérieur gauche', 'Crâne/dents', 'Autre'] },
+    { service: 'Echo', zones: ['Cardiaque', 'Abdominale', 'Gestation', 'Cervicale', 'Autre'] },
+    { service: 'IRM', zones: ['Encéphale', 'Rachis complet', 'Autre'] },
+    { service: 'Scanner', zones: ['Encéphale', 'Thorax', 'Abdomen', 'Autre'] }
+  ];
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Zone demandée' : 'Requested area') + '</span>';
+  html += '<div class="detail-field-value" id="zone-choices-container">';
+  ZONE_CHOICES.forEach(function(grp) {
+    html += '<div class="zone-service-group" data-service="' + grp.service + '" style="margin-bottom:6px;">';
+    html += '<div style="font-size:11px;font-weight:700;color:#64748b;margin:4px 0 2px;">' + grp.service + '</div>';
+    grp.zones.forEach(function(z) {
+      var fullVal = grp.service + ' - ' + z;
+      var checked = zoneList.indexOf(fullVal) !== -1 ? ' checked' : '';
+      html += '<label style="display:inline-flex;align-items:center;gap:4px;font-size:12px;margin-right:10px;cursor:pointer;"><input type="checkbox" class="zone-checkbox" value="' + fullVal + '"' + checked + '> ' + z + '</label>';
+    });
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Risque anesthésie' : 'Anaesthesia risk') + '</span><div class="detail-field-value"><textarea id="task-risque">' + sanitize(task.Risque_Anesthesie) + '</textarea></div></div>';
+
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Examen complémentaire' : 'Additional exam') + '</span><div class="detail-field-value"><select id="task-examen-comp" onchange="toggleTypeExamenComp()">';
+  html += '<option value="Non"' + (task.Examen_Complementaire === 'Non' || !task.Examen_Complementaire ? ' selected' : '') + '>' + (currentLang === 'fr' ? 'Non' : 'No') + '</option>';
+  html += '<option value="Oui"' + (task.Examen_Complementaire === 'Oui' ? ' selected' : '') + '>' + (currentLang === 'fr' ? 'Oui' : 'Yes') + '</option>';
+  html += '</select></div></div>';
+  html += '<div class="detail-field" id="type-examen-comp-wrap" style="' + (task.Examen_Complementaire === 'Oui' ? '' : 'display:none;') + '"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Type' : 'Type') + '</span><div class="detail-field-value"><select id="task-type-examen-comp">';
+  ['Échographie', 'Analyses sanguines', 'Scanner', 'IRM', 'Consultation spécialisée', 'Autre'].forEach(function(opt) {
+    html += '<option value="' + opt + '"' + (task.Type_Examen_Complementaire === opt ? ' selected' : '') + '>' + opt + '</option>';
+  });
+  html += '</select></div></div>';
+  html += '</div>';
+
+  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Prescripteur' : 'Prescriber') + '</span><div class="detail-field-value"><input type="text" id="task-prescripteur" value="' + sanitize(task.Prescripteur) + '" /></div></div>';
 
   // === SUBTASKS SECTION ===
   var taskSubtasks = getTaskSubtasks(task.id);
@@ -6789,68 +6827,6 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="detail-info-row"><span class="info-label">' + t('fieldAssignee') + ' :</span><span class="info-value">' + editAssignees.length + '</span></div>';
   html += '</div>';
 
-  // Time Tracking card
-  var totalTime = getTaskTotalTime(task.id);
-  var isTimerRunning = !!activeTimers[task.id];
-  var taskTimeEntries = getTaskTimeEntries(task.id);
-  html += '<div class="detail-card time-card">';
-  html += '<h4>⏱️ ' + t('timeTracking') + '</h4>';
-  
-  // Timer button
-  html += '<div class="timer-control">';
-  if (isTimerRunning) {
-    html += '<button class="timer-btn timer-stop" onclick="stopTimer(' + task.id + ')">⏹️ ' + t('stopTimer') + '</button>';
-    html += '<span class="timer-status running">● ' + t('timerRunning') + '</span>';
-  } else {
-    html += '<button class="timer-btn timer-start" onclick="startTimer(' + task.id + ')">▶️ ' + t('startTimer') + '</button>';
-  }
-  html += '</div>';
-  
-  // Manual time entry
-  html += '<div class="manual-time-entry" style="display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap;">';
-  html += '<input type="number" id="manual-hours" min="0" max="99" placeholder="0" style="width:52px;" class="form-input" title="' + (currentLang === 'fr' ? 'Heures' : 'Hours') + '"> h';
-  html += '<input type="number" id="manual-minutes" min="0" max="59" placeholder="0" style="width:52px;" class="form-input" title="' + (currentLang === 'fr' ? 'Minutes' : 'Minutes') + '"> min';
-  html += '<button class="btn btn-secondary btn-sm" onclick="addManualTimeEntry(' + task.id + ')">+ ' + (currentLang === 'fr' ? 'Ajouter' : 'Add') + '</button>';
-  html += '</div>';
-
-  // Time summary
-  html += '<div class="time-summary">';
-  html += '<div class="detail-info-row"><span class="info-label">' + t('totalTime') + ' :</span><span class="info-value time-value">' + formatDuration(totalTime) + '</span></div>';
-  if (task.Estimated_Hours) {
-    var estimatedSec = task.Estimated_Hours * 3600;
-    var pctUsed = Math.round((totalTime / estimatedSec) * 100);
-    html += '<div class="detail-info-row"><span class="info-label">' + t('estimatedTime') + ' :</span><span class="info-value">' + task.Estimated_Hours + 'h (' + pctUsed + '%)</span></div>';
-  }
-  html += '</div>';
-  
-  // Recent time entries (newest first)
-  if (taskTimeEntries.length > 0) {
-    html += '<div class="time-entries">';
-    html += '<div class="time-entries-label">' + t('timeEntries') + ':</div>';
-    html += '<div style="max-height:120px;overflow-y:auto;">';
-    for (var tei = 0; tei < taskTimeEntries.length; tei++) {
-      var te = taskTimeEntries[tei];
-      html += '<div class="time-entry-item">';
-      html += '<span class="te-duration">' + formatDurationShort(te.Duration) + '</span>';
-      html += '<span class="te-date">' + formatTimeAgo(te.Start_Time) + '</span>';
-      html += '</div>';
-    }
-    html += '</div>';
-    html += '</div>';
-  }
-  html += '</div>';
-
-  // Extension card
-  html += '<div class="detail-card">';
-  html += '<h4>📏 ' + t('extensionDate') + '</h4>';
-  var extDateVal = task.Extension_Date ? fromEpoch(task.Extension_Date) : '';
-  html += '<div style="margin-bottom:10px;"><input type="date" id="task-extension-date" value="' + extDateVal + '" style="width:100%;padding:6px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:12px;" /></div>';
-  html += '<label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;">';
-  html += '<input type="checkbox" id="task-auto-extend" ' + (task.Auto_Extend ? 'checked' : '') + ' style="width:16px;height:16px;accent-color:#3b82f6;flex-shrink:0;margin-top:2px;" />';
-  html += '<span style="font-size:11px;color:#64748b;line-height:1.3;">' + t('autoExtendHint') + '</span>';
-  html += '</label>';
-  html += '</div>';
-
   // Recurrence card
   var hasRecurrence = task.Recurrence && task.Recurrence !== 'none';
   html += '<div class="detail-card">';
@@ -6890,6 +6866,29 @@ function openEditTaskModal(taskId, preserveAssignees) {
   document.getElementById('modal-container').innerHTML = html;
   // D2 : remplir la liste des pièces jointes (token asynchrone à part)
   renderAttachmentsSection(task.id);
+  filterZoneChoicesByService();
+}
+
+// Affiche uniquement les cases "Zone demandée" du service actuellement sélectionné
+// (Radio/Echo/IRM/Scanner), déduit du nom du service via son préfixe.
+function filterZoneChoicesByService() {
+  var projSel = document.getElementById('task-project');
+  var groupsEl = document.querySelectorAll('.zone-service-group');
+  if (!projSel || !groupsEl.length) return;
+  var opt = projSel.options[projSel.selectedIndex];
+  var serviceName = opt ? (opt.getAttribute('data-name') || opt.textContent || '') : '';
+  groupsEl.forEach(function(g) {
+    var prefix = g.getAttribute('data-service') || '';
+    var show = !serviceName || serviceName.toLowerCase().indexOf(prefix.toLowerCase()) !== -1;
+    g.style.display = show ? '' : 'none';
+  });
+}
+
+// Affiche/masque le champ "Type d'examen complémentaire" selon Oui/Non
+function toggleTypeExamenComp() {
+  var sel = document.getElementById('task-examen-comp');
+  var wrap = document.getElementById('type-examen-comp-wrap');
+  if (sel && wrap) wrap.style.display = (sel.value === 'Oui') ? '' : 'none';
 }
 
 // Suffixe de conteneur DOM pour un rôle RACI. editAssignees -> 'assignee' (et non
@@ -7083,10 +7082,24 @@ async function persistTaskFormFields(taskId) {
   if ((el = document.getElementById('task-group'))) setField(record, 'tasks', 'group', el.value);
   if ((el = document.getElementById('task-start'))) setField(record, 'tasks', 'startDate', toEpoch(el.value));
   if ((el = document.getElementById('task-due'))) setField(record, 'tasks', 'dueDate', toEpoch(el.value));
-  if ((el = document.getElementById('task-category'))) setField(record, 'tasks', 'category', el.value.trim());
   if ((el = document.getElementById('task-project'))) setField(record, 'tasks', 'projectId', el.value ? parseInt(el.value) : 0);
   if ((el = document.getElementById('task-recurrence'))) setField(record, 'tasks', 'recurrence', el.value);
   if ((el = document.getElementById('task-tag'))) setField(record, 'tasks', 'tag', el.value.trim());
+  if ((el = document.getElementById('task-espece'))) record.Espece = el.value;
+  if ((el = document.getElementById('task-race'))) record.Race = el.value.trim();
+  if ((el = document.getElementById('task-poids'))) record.Poids = el.value ? parseFloat(el.value) : null;
+  if ((el = document.getElementById('task-age'))) record.Age_Animal = el.value.trim();
+  if ((el = document.getElementById('task-commemoratifs'))) record.Commemoratifs = el.value.trim();
+  var zoneCheckedP = document.querySelectorAll('.zone-checkbox:checked');
+  if (document.getElementById('zone-choices-container')) {
+    var zoneValsP = [];
+    zoneCheckedP.forEach(function(cb) { zoneValsP.push(cb.value); });
+    record.Zone_Demandee = ['L'].concat(zoneValsP);
+  }
+  if ((el = document.getElementById('task-risque'))) record.Risque_Anesthesie = el.value.trim();
+  if ((el = document.getElementById('task-examen-comp'))) record.Examen_Complementaire = el.value;
+  if ((el = document.getElementById('task-type-examen-comp'))) record.Type_Examen_Complementaire = el.value;
+  if ((el = document.getElementById('task-prescripteur'))) record.Prescripteur = el.value.trim();
   if ((el = document.getElementById('task-extension-date'))) record.Extension_Date = toEpoch(el.value);
   if ((el = document.getElementById('task-auto-extend'))) record.Auto_Extend = el.checked;
   try { await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, record]]); }
@@ -7967,17 +7980,18 @@ async function createTask() {
   setField(record, 'tasks', 'title', title);
   setField(record, 'tasks', 'description', document.getElementById('task-desc').value.trim());
   setField(record, 'tasks', 'status', document.getElementById('task-status').value);
-  setField(record, 'tasks', 'priority', document.getElementById('task-priority').value);
+  var pEl;
+  if ((pEl = document.getElementById('task-priority'))) setField(record, 'tasks', 'priority', pEl.value);
   setField(record, 'tasks', 'assignee', editAssignees.join(', '));
   if (raciEnabled) {
     record.Accountable = editAccountable.join(', ');
     record.Consulted = editConsulted.join(', ');
     record.Informed = editInformed.join(', ');
   }
-  setField(record, 'tasks', 'group', document.getElementById('task-group').value);
+  if ((pEl = document.getElementById('task-group'))) setField(record, 'tasks', 'group', pEl.value);
   setField(record, 'tasks', 'startDate', toEpoch(document.getElementById('task-start').value));
   setField(record, 'tasks', 'dueDate', toEpoch(document.getElementById('task-due').value));
-  setField(record, 'tasks', 'category', document.getElementById('task-category').value.trim());
+  if ((pEl = document.getElementById('task-category'))) setField(record, 'tasks', 'category', pEl.value.trim());
   setField(record, 'tasks', 'projectId', projectId);
   setField(record, 'tasks', 'createdAt', Math.floor(Date.now() / 1000));
   // B4 : prolongation auto activée par défaut sur les nouvelles tâches (modifiable ensuite)
@@ -8038,37 +8052,44 @@ async function updateTask(taskId) {
   setField(record, 'tasks', 'title', title);
   setField(record, 'tasks', 'description', document.getElementById('task-desc').value.trim());
   setField(record, 'tasks', 'status', newStatus);
-  setField(record, 'tasks', 'priority', document.getElementById('task-priority').value);
+  var priEl = document.getElementById('task-priority');
+  if (priEl) setField(record, 'tasks', 'priority', priEl.value);
   setField(record, 'tasks', 'assignee', editAssignees.join(', '));
   if (raciEnabled) {
     record.Accountable = editAccountable.join(', ');
     record.Consulted = editConsulted.join(', ');
     record.Informed = editInformed.join(', ');
   }
-  setField(record, 'tasks', 'group', document.getElementById('task-group').value);
   setField(record, 'tasks', 'startDate', toEpoch(document.getElementById('task-start').value));
   setField(record, 'tasks', 'dueDate', toEpoch(document.getElementById('task-due').value));
-  setField(record, 'tasks', 'category', document.getElementById('task-category').value.trim());
   setField(record, 'tasks', 'projectId', projectId);
   setField(record, 'tasks', 'recurrence', newRecurrence);
-  
-  // Add Tag only if the element exists
   var tagEl = document.getElementById('task-tag');
-  if (tagEl) {
-    setField(record, 'tasks', 'tag', tagEl.value.trim());
-  }
-
-  // Extension fields
-  var extDateEl = document.getElementById('task-extension-date');
-  if (extDateEl) record.Extension_Date = toEpoch(extDateEl.value);
-  var autoExtEl = document.getElementById('task-auto-extend');
-  if (autoExtEl) record.Auto_Extend = autoExtEl.checked;
+  if (tagEl) setField(record, 'tasks', 'tag', tagEl.value.trim());
 
   // Auto-freeze extension date when completing a task with auto-extend
   if (newStatus === 'done' && task && task.Auto_Extend && task.Status !== 'done') {
     record.Extension_Date = Math.floor(Date.now() / 1000);
     record.Auto_Extend = false;
   }
+
+  // === Champs patient (imagerie) ===
+  var pel;
+  if ((pel = document.getElementById('task-espece'))) record.Espece = pel.value;
+  if ((pel = document.getElementById('task-race'))) record.Race = pel.value.trim();
+  if ((pel = document.getElementById('task-poids'))) record.Poids = pel.value ? parseFloat(pel.value) : null;
+  if ((pel = document.getElementById('task-age'))) record.Age_Animal = pel.value.trim();
+  if ((pel = document.getElementById('task-commemoratifs'))) record.Commemoratifs = pel.value.trim();
+  var zoneChecked = document.querySelectorAll('.zone-checkbox:checked');
+  if (zoneChecked.length || document.getElementById('zone-choices-container')) {
+    var zoneVals = [];
+    zoneChecked.forEach(function(cb) { zoneVals.push(cb.value); });
+    record.Zone_Demandee = ['L'].concat(zoneVals); // format ChoiceList Grist
+  }
+  if ((pel = document.getElementById('task-risque'))) record.Risque_Anesthesie = pel.value.trim();
+  if ((pel = document.getElementById('task-examen-comp'))) record.Examen_Complementaire = pel.value;
+  if ((pel = document.getElementById('task-type-examen-comp'))) record.Type_Examen_Complementaire = pel.value;
+  if ((pel = document.getElementById('task-prescripteur'))) record.Prescripteur = pel.value.trim();
 
   try {
     await grist.docApi.applyUserActions([
@@ -8079,8 +8100,6 @@ async function updateTask(taskId) {
     var autoChanges = {};
     if (task) {
       if (task.Status !== newStatus) { autoChanges.status = { from: task.Status, to: newStatus }; logDetails.push(task.Status + ' → ' + newStatus); }
-      var newPriority = document.getElementById('task-priority').value;
-      if (task.Priority !== newPriority) autoChanges.priority = { from: task.Priority, to: newPriority };
       var newAssignee = editAssignees.join(', ');
       if (task.Assignee !== newAssignee) autoChanges.assignee = { from: task.Assignee, to: newAssignee };
     }
