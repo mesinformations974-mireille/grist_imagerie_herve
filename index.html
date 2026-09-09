@@ -4119,6 +4119,8 @@
           <option value="due">Échéance</option>
           <option value="priority">Priorité</option>
         </select>
+        <span style="font-size:13px;color:#64748b;margin-left:8px;">Service :</span>
+        <select id="kanban-service-filter" onchange="filterByProject(this.value)" style="padding:5px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:13px;"></select>
         <button id="archive-toggle-btn" class="btn btn-sm" onclick="toggleArchiveView()" style="margin-left:auto;padding:5px 12px;border:1px solid #e2e8f0;border-radius:6px;font-size:12px;background:#f8fafc;cursor:pointer;font-weight:600;">📦 Archives</button>
       </div>
       <div class="kanban-board" id="kanban-board"></div>
