@@ -9529,15 +9529,11 @@ async function removeKanbanStatus(index) {
 function renderCardDisplaySettings() {
   var container = document.getElementById('card-display-settings');
   if (!container) return;
-  var fields = [
+   var fields = [
     { key: 'priority',    label: currentLang === 'fr' ? 'Priorité' : 'Priority' },
     { key: 'description', label: currentLang === 'fr' ? 'Description' : 'Description' },
-    { key: 'date',        label: currentLang === 'fr' ? 'Date d\'échéance' : 'Due date' },
     { key: 'assignee',    label: currentLang === 'fr' ? 'Pris en charge par' : 'Handled by' },
     { key: 'tags',        label: 'Tags' },
-    { key: 'category',    label: currentLang === 'fr' ? 'Catégorie' : 'Category' },
-    { key: 'time',        label: currentLang === 'fr' ? 'Temps passé' : 'Time spent' },
-    { key: 'subtasks',    label: currentLang === 'fr' ? 'Étapes' : 'Steps' },
     { key: 'comments',    label: currentLang === 'fr' ? 'Commentaires' : 'Comments' }
   ];
   var html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">';
