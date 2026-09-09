@@ -3922,7 +3922,16 @@ function renderKanbanView() {
   if (sel && sel.value !== kanbanGroupBy) sel.value = kanbanGroupBy;
   var sortSel = document.getElementById('kanban-sort');
   if (sortSel && sortSel.value !== kanbanSort) sortSel.value = kanbanSort;
-
+  var svcSel = document.getElementById('kanban-service-filter');
+  if (svcSel) {
+    var svcHtml = '<option value="">' + (currentLang === 'fr' ? 'Tous les services' : 'All services') + '</option>';
+    projects.forEach(function(p) {
+      svcHtml += '<option value="' + p.id + '"' + (currentProjectId === p.id ? ' selected' : '') + '>' + sanitize(p.Name) + '</option>';
+    });
+    svcSel.innerHTML = svcHtml;
+    svcSel.value = currentProjectId || '';
+  }
+  
   var columns = [];
   var filteredTasks = getFilteredTasks();
 
