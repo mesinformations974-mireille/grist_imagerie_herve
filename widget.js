@@ -348,8 +348,8 @@ var i18n = {
     templateUpdated: 'Modèle mis à jour !'
   },
   en: {
-    appTitle: 'VetAgroSup SIRIUS tasks Tracking',
-    appSubtitle: 'Organize and track tasks for SIRIUS projects',
+    appTitle: 'IMAGING MANAGEMENT – VETAGROSUP',
+    appSubtitle: "Organiser et suivre les rendez-vous et suivis d'imagerie à VetagroSup",
     notInGrist: 'This widget must be used inside Grist.',
     tabCalendar: 'Calendar',
     tabKanban: 'Kanban',
