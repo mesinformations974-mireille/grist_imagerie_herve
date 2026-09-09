@@ -10818,6 +10818,9 @@ if (!isInsideGrist()) {
     updateNotificationBadge();
     await resolveDocKey();            // B1 : filtres cloisonnes par document
     restoreFilters(); // conserver les filtres en changeant de page / au rechargement
+    // Synchronise les libellés statiques (data-i18n) avec le dictionnaire i18n dès le chargement,
+    // sans attendre un clic manuel sur FR/EN (setLang() ne s'exécutait avant que sur ce clic).
+    setLang(currentLang);
     renderProjectSelector();
     refreshAllViews();
     restoreActiveTab();
