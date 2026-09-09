@@ -9,7 +9,7 @@ var i18n = {
     appTitle: "GESTION IMAGERIE - VETAGROSUP",
     appSubtitle: "Organiser et suivre les rendez-vous et suivis d'imagerie à VetagroSup",
     notInGrist: 'Ce widget doit être utilisé dans Grist.',
-    tabCalendar: 'Calendrier',
+    tabCalendar: 'Planning',
     tabKanban: 'Kanban',
     tabTable: 'Tableau',
     tabGantt: 'Gantt',
@@ -6300,16 +6300,17 @@ function openNewTaskModal(defaultStatus) {
 
   // Dates
   html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field">';
+    // Dates (masquées : remplacées par Début RV / Fin RV, gardées en HTML caché pour compatibilité)
+  html += '<div class="detail-field" style="display:none;">';
   html += '<span class="detail-field-icon">📅</span>';
   html += '<span class="detail-field-label">' + t('fieldStartDate') + '</span>';
-  html += '<div class="detail-field-value"><input type="date" id="task-start" /></div>';
+  html += '<div class="detail-field-value"><input type="date" id="task-start" value="' + startVal + '" /></div>';
   html += '</div>';
 
-  html += '<div class="detail-field">';
+  html += '<div class="detail-field" style="display:none;">';
   html += '<span class="detail-field-icon">⏰</span>';
   html += '<span class="detail-field-label">' + t('fieldDueDate') + '</span>';
-  html += '<div class="detail-field-value"><input type="date" id="task-due" /></div>';
+  html += '<div class="detail-field-value"><input type="date" id="task-due" value="' + dueVal + '" /></div>';
   html += '</div>';
   html += '</div>';
 
