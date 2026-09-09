@@ -3598,21 +3598,36 @@ function confirmRdvPicker(dateStr) {
 
 // Petit formulaire dédié : seulement le créneau (Début RV / Fin RV) d'une demande existante.
 // dateStr optionnel : pré-remplit la date si le RV n'existe pas encore.
+
 function openRdvEditor(taskId, dateStr) {
   var task = tasks.find(function(t) { return t.id === taskId; });
   if (!task) return;
   var proj = projects.find(function(p) { return p.id === task.Project_Id; });
   var serviceName = proj ? proj.Name : (currentLang === 'fr' ? 'Sans service' : 'No service');
-  var debutVal = task.RDV_Debut ? fromEpochDateTime(task.RDV_Debut) : (dateStr ? dateStr + 'T09:00' : '');
-  var finVal = task.RDV_Fin ? fromEpochDateTime(task.RDV_Fin) : '';
+
+  // dateStr fourni = on vient d'un clic sur un jour du Planning -> date déjà fixée,
+  // on ne demande plus que l'heure. Pas de dateStr = "Déplacer le RV" -> date+heure modifiables.
+  var isNew = !!dateStr;
 
   var html = '<div class="modal-overlay" onclick="closeModal(event)">';
   html += '<div class="modal" onclick="event.stopPropagation()" style="max-width:420px;">';
   html += '<div class="modal-header"><h3>🕐 ' + (currentLang === 'fr' ? 'Rendez-vous — ' : 'Appointment — ') + sanitize(task.Title) + '</h3></div>';
   html += '<div class="modal-body" style="padding:16px;">';
   html += '<div style="font-size:12px;color:#64748b;margin-bottom:12px;">' + (currentLang === 'fr' ? 'Service' : 'Service') + ' : <b>' + sanitize(serviceName) + '</b></div>';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Début RV' : 'Start time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-debut" value="' + debutVal + '" /></div></div>';
-  html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Fin RV' : 'End time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-fin" value="' + finVal + '" /></div></div>';
+
+  if (isNew) {
+    var dateLabel = new Date(dateStr + 'T00:00').toLocaleDateString(currentLang === 'fr' ? 'fr-FR' : 'en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    html += '<div style="font-size:13px;margin-bottom:12px;">📅 <b>' + dateLabel + '</b></div>';
+    html += '<input type="hidden" id="rdv-editor-date" value="' + dateStr + '" />';
+    html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Heure de début' : 'Start') + '</span><div class="detail-field-value"><input type="time" id="rdv-editor-debut-time" value="09:00" /></div></div>';
+    html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Heure de fin' : 'End') + '</span><div class="detail-field-value"><input type="time" id="rdv-editor-fin-time" value="" /></div></div>';
+  } else {
+    var debutVal = task.RDV_Debut ? fromEpochDateTime(task.RDV_Debut) : '';
+    var finVal = task.RDV_Fin ? fromEpochDateTime(task.RDV_Fin) : '';
+    html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Début RV' : 'Start time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-debut" value="' + debutVal + '" /></div></div>';
+    html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Fin RV' : 'End time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-fin" value="' + finVal + '" /></div></div>';
+  }
+
   html += '</div>';
   html += '<div class="modal-footer" style="padding:16px;text-align:right;">';
   html += '<button class="btn btn-secondary" onclick="closeModalForce()">' + (currentLang === 'fr' ? 'Annuler' : 'Cancel') + '</button> ';
@@ -3624,10 +3639,21 @@ function openRdvEditor(taskId, dateStr) {
 async function saveRdvEditor(taskId) {
   var task = tasks.find(function(t) { return t.id === taskId; });
   if (!task) return;
-  var debutEl = document.getElementById('rdv-editor-debut');
-  var finEl = document.getElementById('rdv-editor-fin');
-  var debutEpoch = debutEl ? toEpoch(debutEl.value) : null;
-  var finEpoch = finEl ? toEpoch(finEl.value) : null;
+  var debutEpoch, finEpoch;
+  var dateHidden = document.getElementById('rdv-editor-date');
+  if (dateHidden) {
+    var dStr = dateHidden.value;
+    var debutTimeEl = document.getElementById('rdv-editor-debut-time');
+    var finTimeEl = document.getElementById('rdv-editor-fin-time');
+    debutEpoch = debutTimeEl && debutTimeEl.value ? toEpoch(dStr + 'T' + debutTimeEl.value) : null;
+    finEpoch = finTimeEl && finTimeEl.value ? toEpoch(dStr + 'T' + finTimeEl.value) : null;
+  } else {
+    var debutEl = document.getElementById('rdv-editor-debut');
+    var finEl = document.getElementById('rdv-editor-fin');
+    debutEpoch = debutEl ? toEpoch(debutEl.value) : null;
+    finEpoch = finEl ? toEpoch(finEl.value) : null;
+  }
+  
   if (!debutEpoch || !finEpoch) { showToast(currentLang === 'fr' ? 'Renseigne le début et la fin.' : 'Fill in start and end.', 'error'); return; }
   var conflictMsg = checkRdvConflict(taskId, task.Project_Id, debutEpoch, finEpoch);
   if (conflictMsg) { showToast(conflictMsg, 'error'); return; }
