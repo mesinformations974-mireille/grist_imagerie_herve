@@ -4030,13 +4030,16 @@
     }
 
     /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .stats-row { grid-template-columns: repeat(2, 1fr); }
       .kanban-column { min-width: 220px; flex: 1 0 220px; }
       .form-row { grid-template-columns: 1fr; }
       .header-row { flex-direction: column; align-items: flex-start; }
       .filter-combo-btn { min-width: 100px; max-width: 140px; }
       .proj-combobox-btn { min-width: 100px; max-width: 140px; }
+      #header-actions-row { flex-wrap: wrap; }
+      #header-actions-row #project-selector { width: 100%; order: 2; }
+      .btn-new-project, .btn-new-task { flex: 1 1 0; justify-content: center; order: 1; }
     }
 
     /* ========== FOOTER ========== */
