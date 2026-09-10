@@ -20,6 +20,10 @@
   <style>
     /* ========== RESET & BASE ========== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: #eef8f5;
@@ -28,6 +32,17 @@
       line-height: 1.5;
     }
     .hidden { display: none !important; }
+      #main-content { visibility: hidden; }
+      #app-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      gap: 12px;
+    }
+    #app-loading .spinner { width: 32px; height: 32px; border-width: 3px; }
+    #app-loading span { font-size: 13px; color: #64748b; }
 
     /* ========== HEADER ========== */
     .app-header {
@@ -4044,6 +4059,12 @@
     <p data-i18n="notInGrist">Ce widget doit être utilisé dans Grist.</p>
   </div>
 
+  <!-- LOADING STATE (évite le flash d'affichage brut avant que le JS ait fini) -->
+  <div id="app-loading">
+    <div class="spinner"></div>
+    <span>Chargement…</span>
+  </div>
+  
   <!-- MAIN CONTENT -->
   <div id="main-content">
 
@@ -4682,7 +4703,17 @@
     </div>
   </div>
 
-  <script src="widget.js?v=138"></script>
+    <script>
+    // Filet de sécurité : si le chargement normal échoue pour une raison quelconque,
+    // on révèle quand même l'interface après 8 secondes plutôt que de rester bloqué.
+    setTimeout(function() {
+      var loadingEl = document.getElementById('app-loading');
+      var mainEl = document.getElementById('main-content');
+      if (loadingEl && loadingEl.style.display !== 'none') loadingEl.style.display = 'none';
+      if (mainEl) mainEl.style.visibility = 'visible';
+    }, 8000);
+  </script>
+  <script src="widget.js?v=139"></script>
   <footer style="position: fixed; bottom: 0; left: 0; right: 0; background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 4px 12px; font-size: 0.7em; color: #94a3b8; display: flex; justify-content: space-between; z-index: 1000;">
     <span>© 2026 isaytoo</span>
     <a href="https://gristup.fr" target="_blank" style="color: #3b82f6; text-decoration: none;">gristup.fr</a>
