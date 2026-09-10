@@ -11171,6 +11171,12 @@ if (!isInsideGrist()) {
     renderProjectSelector();
     refreshAllViews();
     restoreActiveTab();
+
+    // Révèle l'interface d'un coup, une fois que tout est prêt (évite le flash d'affichage brut)
+    var loadingEl = document.getElementById('app-loading');
+    var mainEl = document.getElementById('main-content');
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (mainEl) mainEl.style.visibility = 'visible';
     // Synchronise les choix de la colonne Status des sous-tâches avec les statuts personnalisés
     if (isOwner) { syncSubtaskStatusChoices(); syncTaskStatusChoices(); }
 
