@@ -38,6 +38,9 @@
       font-weight: 800;
       color: #006a74;
     }
+     @media (max-width: 480px) {
+      .app-header h1 { font-size: 20px; }
+    }
     .app-header p {
       font-size: 13px;
       color: #64748b;
@@ -140,6 +143,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      flex-wrap: wrap;
     }
     .project-active-badge {
       display: inline-flex;
@@ -4016,6 +4020,8 @@
       .kanban-column { min-width: 220px; flex: 1 0 220px; }
       .form-row { grid-template-columns: 1fr; }
       .header-row { flex-direction: column; align-items: flex-start; }
+      .filter-combo-btn { min-width: 100px; max-width: 140px; }
+      .proj-combobox-btn { min-width: 100px; max-width: 140px; }
     }
 
     /* ========== FOOTER ========== */
