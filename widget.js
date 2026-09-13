@@ -3408,9 +3408,10 @@ function updateStats() {
   var total = filteredTasks.length;
   var html = '';
   if (showArchivedTasks) {
-    html += '<div class="stat-card stat-total"><div><div class="stat-label">' + (currentLang === 'fr' ? 'Archivées' : 'Archived') + '</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📦</div></div>';
+    var archLabel = currentLang === 'fr' ? 'Archivées' : 'Archived';
+    html += '<div class="stat-card stat-total" title="' + sanitize(archLabel) + '"><div><div class="stat-label">' + archLabel + '</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📦</div></div>';
   } else {
-    html += '<div class="stat-card stat-total"><div><div class="stat-label">Total</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📋</div></div>';
+    html += '<div class="stat-card stat-total" title="Total"><div><div class="stat-label">Total</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📋</div></div>';
     var statuses = getKanbanStatuses();
     for (var i = 0; i < statuses.length; i++) {
       var s = statuses[i];
@@ -3421,7 +3422,7 @@ function updateStats() {
       var icon = (s.emoji && s.emoji.trim())
         ? s.emoji.trim()
         : '<span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:' + color + ';"></span>';
-      html += '<div class="stat-card"><div><div class="stat-label">' + sanitize(label) + '</div><div class="stat-value" style="color:' + color + '">' + count + '</div></div><div class="stat-icon">' + icon + '</div></div>';
+            html += '<div class="stat-card" title="' + sanitize(label) + '"><div><div class="stat-label">' + sanitize(label) + '</div><div class="stat-value" style="color:' + color + '">' + count + '</div></div><div class="stat-icon">' + icon + '</div></div>';
     }
   }
   container.innerHTML = html;
