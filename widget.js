@@ -809,6 +809,16 @@ async function syncSubtaskStatusChoices() {
     console.log('syncSubtaskStatusChoices:', e.message);
   }
 }
+
+function renderColLabel(col) {
+  var safeLabel = sanitize(col.label || '');
+  if (!col.emoji) return '<span class="col-label-text">' + safeLabel + '</span>';
+  var safeEmoji = sanitize(col.emoji);
+  var prefix = safeEmoji + ' ';
+  var rest = safeLabel.indexOf(prefix) === 0 ? safeLabel.slice(prefix.length) : safeLabel;
+  return '<span class="col-label-emoji">' + safeEmoji + '</span><span class="col-label-text"> ' + rest + '</span>';
+}
+
 function getStatusLabel(key) {
   var statuses = getKanbanStatuses();
   var found = statuses.find(function(s) { return s.key === key; });
@@ -4198,7 +4208,7 @@ function renderKanbanView() {
     columns = Object.values(projMap).sort(function(a, b) { return a.label.localeCompare(b.label); });
   } else if (showArchivedTasks) {
     columns = [
-      { key: 'archived', label: currentLang === 'fr' ? '📦 Archives' : '📦 Archives', cssClass: 'col-custom', field: 'Status', color: '#94a3b8' }
+      { key: 'archived', label: currentLang === 'fr' ? '📦 Archives' : '📦 Archives', emoji: '📦', cssClass: 'col-custom', field: 'Status', color: '#94a3b8' }
     ];
   } else {
     var statuses = getKanbanStatuses();
@@ -4206,6 +4216,7 @@ function renderKanbanView() {
       return {
         key: s.key,
         label: (s.emoji ? s.emoji + ' ' : '') + (currentLang === 'fr' ? s.label_fr : s.label_en),
+        emoji: s.emoji || '',
         cssClass: s.cssClass || 'col-custom',
         field: 'Status',
         color: s.color
@@ -4238,7 +4249,7 @@ function renderKanbanView() {
     html += '<div class="kanban-column ' + col.cssClass + '">';
     var headerStyle = col.color ? 'border-bottom-color:' + col.color + ';color:' + col.color + ';' : '';
     html += '<div class="kanban-col-header" style="' + headerStyle + '">';
-    html += '<div style="display:flex;align-items:center;gap:4px;"><span style="' + dotStyle + '"></span>' + col.label + ' <span class="col-count">' + colTasks.length + '</span></div>';
+        html += '<div style="display:flex;align-items:center;gap:4px;"><span style="' + dotStyle + '"></span>' + renderColLabel(col) + ' <span class="col-count">' + colTasks.length + '</span></div>';
     html += '<div style="display:flex;align-items:center;gap:4px;">';
     if (kanbanGroupBy === 'status') html += '<button class="col-add" onclick="openNewTaskModal(\'' + col.key + '\')" title="' + (currentLang === 'fr' ? 'Nouvelle demande' : 'New request') + '">+</button>';
     var collapseColor = col.color ? 'color:' + col.color + ';background:white;' : '';
