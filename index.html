@@ -824,6 +824,7 @@
       display: flex;
       flex-direction: column;
     }
+    // pour que les lignes des colonnes soient à la même hauteur
     .kanban-col-header {
       display: flex;
       align-items: center;
@@ -831,7 +832,9 @@
       padding: 12px 14px;
       font-weight: 700;
       font-size: 13px;
+      line-height: 1.3;
       border-bottom: 2px solid transparent;
+      min-height: 54px;
     }
     .kanban-col-header .col-count {
       background: white;
@@ -859,6 +862,12 @@
     .col-done .kanban-col-header { border-bottom-color: #22c55e; color: #166534; }
     .col-done .col-count { color: #22c55e; }
 
+  @media (max-width: 768px) {
+      .kanban-col-header .col-label-text { display: none; }
+      .kanban-col-header .col-label-emoji { font-size: 16px; }
+      .kanban-col-header { min-height: 34px; }
+    }
+    
     .kanban-column-collapsed {
       min-height: 300px;
       min-width: 42px;
