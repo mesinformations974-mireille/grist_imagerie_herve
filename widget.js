@@ -7,15 +7,15 @@ var currentLang = 'fr';
 var i18n = {
   fr: {
     appTitle: "GESTION IMAGERIE - VETAGROSUP",
-    appSubtitle: "Organiser et suivre les rendez-vous d'imagerie à VetagroSup",
+    appSubtitle: "Organiser et suivre les rendez-vous et suivis d'imagerie à VetagroSup",
     notInGrist: 'Ce widget doit être utilisé dans Grist.',
     tabCalendar: 'Calendrier',
     tabKanban: 'Kanban',
     tabTable: 'Tableau',
     tabGantt: 'Gantt',
     tabTemplates: 'Templates',
-    newTask: 'Nouvelle demande',
-    newProject: 'Nouveau service',
+    newTask: 'Nouvelle tâche',
+    newProject: 'Nouveau projet',
     statTotal: 'Total',
     statTodo: 'À faire',
     statProgress: 'En cours',
@@ -23,17 +23,17 @@ var i18n = {
     colTodo: 'À faire',
     colProgress: 'En cours',
     colDone: 'Terminé',
-    noTasks: 'Aucune demande',
-    addTask: '+ Ajouter une demande',
+    noTasks: 'Aucune tâche',
+    addTask: '+ Ajouter une tâche',
     tableTitle: 'Tableau de Gestion',
-    tableSubtitle: "Gérez vos demandes d'imagerie avec édition inline avancée",
-    searchPlaceholder: 'Rechercher une demande...',
+    tableSubtitle: 'Gérez vos tâches avec édition inline avancée',
+    searchPlaceholder: 'Rechercher une tâche...',
     allStatuses: 'Tous les statuts',
     allPriorities: 'Toutes priorités',
-    colTaskName: 'Demande',
+    colTaskName: 'Tâche',
     colStatus: 'Statut',
     colPriority: 'Priorité',
-    colAssignee: 'Pris en charge par',
+    colAssignee: 'Assigné à',
     colStartDate: 'Date de début',
     colDueDate: 'Échéance',
     colActions: 'Actions',
@@ -56,21 +56,21 @@ var i18n = {
     extensionDate: 'Date de prolongation',
     extensionTooltip: 'Prolongation : dépassement de l\'échéance',
     autoExtend: 'Prolongation auto',
-    autoExtendHint: 'Prolonge automatiquement jusqu\'à la date du jour tant que la demande n\'est pas terminée',
+    autoExtendHint: 'Prolonge automatiquement jusqu\'à la date du jour tant que la tâche n\'est pas terminée',
     ganttFullYear: 'Année complète',
     ganttNavInfo: 'Navigation infinie vers autres années',
     ganttViewRange: 'Vue :',
-    templatesTitle: 'Demandes types',
-    templatesSubtitle: 'Gérez les modèles de demandes disponibles pour tous les utilisateurs',
+    templatesTitle: 'Tâches Préformatées',
+    templatesSubtitle: 'Gérez les modèles de tâches disponibles pour tous les utilisateurs',
     newTemplate: 'Nouveau modèle',
-    modalNewTask: 'Nouvelle demande',
-    modalEditTask: 'Modifier la demande',
-    modalNewTemplate: 'Nouveau modèle de demande',
-    fieldTitle: 'N° Dossier *',
+    modalNewTask: 'Nouvelle tâche',
+    modalEditTask: 'Modifier la tâche',
+    modalNewTemplate: 'Nouveau modèle de tâche',
+    fieldTitle: 'Titre *',
     fieldDescription: 'Description',
     fieldStatus: 'Statut',
     fieldPriority: 'Priorité',
-    fieldAssignee: 'Pris en charge par',
+    fieldAssignee: 'Assigné à',
     fieldGroup: 'Groupe',
     fieldStartDate: 'Date de début',
     fieldDueDate: 'Échéance',
@@ -85,12 +85,12 @@ var i18n = {
     save: 'Enregistrer',
     cancel: 'Annuler',
     delete: 'Supprimer',
-    confirmDelete: 'Supprimer cette demande ?',
+    confirmDelete: 'Supprimer cette tâche ?',
     confirmDeleteTemplate: 'Supprimer ce modèle ?',
-    taskCreated: 'Demande créée !',
-    taskUpdated: 'Demande mise à jour !',
-    taskDeleted: 'Demande supprimée.',
-    taskMoved: 'Demande déplacée.',
+    taskCreated: 'Tâche créée !',
+    taskUpdated: 'Tâche mise à jour !',
+    taskDeleted: 'Tâche supprimée.',
+    taskMoved: 'Tâche déplacée.',
     templateCreated: 'Modèle créé !',
     templateDeleted: 'Modèle supprimé.',
     overdue: 'En retard',
@@ -98,28 +98,28 @@ var i18n = {
     notDefined: 'Non définie',
     tablesCreated: 'Tables créées automatiquement.',
     notifications: 'Alertes',
-    overdueTasksAlert: 'demande(s) en retard',
-    upcomingTasksAlert: 'demande(s) à venir (3j)',
+    overdueTasksAlert: 'tâche(s) en retard',
+    upcomingTasksAlert: 'tâche(s) à venir (3j)',
     noAlerts: 'Aucune alerte',
     markAllRead: 'Tout lu',
     markAsRead: 'Marquer comme lu',
     notifUnread: 'non lu(s)',
     automationTitle: 'Automatisations',
-    automationSubtitle: 'Actions automatiques quand les demandes changent',
+    automationSubtitle: 'Actions automatiques quand les tâches changent',
     addRule: 'Ajouter une règle',
     ruleEnabled: 'Activée',
     ruleDisabled: 'Désactivée',
     triggerLabel: 'Déclencheur',
     triggerStatusChange: 'Changement de statut',
     triggerPriorityChange: 'Changement de priorité',
-    triggerAssignmentChange: 'Changement de prise en charge',
-    triggerOverdue: 'Demande en retard',
+    triggerAssignmentChange: 'Changement d\'assignation',
+    triggerOverdue: 'Tâche en retard',
     triggerApproachingDeadline: 'Échéance proche (3j)',
     conditionFrom: 'De',
     conditionTo: 'Vers',
     conditionAny: 'N\'importe quel',
     actionLabel: 'Action',
-    actionNotifyAssignee: 'Notifier la personne en charge',
+    actionNotifyAssignee: 'Notifier l\'assigné',
     actionNotifyProjectLead: 'Notifier le responsable',
     actionNotifySpecific: 'Notifier une personne',
     actionNotifyAll: 'Notifier tout le monde',
@@ -139,34 +139,34 @@ var i18n = {
     lightMode: 'Mode clair',
     tabStats: 'Stats',
     statsTitle: 'Statistiques',
-    statsSubtitle: "Analysez l'activité de votre service imagerie",
+    statsSubtitle: 'Analysez la productivité de votre équipe',
     chartStatus: 'Répartition par statut',
     chartPriority: 'Répartition par priorité',
-    chartAssignee: 'Demandes par responsable',
-    chartWeek: 'Demandes cette semaine',
+    chartAssignee: 'Tâches par assigné',
+    chartWeek: 'Tâches cette semaine',
     chartWorkload: 'Charge de travail (risque de surcharge)',
     completionRate: 'Taux de complétion',
     overdueLabel: 'En retard',
-    avgTimePerTask: 'Temps moyen/demande',
+    avgTimePerTask: 'Temps moyen/tâche',
     totalTime: 'Temps total',
-    allProjects: 'Tous les services',
-    manageProjects: 'Gérer les services',
-    project: 'Service',
-    projectName: 'Nom du service',
+    allProjects: 'Tous les projets',
+    manageProjects: 'Gérer les projets',
+    project: 'Projet',
+    projectName: 'Nom du projet',
     projectLead: 'Responsable',
     projectDescription: 'Description',
     projectColor: 'Couleur',
     projectStatus: 'Statut',
-    addProject: 'Ajouter un service',
-    editProject: 'Modifier le service',
-    deleteProject: 'Supprimer le service',
-    noProject: 'Sans service',
-    projectSearchPlaceholder: 'Rechercher un service...',
+    addProject: 'Ajouter un projet',
+    editProject: 'Modifier le projet',
+    deleteProject: 'Supprimer le projet',
+    noProject: 'Sans projet',
+    projectSearchPlaceholder: 'Rechercher un projet...',
     tabSettings: 'Paramètres',
-    settingsSubtitle: 'Configurez vos services et autres options',
-    projectsSubtitle: "Gérez vos services d'imagerie",
-    categoriesSubtitle: 'Gérez les espèces consultées',
-    tagsSubtitle: 'Gérez les tags pour vos demandes',
+    settingsSubtitle: 'Configurez vos projets, catégories et autres options',
+    projectsSubtitle: 'Gérez vos projets',
+    categoriesSubtitle: 'Gérez les catégories de tâches',
+    tagsSubtitle: 'Gérez les tags pour vos tâches',
     addCategory: 'Ajouter',
     tagName: 'Nom du tag',
     tagColor: 'Couleur',
@@ -174,7 +174,7 @@ var i18n = {
     totalTemplates: 'Total modèles',
     totalUsages: 'Utilisations totales',
     mostUsed: 'Plus utilisé',
-    categories: 'Espèces',
+    categories: 'Catégories',
     tabTeam: 'Équipe',
     teamUsersTitle: 'Utilisateurs',
     teamUsersSubtitle: 'Gérez les membres de votre équipe',
@@ -212,24 +212,24 @@ var i18n = {
     startLabel: 'Début :',
     dueLabel: 'Échéance :',
     quickActions: 'Actions rapides',
-    reopenTask: 'Rouvrir la demande',
-    startTask: 'Démarrer la demande',
-    completeTask: 'Terminer la demande',
+    reopenTask: 'Rouvrir la tâche',
+    startTask: 'Démarrer la tâche',
+    completeTask: 'Terminer la tâche',
     changePriority: 'Changer la priorité',
-    taskSummary: 'Résumé de la demande',
+    taskSummary: 'Résumé de la tâche',
     addAssignee: 'Ajouter',
     searchAssignee: 'Rechercher des noms...',
-    subtasks: 'Étapes',
-    addSubtask: 'Ajouter une étape',
-    subtaskPlaceholder: 'Nouvelle étape...',
-    noSubtasks: 'Aucune étape',
-    subtaskCompleted: 'Étape terminée',
-    subtaskDeleted: 'Étape supprimée',
-    subtaskSaved: 'Étape modifiée',
-    editSubtask: "Modifier l'étape",
+    subtasks: 'Sous-tâches',
+    addSubtask: 'Ajouter une sous-tâche',
+    subtaskPlaceholder: 'Nouvelle sous-tâche...',
+    noSubtasks: 'Aucune sous-tâche',
+    subtaskCompleted: 'Sous-tâche terminée',
+    subtaskDeleted: 'Sous-tâche supprimée',
+    subtaskSaved: 'Sous-tâche modifiée',
+    editSubtask: 'Modifier la sous-tâche',
     subtaskAssignee: 'Responsable',
     subtaskDueDate: 'Échéance',
-    noAssignee: 'Non pris en charge',
+    noAssignee: 'Non assigné',
     dependencies: 'Dépendances',
     blockedBy: 'Bloqué par',
     blocks: 'Bloque',
@@ -237,8 +237,8 @@ var i18n = {
     noDependencies: 'Aucune dépendance',
     dependencyAdded: 'Dépendance ajoutée',
     dependencyRemoved: 'Dépendance supprimée',
-    selectTask: 'Sélectionner une demande...',
-    blockedWarning: 'Demande bloquée',
+    selectTask: 'Sélectionner une tâche...',
+    blockedWarning: 'Tâche bloquée',
     comments: 'Commentaires',
     addComment: 'Ajouter un commentaire',
     commentPlaceholder: 'Écrire un commentaire...',
@@ -270,7 +270,7 @@ var i18n = {
     recurrenceQuarterly: 'Trimestrielle',
     recurrenceYearly: 'Annuelle',
     nextOccurrence: 'Prochaine occurrence créée',
-    recurrenceExplain: 'Quand cette demande est marquée "Terminée", une nouvelle occurrence est automatiquement créée avec les dates décalées.',
+    recurrenceExplain: 'Quand cette tâche est marquée "Terminée", une nouvelle occurrence est automatiquement créée avec les dates décalées.',
     generateMonth: 'Générer pour le mois',
     generateYear: 'Générer pour l\'année',
     occurrencesGenerated: 'occurrences générées',
@@ -289,12 +289,12 @@ var i18n = {
     customFieldCreated: 'Champ créé',
     customFieldDeleted: 'Champ supprimé',
     noCustomFields: 'Aucun champ personnalisé',
-    categories: 'Espèces',
-    manageCategories: 'Gérer les espèces',
+    categories: 'Catégories',
+    manageCategories: 'Gérer les catégories',
     addCategory: 'Ajouter',
-    categoryCreated: 'Espèce créée',
-    categoryDeleted: 'Espèce supprimée',
-    noCategories: 'Aucune espèce',
+    categoryCreated: 'Catégorie créée',
+    categoryDeleted: 'Catégorie supprimée',
+    noCategories: 'Aucune catégorie',
     chartTimeline: 'Charge dans le temps par agent',
     chartBurndown: 'Burndown / Burnup',
     burnRemaining: 'Restantes',
@@ -302,12 +302,12 @@ var i18n = {
     burnIdeal: 'Idéal',
     activityLog: 'Journal d\'activité',
     activityLogSubtitle: 'Historique des actions récentes',
-    actTaskCreated: 'a créé la demande',
-    actTaskUpdated: 'a modifié la demande',
-    actTaskDeleted: 'a supprimé la demande',
+    actTaskCreated: 'a créé la tâche',
+    actTaskUpdated: 'a modifié la tâche',
+    actTaskDeleted: 'a supprimé la tâche',
     actStatusChanged: 'a changé le statut de',
-    actTaskArchived: 'a archivé la demande',
-    actTaskRestored: 'a restauré la demande',
+    actTaskArchived: 'a archivé la tâche',
+    actTaskRestored: 'a restauré la tâche',
     actCommentAdded: 'a commenté sur',
     actNoActivity: 'Aucune activité récente',
     actLoadMore: 'Voir plus',
@@ -315,7 +315,7 @@ var i18n = {
     required: 'requis',
     tag: 'Tag',
     globalSearchPlaceholder: 'Rechercher...',
-    taskSearchPlaceholder: 'Rechercher une demande...',
+    taskSearchPlaceholder: 'Rechercher une tâche...',
     templateSearchPlaceholder: 'Rechercher un modèle...',
     calToday: "Aujourd'hui",
     calMonth: 'Mois',
@@ -333,7 +333,7 @@ var i18n = {
     securityTitle: 'Sécurité du document',
     securitySubtitle: 'Protégez les tables PM_* avec des règles d\'accès Grist (ACL)',
     raciMode: 'Mode RACI',
-    raciSubtitle: 'Activez la matrice RACI pour définir les rôles sur chaque demande',
+    raciSubtitle: 'Activez la matrice RACI pour définir les rôles sur chaque tâche',
     raciResponsible: 'Responsable (R)',
     raciAccountable: 'Approbateur (A)',
     raciConsulted: 'Consulté (C)',
@@ -344,7 +344,7 @@ var i18n = {
     projectCompleted: 'Terminé',
     projectArchived: 'Archivé',
     editTemplate: 'Modifier le modèle',
-    modalEditTemplate: 'Modifier le modèle de demande',
+    modalEditTemplate: 'Modifier le modèle de tâche',
     templateUpdated: 'Modèle mis à jour !'
   },
   en: {
@@ -356,8 +356,8 @@ var i18n = {
     tabTable: 'Table',
     tabGantt: 'Gantt',
     tabTemplates: 'Templates',
-    newTask: 'New request',
-    newProject: 'New service',
+    newTask: 'New task',
+    newProject: 'New project',
     statTotal: 'Total',
     statTodo: 'To do',
     statProgress: 'In progress',
@@ -365,17 +365,17 @@ var i18n = {
     colTodo: 'To do',
     colProgress: 'In progress',
     colDone: 'Done',
-    noTasks: 'No requests',
-    addTask: '+ Add a request',
+    noTasks: 'No tasks',
+    addTask: '+ Add a task',
     tableTitle: 'Management Table',
-    tableSubtitle: 'Manage your imaging requests with advanced inline editing',
-    searchPlaceholder: 'Search a request...',
+    tableSubtitle: 'Manage your tasks with advanced inline editing',
+    searchPlaceholder: 'Search a task...',
     allStatuses: 'All statuses',
     allPriorities: 'All priorities',
-    colTaskName: 'Request',
+    colTaskName: 'Task',
     colStatus: 'Status',
     colPriority: 'Priority',
-    colAssignee: 'Handled by',
+    colAssignee: 'Assigned to',
     colStartDate: 'Start date',
     colDueDate: 'Due date',
     colActions: 'Actions',
@@ -398,21 +398,21 @@ var i18n = {
     extensionDate: 'Extension date',
     extensionTooltip: 'Extension: overdue beyond deadline',
     autoExtend: 'Auto extend',
-    autoExtendHint: 'Automatically extends to today until the request is completed',
+    autoExtendHint: 'Automatically extends to today until the task is completed',
     ganttFullYear: 'Full year',
     ganttNavInfo: 'Infinite navigation to other years',
     ganttViewRange: 'View:',
-    templatesTitle: 'Request Templates',
-    templatesSubtitle: 'Manage request templates available to all users',
+    templatesTitle: 'Task Templates',
+    templatesSubtitle: 'Manage task templates available to all users',
     newTemplate: 'New template',
-    modalNewTask: 'New request',
-    modalEditTask: 'Edit request',
-    modalNewTemplate: 'New request template',
-    fieldTitle: 'File # *',
+    modalNewTask: 'New task',
+    modalEditTask: 'Edit task',
+    modalNewTemplate: 'New task template',
+    fieldTitle: 'Title *',
     fieldDescription: 'Description',
     fieldStatus: 'Status',
     fieldPriority: 'Priority',
-    fieldAssignee: 'Handled by',
+    fieldAssignee: 'Assigned to',
     fieldGroup: 'Group',
     fieldStartDate: 'Start date',
     fieldDueDate: 'Due date',
@@ -427,37 +427,37 @@ var i18n = {
     save: 'Save',
     cancel: 'Cancel',
     delete: 'Delete',
-    confirmDelete: 'Delete this request?',
+    confirmDelete: 'Delete this task?',
     confirmDeleteTemplate: 'Delete this template?',
-    taskCreated: 'Request created!',
-    taskUpdated: 'Request updated!',
-    taskDeleted: 'Request deleted.',
-    taskMoved: 'Request moved.',
+    taskCreated: 'Task created!',
+    taskUpdated: 'Task updated!',
+    taskDeleted: 'Task deleted.',
+    taskMoved: 'Task moved.',
     templateCreated: 'Template created!',
     templateDeleted: 'Template deleted.',
     notifications: 'Alerts',
-    overdueTasksAlert: 'overdue request(s)',
-    upcomingTasksAlert: 'upcoming request(s) (3d)',
+    overdueTasksAlert: 'overdue task(s)',
+    upcomingTasksAlert: 'upcoming task(s) (3d)',
     noAlerts: 'No alerts',
     markAllRead: 'All read',
     markAsRead: 'Mark as read',
     notifUnread: 'unread',
     automationTitle: 'Automations',
-    automationSubtitle: 'Automatic actions when requests change',
+    automationSubtitle: 'Automatic actions when tasks change',
     addRule: 'Add a rule',
     ruleEnabled: 'Enabled',
     ruleDisabled: 'Disabled',
     triggerLabel: 'Trigger',
     triggerStatusChange: 'Status change',
     triggerPriorityChange: 'Priority change',
-    triggerAssignmentChange: 'Handler change',
-    triggerOverdue: 'Request overdue',
+    triggerAssignmentChange: 'Assignment change',
+    triggerOverdue: 'Task overdue',
     triggerApproachingDeadline: 'Approaching deadline (3d)',
     conditionFrom: 'From',
     conditionTo: 'To',
     conditionAny: 'Any',
     actionLabel: 'Action',
-    actionNotifyAssignee: 'Notify handler',
+    actionNotifyAssignee: 'Notify assignee',
     actionNotifyProjectLead: 'Notify project lead',
     actionNotifySpecific: 'Notify specific person',
     actionNotifyAll: 'Notify everyone',
@@ -477,34 +477,34 @@ var i18n = {
     lightMode: 'Light mode',
     tabStats: 'Stats',
     statsTitle: 'Statistics',
-    statsSubtitle: 'Analyze your imaging service activity',
+    statsSubtitle: 'Analyze your team productivity',
     chartStatus: 'Distribution by status',
     chartPriority: 'Distribution by priority',
-    chartAssignee: 'Requests by handler',
-    chartWeek: 'Requests this week',
+    chartAssignee: 'Tasks by assignee',
+    chartWeek: 'Tasks this week',
     chartWorkload: 'Workload (overload risk)',
     completionRate: 'Completion rate',
     overdueLabel: 'Overdue',
-    avgTimePerTask: 'Avg time/request',
+    avgTimePerTask: 'Avg time/task',
     totalTime: 'Total time',
-    allProjects: 'All services',
-    manageProjects: 'Manage services',
-    project: 'Service',
-    projectName: 'Service name',
+    allProjects: 'All projects',
+    manageProjects: 'Manage projects',
+    project: 'Project',
+    projectName: 'Project name',
     projectLead: 'Lead',
     projectDescription: 'Description',
     projectColor: 'Color',
     projectStatus: 'Status',
-    addProject: 'Add service',
-    editProject: 'Edit service',
-    deleteProject: 'Delete service',
-    noProject: 'No service',
-    projectSearchPlaceholder: 'Search a service...',
+    addProject: 'Add project',
+    editProject: 'Edit project',
+    deleteProject: 'Delete project',
+    noProject: 'No project',
+    projectSearchPlaceholder: 'Search a project...',
     tabSettings: 'Settings',
-    settingsSubtitle: 'Configure your services, categories and other options',
-    projectsSubtitle: 'Manage your imaging services',
-    categoriesSubtitle: 'Manage request categories',
-    tagsSubtitle: 'Manage tags for your requests',
+    settingsSubtitle: 'Configure your projects, categories and other options',
+    projectsSubtitle: 'Manage your projects',
+    categoriesSubtitle: 'Manage task categories',
+    tagsSubtitle: 'Manage tags for your tasks',
     addCategory: 'Add',
     tagName: 'Tag name',
     tagColor: 'Color',
@@ -554,24 +554,24 @@ var i18n = {
     startLabel: 'Start:',
     dueLabel: 'Due:',
     quickActions: 'Quick Actions',
-    reopenTask: 'Reopen request',
-    startTask: 'Start request',
-    completeTask: 'Complete request',
+    reopenTask: 'Reopen task',
+    startTask: 'Start task',
+    completeTask: 'Complete task',
     changePriority: 'Change priority',
-    taskSummary: 'Request Summary',
+    taskSummary: 'Task Summary',
     addAssignee: 'Add',
     searchAssignee: 'Search names...',
-    subtasks: 'Steps',
-    addSubtask: 'Add step',
-    subtaskPlaceholder: 'New step...',
-    noSubtasks: 'No steps',
-    subtaskCompleted: 'Step completed',
-    subtaskDeleted: 'Step deleted',
-    subtaskSaved: 'Step updated',
-    editSubtask: 'Edit step',
+    subtasks: 'Subtasks',
+    addSubtask: 'Add subtask',
+    subtaskPlaceholder: 'New subtask...',
+    noSubtasks: 'No subtasks',
+    subtaskCompleted: 'Subtask completed',
+    subtaskDeleted: 'Subtask deleted',
+    subtaskSaved: 'Subtask updated',
+    editSubtask: 'Edit subtask',
     subtaskAssignee: 'Assignee',
     subtaskDueDate: 'Due date',
-    noAssignee: 'Not yet handled',
+    noAssignee: 'Unassigned',
     dependencies: 'Dependencies',
     blockedBy: 'Blocked by',
     blocks: 'Blocks',
@@ -579,8 +579,8 @@ var i18n = {
     noDependencies: 'No dependencies',
     dependencyAdded: 'Dependency added',
     dependencyRemoved: 'Dependency removed',
-    selectTask: 'Select a request...',
-    blockedWarning: 'Blocked request',
+    selectTask: 'Select a task...',
+    blockedWarning: 'Blocked task',
     comments: 'Comments',
     addComment: 'Add comment',
     commentPlaceholder: 'Write a comment...',
@@ -612,7 +612,7 @@ var i18n = {
     recurrenceQuarterly: 'Quarterly',
     recurrenceYearly: 'Yearly',
     nextOccurrence: 'Next occurrence created',
-    recurrenceExplain: 'When this request is marked "Done", a new occurrence is automatically created with shifted dates.',
+    recurrenceExplain: 'When this task is marked "Done", a new occurrence is automatically created with shifted dates.',
     generateMonth: 'Generate for the month',
     generateYear: 'Generate for the year',
     occurrencesGenerated: 'occurrences generated',
@@ -644,12 +644,12 @@ var i18n = {
     burnIdeal: 'Ideal',
     activityLog: 'Activity Log',
     activityLogSubtitle: 'Recent actions history',
-    actTaskCreated: 'created request',
-    actTaskUpdated: 'updated request',
-    actTaskDeleted: 'deleted request',
+    actTaskCreated: 'created task',
+    actTaskUpdated: 'updated task',
+    actTaskDeleted: 'deleted task',
     actStatusChanged: 'changed status of',
-    actTaskArchived: 'archived request',
-    actTaskRestored: 'restored request',
+    actTaskArchived: 'archived task',
+    actTaskRestored: 'restored task',
     actCommentAdded: 'commented on',
     actNoActivity: 'No recent activity',
     actLoadMore: 'Load more',
@@ -657,7 +657,7 @@ var i18n = {
     required: 'required',
     tag: 'Tag',
     globalSearchPlaceholder: 'Search...',
-    taskSearchPlaceholder: 'Search a request...',
+    taskSearchPlaceholder: 'Search a task...',
     templateSearchPlaceholder: 'Search a template...',
     calToday: 'Today',
     calMonth: 'Month',
@@ -675,7 +675,7 @@ var i18n = {
     securityTitle: 'Document security',
     securitySubtitle: 'Protect PM_* tables with Grist access rules (ACL)',
     raciMode: 'RACI Mode',
-    raciSubtitle: 'Enable the RACI matrix to define roles on each request',
+    raciSubtitle: 'Enable the RACI matrix to define roles on each task',
     raciResponsible: 'Responsible (R)',
     raciAccountable: 'Accountable (A)',
     raciConsulted: 'Consulted (C)',
@@ -686,7 +686,7 @@ var i18n = {
     projectCompleted: 'Completed',
     projectArchived: 'Archived',
     editTemplate: 'Edit template',
-    modalEditTemplate: 'Edit request template',
+    modalEditTemplate: 'Edit task template',
     templateUpdated: 'Template updated!'
   }
 };
@@ -762,29 +762,6 @@ function getKanbanStatuses() {
 async function saveKanbanStatuses() {
   await saveSetting('kanban_statuses', JSON.stringify(customKanbanStatuses));
   syncSubtaskStatusChoices();
-  syncTaskStatusChoices();
-}
-
-// Synchronise les choix (+ couleurs) de la colonne Status de PM_Tasks avec les
-// statuts Kanban personnalisés → évite le contour rouge "valeur hors liste" dans Grist.
-async function syncTaskStatusChoices() {
-  try {
-    var statuses = getKanbanStatuses();
-    var choices = statuses.map(function(s) { return s.key; });
-    if (choices.indexOf('archived') === -1) choices.push('archived');
-    var choiceOptions = {};
-    statuses.forEach(function(s) {
-      if (s.color) choiceOptions[s.key] = { fillColor: s.color, textColor: '#ffffff' };
-    });
-    var widgetOptions = JSON.stringify({ widget: 'TextBox', choices: choices, choiceOptions: choiceOptions });
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('pm_task_status_sig') === widgetOptions) return;
-    await grist.docApi.applyUserActions([
-      ['ModifyColumn', TASKS_TABLE, 'Status', { widgetOptions: widgetOptions }]
-    ]);
-    if (typeof localStorage !== 'undefined') localStorage.setItem('pm_task_status_sig', widgetOptions);
-  } catch (e) {
-    console.log('syncTaskStatusChoices:', e.message);
-  }
 }
 
 // Synchronise les choix (+ couleurs) de la colonne Status de PM_Subtasks avec les
@@ -809,16 +786,6 @@ async function syncSubtaskStatusChoices() {
     console.log('syncSubtaskStatusChoices:', e.message);
   }
 }
-
-function renderColLabel(col) {
-  var safeLabel = sanitize(col.label || '');
-  if (!col.emoji) return '<span class="col-label-text">' + safeLabel + '</span>';
-  var safeEmoji = sanitize(col.emoji);
-  var prefix = safeEmoji + ' ';
-  var rest = safeLabel.indexOf(prefix) === 0 ? safeLabel.slice(prefix.length) : safeLabel;
-  return '<span class="col-label-emoji">' + safeEmoji + '</span><span class="col-label-text"> ' + rest + '</span>';
-}
-
 function getStatusLabel(key) {
   var statuses = getKanbanStatuses();
   var found = statuses.find(function(s) { return s.key === key; });
@@ -1148,61 +1115,6 @@ function fromEpoch(ts) {
   var m = String(d.getMonth() + 1).padStart(2, '0');
   var day = String(d.getDate()).padStart(2, '0');
   return y + '-' + m + '-' + day;
-}
-
-// Format epoch -> "YYYY-MM-DDTHH:MM" pour <input type="datetime-local">
-function fromEpochDateTime(ts) {
-  if (!ts) return '';
-  var d = new Date(ts * 1000);
-  var y = d.getFullYear();
-  var m = String(d.getMonth() + 1).padStart(2, '0');
-  var day = String(d.getDate()).padStart(2, '0');
-  var h = String(d.getHours()).padStart(2, '0');
-  var min = String(d.getMinutes()).padStart(2, '0');
-  return y + '-' + m + '-' + day + 'T' + h + ':' + min;
-}
-
-// Capacité de RV simultanés par service (identifié par préfixe insensible à la casse,
-// même logique que le filtrage des zones demandées).
-var RDV_CAPACITY = [
-  { prefix: 'echo', capacity: 2 },
-  { prefix: 'radio', capacity: 1 },
-  { prefix: 'scanner', capacity: 1 },
-  { prefix: 'irm', capacity: 1 }
-];
-function getServiceCapacity(serviceName) {
-  if (!serviceName) return 1;
-  var lower = serviceName.toLowerCase();
-  for (var i = 0; i < RDV_CAPACITY.length; i++) {
-    if (lower.indexOf(RDV_CAPACITY[i].prefix) !== -1) return RDV_CAPACITY[i].capacity;
-  }
-  return 1;
-}
-
-// Vérifie si [startEpoch, endEpoch[ dépasse la capacité du service pour le projet donné.
-// excludeTaskId : exclut le RV en cours de modification de la comparaison (édition autorisée).
-// Retourne null si pas de conflit, ou un message d'erreur sinon.
-function checkRdvConflict(excludeTaskId, projectId, startEpoch, endEpoch) {
-  if (!projectId || !startEpoch || !endEpoch) return null;
-  if (endEpoch <= startEpoch) return currentLang === 'fr' ? 'L\'heure de fin doit être après l\'heure de début.' : 'End time must be after start time.';
-  var proj = projects.find(function(p) { return p.id === projectId; });
-  var serviceName = proj ? proj.Name : '';
-  var capacity = getServiceCapacity(serviceName);
-
-  var overlapping = tasks.filter(function(t) {
-    if (t.id === excludeTaskId) return false;
-    if (t.Project_Id !== projectId) return false;
-    if (t.Status === 'archived') return false;
-    if (!t.RDV_Debut || !t.RDV_Fin) return false;
-    return (startEpoch < t.RDV_Fin) && (endEpoch > t.RDV_Debut);
-  });
-
-  if (overlapping.length >= capacity) {
-    return currentLang === 'fr'
-      ? 'Conflit d\'horaire : ' + serviceName + ' est déjà complet sur ce créneau (capacité : ' + capacity + ').'
-      : 'Time conflict: ' + serviceName + ' is already fully booked for this slot (capacity: ' + capacity + ').';
-  }
-  return null;
 }
 
 function isOverdue(task) {
@@ -2066,84 +1978,6 @@ async function ensureTables() {
       console.log('[GristPM] Migration Project_Id ignorée :', e.message);
     }
 
-    // Migration : ajout des champs patient imagerie sur PM_Tasks
-    try {
-      var imgCols = Object.keys(await grist.docApi.fetchTable(TASKS_TABLE));
-      var imgMig = [];
-
-      if (imgCols.indexOf('Espece') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Espece', {
-          type: 'Choice',
-          widgetOptions: JSON.stringify({ choices: ['Chien', 'Chat', 'NAC', 'Equin', 'Autre'] })
-        }]);
-      }
-      if (imgCols.indexOf('Race') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Race', { type: 'Text' }]);
-      }
-      if (imgCols.indexOf('Poids') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Poids', { type: 'Numeric' }]);
-      }
-      if (imgCols.indexOf('Age_Animal') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Age_Animal', { type: 'Text' }]);
-      }
-      if (imgCols.indexOf('Commemoratifs') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Commemoratifs', { type: 'Text' }]);
-      }
-      if (imgCols.indexOf('Zone_Demandee') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Zone_Demandee', {
-          type: 'ChoiceList',
-          widgetOptions: JSON.stringify({ choices: [
-            'Radio - Thorax', 'Radio - Abdomen', 'Radio - Rachis cervical',
-            'Radio - Rachis thoraco-lombaire', 'Radio - Rachis lombo-sacré',
-            'Radio - Bassin/hanches', 'Radio - Membre antérieur droit',
-            'Radio - Membre antérieur gauche', 'Radio - Membre postérieur droit',
-            'Radio - Membre postérieur gauche', 'Radio - Crâne/dents', 'Radio - Autre',
-            'Echo - Cardiaque', 'Echo - Abdominale', 'Echo - Gestation',
-            'Echo - Cervicale', 'Echo - Autre',
-            'IRM - Encéphale', 'IRM - Rachis complet', 'IRM - Autre',
-            'Scanner - Encéphale', 'Scanner - Thorax', 'Scanner - Abdomen', 'Scanner - Autre'
-          ] })
-        }]);
-      }
-      if (imgCols.indexOf('Risque_Anesthesie') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Risque_Anesthesie', { type: 'Text' }]);
-      }
-      if (imgCols.indexOf('Examen_Complementaire') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Examen_Complementaire', {
-          type: 'Choice',
-          widgetOptions: JSON.stringify({ choices: ['Oui', 'Non'] })
-        }]);
-      }
-      if (imgCols.indexOf('Type_Examen_Complementaire') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Type_Examen_Complementaire', {
-          type: 'Choice',
-          widgetOptions: JSON.stringify({ choices: ['Échographie', 'Analyses sanguines', 'Scanner', 'IRM', 'Consultation spécialisée', 'Autre'] })
-        }]);
-      }
-      if (imgCols.indexOf('Prescripteur') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Prescripteur', { type: 'Text' }]);
-      }
-      if (imgCols.indexOf('RDV_Debut') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'RDV_Debut', { type: 'DateTime:Europe/Paris' }]);
-      }
-      if (imgCols.indexOf('RDV_Fin') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'RDV_Fin', { type: 'DateTime:Europe/Paris' }]);
-      }
-      if (imgCols.indexOf('Nom_Animal') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Nom_Animal', { type: 'Text' }]);
-      }
-      if (imgCols.indexOf('Proprietaire') === -1) {
-        imgMig.push(['AddColumn', TASKS_TABLE, 'Proprietaire', { type: 'Text' }]);
-      }
-
-      if (imgMig.length) {
-        await grist.docApi.applyUserActions(imgMig);
-        console.log('[GristPM] Champs imagerie ajoutés à PM_Tasks');
-      }
-    } catch (e) {
-      console.log('[GristPM] Migration imagerie ignorée :', e.message);
-    }
-
     // Migration Group_Name / Tag / Recurrence sur PM_Templates
     try {
       var tplCols = Object.keys(await grist.docApi.fetchTable(TEMPLATES_TABLE));
@@ -2439,22 +2273,6 @@ async function loadAllData() {
         task.Informed = taskData.Informed ? taskData.Informed[i] || '' : '';
         task.Extension_Date = taskData.Extension_Date ? taskData.Extension_Date[i] : null;
         task.Auto_Extend = taskData.Auto_Extend ? !!taskData.Auto_Extend[i] : false;
-
-        // Champs patient (imagerie)
-        task.Espece = taskData.Espece ? taskData.Espece[i] || '' : '';
-        task.Race = taskData.Race ? taskData.Race[i] || '' : '';
-        task.Poids = taskData.Poids ? taskData.Poids[i] : null;
-        task.Age_Animal = taskData.Age_Animal ? taskData.Age_Animal[i] || '' : '';
-        task.Commemoratifs = taskData.Commemoratifs ? taskData.Commemoratifs[i] || '' : '';
-        task.Zone_Demandee = taskData.Zone_Demandee ? taskData.Zone_Demandee[i] : null;
-        task.Risque_Anesthesie = taskData.Risque_Anesthesie ? taskData.Risque_Anesthesie[i] || '' : '';
-        task.Examen_Complementaire = taskData.Examen_Complementaire ? taskData.Examen_Complementaire[i] || '' : '';
-        task.Type_Examen_Complementaire = taskData.Type_Examen_Complementaire ? taskData.Type_Examen_Complementaire[i] || '' : '';
-        task.Prescripteur = taskData.Prescripteur ? taskData.Prescripteur[i] || '' : '';
-        task.RDV_Debut = taskData.RDV_Debut ? taskData.RDV_Debut[i] : null;
-        task.RDV_Fin = taskData.RDV_Fin ? taskData.RDV_Fin[i] : null;
-        task.Nom_Animal = taskData.Nom_Animal ? taskData.Nom_Animal[i] || '' : '';
-        task.Proprietaire = taskData.Proprietaire ? taskData.Proprietaire[i] || '' : '';
 
         tasks.push(task);
       }
@@ -2837,15 +2655,17 @@ function renderProjectSelector() {
   });
   html += buildFilterCombo('person', currentLang === 'fr' ? '— Personne —' : '— Person —', personOptions, currentFilterAssignee, filterByAssignee);
 
-    // Filtre Espèce (ex-Catégorie, réutilisé — Category n'est plus utilisée en imagerie)
+    // Filtre Catégorie
   var allCategories = [];
   tasks.forEach(function(t) {
-    if (t.Espece && allCategories.indexOf(t.Espece) === -1) allCategories.push(t.Espece);
+    getCategoryList(t.Category).forEach(function(c) {
+      if (allCategories.indexOf(c) === -1) allCategories.push(c);
+    });
   });
   allCategories.sort();
   
   var catOptions = allCategories.map(function(c) { return { value: c, label: c }; });
-  html += buildFilterCombo('category', currentLang === 'fr' ? '— Espèce —' : '— Species —', catOptions, currentFilterCategory, filterByCategory);
+  html += buildFilterCombo('category', currentLang === 'fr' ? '— Catégorie —' : '— Category —', catOptions, currentFilterCategory, filterByCategory);
 
   // Filtre Tag
   var tagOptions = tags.map(function(tag) { return { value: tag.Name, label: tag.Name }; });
@@ -2853,7 +2673,7 @@ function renderProjectSelector() {
 
   // Filtre Projet — combobox moderne avec recherche intégrée
   var selProj = currentProjectId ? projects.find(function(p) { return p.id === currentProjectId; }) : null;
-  var btnLabel = selProj ? sanitize(selProj.Name) : (currentLang === 'fr' ? 'Tous les services' : 'All services');
+  var btnLabel = selProj ? sanitize(selProj.Name) : (currentLang === 'fr' ? 'Tous les projets' : 'All projects');
   var btnDotColor = selProj ? (selProj.Color || '#6366f1') : 'transparent';
   var btnClass = 'proj-combobox-btn' + (currentProjectId ? ' active' : '');
   html += '<div class="proj-combobox" id="proj-combobox">';
@@ -2869,7 +2689,7 @@ function renderProjectSelector() {
   // "All projects" option (always shown)
   html += '<div class="proj-option' + (!currentProjectId ? ' selected' : '') + '" data-id="" data-name="" data-always="1" onclick="selectProjectOption(\'\')">';
   html += '<span class="proj-dot" style="background:#94a3b8;opacity:.4;"></span>';
-  html += '<span>' + (currentLang === 'fr' ? 'Tous les services' : 'All services') + '</span>';
+  html += '<span>' + (currentLang === 'fr' ? 'Tous les projets' : 'All projects') + '</span>';
   html += '</div>';
   // Project options — first 5 visible, rest hidden until search
   var allTasksForCount = tasks;
@@ -2898,7 +2718,7 @@ function renderProjectSelector() {
 
   // Bouton "Mes projets" (créés par moi OU assigné à moi)
   if (currentUserEmail) {
-    html += '<button class="btn-icon" onclick="toggleMyProjects()" title="' + (currentLang === 'fr' ? 'Mes services : créés par moi ou qui me sont assignés' : 'My services: created by or assigned to me') + '" style="width:auto;padding:0 12px;font-size:12px;font-weight:600;' + (mineOnly ? 'background:#6366f1;color:#fff;border-color:#6366f1;' : '') + '">👤 ' + (currentLang === 'fr' ? 'Mes services' : 'My services') + '</button>';
+    html += '<button class="btn-icon" onclick="toggleMyProjects()" title="' + (currentLang === 'fr' ? 'Mes projets : créés par moi ou qui me sont assignés' : 'My projects: created by or assigned to me') + '" style="width:auto;padding:0 12px;font-size:12px;font-weight:600;' + (mineOnly ? 'background:#6366f1;color:#fff;border-color:#6366f1;' : '') + '">👤 ' + (currentLang === 'fr' ? 'Mes projets' : 'My projects') + '</button>';
   }
 
   if (currentFilterRole || currentFilterAssignee || currentFilterCategory || currentFilterTag || currentProjectId || mineOnly) {
@@ -2920,14 +2740,14 @@ function renderProjectSelector() {
     var proj2 = currentProjectId ? projects.find(function(p) { return p.id === currentProjectId; }) : null;
     var c2 = (proj2 && proj2.Color) ? proj2.Color : '#6366f1';
     var bits = [];
-    if (mineOnly) bits.push('👤 ' + (currentLang === 'fr' ? 'Mes services' : 'My services'));
+    if (mineOnly) bits.push('👤 ' + (currentLang === 'fr' ? 'Mes projets' : 'My projects'));
     if (currentFilterRole) bits.push('👔 ' + sanitize(roleLabel(currentFilterRole)));
     if (currentFilterAssignee) {
       var u = findUserByIdent(currentFilterAssignee);
       var displayName = u ? (u.Name || u.Email) : currentFilterAssignee;
       bits.push('👤 ' + sanitize(displayName));
     }
-    if (currentFilterCategory) bits.push('🐾 ' + sanitize(currentFilterCategory));
+    if (currentFilterCategory) bits.push('📁 ' + sanitize(currentFilterCategory));
     if (currentFilterTag) bits.push('🏷️ ' + sanitize(currentFilterTag));
     if (proj2) bits.push('🎯 ' + sanitize(proj2.Name));
     banner.innerHTML = (currentLang === 'fr' ? 'Filtres actifs : ' : 'Active filters: ') + '<strong>' + bits.join(' › ') + '</strong> — <a href="#" onclick="resetFilters();return false;" style="color:inherit;text-decoration:underline;">' + (currentLang === 'fr' ? 'Tout effacer' : 'Clear all') + '</a>';
@@ -3361,7 +3181,7 @@ function getFilteredTasks() {
   }
     if (currentFilterCategory) {
     var catKey = String(currentFilterCategory).trim();
-    result = result.filter(function(t) { return String(t.Espece || '').trim() === catKey; });
+    result = result.filter(function(t) { return getCategoryList(t.Category).indexOf(catKey) !== -1; });
   }
   if (currentFilterTag) {
     var tagKey = String(currentFilterTag).trim();
@@ -3418,9 +3238,10 @@ function updateStats() {
   var total = filteredTasks.length;
   var html = '';
   if (showArchivedTasks) {
-    html += '<div class="stat-card stat-total"><div><div class="stat-label">' + (currentLang === 'fr' ? 'Archivées' : 'Archived') + '</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📦</div></div>';
+    var archLabel = currentLang === 'fr' ? 'Archivées' : 'Archived';
+    html += '<div class="stat-card stat-total" title="' + sanitize(archLabel) + '"><div><div class="stat-label">' + archLabel + '</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📦</div></div>';
   } else {
-    html += '<div class="stat-card stat-total"><div><div class="stat-label">Total</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📋</div></div>';
+    html += '<div class="stat-card stat-total" title="Total"><div><div class="stat-label">Total</div><div class="stat-value">' + total + '</div></div><div class="stat-icon">📋</div></div>';
     var statuses = getKanbanStatuses();
     for (var i = 0; i < statuses.length; i++) {
       var s = statuses[i];
@@ -3431,7 +3252,7 @@ function updateStats() {
       var icon = (s.emoji && s.emoji.trim())
         ? s.emoji.trim()
         : '<span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:' + color + ';"></span>';
-      html += '<div class="stat-card"><div><div class="stat-label">' + sanitize(label) + '</div><div class="stat-value" style="color:' + color + '">' + count + '</div></div><div class="stat-icon">' + icon + '</div></div>';
+      html += '<div class="stat-card" title="' + sanitize(label) + '"><div><div class="stat-label">' + sanitize(label) + '</div><div class="stat-value" style="color:' + color + '">' + count + '</div></div><div class="stat-icon">' + icon + '</div></div>';
     }
   }
   container.innerHTML = html;
@@ -3545,14 +3366,8 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
     var task = dayTasks[i];
     var statusClass = 'status-' + task.Status;
     var priorityClass = task.Priority === 'high' ? ' priority-high' : '';
-    var proj = projects.find(function(p) { return p.id === task.Project_Id; });
-    var svcColor = proj && proj.Color ? proj.Color : '#94a3b8';
-    var rvTime = task.RDV_Debut ? new Date(task.RDV_Debut * 1000).toTimeString().slice(0, 5) : '';
-    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openRdvViewer(' + task.id + ')" title="' + sanitize(task.Title) + (task.Nom_Animal ? ' - ' + sanitize(task.Nom_Animal) : '') + '" style="border-left:4px solid ' + svcColor + ';background:' + svcColor + '22;">';
-    var chipLabel = (task.Nom_Animal ? sanitize(task.Nom_Animal) : sanitize(task.Title));
-    if (task.Espece) chipLabel += ' (' + sanitize(task.Espece) + ')';
-    chipLabel += ' · ' + sanitize(task.Title);
-    html += (rvTime ? '<b>' + rvTime + '</b> ' : '') + chipLabel;
+    html += '<div class="day-task ' + statusClass + priorityClass + '" draggable="true" ondragstart="onCalendarTaskDragStart(event, ' + task.id + ')" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '">';
+    html += sanitize(task.Title);
     html += '</div>';
   }
 
@@ -3565,185 +3380,7 @@ function renderCalendarDay(dayNum, date, dayTasks, isOtherMonth, isToday, isWeek
 }
 
 function onCalendarDayClick(dateStr) {
-  openRdvPickerModal(dateStr);
-}
-
-// Choix du service puis de la demande existante pour lui attribuer un RV ce jour-là
-// (le Planning ne crée jamais de nouvelle demande).
-function openRdvPickerModal(dateStr) {
-  var projOptions = '<option value="">' + (currentLang === 'fr' ? '-- Choisir un service --' : '-- Choose a service --') + '</option>';
-  projects.forEach(function(p) {
-    projOptions += '<option value="' + p.id + '">' + sanitize(p.Name) + '</option>';
-  });
-  var html = '<div class="modal-overlay" onclick="closeModal(event)">';
-  html += '<div class="modal" onclick="event.stopPropagation()" style="max-width:420px;">';
-  html += '<div class="modal-header"><h3>📅 ' + (currentLang === 'fr' ? 'Prendre un RV le ' : 'Book an appointment on ') + dateStr + '</h3></div>';
-  html += '<div class="modal-body" style="padding:16px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Service' : 'Service') + '</span><div class="detail-field-value"><select id="rdv-picker-project" onchange="updateRdvPickerTasks()">' + projOptions + '</select></div></div>';
-  html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Demande' : 'Request') + '</span><div class="detail-field-value"><select id="rdv-picker-task"><option value="">' + (currentLang === 'fr' ? '-- Choisissez d\'abord un service --' : '-- Choose a service first --') + '</option></select></div></div>';
-  html += '</div>';
-  html += '<div class="modal-footer" style="padding:16px;text-align:right;">';
-  html += '<button class="btn btn-secondary" onclick="closeModalForce()">' + (currentLang === 'fr' ? 'Annuler' : 'Cancel') + '</button> ';
-  html += '<button class="btn btn-primary" onclick="confirmRdvPicker(\'' + dateStr + '\')">' + (currentLang === 'fr' ? 'Choisir' : 'Choose') + '</button>';
-  html += '</div></div></div>';
-  document.getElementById('modal-container').innerHTML = html;
-}
-
-function updateRdvPickerTasks() {
-  var projSel = document.getElementById('rdv-picker-project');
-  var taskSel = document.getElementById('rdv-picker-task');
-  if (!projSel || !taskSel) return;
-  var pid = projSel.value ? parseInt(projSel.value) : null;
-  if (!pid) {
-    taskSel.innerHTML = '<option value="">' + (currentLang === 'fr' ? '-- Choisissez d\'abord un service --' : '-- Choose a service first --') + '</option>';
-    return;
-  }
-  var candidates = tasks.filter(function(t) { return t.Project_Id === pid && t.Status !== 'archived'; });
-  var opts = '<option value="">' + (currentLang === 'fr' ? '-- Choisir une demande --' : '-- Choose a request --') + '</option>';
-  candidates.forEach(function(t) {
-    opts += '<option value="' + t.id + '">' + sanitize(t.Title) + ' (' + statusLabel(t.Status) + ')</option>';
-  });
-  if (!candidates.length) opts = '<option value="">' + (currentLang === 'fr' ? 'Aucune demande sur ce service' : 'No request for this service') + '</option>';
-  taskSel.innerHTML = opts;
-}
-
-function confirmRdvPicker(dateStr) {
-  var taskSel = document.getElementById('rdv-picker-task');
-  var taskId = taskSel && taskSel.value ? parseInt(taskSel.value) : null;
-  if (!taskId) { showToast(currentLang === 'fr' ? 'Choisis une demande.' : 'Choose a request.', 'error'); return; }
-  closeModalForce();
-  openRdvEditor(taskId, dateStr);
-}
-
-// Petit formulaire dédié : seulement le créneau (Début RV / Fin RV) d'une demande existante.
-// dateStr optionnel : pré-remplit la date si le RV n'existe pas encore.
-function openRdvEditor(taskId, dateStr) {
-  var task = tasks.find(function(t) { return t.id === taskId; });
-  if (!task) return;
-  var proj = projects.find(function(p) { return p.id === task.Project_Id; });
-  var serviceName = proj ? proj.Name : (currentLang === 'fr' ? 'Sans service' : 'No service');
-  var isNew = !!dateStr;
-
-  var html = '<div class="modal-overlay" onclick="closeModal(event)">';
-  html += '<div class="modal" onclick="event.stopPropagation()" style="max-width:420px;">';
-  html += '<div class="modal-header"><h3>🕐 ' + (currentLang === 'fr' ? 'Rendez-vous — ' : 'Appointment — ') + sanitize(task.Title) + '</h3></div>';
-  html += '<div class="modal-body" style="padding:16px;">';
-  html += '<div style="font-size:12px;color:#64748b;margin-bottom:12px;">' + (currentLang === 'fr' ? 'Service' : 'Service') + ' : <b>' + sanitize(serviceName) + '</b></div>';
-
-  if (isNew) {
-    var dateLabel = new Date(dateStr + 'T00:00').toLocaleDateString(currentLang === 'fr' ? 'fr-FR' : 'en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-    html += '<div style="font-size:13px;margin-bottom:12px;">📅 <b>' + dateLabel + '</b></div>';
-    html += '<input type="hidden" id="rdv-editor-date" value="' + dateStr + '" />';
-    html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Heure de début' : 'Start') + '</span><div class="detail-field-value"><input type="time" id="rdv-editor-debut-time" value="09:00" /></div></div>';
-    html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Heure de fin' : 'End') + '</span><div class="detail-field-value"><input type="time" id="rdv-editor-fin-time" value="" /></div></div>';
-  } else {
-    var debutVal = task.RDV_Debut ? fromEpochDateTime(task.RDV_Debut) : '';
-    var finVal = task.RDV_Fin ? fromEpochDateTime(task.RDV_Fin) : '';
-    html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Début RV' : 'Start time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-debut" value="' + debutVal + '" /></div></div>';
-    html += '<div class="detail-field" style="margin-top:10px;"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Fin RV' : 'End time') + '</span><div class="detail-field-value"><input type="datetime-local" id="rdv-editor-fin" value="' + finVal + '" /></div></div>';
-  }
-
-  html += '</div>';
-  html += '<div class="modal-footer" style="padding:16px;text-align:right;">';
-  html += '<button class="btn btn-secondary" onclick="closeModalForce()">' + (currentLang === 'fr' ? 'Annuler' : 'Cancel') + '</button> ';
-  html += '<button class="btn btn-primary" onclick="saveRdvEditor(' + taskId + ')">' + t('save') + '</button>';
-  html += '</div></div></div>';
-  document.getElementById('modal-container').innerHTML = html;
-}
-
-async function saveRdvEditor(taskId) {
-  var task = tasks.find(function(t) { return t.id === taskId; });
-  if (!task) return;
-  var debutEpoch, finEpoch;
-  var dateHidden = document.getElementById('rdv-editor-date');
-  if (dateHidden) {
-    var dStr = dateHidden.value;
-    var debutTimeEl = document.getElementById('rdv-editor-debut-time');
-    var finTimeEl = document.getElementById('rdv-editor-fin-time');
-    debutEpoch = debutTimeEl && debutTimeEl.value ? toEpoch(dStr + 'T' + debutTimeEl.value) : null;
-    finEpoch = finTimeEl && finTimeEl.value ? toEpoch(dStr + 'T' + finTimeEl.value) : null;
-  } else {
-    var debutEl = document.getElementById('rdv-editor-debut');
-    var finEl = document.getElementById('rdv-editor-fin');
-    debutEpoch = debutEl ? toEpoch(debutEl.value) : null;
-    finEpoch = finEl ? toEpoch(finEl.value) : null;
-  }
-  if (!debutEpoch || !finEpoch) { showToast(currentLang === 'fr' ? 'Renseigne le début et la fin.' : 'Fill in start and end.', 'error'); return; }
-  var conflictMsg = checkRdvConflict(taskId, task.Project_Id, debutEpoch, finEpoch);
-  if (conflictMsg) { showToast(conflictMsg, 'error'); return; }
-  try {
-    await grist.docApi.applyUserActions([
-      ['UpdateRecord', TASKS_TABLE, taskId, { RDV_Debut: debutEpoch, RDV_Fin: finEpoch }]
-    ]);
-    closeModalForce();
-    await loadAllData();
-    refreshAllViews();
-    showToast(currentLang === 'fr' ? 'RV enregistré.' : 'Appointment saved.', 'success');
-  } catch (e) {
-    showToast('Error: ' + e.message, 'error');
-  }
-}
-
-async function deleteRdv(taskId) {
-  try {
-    await grist.docApi.applyUserActions([
-      ['UpdateRecord', TASKS_TABLE, taskId, { RDV_Debut: null, RDV_Fin: null }]
-    ]);
-    closeModalForce();
-    await loadAllData();
-    refreshAllViews();
-    showToast(currentLang === 'fr' ? 'RV supprimé.' : 'Appointment deleted.', 'success');
-  } catch (e) {
-    showToast('Error: ' + e.message, 'error');
-  }
-}
-
-// Aperçu en lecture seule des infos patient depuis le Planning : rien n'est modifiable ici,
-// seules actions possibles = déplacer (rouvre openRdvEditor) ou supprimer le RV.
-function openRdvViewer(taskId) {
-  var task = tasks.find(function(t) { return t.id === taskId; });
-  if (!task) return;
-  var proj = projects.find(function(p) { return p.id === task.Project_Id; });
-  var serviceName = proj ? proj.Name : (currentLang === 'fr' ? 'Sans service' : 'No service');
-  var zoneList = getCategoryList(task.Zone_Demandee);
-  var rvRange = '';
-  if (task.RDV_Debut) {
-    var db = new Date(task.RDV_Debut * 1000);
-    rvRange += db.toLocaleDateString() + ' ' + db.toTimeString().slice(0, 5);
-  }
-  if (task.RDV_Fin) {
-    rvRange += ' → ' + new Date(task.RDV_Fin * 1000).toTimeString().slice(0, 5);
-  }
-
-  function row(label, value) {
-    if (!value) return '';
-    return '<div class="detail-info-row"><span class="info-label">' + label + ' :</span><span class="info-value">' + sanitize(String(value)) + '</span></div>';
-  }
-
-  var html = '<div class="modal-overlay" onclick="closeModal(event)">';
-  html += '<div class="modal" onclick="event.stopPropagation()" style="max-width:440px;">';
-  html += '<div class="modal-header"><h3>🩻 ' + sanitize(task.Title) + '</h3></div>';
-  html += '<div class="modal-body" style="padding:16px;">';
-  html += '<div style="font-size:12px;color:#64748b;margin-bottom:10px;">🕐 ' + rvRange + '</div>';
-  html += row(currentLang === 'fr' ? 'N° dossier' : 'File #', task.Title);
-  html += row(currentLang === 'fr' ? 'Service' : 'Service', serviceName);
-  html += row(currentLang === 'fr' ? 'Statut' : 'Status', statusLabel(task.Status));
-  html += row(currentLang === 'fr' ? 'Animal' : 'Animal', task.Nom_Animal);
-  html += row(currentLang === 'fr' ? 'Propriétaire' : 'Owner', task.Proprietaire);
-  html += row(currentLang === 'fr' ? 'Espèce' : 'Species', task.Espece);
-  html += row(currentLang === 'fr' ? 'Race' : 'Breed', task.Race);
-  html += row(currentLang === 'fr' ? 'Poids (kg)' : 'Weight (kg)', task.Poids);
-  html += row(currentLang === 'fr' ? 'Âge' : 'Age', task.Age_Animal);
-  html += row(currentLang === 'fr' ? 'Commémoratifs' : 'History', task.Commemoratifs);
-  html += row(currentLang === 'fr' ? 'Zone demandée' : 'Requested area', zoneList.join(', '));
-  html += row(currentLang === 'fr' ? 'Prescripteur' : 'Prescriber', task.Prescripteur);
-  html += '</div>';
-  html += '<div class="modal-footer" style="padding:16px;text-align:right;">';
-  html += '<button class="btn btn-secondary" onclick="closeModalForce()">' + (currentLang === 'fr' ? 'Fermer' : 'Close') + '</button> ';
-  html += '<button class="btn btn-secondary" onclick="if(confirm(\'' + (currentLang === 'fr' ? 'Supprimer ce RV ?' : 'Delete this appointment?') + '\')) deleteRdv(' + taskId + ')">🗑️ ' + (currentLang === 'fr' ? 'Supprimer le RV' : 'Delete appointment') + '</button> ';
-  html += '<button class="btn btn-primary" onclick="openRdvEditor(' + taskId + ')">↔️ ' + (currentLang === 'fr' ? 'Déplacer le RV' : 'Move appointment') + '</button>';
-  html += '</div></div></div>';
-  document.getElementById('modal-container').innerHTML = html;
+  openNewTaskModalWithDate(dateStr);
 }
 
 var calendarDraggedTaskId = null;
@@ -3767,20 +3404,24 @@ async function onCalendarDrop(event, dateStr) {
   if (!calendarDraggedTaskId) return;
   
   var task = tasks.find(function(t) { return t.id === calendarDraggedTaskId; });
-  if (!task || !task.RDV_Debut) { calendarDraggedTaskId = null; return; }
+  if (!task) return;
   
-  // Parse the new date, en conservant l'heure et la durée du RV existant
+  // Parse the new date
   var parts = dateStr.split('-');
-  var oldStart = new Date(task.RDV_Debut * 1000);
-  var newStart = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]), oldStart.getHours(), oldStart.getMinutes());
-  var newStartTs = Math.floor(newStart.getTime() / 1000);
-  var duration = task.RDV_Fin ? (task.RDV_Fin - task.RDV_Debut) : 0;
-
-  var updates = { RDV_Debut: newStartTs };
-  if (task.RDV_Fin) updates.RDV_Fin = newStartTs + duration;
-
-  var conflictMsg = checkRdvConflict(task.id, task.Project_Id, newStartTs, updates.RDV_Fin || (newStartTs + 1));
-  if (conflictMsg) { showToast(conflictMsg, 'error'); calendarDraggedTaskId = null; return; }
+  var newDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+  var newTimestamp = Math.floor(newDate.getTime() / 1000);
+  
+  // Calculate duration if task has both start and due dates
+  var duration = 0;
+  if (task.Start_Date && task.Due_Date) {
+    duration = task.Due_Date - task.Start_Date;
+  }
+  
+  // Update the task dates
+  var updates = { Due_Date: newTimestamp };
+  if (task.Start_Date) {
+    updates.Start_Date = newTimestamp - duration;
+  }
   
   try {
     await grist.docApi.applyUserActions([
@@ -3844,8 +3485,15 @@ function getTasksForDate(date) {
   var dateEndTs = dateEnd.getTime() / 1000;
 
   return getFilteredTasks().filter(function(task) {
-    if (!task.RDV_Debut) return false;
-    return task.RDV_Debut >= dateTs && task.RDV_Debut <= dateEndTs;
+    var taskStart = task.Start_Date;
+    var taskEnd = task.Due_Date;
+    if (!taskStart && !taskEnd) return false;
+    if (taskStart && taskEnd) {
+      return taskStart <= dateEndTs && taskEnd >= dateTs;
+    }
+    if (taskStart) return taskStart >= dateTs && taskStart <= dateEndTs;
+    if (taskEnd) return taskEnd >= dateTs && taskEnd <= dateEndTs;
+    return false;
   });
 }
 
@@ -3963,7 +3611,7 @@ function renderCalendarMobileView() {
     html += '<div class="day-tasks">';
     for (var i = 0; i < dayTasks.length; i++) {
       var task = dayTasks[i];
-      html += '<div class="day-task status-' + task.Status + '" onclick="event.stopPropagation(); openRdvViewer(' + task.id + ')" title="' + sanitize(task.Title) + '">' + sanitize(task.Title) + '</div>';
+      html += '<div class="day-task status-' + task.Status + '" onclick="event.stopPropagation(); openEditTaskModal(' + task.id + ')" title="' + sanitize(task.Title) + '">' + sanitize(task.Title) + '</div>';
     }
     if (dayTasks.length === 0) {
       html += '<span class="mobile-no-task">\u2014</span>';
@@ -4052,11 +3700,11 @@ function renderCalendarDayView() {
   var html = '<div class="calendar-day-view">';
   html += '<div class="calendar-day-header' + (isToday ? ' today' : '') + '">';
   html += isToday ? '📅 ' + (currentLang === 'fr' ? "Aujourd'hui" : 'Today') : '';
-  html += '<span class="day-task-count">' + dayTasks.length + ' ' + (currentLang === 'fr' ? 'demande(s)' : 'request(s)') + '</span>';
+  html += '<span class="day-task-count">' + dayTasks.length + ' ' + (currentLang === 'fr' ? 'tâche(s)' : 'task(s)') + '</span>';
   html += '</div>';
 
   if (dayTasks.length === 0) {
-    html += '<div class="day-empty">' + (currentLang === 'fr' ? 'Aucune demande ce jour' : 'No requests today') + '</div>';
+    html += '<div class="day-empty">' + (currentLang === 'fr' ? 'Aucune tâche ce jour' : 'No tasks today') + '</div>';
   } else {
     dayTasks.forEach(function(task) {
       var taskSubtasks = getTaskSubtasks(task.id);
@@ -4067,7 +3715,7 @@ function renderCalendarDayView() {
       var dueBadge = dueThisDay
         ? '<span class="day-due-badge">📌 ' + (currentLang === 'fr' ? 'Échéance' : 'Due today') + '</span>'
         : (isOverdue ? '<span class="day-due-badge overdue">⚠️ ' + (currentLang === 'fr' ? 'En retard' : 'Overdue') + '</span>' : '<span class="day-due-badge ongoing">🔄 ' + (currentLang === 'fr' ? 'En cours' : 'In progress') + '</span>');
-      html += '<div class="day-task-row" onclick="openRdvViewer(' + task.id + ')">';
+      html += '<div class="day-task-row" onclick="openEditTaskModal(' + task.id + ')">';
       html += '<div class="day-task-indicator" style="background:' + stColor + '"></div>';
       html += '<div class="day-task-body">';
       html += '<div class="day-task-title">' + sanitize(task.Title) + ' ' + dueBadge + '</div>';
@@ -4097,7 +3745,7 @@ function renderCalendarDayView() {
   // Quick add task for this day
   var dateStr = viewDate.getFullYear() + '-' + String(viewDate.getMonth() + 1).padStart(2, '0') + '-' + String(viewDate.getDate()).padStart(2, '0');
   html += '<div class="day-add-task" onclick="openNewTaskForDay(\'' + dateStr + '\')">';
-  html += '+ ' + (currentLang === 'fr' ? 'Prendre un RV ce jour' : 'Book an appointment this day');
+  html += '+ ' + (currentLang === 'fr' ? 'Ajouter une tâche ce jour' : 'Add a task for this day');
   html += '</div>';
   html += '</div>';
 
@@ -4108,7 +3756,7 @@ function renderCalendarDayView() {
 }
 
 function openNewTaskForDay(dateStr) {
-  openRdvPickerModal(dateStr);
+  openNewTaskModalWithDate(dateStr);
 }
 
 // =============================================================================
@@ -4201,14 +3849,14 @@ function renderKanbanView() {
     filteredTasks.forEach(function(task) {
       var pid = task.Project_Id || 0;
       if (!projMap[pid]) {
-        projMap[pid] = { key: String(pid), label: pid ? (getProjectName(pid) || 'Projet ' + pid) : (currentLang === 'fr' ? 'Sans service' : 'No service'), cssClass: 'col-todo', field: 'Project_Id', tasks: [], color: getProjectColor(pid || null) };
+        projMap[pid] = { key: String(pid), label: pid ? (getProjectName(pid) || 'Projet ' + pid) : (currentLang === 'fr' ? 'Sans projet' : 'No project'), cssClass: 'col-todo', field: 'Project_Id', tasks: [], color: getProjectColor(pid || null) };
       }
       projMap[pid].tasks.push(task);
     });
     columns = Object.values(projMap).sort(function(a, b) { return a.label.localeCompare(b.label); });
   } else if (showArchivedTasks) {
     columns = [
-      { key: 'archived', label: currentLang === 'fr' ? '📦 Archives' : '📦 Archives', emoji: '📦', cssClass: 'col-custom', field: 'Status', color: '#94a3b8' }
+      { key: 'archived', label: currentLang === 'fr' ? '📦 Archives' : '📦 Archives', cssClass: 'col-custom', field: 'Status', color: '#94a3b8' }
     ];
   } else {
     var statuses = getKanbanStatuses();
@@ -4216,7 +3864,6 @@ function renderKanbanView() {
       return {
         key: s.key,
         label: (s.emoji ? s.emoji + ' ' : '') + (currentLang === 'fr' ? s.label_fr : s.label_en),
-        emoji: s.emoji || '',
         cssClass: s.cssClass || 'col-custom',
         field: 'Status',
         color: s.color
@@ -4249,9 +3896,9 @@ function renderKanbanView() {
     html += '<div class="kanban-column ' + col.cssClass + '">';
     var headerStyle = col.color ? 'border-bottom-color:' + col.color + ';color:' + col.color + ';' : '';
     html += '<div class="kanban-col-header" style="' + headerStyle + '">';
-        html += '<div style="display:flex;align-items:center;gap:4px;"><span style="' + dotStyle + '"></span>' + renderColLabel(col) + ' <span class="col-count">' + colTasks.length + '</span></div>';
+    html += '<div style="display:flex;align-items:center;gap:4px;"><span style="' + dotStyle + '"></span>' + col.label + ' <span class="col-count">' + colTasks.length + '</span></div>';
     html += '<div style="display:flex;align-items:center;gap:4px;">';
-    if (kanbanGroupBy === 'status') html += '<button class="col-add" onclick="openNewTaskModal(\'' + col.key + '\')" title="' + (currentLang === 'fr' ? 'Nouvelle demande' : 'New request') + '">+</button>';
+    if (kanbanGroupBy === 'status') html += '<button class="col-add" onclick="openNewTaskModal(\'' + col.key + '\')" title="' + (currentLang === 'fr' ? 'Nouvelle tâche' : 'New task') + '">+</button>';
     var collapseColor = col.color ? 'color:' + col.color + ';background:white;' : '';
     html += '<button class="col-add" onclick="toggleKanbanCol(\'' + sanitize(col.key) + '\')" title="' + (currentLang === 'fr' ? 'Réduire' : 'Collapse') + '" style="' + collapseColor + '">⇄</button>';
     html += '</div>';
@@ -4284,10 +3931,9 @@ function renderTaskCard(task) {
   var taskComments = getTaskComments(task.id);
 
   var priorityClass = 'priority-' + (task.Priority || 'medium');
-  var projColor = getProjectColor(task.Project_Id) || '#94a3b8';
+  var projColor = getProjectColor(task.Project_Id);
   var projName = getProjectName(task.Project_Id);
-  var cardBg = 'background:linear-gradient(135deg, ' + projColor + '15 0%, ' + projColor + '35 100%);';
-  var html = '<div class="task-card' + (blocked ? ' task-blocked' : '') + '" draggable="true" ondragstart="onDragStart(event, ' + task.id + ')" data-id="' + task.id + '" ondblclick="openEditTaskModal(' + task.id + ')" style="border-left:none;display:flex;flex-direction:row;padding:0;overflow:visible;' + cardBg + '">';
+  var html = '<div class="task-card ' + priorityClass + (blocked ? ' task-blocked' : '') + '" draggable="true" ondragstart="onDragStart(event, ' + task.id + ')" data-id="' + task.id + '" ondblclick="openEditTaskModal(' + task.id + ')" style="border-left:none;display:flex;flex-direction:row;padding:0;overflow:visible;">';
   html += '<div class="task-card-project-bar" style="background:' + projColor + ';min-width:22px;max-width:22px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;text-orientation:mixed;flex-shrink:0;border-radius:14px 0 0 14px;padding:8px 0;">';
   if (projName) html += '<span style="color:white;font-size:9px;font-weight:700;letter-spacing:0.5px;white-space:nowrap;">' + sanitize(projName) + '</span>';
   html += '</div>';
@@ -4299,7 +3945,7 @@ function renderTaskCard(task) {
   }
 // modifié
   html += '<div class="task-card-header" style="display:flex;flex-direction:column;gap:6px;">';
-  html += '<div class="task-card-title" style="cursor:pointer;width:100%;background:' + projColor + ';" onclick="openEditTaskModal(' + task.id + ')">' + sanitize(task.Title) + '</div>';
+  html += '<div class="task-card-title" style="cursor:pointer;width:100%;" onclick="openEditTaskModal(' + task.id + ')">' + sanitize(task.Title) + '</div>';
   html += '<div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;flex-wrap:wrap;">';
   if (cd.priority) html += '<span class="priority-badge priority-' + (task.Priority || 'medium') + '" style="font-size:11px;">' + priorityLabel(task.Priority) + '</span>';
   var _statusDef = getKanbanStatuses().find(function(st) { return st.key === task.Status; });
@@ -4406,7 +4052,7 @@ function renderTaskCard(task) {
       html += '<div class="tcd-desc">' + sanitize(task.Description) + '</div></div>';
     }
     if (taskSubtasks.length > 0) {
-      html += '<div class="tcd-section"><div class="tcd-label">' + (_fr ? 'Étapes' : 'Steps') + ' (' + completedCount + '/' + taskSubtasks.length + ')</div>';
+      html += '<div class="tcd-section"><div class="tcd-label">' + (_fr ? 'Sous-tâches' : 'Subtasks') + ' (' + completedCount + '/' + taskSubtasks.length + ')</div>';
       taskSubtasks.forEach(function(st) {
         html += '<label class="tcd-subtask"><input type="checkbox" ' + (st.Completed ? 'checked' : '') + ' onclick="event.stopPropagation();toggleSubtaskFromCard(' + st.id + ', this.checked)">';
         html += '<span' + (st.Completed ? ' style="text-decoration:line-through;color:#94a3b8;"' : '') + '>' + sanitize(st.Title) + '</span>';
@@ -4427,7 +4073,7 @@ function renderTaskCard(task) {
     if (!task.Description && taskSubtasks.length === 0 && taskComments.length === 0) {
       html += '<div style="color:#94a3b8;font-size:12px;padding:4px 0;">' + (_fr ? 'Aucun détail pour le moment' : 'No details yet') + '</div>';
     }
-    html += '<button class="btn btn-sm" style="margin-top:8px;font-size:11px;padding:3px 10px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;cursor:pointer;" onclick="event.stopPropagation();openEditTaskModal(' + task.id + ')">✏️ ' + (_fr ? 'Éditer la demande' : 'Edit request') + '</button>';
+    html += '<button class="btn btn-sm" style="margin-top:8px;font-size:11px;padding:3px 10px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;cursor:pointer;" onclick="event.stopPropagation();openEditTaskModal(' + task.id + ')">✏️ ' + (_fr ? 'Éditer la tâche' : 'Edit task') + '</button>';
     html += '</div>';
   }
 
@@ -4442,7 +4088,7 @@ async function archiveTask(taskId) {
     var oldStatus = task ? task.Status : '';
     await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, { [statusCol]: 'archived' }]]);
     if (task) task.Status = 'archived';
-    showToast(currentLang === 'fr' ? 'Demande archivée' : 'Request archived', 'success');
+    showToast(currentLang === 'fr' ? 'Tâche archivée' : 'Task archived', 'success');
     logActivity('task_archived', taskId, task ? task.Title : '', '');
     if (task && oldStatus !== 'archived') {
       await evaluateAutomationRules(Object.assign({}, task, { Status: 'archived' }), { status: { from: oldStatus, to: 'archived' } });
@@ -4460,7 +4106,7 @@ async function restoreTask(taskId) {
     var oldStatus = task ? task.Status : '';
     await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, { [statusCol]: 'todo' }]]);
     if (task) task.Status = 'todo';
-    showToast(currentLang === 'fr' ? 'Demande restaurée' : 'Request restored', 'success');
+    showToast(currentLang === 'fr' ? 'Tâche restaurée' : 'Task restored', 'success');
     logActivity('task_restored', taskId, task ? task.Title : '', '');
     if (task && oldStatus !== 'todo') {
       await evaluateAutomationRules(Object.assign({}, task, { Status: 'todo' }), { status: { from: oldStatus, to: 'todo' } });
@@ -4483,7 +4129,7 @@ function updateArchiveButton() {
   var archivedCount = tasks.filter(function(t) { return t.Status === 'archived'; }).length;
   btn.classList.toggle('active', showArchivedTasks);
   if (showArchivedTasks) {
-    btn.innerHTML = (currentLang === 'fr' ? '← Retour aux demandes' : '← Back to requests');
+    btn.innerHTML = (currentLang === 'fr' ? '← Retour aux tâches' : '← Back to tasks');
     btn.style.background = '#3b82f6';
     btn.style.color = 'white';
     btn.style.borderColor = '#3b82f6';
@@ -4537,7 +4183,7 @@ async function onDrop(e) {
     if (field === 'Status' && newValue === 'done' && isTaskBlocked(draggedTaskId)) {
       var blockers = getTaskDependencies(draggedTaskId).filter(function(b) { return b && b.Status !== 'done'; });
       var blockerNames = blockers.map(function(b) { return b.Title; }).join(', ');
-      showToast((currentLang === 'fr' ? 'Impossible : demande bloquée par ' : 'Cannot move: blocked by ') + blockerNames, 'error');
+      showToast((currentLang === 'fr' ? 'Impossible : tâche bloquée par ' : 'Cannot move: blocked by ') + blockerNames, 'error');
       draggedTaskId = null;
       return;
     }
@@ -4639,7 +4285,7 @@ function renderTableView() {
   var html = '<table class="data-table">';
   html += '<thead><tr>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Title\')">' + t('colTaskName') + sortIcon('Title') + '</th>';
-  html += '<th style="' + thStyle + '" onclick="sortTable(\'Project\')">' + (currentLang === 'fr' ? 'Service' : 'Service') + sortIcon('Project') + '</th>';
+  html += '<th style="' + thStyle + '" onclick="sortTable(\'Project\')">' + (currentLang === 'fr' ? 'Projet' : 'Project') + sortIcon('Project') + '</th>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Status\')">' + t('colStatus') + sortIcon('Status') + '</th>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Priority\')">' + t('colPriority') + sortIcon('Priority') + '</th>';
   html += '<th style="' + thStyle + '" onclick="sortTable(\'Assignee\')">' + t('colAssignee') + sortIcon('Assignee') + '</th>';
@@ -4903,7 +4549,7 @@ function ganttChevron(task) {
   }
   var expanded = !!expandedGanttTasks[task.id];
   var icon = expanded ? '▼' : '▶';
-  return '<button type="button" class="gantt-toggle' + (expanded ? ' gantt-toggle-open' : '') + '" onclick="event.stopPropagation();toggleGanttSubtasks(' + task.id + ')" title="' + (currentLang === 'fr' ? 'Étapes' : 'Steps') + '">' + icon + '</button>';
+  return '<button type="button" class="gantt-toggle' + (expanded ? ' gantt-toggle-open' : '') + '" onclick="event.stopPropagation();toggleGanttSubtasks(' + task.id + ')" title="' + (currentLang === 'fr' ? 'Sous-tâches' : 'Subtasks') + '">' + icon + '</button>';
 }
 
 function getTaskExtensionEnd(task) {
@@ -5049,7 +4695,7 @@ function renderGanttView() {
       return da - db;
     });
   }
-  document.getElementById('gantt-task-count').textContent = '(' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests') + ')';
+  document.getElementById('gantt-task-count').textContent = '(' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + ')';
 
   var today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -5182,7 +4828,7 @@ function renderGanttView() {
     var viewEndMonth = monthNames[weeks[weeks.length - 1].start.getMonth()];
     html += '</tbody></table>';
     html += '<div class="gantt-footer">';
-    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests') + '</span>';
+    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
     html += '<span>' + t('ganttViewRange') + ' ' + viewStartMonth + ' - ' + viewEndMonth + ' ' + ganttYear + '</span>';
     html += '</div></div>';
 
@@ -5307,7 +4953,7 @@ function renderGanttView() {
     html += '</tbody></table>';
     html += '<div class="gantt-footer">';
     var rangeLabel = ganttMode === 'twoyears' ? (startYr + ' - ' + (startYr + 1)) : String(startYr);
-    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests') + '</span>';
+    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
     html += '<span>' + t('ganttViewRange') + ' ' + rangeLabel + '</span>';
     html += '</div></div>';
 
@@ -5404,7 +5050,7 @@ function renderGanttView() {
 
     html += '</tbody></table>';
     html += '<div class="gantt-footer">';
-    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests') + '</span>';
+    html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
     html += '<span>' + t('ganttViewRange') + ' ' + monthNames[0] + ' - ' + monthNames[11] + ' ' + ganttYear + '</span>';
     html += '</div></div>';
 
@@ -5568,7 +5214,7 @@ function renderGanttView() {
   var viewStart = monthNames[startDate.getMonth()];
   var viewEnd = monthNames[endDate.getMonth()];
   html += '<div class="gantt-footer">';
-  html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests') + '</span>';
+  html += '<span>🌟 ' + t('ganttFullYear') + ' • ' + t('ganttNavInfo') + ' • ' + tasksWithDates.length + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
   html += '<span>' + t('ganttViewRange') + ' ' + viewStart + ' - ' + viewEnd + ' ' + ganttYear + '</span>';
   html += '</div></div>';
 
@@ -6649,8 +6295,6 @@ function openEditTaskModal(taskId, preserveAssignees) {
     html += renderRaciField('C', t('raciConsulted'), 'consulted', 'editConsulted');
     html += renderRaciField('I', t('raciInformed'), 'informed', 'editInformed');
   } else {
-    html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Prescripteur *' : 'Prescriber *') + '</span><div class="detail-field-value"><input type="text" id="task-prescripteur" value="' + sanitize(task.Prescripteur) + '" /></div></div>';
-
     html += '<div class="detail-field">';
     html += '<span class="detail-field-icon">👤</span>';
     html += '<span class="detail-field-label">' + t('fieldAssignee') + '</span>';
@@ -6683,20 +6327,20 @@ function openEditTaskModal(taskId, preserveAssignees) {
   }
   html += '</select></div></div>';
 
-  // Dates (masquées : remplacées par Début RV / Fin RV, gardées en HTML caché pour compatibilité)
-  html += '<div class="detail-field" style="display:none;">';
+  // Dates
+  html += '<div class="detail-field">';
   html += '<span class="detail-field-icon">📅</span>';
   html += '<span class="detail-field-label">' + t('fieldStartDate') + '</span>';
   html += '<div class="detail-field-value"><input type="date" id="task-start" value="' + startVal + '" /></div>';
   html += '</div>';
 
-  html += '<div class="detail-field" style="display:none;">';
+  html += '<div class="detail-field">';
   html += '<span class="detail-field-icon">⏰</span>';
   html += '<span class="detail-field-label">' + t('fieldDueDate') + '</span>';
   html += '<div class="detail-field-value"><input type="date" id="task-due" value="' + dueVal + '" /></div>';
   html += '</div>';
 
-  // Priorité (conservée)
+  // Priority
   html += '<div class="detail-field">';
   html += '<span class="detail-field-icon">🔥</span>';
   html += '<span class="detail-field-label">' + t('fieldPriority') + '</span>';
@@ -6706,7 +6350,38 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<option value="low"' + (task.Priority === 'low' ? ' selected' : '') + '>' + t('priorityLow') + '</option>';
   html += '</select></div></div>';
 
-  // Tag (conservé)
+  // Group
+  html += '<div class="detail-field">';
+  html += '<span class="detail-field-icon">👥</span>';
+  html += '<span class="detail-field-label">' + t('fieldGroup') + '</span>';
+  html += '<div class="detail-field-value"><select id="task-group">' + groupOptions + '</select></div>';
+  html += '</div>';
+
+  // Project
+  var projectOptions = '<option value="">' + t('noProject') + '</option>';
+  for (var pi = 0; pi < projects.length; pi++) {
+    var projSel = projects[pi].id === task.Project_Id ? ' selected' : '';
+    projectOptions += '<option value="' + projects[pi].id + '"' + projSel + '>' + sanitize(projects[pi].Name) + '</option>';
+  }
+  html += '<div class="detail-field">';
+  html += '<span class="detail-field-icon">📂</span>';
+  html += '<span class="detail-field-label">' + t('project') + '</span>';
+  html += '<div class="detail-field-value"><select id="task-project">' + projectOptions + '</select></div>';
+  html += '</div>';
+
+  // Category
+  var categoryOptions = '<option value="">--</option>';
+  for (var ci = 0; ci < categories.length; ci++) {
+    var catSel = categories[ci].Name === task.Category ? ' selected' : '';
+    categoryOptions += '<option value="' + sanitize(categories[ci].Name) + '"' + catSel + '>' + sanitize(categories[ci].Name) + '</option>';
+  }
+  html += '<div class="detail-field">';
+  html += '<span class="detail-field-icon">📁</span>';
+  html += '<span class="detail-field-label">' + t('fieldCategory') + '</span>';
+  html += '<div class="detail-field-value"><select id="task-category">' + categoryOptions + '</select></div>';
+  html += '</div>';
+
+  // Tag
   var tagOptions = '<option value="">--</option>';
   for (var ti = 0; ti < tags.length; ti++) {
     var tagSel = tags[ti].Name === task.Tag ? ' selected' : '';
@@ -6718,88 +6393,9 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="detail-field-value"><select id="task-tag">' + tagOptions + '</select></div>';
   html += '</div>';
 
-  // Service (ex-Projet)
-  var projectOptions = '<option value="">' + t('noProject') + '</option>';
-  for (var pi = 0; pi < projects.length; pi++) {
-    var projSel = projects[pi].id === task.Project_Id ? ' selected' : '';
-    projectOptions += '<option value="' + projects[pi].id + '" data-name="' + sanitize(projects[pi].Name) + '"' + projSel + '>' + sanitize(projects[pi].Name) + '</option>';
-  }
-  html += '<div class="detail-field">';
-  html += '<span class="detail-field-icon">📂</span>';
-  html += '<span class="detail-field-label">' + t('project') + ' *</span>';
-  html += '<div class="detail-field-value"><select id="task-project" onchange="filterZoneChoicesByService()">' + projectOptions + '</select></div>';
-  html += '</div>';
-
-  // Créneau du rendez-vous : géré désormais uniquement depuis le Planning (voir openRdvEditor).
-  // Champs gardés en HTML caché pour compatibilité avec les lectures existantes.
-  html += '<div style="display:none;">';
-  html += '<div class="detail-field"><span class="detail-field-icon">🕐</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Début RV' : 'Start time') + '</span><div class="detail-field-value"><input type="datetime-local" id="task-rdv-debut" value="' + fromEpochDateTime(task.RDV_Debut) + '" /></div></div>';
-  html += '<div class="detail-field"><span class="detail-field-icon">🕐</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Fin RV' : 'End time') + '</span><div class="detail-field-value"><input type="datetime-local" id="task-rdv-fin" value="' + fromEpochDateTime(task.RDV_Fin) + '" /></div></div>';
-  html += '</div>';
-
-  // === CHAMPS PATIENT (IMAGERIE) ===
-  html += '<div class="subtasks-header" style="margin-top:14px;"><span class="detail-field-icon">🩻</span><span class="detail-field-label">' + (currentLang === 'fr' ? 'Informations patient' : 'Patient information') + '</span></div>';
-
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? "Nom de l'animal" : 'Animal name') + '</span><div class="detail-field-value"><input type="text" id="task-nom-animal" value="' + sanitize(task.Nom_Animal) + '" /></div></div>';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Nom du propriétaire *' : 'Owner name *') + '</span><div class="detail-field-value"><input type="text" id="task-proprietaire" value="' + sanitize(task.Proprietaire) + '" /></div></div>';
-  html += '</div>';
-
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Espèce *' : 'Species *') + '</span><div class="detail-field-value"><select id="task-espece">';
-  ['Chien', 'Chat', 'NAC', 'Equin', 'Autre'].forEach(function(opt) {
-    html += '<option value="' + opt + '"' + (task.Espece === opt ? ' selected' : '') + '>' + opt + '</option>';
-  });
-  html += '</select></div></div>';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Race' : 'Breed') + '</span><div class="detail-field-value"><input type="text" id="task-race" value="' + sanitize(task.Race) + '" /></div></div>';
-  html += '</div>';
-
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Poids (kg) *' : 'Weight (kg) *') + '</span><div class="detail-field-value"><input type="number" step="0.5" min="0" id="task-poids" value="' + (task.Poids != null ? task.Poids : '') + '" /></div></div>';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Âge' : 'Age') + '</span><div class="detail-field-value"><input type="text" id="task-age" value="' + sanitize(task.Age_Animal) + '" /></div></div>';
-  html += '</div>';
-
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Commémoratifs' : 'History') + '</span><div class="detail-field-value"><textarea id="task-commemoratifs">' + sanitize(task.Commemoratifs) + '</textarea></div></div>';
-
-  // Zone demandée (ChoiceList, réutilise le parseur ChoiceList-safe existant, filtrée par service)
-  var zoneList = getCategoryList(task.Zone_Demandee);
-  var ZONE_CHOICES = [
-    { service: 'Radio', zones: ['Thorax', 'Abdomen', 'Rachis cervical', 'Rachis thoraco-lombaire', 'Rachis lombo-sacré', 'Bassin/hanches', 'Membre antérieur droit', 'Membre antérieur gauche', 'Membre postérieur droit', 'Membre postérieur gauche', 'Crâne/dents', 'Autre'] },
-    { service: 'Echo', zones: ['Cardiaque', 'Abdominale', 'Gestation', 'Cervicale', 'Autre'] },
-    { service: 'IRM', zones: ['Encéphale', 'Rachis complet', 'Autre'] },
-    { service: 'Scanner', zones: ['Encéphale', 'Thorax', 'Abdomen', 'Autre'] }
-  ];
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Zone demandée' : 'Requested area') + '</span>';
-  html += '<div class="detail-field-value" id="zone-choices-container">';
-  ZONE_CHOICES.forEach(function(grp) {
-    html += '<div class="zone-service-group" data-service="' + grp.service + '" style="margin-bottom:6px;">';
-    html += '<div style="font-size:11px;font-weight:700;color:#64748b;margin:4px 0 2px;">' + grp.service + '</div>';
-    grp.zones.forEach(function(z) {
-      var fullVal = grp.service + ' - ' + z;
-      var checked = zoneList.indexOf(fullVal) !== -1 ? ' checked' : '';
-      html += '<label style="display:inline-flex;align-items:center;gap:4px;font-size:12px;margin-right:10px;cursor:pointer;"><input type="checkbox" class="zone-checkbox" value="' + fullVal + '"' + checked + '> ' + z + '</label>';
-    });
-    html += '</div>';
-  });
-  html += '</div></div>';
-
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Risque anesthésie' : 'Anaesthesia risk') + '</span><div class="detail-field-value"><textarea id="task-risque">' + sanitize(task.Risque_Anesthesie) + '</textarea></div></div>';
-
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-  html += '<div class="detail-field"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Examen complémentaire' : 'Additional exam') + '</span><div class="detail-field-value"><select id="task-examen-comp" onchange="toggleTypeExamenComp()">';
-  html += '<option value="Non"' + (task.Examen_Complementaire === 'Non' || !task.Examen_Complementaire ? ' selected' : '') + '>' + (currentLang === 'fr' ? 'Non' : 'No') + '</option>';
-  html += '<option value="Oui"' + (task.Examen_Complementaire === 'Oui' ? ' selected' : '') + '>' + (currentLang === 'fr' ? 'Oui' : 'Yes') + '</option>';
-  html += '</select></div></div>';
-  html += '<div class="detail-field" id="type-examen-comp-wrap" style="' + (task.Examen_Complementaire === 'Oui' ? '' : 'display:none;') + '"><span class="detail-field-label">' + (currentLang === 'fr' ? 'Type' : 'Type') + '</span><div class="detail-field-value"><select id="task-type-examen-comp">';
-  ['Échographie', 'Analyses sanguines', 'Scanner', 'IRM', 'Consultation spécialisée', 'Autre'].forEach(function(opt) {
-    html += '<option value="' + opt + '"' + (task.Type_Examen_Complementaire === opt ? ' selected' : '') + '>' + opt + '</option>';
-  });
-  html += '</select></div></div>';
-  html += '</div>';
-
   // === SUBTASKS SECTION ===
   var taskSubtasks = getTaskSubtasks(task.id);
-  html += '<div class="subtasks-section" style="display:none;">';
+  html += '<div class="subtasks-section">';
   html += '<div class="subtasks-header">';
   html += '<span class="detail-field-icon">☑️</span>';
   html += '<span class="detail-field-label">' + t('subtasks') + '</span>';
@@ -6873,14 +6469,14 @@ function openEditTaskModal(taskId, preserveAssignees) {
       var prLbl = { high: t('priorityHigh'), medium: t('priorityMedium'), low: t('priorityLow') };
       html += '<div class="subtask-edit-form" id="st-edit-' + st.id + '">';
       // Title
-      html += '<input type="text" class="subtask-edit-title" id="st-title-' + st.id + '" value="' + sanitize(st.Title) + '" placeholder="' + (currentLang === 'fr' ? "Titre de l'étape..." : 'Step title...') + '">';
+      html += '<input type="text" class="subtask-edit-title" id="st-title-' + st.id + '" value="' + sanitize(st.Title) + '" placeholder="' + (currentLang === 'fr' ? 'Titre de la sous-tâche...' : 'Subtask title...') + '">';
       // Description
       html += '<textarea class="subtask-edit-title" id="st-desc-' + st.id + '" rows="2" placeholder="' + (currentLang === 'fr' ? 'Description (optionnel)...' : 'Description (optional)...') + '" style="resize:vertical;">' + sanitize(st.Description || '') + '</textarea>';
       // B2 : type (sous-tâche / jalon)
       var stType = st.Type || 'subtask';
       html += '<div><div class="st-pill-label">' + (currentLang === 'fr' ? 'Type' : 'Type') + '</div>';
       html += '<div class="st-pill-group">';
-      html += '<button type="button" class="st-pill' + (stType !== 'milestone' ? ' active-progress' : '') + '" onclick="setStType(' + st.id + ',\'subtask\',this)">' + (currentLang === 'fr' ? '↳ Étape' : '↳ Step') + '</button>';
+      html += '<button type="button" class="st-pill' + (stType !== 'milestone' ? ' active-progress' : '') + '" onclick="setStType(' + st.id + ',\'subtask\',this)">' + (currentLang === 'fr' ? '↳ Sous-tâche' : '↳ Subtask') + '</button>';
       html += '<button type="button" class="st-pill' + (stType === 'milestone' ? ' active-progress' : '') + '" onclick="setStType(' + st.id + ',\'milestone\',this)">' + (currentLang === 'fr' ? '◆ Jalon (1 date)' : '◆ Milestone (1 date)') + '</button>';
       html += '</div>';
       html += '<input type="hidden" id="st-type-' + st.id + '" value="' + stType + '">';
@@ -6957,7 +6553,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
   // === DEPENDENCIES SECTION ===
   var taskDeps = getTaskDependencies(task.id);
   var taskBlocks = getTasksDependingOn(task.id);
-  html += '<div class="dependencies-section" style="display:none;">';
+  html += '<div class="dependencies-section">';
   html += '<div class="dependencies-header">';
   html += '<span class="detail-field-icon">🔗</span>';
   html += '<span class="detail-field-label">' + t('dependencies') + '</span>';
@@ -7015,7 +6611,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
 
   // === CUSTOM FIELDS SECTION ===
   if (customFields.length > 0) {
-    html += '<div class="custom-fields-section" style="display:none;">';
+    html += '<div class="custom-fields-section">';
     html += '<div class="custom-fields-header">';
     html += '<span class="detail-field-icon">📋</span>';
     html += '<span class="detail-field-label">' + t('customFields') + '</span>';
@@ -7033,7 +6629,7 @@ function openEditTaskModal(taskId, preserveAssignees) {
     html += '</div>';
     html += '</div>';
   } else if (isOwner) {
-    html += '<div class="custom-fields-section" style="display:none;">';
+    html += '<div class="custom-fields-section">';
     html += '<div class="custom-fields-header">';
     html += '<span class="detail-field-icon">📋</span>';
     html += '<span class="detail-field-label">' + t('customFields') + '</span>';
@@ -7128,6 +6724,68 @@ function openEditTaskModal(taskId, preserveAssignees) {
   html += '<div class="detail-info-row"><span class="info-label">' + t('fieldAssignee') + ' :</span><span class="info-value">' + editAssignees.length + '</span></div>';
   html += '</div>';
 
+  // Time Tracking card
+  var totalTime = getTaskTotalTime(task.id);
+  var isTimerRunning = !!activeTimers[task.id];
+  var taskTimeEntries = getTaskTimeEntries(task.id);
+  html += '<div class="detail-card time-card">';
+  html += '<h4>⏱️ ' + t('timeTracking') + '</h4>';
+  
+  // Timer button
+  html += '<div class="timer-control">';
+  if (isTimerRunning) {
+    html += '<button class="timer-btn timer-stop" onclick="stopTimer(' + task.id + ')">⏹️ ' + t('stopTimer') + '</button>';
+    html += '<span class="timer-status running">● ' + t('timerRunning') + '</span>';
+  } else {
+    html += '<button class="timer-btn timer-start" onclick="startTimer(' + task.id + ')">▶️ ' + t('startTimer') + '</button>';
+  }
+  html += '</div>';
+  
+  // Manual time entry
+  html += '<div class="manual-time-entry" style="display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap;">';
+  html += '<input type="number" id="manual-hours" min="0" max="99" placeholder="0" style="width:52px;" class="form-input" title="' + (currentLang === 'fr' ? 'Heures' : 'Hours') + '"> h';
+  html += '<input type="number" id="manual-minutes" min="0" max="59" placeholder="0" style="width:52px;" class="form-input" title="' + (currentLang === 'fr' ? 'Minutes' : 'Minutes') + '"> min';
+  html += '<button class="btn btn-secondary btn-sm" onclick="addManualTimeEntry(' + task.id + ')">+ ' + (currentLang === 'fr' ? 'Ajouter' : 'Add') + '</button>';
+  html += '</div>';
+
+  // Time summary
+  html += '<div class="time-summary">';
+  html += '<div class="detail-info-row"><span class="info-label">' + t('totalTime') + ' :</span><span class="info-value time-value">' + formatDuration(totalTime) + '</span></div>';
+  if (task.Estimated_Hours) {
+    var estimatedSec = task.Estimated_Hours * 3600;
+    var pctUsed = Math.round((totalTime / estimatedSec) * 100);
+    html += '<div class="detail-info-row"><span class="info-label">' + t('estimatedTime') + ' :</span><span class="info-value">' + task.Estimated_Hours + 'h (' + pctUsed + '%)</span></div>';
+  }
+  html += '</div>';
+  
+  // Recent time entries (newest first)
+  if (taskTimeEntries.length > 0) {
+    html += '<div class="time-entries">';
+    html += '<div class="time-entries-label">' + t('timeEntries') + ':</div>';
+    html += '<div style="max-height:120px;overflow-y:auto;">';
+    for (var tei = 0; tei < taskTimeEntries.length; tei++) {
+      var te = taskTimeEntries[tei];
+      html += '<div class="time-entry-item">';
+      html += '<span class="te-duration">' + formatDurationShort(te.Duration) + '</span>';
+      html += '<span class="te-date">' + formatTimeAgo(te.Start_Time) + '</span>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+
+  // Extension card
+  html += '<div class="detail-card">';
+  html += '<h4>📏 ' + t('extensionDate') + '</h4>';
+  var extDateVal = task.Extension_Date ? fromEpoch(task.Extension_Date) : '';
+  html += '<div style="margin-bottom:10px;"><input type="date" id="task-extension-date" value="' + extDateVal + '" style="width:100%;padding:6px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:12px;" /></div>';
+  html += '<label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;">';
+  html += '<input type="checkbox" id="task-auto-extend" ' + (task.Auto_Extend ? 'checked' : '') + ' style="width:16px;height:16px;accent-color:#3b82f6;flex-shrink:0;margin-top:2px;" />';
+  html += '<span style="font-size:11px;color:#64748b;line-height:1.3;">' + t('autoExtendHint') + '</span>';
+  html += '</label>';
+  html += '</div>';
+
   // Recurrence card
   var hasRecurrence = task.Recurrence && task.Recurrence !== 'none';
   html += '<div class="detail-card">';
@@ -7167,29 +6825,6 @@ function openEditTaskModal(taskId, preserveAssignees) {
   document.getElementById('modal-container').innerHTML = html;
   // D2 : remplir la liste des pièces jointes (token asynchrone à part)
   renderAttachmentsSection(task.id);
-  filterZoneChoicesByService();
-}
-
-// Affiche uniquement les cases "Zone demandée" du service actuellement sélectionné
-// (Radio/Echo/IRM/Scanner), déduit du nom du service via son préfixe.
-function filterZoneChoicesByService() {
-  var projSel = document.getElementById('task-project');
-  var groupsEl = document.querySelectorAll('.zone-service-group');
-  if (!projSel || !groupsEl.length) return;
-  var opt = projSel.options[projSel.selectedIndex];
-  var serviceName = opt ? (opt.getAttribute('data-name') || opt.textContent || '') : '';
-  groupsEl.forEach(function(g) {
-    var prefix = g.getAttribute('data-service') || '';
-    var show = !serviceName || serviceName.toLowerCase().indexOf(prefix.toLowerCase()) !== -1;
-    g.style.display = show ? '' : 'none';
-  });
-}
-
-// Affiche/masque le champ "Type d'examen complémentaire" selon Oui/Non
-function toggleTypeExamenComp() {
-  var sel = document.getElementById('task-examen-comp');
-  var wrap = document.getElementById('type-examen-comp-wrap');
-  if (sel && wrap) wrap.style.display = (sel.value === 'Oui') ? '' : 'none';
 }
 
 // Suffixe de conteneur DOM pour un rôle RACI. editAssignees -> 'assignee' (et non
@@ -7329,7 +6964,7 @@ async function quickAction(taskId, newStatus) {
   if (newStatus === 'done' && isTaskBlocked(taskId)) {
     var qaBlockers = getTaskDependencies(taskId).filter(function(b) { return b && b.Status !== 'done'; });
     var qaNames = qaBlockers.map(function(b) { return b.Title; }).join(', ');
-    showToast((currentLang === 'fr' ? 'Impossible : demande bloquee par ' : 'Cannot complete: blocked by ') + qaNames, 'error');
+    showToast((currentLang === 'fr' ? 'Impossible : tache bloquee par ' : 'Cannot complete: blocked by ') + qaNames, 'error');
     return;
   }
 
@@ -7383,28 +7018,10 @@ async function persistTaskFormFields(taskId) {
   if ((el = document.getElementById('task-group'))) setField(record, 'tasks', 'group', el.value);
   if ((el = document.getElementById('task-start'))) setField(record, 'tasks', 'startDate', toEpoch(el.value));
   if ((el = document.getElementById('task-due'))) setField(record, 'tasks', 'dueDate', toEpoch(el.value));
+  if ((el = document.getElementById('task-category'))) setField(record, 'tasks', 'category', el.value.trim());
   if ((el = document.getElementById('task-project'))) setField(record, 'tasks', 'projectId', el.value ? parseInt(el.value) : 0);
   if ((el = document.getElementById('task-recurrence'))) setField(record, 'tasks', 'recurrence', el.value);
   if ((el = document.getElementById('task-tag'))) setField(record, 'tasks', 'tag', el.value.trim());
-  if ((el = document.getElementById('task-espece'))) record.Espece = el.value;
-  if ((el = document.getElementById('task-race'))) record.Race = el.value.trim();
-  if ((el = document.getElementById('task-poids'))) record.Poids = el.value ? parseFloat(el.value) : null;
-  if ((el = document.getElementById('task-age'))) record.Age_Animal = el.value.trim();
-  if ((el = document.getElementById('task-commemoratifs'))) record.Commemoratifs = el.value.trim();
-  var zoneCheckedP = document.querySelectorAll('.zone-checkbox:checked');
-  if (document.getElementById('zone-choices-container')) {
-    var zoneValsP = [];
-    zoneCheckedP.forEach(function(cb) { zoneValsP.push(cb.value); });
-    record.Zone_Demandee = ['L'].concat(zoneValsP);
-  }
-  if ((el = document.getElementById('task-risque'))) record.Risque_Anesthesie = el.value.trim();
-  if ((el = document.getElementById('task-examen-comp'))) record.Examen_Complementaire = el.value;
-  if ((el = document.getElementById('task-type-examen-comp'))) record.Type_Examen_Complementaire = el.value;
-  if ((el = document.getElementById('task-prescripteur'))) record.Prescripteur = el.value.trim();
-  if ((el = document.getElementById('task-rdv-debut'))) record.RDV_Debut = toEpoch(el.value);
-  if ((el = document.getElementById('task-rdv-fin'))) record.RDV_Fin = toEpoch(el.value);
-  if ((el = document.getElementById('task-nom-animal'))) record.Nom_Animal = el.value.trim();
-  if ((el = document.getElementById('task-proprietaire'))) record.Proprietaire = el.value.trim();
   if ((el = document.getElementById('task-extension-date'))) record.Extension_Date = toEpoch(el.value);
   if ((el = document.getElementById('task-auto-extend'))) record.Auto_Extend = el.checked;
   try { await grist.docApi.applyUserActions([['UpdateRecord', TASKS_TABLE, taskId, record]]); }
@@ -8285,18 +7902,17 @@ async function createTask() {
   setField(record, 'tasks', 'title', title);
   setField(record, 'tasks', 'description', document.getElementById('task-desc').value.trim());
   setField(record, 'tasks', 'status', document.getElementById('task-status').value);
-  var pEl;
-  if ((pEl = document.getElementById('task-priority'))) setField(record, 'tasks', 'priority', pEl.value);
+  setField(record, 'tasks', 'priority', document.getElementById('task-priority').value);
   setField(record, 'tasks', 'assignee', editAssignees.join(', '));
   if (raciEnabled) {
     record.Accountable = editAccountable.join(', ');
     record.Consulted = editConsulted.join(', ');
     record.Informed = editInformed.join(', ');
   }
-  if ((pEl = document.getElementById('task-group'))) setField(record, 'tasks', 'group', pEl.value);
+  setField(record, 'tasks', 'group', document.getElementById('task-group').value);
   setField(record, 'tasks', 'startDate', toEpoch(document.getElementById('task-start').value));
   setField(record, 'tasks', 'dueDate', toEpoch(document.getElementById('task-due').value));
-  if ((pEl = document.getElementById('task-category'))) setField(record, 'tasks', 'category', pEl.value.trim());
+  setField(record, 'tasks', 'category', document.getElementById('task-category').value.trim());
   setField(record, 'tasks', 'projectId', projectId);
   setField(record, 'tasks', 'createdAt', Math.floor(Date.now() / 1000));
   // B4 : prolongation auto activée par défaut sur les nouvelles tâches (modifiable ensuite)
@@ -8334,25 +7950,6 @@ async function createTask() {
 async function updateTask(taskId) {
   var title = document.getElementById('task-title').value.trim();
   if (!title) return;
-
-  // Champs obligatoires pour une demande d'imagerie
-  var missing = [];
-  if (!title) missing.push(currentLang === 'fr' ? 'N° de dossier' : 'File #');
-  var especeEl = document.getElementById('task-espece');
-  if (!especeEl || !especeEl.value) missing.push(currentLang === 'fr' ? 'Espèce' : 'Species');
-  var projectElCheck = document.getElementById('task-project');
-  if (!projectElCheck || !projectElCheck.value) missing.push(currentLang === 'fr' ? 'Service' : 'Service');
-  var poidsEl = document.getElementById('task-poids');
-  if (!poidsEl || !poidsEl.value) missing.push(currentLang === 'fr' ? 'Poids' : 'Weight');
-  var propEl2 = document.getElementById('task-proprietaire');
-  if (!propEl2 || !propEl2.value.trim()) missing.push(currentLang === 'fr' ? 'Nom du propriétaire' : 'Owner name');
-  var prescEl = document.getElementById('task-prescripteur');
-  if (!prescEl || !prescEl.value.trim()) missing.push(currentLang === 'fr' ? 'Prescripteur' : 'Prescriber');
-  if (missing.length) {
-    showToast((currentLang === 'fr' ? 'Champs obligatoires manquants : ' : 'Missing required fields: ') + missing.join(', '), 'error');
-    return;
-  }
-
   if (draftTaskId === taskId) draftTaskId = null; // ce brouillon devient une vraie tâche
 
   var task = tasks.find(function(t) { return t.id === taskId; });
@@ -8362,7 +7959,7 @@ async function updateTask(taskId) {
   if (newStatus === 'done' && isTaskBlocked(taskId)) {
     var blockers = getTaskDependencies(taskId).filter(function(b) { return b && b.Status !== 'done'; });
     var blockerNames = blockers.map(function(b) { return b.Title; }).join(', ');
-    showToast((currentLang === 'fr' ? 'Impossible : demande bloquée par ' : 'Cannot complete: blocked by ') + blockerNames, 'error');
+    showToast((currentLang === 'fr' ? 'Impossible : tâche bloquée par ' : 'Cannot complete: blocked by ') + blockerNames, 'error');
     return;
   }
 
@@ -8372,67 +7969,41 @@ async function updateTask(taskId) {
   var projectEl = document.getElementById('task-project');
   var projectId = projectEl && projectEl.value ? parseInt(projectEl.value) : 0;
 
-  // Vérification des conflits de rendez-vous (capacité par service)
-  var rdvDebutEl = document.getElementById('task-rdv-debut');
-  var rdvFinEl = document.getElementById('task-rdv-fin');
-  var rdvDebutEpoch = rdvDebutEl ? toEpoch(rdvDebutEl.value) : null;
-  var rdvFinEpoch = rdvFinEl ? toEpoch(rdvFinEl.value) : null;
-  if (rdvDebutEpoch && rdvFinEpoch) {
-    var conflictMsg = checkRdvConflict(taskId, projectId, rdvDebutEpoch, rdvFinEpoch);
-    if (conflictMsg) {
-      showToast(conflictMsg, 'error');
-      return;
-    }
-  }
-
   var record = {};
   setField(record, 'tasks', 'title', title);
   setField(record, 'tasks', 'description', document.getElementById('task-desc').value.trim());
   setField(record, 'tasks', 'status', newStatus);
-  var priEl = document.getElementById('task-priority');
-  if (priEl) setField(record, 'tasks', 'priority', priEl.value);
+  setField(record, 'tasks', 'priority', document.getElementById('task-priority').value);
   setField(record, 'tasks', 'assignee', editAssignees.join(', '));
   if (raciEnabled) {
     record.Accountable = editAccountable.join(', ');
     record.Consulted = editConsulted.join(', ');
     record.Informed = editInformed.join(', ');
   }
+  setField(record, 'tasks', 'group', document.getElementById('task-group').value);
   setField(record, 'tasks', 'startDate', toEpoch(document.getElementById('task-start').value));
   setField(record, 'tasks', 'dueDate', toEpoch(document.getElementById('task-due').value));
+  setField(record, 'tasks', 'category', document.getElementById('task-category').value.trim());
   setField(record, 'tasks', 'projectId', projectId);
   setField(record, 'tasks', 'recurrence', newRecurrence);
+  
+  // Add Tag only if the element exists
   var tagEl = document.getElementById('task-tag');
-  if (tagEl) setField(record, 'tasks', 'tag', tagEl.value.trim());
+  if (tagEl) {
+    setField(record, 'tasks', 'tag', tagEl.value.trim());
+  }
+
+  // Extension fields
+  var extDateEl = document.getElementById('task-extension-date');
+  if (extDateEl) record.Extension_Date = toEpoch(extDateEl.value);
+  var autoExtEl = document.getElementById('task-auto-extend');
+  if (autoExtEl) record.Auto_Extend = autoExtEl.checked;
 
   // Auto-freeze extension date when completing a task with auto-extend
   if (newStatus === 'done' && task && task.Auto_Extend && task.Status !== 'done') {
     record.Extension_Date = Math.floor(Date.now() / 1000);
     record.Auto_Extend = false;
   }
-
-  // === Champs patient (imagerie) ===
-  var pel;
-  if ((pel = document.getElementById('task-espece'))) record.Espece = pel.value;
-  if ((pel = document.getElementById('task-race'))) record.Race = pel.value.trim();
-  if ((pel = document.getElementById('task-poids'))) record.Poids = pel.value ? parseFloat(pel.value) : null;
-  if ((pel = document.getElementById('task-age'))) record.Age_Animal = pel.value.trim();
-  if ((pel = document.getElementById('task-commemoratifs'))) record.Commemoratifs = pel.value.trim();
-  var zoneChecked = document.querySelectorAll('.zone-checkbox:checked');
-  if (zoneChecked.length || document.getElementById('zone-choices-container')) {
-    var zoneVals = [];
-    zoneChecked.forEach(function(cb) { zoneVals.push(cb.value); });
-    record.Zone_Demandee = ['L'].concat(zoneVals); // format ChoiceList Grist
-  }
-  if ((pel = document.getElementById('task-risque'))) record.Risque_Anesthesie = pel.value.trim();
-  if ((pel = document.getElementById('task-examen-comp'))) record.Examen_Complementaire = pel.value;
-  if ((pel = document.getElementById('task-type-examen-comp'))) record.Type_Examen_Complementaire = pel.value;
-  if ((pel = document.getElementById('task-prescripteur'))) record.Prescripteur = pel.value.trim();
-  record.RDV_Debut = rdvDebutEpoch;
-  record.RDV_Fin = rdvFinEpoch;
-  var animalEl = document.getElementById('task-nom-animal');
-  if (animalEl) record.Nom_Animal = animalEl.value.trim();
-  var propEl = document.getElementById('task-proprietaire');
-  if (propEl) record.Proprietaire = propEl.value.trim();
 
   try {
     await grist.docApi.applyUserActions([
@@ -8443,6 +8014,8 @@ async function updateTask(taskId) {
     var autoChanges = {};
     if (task) {
       if (task.Status !== newStatus) { autoChanges.status = { from: task.Status, to: newStatus }; logDetails.push(task.Status + ' → ' + newStatus); }
+      var newPriority = document.getElementById('task-priority').value;
+      if (task.Priority !== newPriority) autoChanges.priority = { from: task.Priority, to: newPriority };
       var newAssignee = editAssignees.join(', ');
       if (task.Assignee !== newAssignee) autoChanges.assignee = { from: task.Assignee, to: newAssignee };
     }
@@ -8472,7 +8045,7 @@ async function updateTask(taskId) {
 
 async function deleteTask(taskId) {
   if (!isOwner) return;
-  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer la demande' : 'Delete request');
+  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer la tâche' : 'Delete task');
   if (!confirmed) return;
   try {
     await grist.docApi.applyUserActions([
@@ -8864,7 +8437,7 @@ function renderWorkloadChart() {
 
   var html = '';
   if (workloadEntries.length === 0) {
-    html = '<div style="text-align:center;color:#94a3b8;padding:20px;">' + (currentLang === 'fr' ? 'Aucune demande prise en charge' : 'No handled requests') + '</div>';
+    html = '<div style="text-align:center;color:#94a3b8;padding:20px;">' + (currentLang === 'fr' ? 'Aucune tâche assignée' : 'No assigned tasks') + '</div>';
   } else {
     workloadEntries.forEach(function(entry) {
       var barWidth = Math.min((entry.score / maxScore) * 100, 100);
@@ -8875,7 +8448,7 @@ function renderWorkloadChart() {
       html += '</div>';
       html += '<div class="workload-stats">';
       html += '<span class="workload-badge ' + entry.level + '">' + entry.levelLabel + '</span>';
-      html += '<span class="workload-detail">' + entry.total + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests');
+      html += '<span class="workload-detail">' + entry.total + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks');
       if (entry.overdue > 0) {
         html += ' • <span style="color:#ef4444;">' + entry.overdue + ' ' + (currentLang === 'fr' ? 'en retard' : 'overdue') + '</span>';
       }
@@ -9256,7 +8829,7 @@ function renderProjectList() {
   var shown = q ? matching : matching.slice(0, PROJECT_LIST_LIMIT);
 
   if (matching.length === 0) {
-    html = '<div style="text-align:center;color:#94a3b8;padding:16px;">' + (currentLang === 'fr' ? 'Aucun service trouvé' : 'No service found') + '</div>';
+    html = '<div style="text-align:center;color:#94a3b8;padding:16px;">' + (currentLang === 'fr' ? 'Aucun projet trouvé' : 'No project found') + '</div>';
     document.getElementById('project-list').innerHTML = html;
     return;
   }
@@ -9268,7 +8841,7 @@ function renderProjectList() {
     html += '<div class="project-item" style="border-left: 4px solid ' + (proj.Color || '#6366f1') + ';">';
     html += '<div class="project-item-info">';
     html += '<strong>' + sanitize(proj.Name) + '</strong>';
-    var metaTxt = taskCount + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests');
+    var metaTxt = taskCount + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks');
     if (proj.Lead) metaTxt += ' · 👤 ' + (currentLang === 'fr' ? 'resp. ' : 'lead ') + sanitize(getUserDisplayName(proj.Lead));
     if (proj.CreatedBy) metaTxt += ' · ' + (currentLang === 'fr' ? 'créé par ' : 'created by ') + sanitize(getUserDisplayName(proj.CreatedBy));
     html += '<span class="project-item-meta">' + metaTxt + '</span>';
@@ -9362,7 +8935,7 @@ async function saveProject() {
 }
 
 async function deleteProject(projectId) {
-  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer le service' : 'Delete service');
+  var confirmed = await showConfirmModal(t('confirmDelete'), currentLang === 'fr' ? 'Supprimer le projet' : 'Delete project');
   if (!confirmed) return;
   
   try {
@@ -9540,11 +9113,15 @@ async function removeKanbanStatus(index) {
 function renderCardDisplaySettings() {
   var container = document.getElementById('card-display-settings');
   if (!container) return;
-   var fields = [
+  var fields = [
     { key: 'priority',    label: currentLang === 'fr' ? 'Priorité' : 'Priority' },
     { key: 'description', label: currentLang === 'fr' ? 'Description' : 'Description' },
-    { key: 'assignee',    label: currentLang === 'fr' ? 'Pris en charge par' : 'Handled by' },
+    { key: 'date',        label: currentLang === 'fr' ? 'Date d\'échéance' : 'Due date' },
+    { key: 'assignee',    label: currentLang === 'fr' ? 'Assigné à' : 'Assignee' },
     { key: 'tags',        label: 'Tags' },
+    { key: 'category',    label: currentLang === 'fr' ? 'Catégorie' : 'Category' },
+    { key: 'time',        label: currentLang === 'fr' ? 'Temps passé' : 'Time spent' },
+    { key: 'subtasks',    label: currentLang === 'fr' ? 'Sous-tâches' : 'Subtasks' },
     { key: 'comments',    label: currentLang === 'fr' ? 'Commentaires' : 'Comments' }
   ];
   var html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">';
@@ -9649,7 +9226,7 @@ async function applySecurityRules() {
 
   var confirmed = await showConfirmModal(
     currentLang === 'fr'
-      ? 'Cela va créer des règles d\'accès (ACL) pour protéger les tables PM_*. Les owners garderont tous les droits. Les éditeurs pourront créer et modifier les demandes mais pas les supprimer ni modifier les paramètres. Le document sera rechargé automatiquement.'
+      ? 'Cela va créer des règles d\'accès (ACL) pour protéger les tables PM_*. Les owners garderont tous les droits. Les éditeurs pourront créer et modifier les tâches mais pas les supprimer ni modifier les paramètres. Le document sera rechargé automatiquement.'
       : 'This will create access rules (ACL) to protect PM_* tables. Owners keep full rights. Editors can create and edit tasks but cannot delete them or modify settings. The document will reload automatically.',
     currentLang === 'fr' ? 'Sécuriser le document' : 'Secure document',
     currentLang === 'fr' ? 'Confirmer' : 'Confirm'
@@ -9821,7 +9398,7 @@ function renderNotifyConcernedToggle() {
   var L = currentLang === 'fr';
   var html = '<div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0;">';
   html += '<div><span style="font-size:13px;font-weight:600;">' + (L ? 'Notifier les utilisateurs concernés' : 'Notify concerned users') + '</span>';
-  html += '<p style="font-size:12px;color:#94a3b8;margin:2px 0 0;">' + (L ? 'À la création et à la modification d\'une demande (R/A/C/I), une notification est créée pour chaque personne concernée.' : 'On request creation and update, a notification is created for each concerned person (R/A/C/I).') + '</p></div>';
+  html += '<p style="font-size:12px;color:#94a3b8;margin:2px 0 0;">' + (L ? 'À la création et à la modification d\'une tâche (R/A/C/I), une notification est créée pour chaque personne concernée.' : 'On task creation and update, a notification is created for each concerned person (R/A/C/I).') + '</p></div>';
   html += '<label class="toggle-switch"><input type="checkbox" ' + (notifyConcernedEnabled ? 'checked' : '') + ' onchange="toggleNotifyConcerned(this.checked)"><span class="toggle-slider"></span></label>';
   html += '</div>';
   container.innerHTML = html;
@@ -9985,7 +9562,7 @@ async function saveAutomationRuleFromModal() {
   if (toVal) rule.condition.to = toVal;
 
   if (!rule.message_fr && !rule.message_en) {
-    rule.message_fr = 'La demande "{title}" a changé';
+    rule.message_fr = 'La tâche "{title}" a changé';
     rule.message_en = 'Task "{title}" changed';
   }
 
@@ -10018,17 +9595,17 @@ async function addDefaultAutomationRules() {
     {
       id: 'rule_default_1', enabled: true, trigger: 'status_change',
       condition: { to: 'done' }, action: 'notify_assignee',
-      message_fr: 'La demande "{title}" est terminée', message_en: 'Request "{title}" is completed'
+      message_fr: 'La tâche "{title}" est terminée', message_en: 'Task "{title}" is completed'
     },
     {
       id: 'rule_default_2', enabled: true, trigger: 'priority_change',
       condition: { to: 'high' }, action: 'notify_project_lead',
-      message_fr: 'La demande "{title}" est passée en priorité haute', message_en: 'Request "{title}" priority changed to high'
+      message_fr: 'La tâche "{title}" est passée en priorité haute', message_en: 'Task "{title}" priority changed to high'
     },
     {
       id: 'rule_default_3', enabled: true, trigger: 'overdue',
       condition: {}, action: 'notify_assignee',
-      message_fr: 'La demande "{title}" est en retard !', message_en: 'Request "{title}" is overdue!'
+      message_fr: 'La tâche "{title}" est en retard !', message_en: 'Task "{title}" is overdue!'
     }
   ];
   await saveSetting('automation_rules', JSON.stringify(automationRules));
@@ -10122,7 +9699,7 @@ function renderSettingsProjectsList(searchOverride) {
 
   var html = '<div style="margin-bottom:10px;">';
   html += '<input type="text" id="settings-proj-search" class="settings-search-input"';
-  html += ' placeholder="' + (currentLang === 'fr' ? 'Rechercher un service...' : 'Search a service...') + '"';
+  html += ' placeholder="' + (currentLang === 'fr' ? 'Rechercher un projet...' : 'Search a project...') + '"';
   html += ' value="' + sanitize(_settingsProjectSearch) + '" oninput="renderSettingsProjectsList(this.value)"';
   html += ' autocomplete="off">';
   html += '</div>';
@@ -10139,7 +9716,7 @@ function renderSettingsProjectsList(searchOverride) {
       html += '<span class="settings-item-dot" style="background:' + dotColor + ';"></span>';
       html += '<div class="settings-item-info">';
       html += '<strong>' + sanitize(proj.Name) + '</strong>';
-      html += '<span class="settings-item-meta">' + taskCount + ' ' + (currentLang === 'fr' ? 'demandes' : 'requests') + '</span>';
+      html += '<span class="settings-item-meta">' + taskCount + ' ' + (currentLang === 'fr' ? 'tâches' : 'tasks') + '</span>';
       html += '</div>';
       html += '<div class="settings-item-actions">';
       html += '<button class="btn-icon" onclick="openProjectModalForEdit(' + proj.id + ')" title="' + t('editProject') + '">✏️</button>';
@@ -10167,7 +9744,7 @@ function openProjectModalForEdit(projectId) {
 
   var html = '<div class="modal-overlay" onclick="closeModal(event)">';
   html += '<div class="modal" style="max-width:420px;" onclick="event.stopPropagation()">';
-  html += '<div class="modal-header"><h3>✏️ ' + (currentLang === 'fr' ? 'Modifier le service' : 'Edit service') + '</h3>';
+  html += '<div class="modal-header"><h3>✏️ ' + (currentLang === 'fr' ? 'Modifier le projet' : 'Edit project') + '</h3>';
   html += '<button class="modal-close" onclick="closeModalForce()">✕</button></div>';
   html += '<div class="modal-body">';
   html += '<div class="form-group"><label>' + (currentLang === 'fr' ? 'Nom' : 'Name') + '</label>';
@@ -10202,7 +9779,7 @@ async function saveInlineProjectEdit(projectId) {
   setField(record, 'projects', 'status', document.getElementById('inline-proj-status').value || 'active');
   try {
     await grist.docApi.applyUserActions([['UpdateRecord', PROJECTS_TABLE, projectId, record]]);
-    showToast((currentLang === 'fr' ? 'Service modifié' : 'Service updated') + ' ✓', 'success');
+    showToast((currentLang === 'fr' ? 'Projet modifié' : 'Project updated') + ' ✓', 'success');
     closeModalForce();
     await loadAllData();
     renderSettingsProjectsList();
@@ -10289,7 +9866,7 @@ async function openColumnMappingModal() {
   
   // Tasks mapping section
   html += '<div class="form-section" style="margin-bottom:25px;">';
-  html += '<h4 style="margin-bottom:15px;color:#1e293b;">📋 Table des Demandes</h4>';
+  html += '<h4 style="margin-bottom:15px;color:#1e293b;">📋 Table des Tâches</h4>';
   html += '<div class="form-group">';
   html += '<label>Nom de la table</label>';
   html += '<select id="mapping-tasks-table" onchange="detectTaskColumns()">';
@@ -10840,8 +10417,8 @@ async function notifyConcernedUsers(taskId, emails, eventType, title) {
   });
   if (!recipients.length) return;
   var msg = (eventType === 'task_created')
-    ? (currentLang === 'fr' ? 'Nouvelle demande vous concernant : ' : 'New request involving you: ') + title
-    : (currentLang === 'fr' ? 'Demande modifiée : ' : 'Request updated: ') + title;
+    ? (currentLang === 'fr' ? 'Nouvelle tâche vous concernant : ' : 'New task involving you: ') + title
+    : (currentLang === 'fr' ? 'Tâche modifiée : ' : 'Task updated: ') + title;
   var now = Math.floor(Date.now() / 1000);
   var actions = recipients.map(function(email) {
     return ['AddRecord', NOTIFICATIONS_TABLE, null, { Task_Id: taskId, User_Email: email, Type: eventType, Message: msg, Is_Read: false, Created_At: now, Rule_Id: 'builtin' }];
@@ -11176,20 +10753,11 @@ if (!isInsideGrist()) {
     updateNotificationBadge();
     await resolveDocKey();            // B1 : filtres cloisonnes par document
     restoreFilters(); // conserver les filtres en changeant de page / au rechargement
-    // Synchronise les libellés statiques (data-i18n) avec le dictionnaire i18n dès le chargement,
-    // sans attendre un clic manuel sur FR/EN (setLang() ne s'exécutait avant que sur ce clic).
-    setLang(currentLang);
     renderProjectSelector();
     refreshAllViews();
     restoreActiveTab();
-
-    // Révèle l'interface d'un coup, une fois que tout est prêt (évite le flash d'affichage brut)
-    var loadingEl = document.getElementById('app-loading');
-    var mainEl = document.getElementById('main-content');
-    if (loadingEl) loadingEl.style.display = 'none';
-    if (mainEl) mainEl.style.visibility = 'visible';
     // Synchronise les choix de la colonne Status des sous-tâches avec les statuts personnalisés
-    if (isOwner) { syncSubtaskStatusChoices(); syncTaskStatusChoices(); }
+    if (isOwner) syncSubtaskStatusChoices();
 
     // A6 : synchro live — recharge si la table liée change (édition directe dans Grist,
     // autre utilisateur). Debounce + on ne perturbe pas une saisie (modale ouverte).
